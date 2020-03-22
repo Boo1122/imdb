@@ -6,6 +6,7 @@ export class Navbar {
     nav() {
       let body = document.getElementById('body')
       let containerDiv = document.createElement('div')
+      containerDiv.classList.add('container-fluid', 'px-0')
         
       body.appendChild(containerDiv)
 
