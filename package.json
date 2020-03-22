@@ -1,0 +1,26 @@
+{
+  "name": "imdb",
+  "version": "1.0.0",
+  "description": "work",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack -p && webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boo1122/imdb.git"
+  },
+  "author": "bogdan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boo1122/imdb/issues"
+  },
+  "homepage": "https://github.com/Boo1122/imdb#readme",
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
