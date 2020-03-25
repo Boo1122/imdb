@@ -13,7 +13,7 @@ export class Header {
     body.appendChild(header);
 
     const movies = document.createElement("button");
-    movies.classList.add("movies-btn");
+    movies.classList.add("movies-btn", "btn");
     movies.innerText = "Movies";
 
     const anchor = document.createElement("a");
