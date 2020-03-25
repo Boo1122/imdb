@@ -1,5 +1,5 @@
-import { header } from "./components/Home_Page_Header/Home_Page_Header_Script";
+import { Header } from "./components/Home_Page_Header/Home_Page_Header";
 
-header();
+new Header();
 
 console.log("start");
