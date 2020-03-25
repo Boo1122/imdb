@@ -12,17 +12,24 @@ export class Header {
     header.classList.add("header");
     body.appendChild(header);
 
+    const movBtn = document.createElement("div");
+    movBtn.className = "movBtn";
     const movies = document.createElement("button");
     movies.classList.add("movies-btn", "btn");
     movies.innerText = "Movies";
 
-    const anchor = document.createElement("a");
+    const anchBtn = document.createElement("div");
+    anchBtn.className = "anchBtn";
+    const anchor = document.createElement("button");
     anchor.classList.add("active", "nav-link");
     anchor.setAttribute("data-target", "login");
     anchor.id = "login";
     anchor.innerHTML = "Login";
 
-    header.appendChild(movies);
-    header.appendChild(anchor);
+    header.appendChild(movBtn);
+    movBtn.appendChild(movies);
+
+    header.appendChild(anchBtn);
+    anchBtn.appendChild(anchor);
   }
 }
