@@ -60,13 +60,13 @@ body {
     -10px -10px 30px rgba(233, 27, 16, 0.8);
 }
 
-.anchBtn {
+#anchBtn {
   margin-top: 20px;
   margin-left: 30px;
   margin-right: 30px;
 }
 
-.movBtn {
+#movBtn {
   margin-top: 20px;
   margin-left: 30px;
   margin-right: 30px;
