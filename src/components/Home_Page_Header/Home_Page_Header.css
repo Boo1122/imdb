@@ -8,7 +8,6 @@ body {
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -24,6 +23,7 @@ body {
   border: none;
   font-family: "Great Vibes", cursive;
   text-align: center;
+  outline: none;
 }
 
 .btn:hover {
@@ -34,6 +34,7 @@ body {
   background: #ffff00;
   box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
     -10px -10px 30px rgba(233, 27, 16, 0.8);
+  outline: none;
 }
 
 #login {
@@ -48,6 +49,7 @@ body {
   border: none;
   font-family: "Great Vibes", cursive;
   text-align: center;
+  outline: none;
 }
 
 #login:hover {
@@ -58,6 +60,7 @@ body {
   background: #ffff00;
   box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
     -10px -10px 30px rgba(233, 27, 16, 0.8);
+  outline: none;
 }
 
 #anchBtn {

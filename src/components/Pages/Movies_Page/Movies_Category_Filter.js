@@ -1,3 +1,5 @@
+import './Movies_Category_Filter.css' from './Movies_Category_Filter.css'
+
 export class MoviesCategoryFilter {
   constructor(text) {
     this.cat = text;
@@ -15,23 +17,38 @@ export class MoviesCategoryFilter {
 
     movieBtn.appendChild(div);
     div.appendChild(p);
-
   }
 }
 
-
 export function moviesClicked() {
-
-  
-
-  
   const movieBtn = document.getElementById("movBtn");
 
   movieBtn.addEventListener("click", event => {
-   
-    
-    let title = new MoviesCategoryFilter('Title');
-    let year = new MoviesCategoryFilter('Year');
-    return title , year;
+    event.preventDefault();
+    const title = new MoviesCategoryFilter("Title");
+    const year = new MoviesCategoryFilter("Year");
+    const runtime = new MoviesCategoryFilter("Runtime");
+    const genre = new MoviesCategoryFilter("Genre");
+    const language = new MoviesCategoryFilter("Language");
+    const country = new MoviesCategoryFilter("Country");
+    const poster = new MoviesCategoryFilter("Poster");
+    const imdbRating = new MoviesCategoryFilter("IMDb Rating");
+    const imdbVotes = new MoviesCategoryFilter("IMDb Votes");
+    const imdbID = new MoviesCategoryFilter("IMDb ID");
+    const type = new MoviesCategoryFilter("Type");
+
+    return (
+      title,
+      year,
+      runtime,
+      genre,
+      language,
+      country,
+      poster,
+      imdbRating,
+      imdbVotes,
+      imdbID,
+      type
+    );
   });
 }
