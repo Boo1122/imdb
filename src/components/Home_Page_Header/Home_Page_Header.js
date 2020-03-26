@@ -1,9 +1,6 @@
 // import {navigate} from './components/Navigate_History/Navigate_History';
 import { MoviesCategoryFilter } from "../Pages/Movies_Page/Movies_Category_Filter";
 
-
-
-
 export class Header {
   constructor() {
     this.Header();
@@ -32,35 +29,31 @@ export class Header {
     anchor.id = "login";
     anchor.innerHTML = "Login";
 
-    let inputDiv = document.createElement('div')
-    inputDiv.className = 'input'
-    inputDiv.id = 'input-div'
+    let inputDiv = document.createElement("div");
+    inputDiv.className = "input";
+    inputDiv.id = "input-div";
 
-    let input = document.createElement('input');
-    input.setAttribute('type', 'text')
-    input.id  = 'input';
-    input.placeholder = 'search';
+    let input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.id = "input";
+    input.placeholder = "search";
 
-    
+    let img = document.createElement("img");
+    img.id = "img";
+    img.src = "./src/components/Home_Page_Header/search.png";
 
-    let img = document.createElement('img');
-    img.id = 'img';
-    img.src = "./src/components/Home_Page_Header/search.png"
+    img.addEventListener("click", () => {
+      console.log("clicked");
+    });
 
-    img.addEventListener('click', () => {
-     console.log('clicked')
-    })
+    inputDiv.appendChild(img);
+    inputDiv.appendChild(input);
+    header.appendChild(inputDiv);
 
-    inputDiv.appendChild(img)
-    inputDiv.appendChild(input)
-    header.appendChild(inputDiv)
-    
     header.appendChild(movBtn);
     movBtn.appendChild(movies);
 
     header.appendChild(anchBtn);
     anchBtn.appendChild(anchor);
-    
-
   }
 }
