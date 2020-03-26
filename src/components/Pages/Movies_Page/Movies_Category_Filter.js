@@ -1,5 +1,3 @@
-import './Movies_Category_Filter.css' from './Movies_Category_Filter.css'
-
 export class MoviesCategoryFilter {
   constructor(text) {
     this.cat = text;
