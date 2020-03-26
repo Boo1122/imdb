@@ -2,7 +2,7 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(145deg, #171717, #1b1b1b);
+  background: #272727;
   margin: 0;
 }
 
@@ -13,11 +13,11 @@ body {
 }
 
 .btn {
-  padding: 10px 20px 0px 10px;
-  border-radius: 30px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
 
-  background: #171717;
-  box-shadow: 15px 15px 30px #131313, -15px -15px 30px #1f1f1f;
+  background: #272727;
+  box-shadow: 30px 30px 60px #101010, -30px -30px 60px #3e3e3e;
 
   color: #ffff00;
   font-size: 1.8rem;
@@ -29,17 +29,19 @@ body {
 .btn:hover {
   font-family: "Great Vibes", cursive;
   color: rgba(233, 27, 16, 0.8);
+  border-radius: 20px;
+
   background: #ffff00;
   box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
     -10px -10px 30px rgba(233, 27, 16, 0.8);
 }
 
 #login {
-  padding: 10px 15px 0px 10px;
-  border-radius: 30px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
 
-  background: #171717;
-  box-shadow: 15px 15px 30px #131313, -15px -15px 30px #1f1f1f;
+  background: #272727;
+  box-shadow: 30px 30px 60px #101010, -30px -30px 60px #3e3e3e;
 
   color: #ffff00;
   font-size: 1.8rem;
@@ -51,6 +53,8 @@ body {
 #login:hover {
   font-family: "Great Vibes", cursive;
   color: rgba(233, 27, 16, 0.8);
+  border-radius: 20px;
+
   background: #ffff00;
   box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
     -10px -10px 30px rgba(233, 27, 16, 0.8);
