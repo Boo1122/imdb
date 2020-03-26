@@ -1,14 +1,6 @@
-console.log("start");
-
 import { Header } from "./components/Home_Page_Header/Home_Page_Header";
-import { MoviesCategoryFilter } from "./components/Pages/Movies_Page/Movies_Category_Filter";
-
-
+import { moviesClicked } from "./components/Pages/Movies_Page/Button_Clicked";
 
 new Header();
 
-
-new MoviesCategoryFilter("Title");
-new MoviesCategoryFilter("Year");
-new MoviesCategoryFilter("Runtime");
-new MoviesCategoryFilter("Genre");
+moviesClicked();
