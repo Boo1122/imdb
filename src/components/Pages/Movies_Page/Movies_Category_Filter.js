@@ -15,17 +15,23 @@ export class MoviesCategoryFilter {
 
     movieBtn.appendChild(div);
     div.appendChild(p);
+
   }
 }
 
+
 export function moviesClicked() {
+
+  
+
+  
   const movieBtn = document.getElementById("movBtn");
 
   movieBtn.addEventListener("click", event => {
-    event.preventDefault();
-    console.log("clicked");
-    const title = new MoviesCategoryFilter(Title);
-    const year = new MoviesCategoryFilter(Year);
-    return title, year;
+   
+    
+    let title = new MoviesCategoryFilter('Title');
+    let year = new MoviesCategoryFilter('Year');
+    return title , year;
   });
 }
