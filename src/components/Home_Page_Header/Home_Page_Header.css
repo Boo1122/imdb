@@ -37,9 +37,8 @@ body {
 .btn {
   padding: 10px 20px 0px 10px;
   border-radius: 30px;
-  border: 3px solid rgba(233, 27, 16, 0);
 
-  background: linear-gradient(145deg, #171717, #1b1b1b);
+  background: #171717;
   box-shadow: 15px 15px 30px #131313, -15px -15px 30px #1f1f1f;
 
   color: #ffff00;
@@ -53,7 +52,6 @@ body {
   font-family: "Great Vibes", cursive;
   color: rgba(233, 27, 16, 0.8);
   background: #ffff00;
-  border: 3px solid rgba(233, 27, 16, 0.8);
   box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
     -10px -10px 30px rgba(233, 27, 16, 0.8);
 }
@@ -61,9 +59,8 @@ body {
 #login {
   padding: 10px 15px 0px 10px;
   border-radius: 30px;
-  border: 3px solid rgba(233, 27, 16, 0);
 
-  background: linear-gradient(145deg, #171717, #1b1b1b);
+  background: #171717;
   box-shadow: 15px 15px 30px #131313, -15px -15px 30px #1f1f1f;
 
   color: #ffff00;
@@ -77,7 +74,6 @@ body {
   font-family: "Great Vibes", cursive;
   color: rgba(233, 27, 16, 0.8);
   background: #ffff00;
-  border: 3px solid rgba(233, 27, 16, 0.8);
   box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
     -10px -10px 30px rgba(233, 27, 16, 0.8);
 }
