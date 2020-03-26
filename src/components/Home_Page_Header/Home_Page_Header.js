@@ -16,6 +16,7 @@ export class Header {
     movBtn.className = "movBtn";
     const movies = document.createElement("button");
     movies.classList.add("movies-btn", "btn");
+    movies.id = "movies-button";
     movies.innerText = "Movies";
 
     const anchBtn = document.createElement("div");
