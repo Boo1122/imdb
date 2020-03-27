@@ -6,11 +6,8 @@ export function moviesClicked() {
   movieBtn.addEventListener("click", event => {
     event.preventDefault();
 
+    clearButton(event);
     createFilters();
-
-    if (createFilters) {
-      clearButton(event);
-    }
   });
 }
 
