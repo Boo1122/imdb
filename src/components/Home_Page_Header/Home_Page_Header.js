@@ -1,6 +1,4 @@
 // import {navigate} from './components/Navigate_History/Navigate_History';
-import { MoviesCategoryFilter } from "../Pages/Movies_Page/Movies_Category_Filter";
-import { IgnorePlugin } from "webpack";
 
 export class Header {
   constructor() {
