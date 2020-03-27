@@ -14,14 +14,6 @@ export class Header {
     header.id = "header";
     body.appendChild(header);
 
-    const logoBtn = document.createElement("div");
-    logoBtn.id = "logoBtnID";
-    logoBtn.class = "logoBtnClass";
-
-    const imgLogo = document.createElement("img");
-    img.id = "logoID";
-    img.src = "./src/components/Home_Page_Header/logoFINAL.png";
-
     const anchBtn = document.createElement("div");
     anchBtn.id = "anchBtn";
     const anchor = document.createElement("button");
@@ -43,6 +35,14 @@ export class Header {
     img.id = "img";
     img.src = "./src/components/Home_Page_Header/search.png";
 
+    const logoBtn = document.createElement("div");
+    logoBtn.id = "logoBtnID";
+    logoBtn.class = "logoBtnClass";
+
+    const imgLogo = document.createElement("img");
+    imgLogo.id = "logoID";
+    imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
+
     img.addEventListener("click", () => {
       console.log("clicked");
     });
@@ -51,11 +51,11 @@ export class Header {
     inputDiv.appendChild(input);
     header.appendChild(inputDiv);
 
+    logoBtn.appendChild(imgLogo);
+    header.prepend(logoBtn);
+
     header.appendChild(anchBtn);
     anchBtn.appendChild(anchor);
-
-    header.appendChild(logoBtn);
-    logoBtn.appendChild(imgLogo);
   }
 
   MoviesButton() {
