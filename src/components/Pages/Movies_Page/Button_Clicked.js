@@ -6,16 +6,12 @@ export function moviesClicked() {
   movieBtn.addEventListener("click", event => {
     event.preventDefault();
 
-    clearButton();
+    clearButton(event);
     createFilters();
   });
 }
 
-export function clearButton() {
+export function clearButton(event) {
   const allFilters = document.getElementsByClassName("allMovieButtons");
-
-  for (const each of allFilters) {
-    console.log(each);
-    each.parentNode.parentNode.removeChild(each);
-  }
+  event.target.parentNode.remove(allFilters);
 }

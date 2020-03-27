@@ -1,5 +1,3 @@
-import { moviesClicked } from "./Button_Clicked";
-
 export class MoviesCategoryFilter {
   constructor(text) {
     this.cat = text;

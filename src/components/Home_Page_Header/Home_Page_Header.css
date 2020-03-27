@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+/* font-family: "Great Vibes", cursive;
+   font-family: "Pacifico", cursive; */
 
 body {
   height: 100vh;
@@ -17,18 +21,17 @@ body {
   border-radius: 20px;
 
   background: #272727;
-  box-shadow: 30px 30px 60px #101010, -30px -30px 60px #3e3e3e;
 
   color: #ffff00;
   font-size: 1.8rem;
   border: none;
-  font-family: "Great Vibes", cursive;
+  font-family: "Pacifico", cursive;
   text-align: center;
   outline: none;
 }
 
 .btn:hover {
-  font-family: "Great Vibes", cursive;
+  font-family: "Pacifico", cursive;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
 
@@ -43,18 +46,17 @@ body {
   border-radius: 20px;
 
   background: #272727;
-  box-shadow: 30px 30px 60px #101010, -30px -30px 60px #3e3e3e;
 
   color: #ffff00;
   font-size: 1.8rem;
   border: none;
-  font-family: "Great Vibes", cursive;
+  font-family: "Pacifico", cursive;
   text-align: center;
   outline: none;
 }
 
 #login:hover {
-  font-family: "Great Vibes", cursive;
+  font-family: "Pacifico", cursive;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
 
