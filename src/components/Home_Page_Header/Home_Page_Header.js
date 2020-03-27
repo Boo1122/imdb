@@ -1,5 +1,6 @@
 // import {navigate} from './components/Navigate_History/Navigate_History';
 import { MoviesCategoryFilter } from "../Pages/Movies_Page/Movies_Category_Filter";
+import { IgnorePlugin } from "webpack";
 
 export class Header {
   constructor() {
@@ -14,6 +15,14 @@ export class Header {
     header.classList.add("header");
     header.id = "header";
     body.appendChild(header);
+
+    const logoBtn = document.createElement("div");
+    logoBtn.id = "logoBtnID";
+    logoBtn.class = "logoBtnClass";
+
+    const imgLogo = document.createElement("img");
+    img.id = "logoID";
+    img.src = "./src/components/Home_Page_Header/logoFINAL.png";
 
     const anchBtn = document.createElement("div");
     anchBtn.id = "anchBtn";
@@ -46,6 +55,9 @@ export class Header {
 
     header.appendChild(anchBtn);
     anchBtn.appendChild(anchor);
+
+    header.appendChild(logoBtn);
+    logoBtn.appendChild(imgLogo);
   }
 
   MoviesButton() {
