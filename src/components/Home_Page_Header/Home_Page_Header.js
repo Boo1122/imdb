@@ -47,6 +47,10 @@ export class Header {
       console.log("clicked");
     });
 
+    imgLogo.addEventListener("click", () => {
+      location.href = "index.html";
+    });
+
     inputDiv.appendChild(img);
     inputDiv.appendChild(input);
     header.appendChild(inputDiv);
