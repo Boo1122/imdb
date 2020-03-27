@@ -16,6 +16,6 @@ export function clearButton() {
 
   for (const each of allFilters) {
     console.log(each);
-    each.parentNode.parentNode.removeChild(each);
+    each.parentNode.remove(each);
   }
 }
