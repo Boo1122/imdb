@@ -4,6 +4,7 @@ import { MoviesCategoryFilter } from "../Pages/Movies_Page/Movies_Category_Filte
 export class Header {
   constructor() {
     this.Header();
+    this.MoviesButton();
   }
 
   Header() {
@@ -11,18 +12,11 @@ export class Header {
 
     const header = document.createElement("div");
     header.classList.add("header");
+    header.id = "header";
     body.appendChild(header);
-
-    const movBtn = document.createElement("div");
-    movBtn.id = "movBtn";
-
-    const movies = document.createElement("button");
-    movies.classList.add("movies-btn", "btn");
-    movies.innerText = "Movies";
 
     const anchBtn = document.createElement("div");
     anchBtn.id = "anchBtn";
-
     const anchor = document.createElement("button");
     anchor.classList.add("active", "nav-link");
     anchor.setAttribute("data-target", "login");
@@ -50,10 +44,20 @@ export class Header {
     inputDiv.appendChild(input);
     header.appendChild(inputDiv);
 
-    header.appendChild(movBtn);
-    movBtn.appendChild(movies);
-
     header.appendChild(anchBtn);
     anchBtn.appendChild(anchor);
+  }
+
+  MoviesButton() {
+    const header = document.getElementById("header");
+
+    const movBtn = document.createElement("div");
+    movBtn.id = "movBtn";
+    const movies = document.createElement("button");
+    movies.classList.add("movies-btn", "btn");
+    movies.innerText = "Movies";
+
+    header.appendChild(movBtn);
+    movBtn.appendChild(movies);
   }
 }
