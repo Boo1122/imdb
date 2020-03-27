@@ -1,5 +1,6 @@
-console.log("start");
+import { Header } from "./components/Home_Page_Header/Home_Page_Header";
+import { moviesClicked } from "./components/Pages/Movies_Page/Button_Clicked";
 
-import { Header } from "./components/Home_Page_Header/Home_Page_Header"
+new Header();
 
-let newHeader = new Header();
+moviesClicked();
