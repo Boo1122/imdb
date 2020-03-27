@@ -8,7 +8,7 @@ export class MoviesCategoryFilter {
 
   Name(text) {
     const movieBtn = document.getElementById("movBtn");
-   
+
     const div = document.createElement("div");
     div.id = `${text}-div`;
     div.classList.add("allMovieButtons");
@@ -18,6 +18,5 @@ export class MoviesCategoryFilter {
 
     movieBtn.appendChild(div);
     div.appendChild(p);
-  
   }
 }
