@@ -7,8 +7,6 @@ export function moviesClicked() {
     event.preventDefault();
 
     clearButton();
-    resetMoviesFilter();
-
     createFilters();
   });
 }
@@ -18,14 +16,6 @@ export function clearButton() {
 
   for (const each of allFilters) {
     console.log(each);
-    each.style.display = "none";
-  }
-}
-
-export function resetMoviesFilter() {
-  const all = document.getElementsByClassName("allMovieButtons");
-
-  for (const each of all) {
-    each.remove.MoviesCategoryFilter();
+    each.parentNode.parentNode.removeChild(each);
   }
 }
