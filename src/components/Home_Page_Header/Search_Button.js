@@ -1,8 +1,8 @@
 export class Search {
     constructor() {
         this.CreateImage();
-        this.CreateInput();
         this.AddSearchInput();
+        this.CreateInput();
        
     }
     CreateInput() {
@@ -40,13 +40,17 @@ export class Search {
     AddSearchInput() {
 
         let showInput = false;
-
+        
+     
         img.addEventListener('click', () => {
 
         if(showInput) {
             document.getElementById('input').style.display = 'none'
+            
         } else {
             document.getElementById('input').style.display = 'block'
+            document.getElementById('img').style.display = 'none'
+           
         }
         showInput =!showInput
        });
