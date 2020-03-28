@@ -1,4 +1,5 @@
 import { createFilters } from "../Pages/Movies_Page/Create_Filters";
+import {Search} from "../Home_Page_Header/Search_Button";
 
 export class Header {
   constructor() {
@@ -22,18 +23,8 @@ export class Header {
     anchor.id = "login";
     anchor.innerHTML = "Login";
 
-    let inputDiv = document.createElement("div");
-    inputDiv.className = "input";
-    inputDiv.id = "input-div";
-
-    let input = document.createElement("input");
-    input.setAttribute("type", "text");
-    input.id = "input";
-    input.placeholder = "search";
-
-    let img = document.createElement("img");
-    img.id = "img";
-    img.src = "./src/components/Home_Page_Header/search.png";
+  
+    let search = new Search();
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "logoBtnID";
@@ -43,17 +34,12 @@ export class Header {
     imgLogo.id = "logoID";
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
 
-    img.addEventListener("click", () => {
-      console.log("clicked");
-    });
-
+  
     imgLogo.addEventListener("click", () => {
       location.href = "index.html";
     });
 
-    inputDiv.appendChild(img);
-    inputDiv.appendChild(input);
-    header.appendChild(inputDiv);
+
 
     logoBtn.appendChild(imgLogo);
     header.prepend(logoBtn);

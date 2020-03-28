@@ -108,3 +108,7 @@ body {
 .movie-sub-buttons {
   text-align: center;
 }
+
+#img {
+  margin-bottom: -3px;
+}
