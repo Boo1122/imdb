@@ -93,3 +93,7 @@ body {
   order: 2;
   margin-left: 500px;
 }
+
+.movie-sub-buttons {
+  text-align: center;
+}
