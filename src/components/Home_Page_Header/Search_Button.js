@@ -2,7 +2,8 @@ export class Search {
     constructor() {
         this.CreateImage();
         this.CreateInput();
-        this.RemoveSearchInput();
+        this.AddSearchInput();
+       
     }
     CreateInput() {
         let inputDiv = document.createElement("div");
@@ -13,11 +14,10 @@ export class Search {
         input.setAttribute("type", "text");
         input.id = "input";
         input.placeholder = "search";
-
-        inputDiv.appendChild(img);
-        inputDiv.appendChild(input);
+       
         header.appendChild(inputDiv);
-
+        inputDiv.appendChild(input);
+        header.appendChild(img);
 
     }
 
@@ -36,13 +36,27 @@ export class Search {
 
     }
 
-  
 
-    RemoveSearchInput() {
+    AddSearchInput() {
 
-        
-    
+        let showInput = false;
+
+        img.addEventListener('click', () => {
+
+        if(showInput) {
+            document.getElementById('input').style.display = 'none'
+        } else {
+            document.getElementById('input').style.display = 'block'
+        }
+        showInput =!showInput
+       });
     }
 
+       
 
+       
 }
+
+
+      
+        

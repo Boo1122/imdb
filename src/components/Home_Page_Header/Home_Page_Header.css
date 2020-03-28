@@ -8,12 +8,15 @@ body {
   height: 100vh;
   background: #272727;
   margin: 0;
+  
 }
 
 .header {
   height: 10vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  
+  
 }
 
 .btn {
@@ -53,6 +56,7 @@ body {
   font-family: "Pacifico", cursive;
   text-align: center;
   outline: none;
+  order: 4;
 }
 
 #login:hover {
@@ -109,6 +113,3 @@ body {
   text-align: center;
 }
 
-#img {
-  margin-bottom: -3px;
-}
