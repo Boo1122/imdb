@@ -13,8 +13,14 @@ export class Search {
         let input = document.createElement("input");
         input.setAttribute("type", "text");
         input.id = "input";
-        input.placeholder = "search";
-       
+        input.classList.add('search-txt');
+        input.placeholder = "Type to search";
+
+        let a = document.createElement('a')
+        a.classList.add('search-btn')
+
+
+        input.appendChild(a)
         header.appendChild(inputDiv);
         inputDiv.appendChild(input);
         header.appendChild(img);
