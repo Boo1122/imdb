@@ -9,6 +9,7 @@ export class Search {
         let inputDiv = document.createElement("div");
         inputDiv.className = "input";
         inputDiv.id = "input-div";
+        // inputDiv.classList.add('search-box')
 
         let input = document.createElement("input");
         input.setAttribute("type", "text");

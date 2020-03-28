@@ -9,10 +9,11 @@
 #input {
    transform: translate(-50%, -50%);
    background: #34495e;
-   height: 20px;
+   height: 15px;
    border-radius: 30px;
    padding: 10px;   
    display: none;
+ 
 }
 
 .search-txt {
@@ -27,7 +28,6 @@
    line-height: 40px;
    width: 0px;
 }
-
 
    .search-btn {
     color:#d35400 ;
