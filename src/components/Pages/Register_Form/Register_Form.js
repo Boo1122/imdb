@@ -4,31 +4,35 @@ export class RegisterForm {
   }
 
   Register() {
-    const body = document.getElementById("body");
+    const body = document.getElementById("main-container");
     const containerForm = document.createElement("div");
+    containerForm.id = "form-container";
+
+    const box = document.createElement("div");
+    box.id = "register-box";
 
     const h1 = document.createElement("h1");
     h1.innerText = "Register";
     h1.id = "register-h1";
-    const completeForm = document.createElement("p");
+    const completeForm = document.createElement("h4");
     completeForm.id = "register-msg";
     completeForm.innerText = "Please fill in this form to create an account.";
 
     const usernameLabel = document.createElement("label");
     usernameLabel.setAttribute("for", "name");
     usernameLabel.id = "username";
-    usernameLabel.innerText = "username";
+    usernameLabel.innerText = "Username:";
 
     const usernameInput = document.createElement("input");
     usernameInput.id = "username-input";
     usernameInput.setAttribute("type", "text");
-    usernameInput.setAttribute("placeholder", "Enter Name");
+    usernameInput.setAttribute("placeholder", "Enter Username");
     usernameInput.setAttribute("name", "name");
 
     const emailLabel = document.createElement("label");
     emailLabel.setAttribute("for", "email");
     emailLabel.id = "email-label";
-    emailLabel.innerText = "Email";
+    emailLabel.innerText = "Email:";
 
     const emailInput = document.createElement("input");
     emailInput.id = "email-input";
@@ -39,7 +43,7 @@ export class RegisterForm {
     const passwordLabel = document.createElement("label");
     passwordLabel.setAttribute("for", "password");
     passwordLabel.id = "password-label";
-    passwordLabel.innerText = "Password";
+    passwordLabel.innerText = "Password:";
 
     const passwordInput = document.createElement("input");
     passwordInput.id = "password-input";
@@ -58,15 +62,17 @@ export class RegisterForm {
     registerBtn.innerText = "Register";
 
     body.appendChild(containerForm);
-    containerForm.appendChild(h1);
-    containerForm.appendChild(completeForm);
-    containerForm.appendChild(usernameLabel);
-    containerForm.appendChild(usernameInput);
-    containerForm.appendChild(emailLabel);
-    containerForm.appendChild(emailInput);
-    containerForm.appendChild(passwordLabel);
-    containerForm.appendChild(passwordInput);
-    containerForm.appendChild(message);
-    containerForm.appendChild(registerBtn);
+    containerForm.appendChild(box);
+    box.appendChild(h1);
+    box.appendChild(completeForm);
+    box.appendChild(usernameLabel);
+    box.appendChild(usernameInput);
+    box.appendChild(emailLabel);
+    box.appendChild(emailInput);
+    box.appendChild(passwordLabel);
+    box.appendChild(passwordInput);
+
+    box.appendChild(registerBtn);
+    box.appendChild(message);
   }
 }

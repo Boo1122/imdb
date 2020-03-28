@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+/* font-family: "Pacifico", cursive; */
+
+#form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: #272727;
+  color: rgba(233, 27, 16, 0.8);
+  /* color: #ffff00; */
+
+  font-family: "Pacifico", cursive;
+}
+
+#register-box {
+  height: 65vh;
+  width: 40vw;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+}
+
+#username-input,
+#email-input,
+#password-input {
+  outline: none;
+}
+
+#register-h1 {
+  text-align: center;
+}
+
+#register-msg {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#username,
+#email-label,
+#password-label {
+  margin: 1rem 1rem 1rem 4.4rem;
+}
+
+#username-input,
+#email-input,
+#password-input {
+  width: 18.75rem;
+  align-self: center;
+}
+
+#register-message {
+  text-align: center;
+}
+
+#registerBtn {
+  align-self: center;
+  margin-top: 3rem;
+  color: rgba(233, 27, 16, 0.8);
+  background: #272727;
+  outline: none;
+
+  padding: 1rem;
+}
+
+::placeholder {
+  color: rgba(233, 27, 16, 0.8);
+}
