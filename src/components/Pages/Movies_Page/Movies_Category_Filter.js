@@ -1,22 +1,14 @@
-import { moviesClicked } from "./Button_Clicked";
+export const createMoviesCategoryFilter = (categoryName) => {
+  const p = document.createElement("p");
+  p.classList.add("filter-p");
+  p.innerText = categoryName;
 
-export class MoviesCategoryFilter {
-  constructor(text) {
-    this.cat = text;
-    this.Name(text);
-  }
+  const div = document.createElement("div");
+  div.classList.add("movie-sub-buttons");
+  div.classList.add(`${categoryName}-filter`);
+  div.classList.add('movie-filter-hideable-button');
 
-  Name(text) {
-    const movieBtn = document.getElementById("movBtn");
+  div.appendChild(p);
 
-    const div = document.createElement("div");
-    div.id = `${text}-div`;
-    div.classList.add("allMovieButtons");
-    const p = document.createElement("p");
-    p.classList.add("filter-p");
-    p.innerText = `${text}`;
-
-    movieBtn.appendChild(div);
-    div.appendChild(p);
-  }
+  return div;
 }
