@@ -1,4 +1,4 @@
-// import {navigate} from './components/Navigate_History/Navigate_History';
+import { createFilters } from "../Pages/Movies_Page/Create_Filters";
 
 export class Header {
   constructor() {
@@ -50,13 +50,19 @@ export class Header {
   MoviesButton() {
     const header = document.getElementById("header");
 
-    const movBtn = document.createElement("div");
-    movBtn.id = "movBtn";
+    const moviesButtonWrapper = document.createElement('div');
+    moviesButtonWrapper.id = 'movies-btn-wrapper';
+   
+
     const movies = document.createElement("button");
+    movies.id = 'movBtn';
     movies.classList.add("movies-btn", "btn");
     movies.innerText = "Movies";
 
-    header.appendChild(movBtn);
-    movBtn.appendChild(movies);
+    moviesButtonWrapper.appendChild(movies);
+
+    createFilters().forEach(_ => moviesButtonWrapper.appendChild(_));
+
+    header.appendChild(moviesButtonWrapper);
   }
 }

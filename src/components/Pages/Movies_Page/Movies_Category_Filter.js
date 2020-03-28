@@ -1,20 +1,14 @@
-export class MoviesCategoryFilter {
-  constructor(text) {
-    this.cat = text;
-    this.Name(text);
-  }
+export const createMoviesCategoryFilter = (categoryName) => {
+  const p = document.createElement("p");
+  p.classList.add("filter-p");
+  p.innerText = categoryName;
 
-  Name(text) {
-    const movieBtn = document.getElementById("movBtn");
+  const div = document.createElement("div");
+  div.classList.add("movie-sub-buttons");
+  div.classList.add(`${categoryName}-filter`);
+  div.classList.add('movie-filter-hideable-button');
 
-    const div = document.createElement("div");
-    div.id = `${text}-div`;
-    div.classList.add("allMovieButtons");
-    const p = document.createElement("p");
-    p.classList.add("filter-p");
-    p.innerText = `${text}`;
+  div.appendChild(p);
 
-    movieBtn.appendChild(div);
-    div.appendChild(p);
-  }
+  return div;
 }

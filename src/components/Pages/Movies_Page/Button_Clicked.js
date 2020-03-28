@@ -1,17 +1,29 @@
-import { createFilters } from "./Create_Filters";
+const hideableClassName = 'hide-this-item';
 
-export function moviesClicked() {
-  const movieBtn = document.getElementById("movBtn");
-
-  movieBtn.addEventListener("click", event => {
-    event.preventDefault();
-
-    clearButton(event);
-    createFilters();
-  });
+export const onMoviesButtonClick = (references) => () => {
+  if (references.length) {
+    references.forEach(element => {
+      const { classList } = element;
+      if (classList.contains(hideableClassName)) {
+        classList.remove(hideableClassName);
+      } else {
+        classList.add(hideableClassName);
+      }
+    });
+  }
 }
 
-export function clearButton(event) {
-  const allFilters = document.getElementsByClassName("allMovieButtons");
-  event.target.parentNode.remove(allFilters);
+
+export const moviesButtonEventListenerHandler = () => {
+  const movieBtn = document.getElementById("movBtn");
+  if (movieBtn) {
+    const movieBtnWrapper = document.getElementById('movies-btn-wrapper');
+    if (movieBtnWrapper) {
+      const filterList = movieBtnWrapper.getElementsByClassName('movie-filter-hideable-button');
+
+      if (filterList) {
+        movieBtn.addEventListener("click", onMoviesButtonClick([...filterList]));
+      }
+    }
+  }
 }
