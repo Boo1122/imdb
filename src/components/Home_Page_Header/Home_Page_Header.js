@@ -35,13 +35,28 @@ export class Header {
     img.id = "img";
     img.src = "./src/components/Home_Page_Header/search.png";
 
+    const logoBtn = document.createElement("div");
+    logoBtn.id = "logoBtnID";
+    logoBtn.class = "logoBtnClass";
+
+    const imgLogo = document.createElement("img");
+    imgLogo.id = "logoID";
+    imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
+
     img.addEventListener("click", () => {
       console.log("clicked");
+    });
+
+    imgLogo.addEventListener("click", () => {
+      location.href = "index.html";
     });
 
     inputDiv.appendChild(img);
     inputDiv.appendChild(input);
     header.appendChild(inputDiv);
+
+    logoBtn.appendChild(imgLogo);
+    header.prepend(logoBtn);
 
     header.appendChild(anchBtn);
     anchBtn.appendChild(anchor);
@@ -50,12 +65,11 @@ export class Header {
   MoviesButton() {
     const header = document.getElementById("header");
 
-    const moviesButtonWrapper = document.createElement('div');
-    moviesButtonWrapper.id = 'movies-btn-wrapper';
-   
+    const moviesButtonWrapper = document.createElement("div");
+    moviesButtonWrapper.id = "movies-btn-wrapper";
 
     const movies = document.createElement("button");
-    movies.id = 'movBtn';
+    movies.id = "movBtn";
     movies.classList.add("movies-btn", "btn");
     movies.innerText = "Movies";
 

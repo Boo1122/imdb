@@ -91,7 +91,18 @@ body {
 
 #input-div {
   order: 2;
-  margin-left: 500px;
+  margin-left: 800px;
+}
+
+#logoBtnID {
+  height: 100px;
+  width: 100px;
+  order: 0;
+  margin-left: 20px;
+}
+
+#logoID {
+  width: 100px;
 }
 
 .movie-sub-buttons {
