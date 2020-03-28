@@ -63,6 +63,7 @@ export class RegisterForm {
 
     body.appendChild(containerForm);
     containerForm.appendChild(box);
+
     box.appendChild(h1);
     box.appendChild(completeForm);
     box.appendChild(usernameLabel);

@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+/* font-family: "Pacifico", cursive; */
+
+#login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: #272727;
+  color: rgba(233, 27, 16, 0.8);
+  /* color: #ffff00; */
+
+  font-family: "Pacifico", cursive;
+}
+
+#login-box {
+  height: 40vh;
+  width: 30vw;
+  background: lightgray;
+  display: flex;
+  flex-direction: column;
+}
+
+#login-h1 {
+  text-align: center;
+}
+
+#username-login,
+#password-label-login {
+  margin: 1rem 1rem 1rem 3.4rem;
+}
+
+#username-input-login,
+#password-input-login {
+  width: 220px;
+  align-self: center;
+}
+
+#loginBtn {
+  padding: 0.4rem;
+  margin-top: 2.8rem;
+}
+
+#login-submit-btn {
+  align-self: center;
+}
