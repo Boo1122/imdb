@@ -17,7 +17,7 @@
 }
 
 #login-box {
-  height: 340px;
+  height: 370px;
   width: 380px;
   background: lightgray;
   display: flex;
@@ -41,7 +41,7 @@
 
 #loginBtn {
   padding: 0.4rem;
-  margin-top: 2.8rem;
+  margin-top: 2.4rem;
 }
 
 #login-submit-btn {
