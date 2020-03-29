@@ -1,12 +1,12 @@
 import "./Home_Page_Header.css";
 import { createFilters } from "../Pages/Movies_Page/Create_Filters";
 import { Search } from "../Home_Page_Header/Search_Button";
-
 import { navigate } from "../Navigate_History/Navigate_History";
 
 export class Header {
   constructor() {
     this.Header();
+    this.LogoButton();
     this.MoviesButton();
     this.MovBtn();
   }
@@ -29,6 +29,11 @@ export class Header {
 
     let search = new Search();
 
+    login.appendChild(anchorLogin);
+    header.appendChild(login);
+  }
+
+  LogoButton() {
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
     logoBtn.classList.add("logoBtnClass");
@@ -39,14 +44,12 @@ export class Header {
     imgLogo.setAttribute("data-target", "logo");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
 
-    // imgLogo.addEventListener("click", () => {
-    //   location.href = "index.html";
-    // });
+    imgLogo.addEventListener("click", () => {
+      location.href = "index.html";
+    });
 
     logoBtn.appendChild(imgLogo);
     header.prepend(logoBtn);
-    login.appendChild(anchorLogin);
-    header.appendChild(login);
   }
 
   MoviesButton() {

@@ -1,0 +1,17 @@
+#carousselWrapID {
+  width: 900px;
+  height: 700px;
+  background: red;
+}
+
+#outsideCarousselID {
+  width: 200px;
+  height: 200px;
+  background: blue;
+}
+
+#carousselTitleID {
+  background: white;
+  height: 100px;
+  width: 100px;
+}
