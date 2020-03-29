@@ -6,11 +6,13 @@ import {
 } from "../Home_Page_Header/Search_Button";
 
 import {navigate} from "../Navigate_History/Navigate_History"
+import {Pages} from "../Navigate_History/Navigate_Pages"
 
 export class Header {
   constructor() {
     this.Header();
     this.MoviesButton();
+    navigate.init();
   }
 
   Header() {
@@ -24,7 +26,7 @@ export class Header {
     const login = document.createElement("div");
     login.id = "anchBtn";
     const anchorLogin = document.createElement("button");
-    anchorLogin.classList.add("nav-link", "page", "active");
+    anchorLogin.classList.add("nav-link");
     anchorLogin.setAttribute("data-target", "login");
     anchorLogin.id = "login";
     anchorLogin.innerHTML = "Login";
@@ -38,8 +40,8 @@ export class Header {
 
     const imgLogo = document.createElement("img");
     imgLogo.id = "logoID";
-    imgLogo.classList.add("nav-link","page","active")
-    imgLogo.setAttribute("data-target", "logo");
+    imgLogo.classList.add("nav-link");
+    imgLogo.setAttribute("data-target", "home");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
 
     // imgLogo.addEventListener("click", () => {
@@ -63,7 +65,7 @@ export class Header {
 
     const movies = document.createElement("button");
     movies.id = "movBtn";
-    movies.classList.add("nav-link","page", "active","movies-btn", "btn");
+    movies.classList.add("nav-link","movies-btn", "btn");
     movies.setAttribute("data-target", "movies")
     movies.innerText = "Movies";
 
@@ -72,6 +74,6 @@ export class Header {
     createFilters().forEach(_ => moviesButtonWrapper.appendChild(_));
 
     header.appendChild(moviesButtonWrapper);
-    
+    let pages = new Pages();
   }
 }

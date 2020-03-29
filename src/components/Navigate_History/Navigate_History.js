@@ -42,6 +42,6 @@ export const navigate = {
     }
   }
   
-    document.addEventListener('DOMContentLoaded', navigate.init);
+   
 
 
