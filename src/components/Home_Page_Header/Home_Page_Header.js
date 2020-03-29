@@ -1,4 +1,11 @@
-import { createFilters } from "../Pages/Movies_Page/Create_Filters";
+import {
+  createFilters
+} from "../Pages/Movies_Page/Create_Filters";
+import {
+  Search
+} from "../Home_Page_Header/Search_Button";
+
+import {navigate} from "../Navigate_History/Navigate_History"
 
 export class Header {
   constructor() {
@@ -14,52 +21,38 @@ export class Header {
     header.id = "header";
     body.appendChild(header);
 
-    const anchBtn = document.createElement("div");
-    anchBtn.id = "anchBtn";
-    const anchor = document.createElement("button");
-    anchor.classList.add("active", "nav-link");
-    anchor.setAttribute("data-target", "login");
-    anchor.id = "login";
-    anchor.innerHTML = "Login";
+    const login = document.createElement("div");
+    login.id = "anchBtn";
+    const anchorLogin = document.createElement("button");
+    anchorLogin.classList.add("nav-link", "page", "active");
+    anchorLogin.setAttribute("data-target", "login");
+    anchorLogin.id = "login";
+    anchorLogin.innerHTML = "Login";
 
-    let inputDiv = document.createElement("div");
-    inputDiv.className = "input";
-    inputDiv.id = "input-div";
 
-    let input = document.createElement("input");
-    input.setAttribute("type", "text");
-    input.id = "input";
-    input.placeholder = "search";
-
-    let img = document.createElement("img");
-    img.id = "img";
-    img.src = "./src/components/Home_Page_Header/search.png";
+    let search = new Search();
 
     const logoBtn = document.createElement("div");
-    logoBtn.id = "logoBtnID";
-    logoBtn.class = "logoBtnClass";
+    logoBtn.id = "home";
+    logoBtn.classList.add("logoBtnClass");
 
     const imgLogo = document.createElement("img");
     imgLogo.id = "logoID";
+    imgLogo.classList.add("nav-link","page","active")
+    imgLogo.setAttribute("data-target", "logo");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
-
-    img.addEventListener("click", () => {
-      console.log("clicked");
-    });
 
     // imgLogo.addEventListener("click", () => {
     //   location.href = "index.html";
     // });
 
-    inputDiv.appendChild(img);
-    inputDiv.appendChild(input);
-    header.appendChild(inputDiv);
+
 
     logoBtn.appendChild(imgLogo);
     header.prepend(logoBtn);
-
-    header.appendChild(anchBtn);
-    anchBtn.appendChild(anchor);
+    login.appendChild(anchorLogin);
+    header.appendChild(login);
+   
   }
 
   MoviesButton() {
@@ -70,7 +63,8 @@ export class Header {
 
     const movies = document.createElement("button");
     movies.id = "movBtn";
-    movies.classList.add("movies-btn", "btn");
+    movies.classList.add("nav-link","page", "active","movies-btn", "btn");
+    movies.setAttribute("data-target", "movies")
     movies.innerText = "Movies";
 
     moviesButtonWrapper.appendChild(movies);
@@ -78,5 +72,6 @@ export class Header {
     createFilters().forEach(_ => moviesButtonWrapper.appendChild(_));
 
     header.appendChild(moviesButtonWrapper);
+    
   }
 }
