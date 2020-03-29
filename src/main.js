@@ -6,6 +6,6 @@ import { SinglePage } from "./components/Pages/Single_Page/Single_Page";
 
 new Header();
 moviesButtonEventListenerHandler();
-new SinglePage();
+
 new RegisterForm();
 new LoginForm();

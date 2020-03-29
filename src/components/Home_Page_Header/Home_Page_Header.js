@@ -1,16 +1,13 @@
-import {
-  createFilters
-} from "../Pages/Movies_Page/Create_Filters";
-import {
-  Search
-} from "../Home_Page_Header/Search_Button";
+import { createFilters } from "../Pages/Movies_Page/Create_Filters";
+import { Search } from "../Home_Page_Header/Search_Button";
 
-import {navigate} from "../Navigate_History/Navigate_History"
+import { navigate } from "../Navigate_History/Navigate_History";
 
 export class Header {
   constructor() {
     this.Header();
     this.MoviesButton();
+    this.MovBtn();
   }
 
   Header() {
@@ -29,7 +26,6 @@ export class Header {
     anchorLogin.id = "login";
     anchorLogin.innerHTML = "Login";
 
-
     let search = new Search();
 
     const logoBtn = document.createElement("div");
@@ -38,7 +34,7 @@ export class Header {
 
     const imgLogo = document.createElement("img");
     imgLogo.id = "logoID";
-    imgLogo.classList.add("nav-link","page","active")
+    imgLogo.classList.add("nav-link", "page", "active");
     imgLogo.setAttribute("data-target", "logo");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
 
@@ -46,13 +42,10 @@ export class Header {
     //   location.href = "index.html";
     // });
 
-
-
     logoBtn.appendChild(imgLogo);
     header.prepend(logoBtn);
     login.appendChild(anchorLogin);
     header.appendChild(login);
-   
   }
 
   MoviesButton() {
@@ -63,8 +56,8 @@ export class Header {
 
     const movies = document.createElement("button");
     movies.id = "movBtn";
-    movies.classList.add("nav-link","page", "active","movies-btn", "btn");
-    movies.setAttribute("data-target", "movies")
+    movies.classList.add("nav-link", "page", "active", "movies-btn", "btn");
+    movies.setAttribute("data-target", "movies");
     movies.innerText = "Movies";
 
     moviesButtonWrapper.appendChild(movies);
@@ -72,6 +65,41 @@ export class Header {
     createFilters().forEach(_ => moviesButtonWrapper.appendChild(_));
 
     header.appendChild(moviesButtonWrapper);
-    
+  }
+
+  MovBtn() {
+    const header = document.getElementById("header");
+
+    const buttonDiv = document.createElement("div");
+    buttonDiv.id = "movBtn";
+    buttonDiv.classList.add("nav-link", "page", "active", "movies-btn", "btn");
+    buttonDiv.className = "dropdown";
+
+    const button = document.createElement("p");
+    button.setAttribute("data-target", "movies");
+    button.classList.add("dropbtn");
+    button.innerText = "Movies";
+
+    const buttonBody = document.createElement("div");
+    buttonBody.classList.add("dropdown-content");
+
+    const title = document.createElement("p");
+    title.id = "mov-button-title";
+    title.innerText = "Title";
+
+    const year = document.createElement("p");
+    year.id = "mov-button-year";
+    year.innerText = "Year";
+
+    const genre = document.createElement("p");
+    genre.id = "mov-button-genre";
+    genre.innerText = "Genre";
+
+    header.appendChild(buttonDiv);
+    buttonDiv.appendChild(button);
+    buttonDiv.appendChild(buttonBody);
+    buttonBody.appendChild(title);
+    buttonBody.appendChild(year);
+    buttonBody.appendChild(genre);
   }
 }
