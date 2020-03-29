@@ -9,3 +9,4 @@ moviesButtonEventListenerHandler();
 
 new RegisterForm();
 new LoginForm();
+new SinglePage();
