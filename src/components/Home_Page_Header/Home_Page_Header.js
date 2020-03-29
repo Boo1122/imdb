@@ -34,10 +34,13 @@ export class Header {
     imgLogo.id = "logoID";
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
 
-  
-    imgLogo.addEventListener("click", () => {
-      location.href = "index.html";
+    img.addEventListener("click", () => {
+      console.log("clicked");
     });
+
+    // imgLogo.addEventListener("click", () => {
+    //   location.href = "index.html";
+    // });
 
 
 
