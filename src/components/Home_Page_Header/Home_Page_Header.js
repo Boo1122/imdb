@@ -3,12 +3,13 @@ import { createFilters } from "../Pages/Movies_Page/Create_Filters";
 import { Search } from "../Home_Page_Header/Search_Button";
 
 import { navigate } from "../Navigate_History/Navigate_History";
+import { Pages } from "../Navigate_History/Navigate_Pages";
 
 export class Header {
   constructor() {
     this.Header();
     this.MoviesButton();
-    this.MovBtn();
+    navigate.init();
   }
 
   Header() {
@@ -18,8 +19,6 @@ export class Header {
     header.classList.add("header");
     header.id = "header";
     body.appendChild(header);
-
-   
 
     const login = document.createElement("div");
     login.id = "anchBtn";
@@ -34,16 +33,12 @@ export class Header {
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
-   
 
     const imgLogo = document.createElement("img");
     imgLogo.id = "home";
     imgLogo.classList.add("nav-link","home");
     imgLogo.setAttribute("data-target", "home");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
-    
-
-  
     logoBtn.appendChild(imgLogo);
     header.appendChild(logoBtn);
     login.appendChild(anchorLogin);
@@ -58,8 +53,8 @@ export class Header {
 
     const movies = document.createElement("button");
     movies.id = "movBtn";
-    movies.classList.add("nav-link","movies-btn", "btn");
-    movies.setAttribute("data-target", "movies")
+    movies.classList.add("nav-link", "movies-btn", "btn");
+    movies.setAttribute("data-target", "movies");
     movies.innerText = "Movies";
 
     moviesButtonWrapper.appendChild(movies);

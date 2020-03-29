@@ -17,7 +17,7 @@
 }
 
 #register-box {
-  height: 540px;
+  height: 580px;
   width: 420px;
   background: lightgray;
   display: flex;
@@ -58,7 +58,7 @@
 
 #registerBtn {
   align-self: center;
-  margin-top: 3rem;
+  margin-top: 1.4rem;
   color: rgba(233, 27, 16, 0.8);
   background: #272727;
   outline: none;
