@@ -4,7 +4,7 @@ export class LoginForm {
   }
 
   Login() {
-    const body = document.getElementById("main-container");
+    const body = document.getElementById("body");
     const containerForm = document.createElement("div");
     containerForm.id = "login-container";
 
