@@ -7,7 +7,6 @@ import { navigate } from "../Navigate_History/Navigate_History";
 export class Header {
   constructor() {
     this.Header();
-    this.MoviesButton();
     this.MovBtn();
   }
 
