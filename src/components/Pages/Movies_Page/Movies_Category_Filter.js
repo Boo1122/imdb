@@ -5,6 +5,7 @@ export const createMoviesCategoryFilter = (categoryName) => {
 
   const div = document.createElement("div");
   div.classList.add("movie-sub-buttons");
+  div.classList.add('hide-this-item')
   div.classList.add(`${categoryName}-filter`);
   div.classList.add('movie-filter-hideable-button');
 
