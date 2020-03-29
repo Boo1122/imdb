@@ -5,14 +5,19 @@ import {
   Search
 } from "../Home_Page_Header/Search_Button";
 
-import {navigate} from "../Navigate_History/Navigate_History"
-import {Pages} from "../Navigate_History/Navigate_Pages"
+import {
+  navigate
+} from "../Navigate_History/Navigate_History"
+import {
+  Pages
+} from "../Navigate_History/Navigate_Pages"
 
 export class Header {
   constructor() {
     this.Header();
     this.MoviesButton();
     navigate.init();
+    
   }
 
   Header() {
@@ -23,6 +28,8 @@ export class Header {
     header.id = "header";
     body.appendChild(header);
 
+   
+
     const login = document.createElement("div");
     login.id = "anchBtn";
     const anchorLogin = document.createElement("button");
@@ -31,27 +38,25 @@ export class Header {
     anchorLogin.id = "login";
     anchorLogin.innerHTML = "Login";
 
-
+  
     let search = new Search();
+    let pages = new Pages();
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
-    logoBtn.classList.add("logoBtnClass");
+   
 
     const imgLogo = document.createElement("img");
-    imgLogo.id = "logoID";
+    imgLogo.id = "home";
+    imgLogo.classList.add("home");
     imgLogo.classList.add("nav-link");
     imgLogo.setAttribute("data-target", "home");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
+    
 
-    // imgLogo.addEventListener("click", () => {
-    //   location.href = "index.html";
-    // });
-
-
-
+  
     logoBtn.appendChild(imgLogo);
-    header.prepend(logoBtn);
+    header.appendChild(logoBtn);
     login.appendChild(anchorLogin);
     header.appendChild(login);
    
@@ -74,6 +79,6 @@ export class Header {
     createFilters().forEach(_ => moviesButtonWrapper.appendChild(_));
 
     header.appendChild(moviesButtonWrapper);
-    let pages = new Pages();
+    
   }
 }
