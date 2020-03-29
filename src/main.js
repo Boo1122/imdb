@@ -5,6 +5,7 @@ import { LoginForm } from "./components/Pages/Login_Form/Login_Form";
 import { SinglePage } from "./components/Pages/Single_Page/Single_Page";
 
 new Header();
+
 moviesButtonEventListenerHandler();
 
 new RegisterForm();
