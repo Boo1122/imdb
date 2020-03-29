@@ -8,8 +8,7 @@ import { Pages } from "../Navigate_History/Navigate_Pages";
 export class Header {
   constructor() {
     this.Header();
-    this.MoviesButton();
-    navigate.init();
+    this.MovBtn();
   }
 
   Header() {
