@@ -48,8 +48,7 @@ export class Header {
 
     const imgLogo = document.createElement("img");
     imgLogo.id = "home";
-    imgLogo.classList.add("home");
-    imgLogo.classList.add("nav-link");
+    imgLogo.classList.add("nav-link","home");
     imgLogo.setAttribute("data-target", "home");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
     
