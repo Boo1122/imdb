@@ -1,3 +1,5 @@
+import "./Register_Form.css";
+
 export class RegisterForm {
   constructor() {
     this.Register();

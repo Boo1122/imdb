@@ -1,3 +1,5 @@
+import "./Single_Page.css";
+
 export class SinglePage {
   constructor() {
     this.MainContent();

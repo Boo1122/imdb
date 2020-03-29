@@ -1,3 +1,4 @@
+import "./Home_Page_Header.css";
 import { createFilters } from "../Pages/Movies_Page/Create_Filters";
 import { Search } from "../Home_Page_Header/Search_Button";
 
