@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+/* font-family: "Pacifico", cursive; */
+
+#main-div {
+  height: 100vh;
+  margin: 0;
+  font-family: "Pacifico", cursive;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#movie-content {
+  height: 80%;
+  width: 80%;
+  background: lightgray;
+  display: flex;
+}
+
+#single-movie-poster .single-poster-img {
+  height: 749px;
+}

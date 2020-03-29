@@ -17,8 +17,8 @@
 }
 
 #login-box {
-  height: 40vh;
-  width: 30vw;
+  height: 340px;
+  width: 380px;
   background: lightgray;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
 
 #username-login,
 #password-label-login {
-  margin: 1rem 1rem 1rem 3.4rem;
+  margin: 1rem 1rem 1rem 5rem;
 }
 
 #username-input-login,

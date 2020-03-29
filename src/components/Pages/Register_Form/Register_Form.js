@@ -1,10 +1,12 @@
+import "./Register_Form.css";
+
 export class RegisterForm {
   constructor() {
     this.Register();
   }
 
   Register() {
-    const body = document.getElementById("main-container");
+    const body = document.getElementById("body");
     const containerForm = document.createElement("div");
     containerForm.id = "form-container";
 
