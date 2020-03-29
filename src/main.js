@@ -3,3 +3,4 @@ import { moviesButtonEventListenerHandler } from "./components/Pages/Movies_Page
 
 new Header();
 moviesButtonEventListenerHandler();
+
