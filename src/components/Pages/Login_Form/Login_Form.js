@@ -1,3 +1,5 @@
+import "./Login_Form.css";
+
 export class LoginForm {
   constructor() {
     this.Login();
