@@ -9,7 +9,6 @@ export class Header {
   constructor() {
     this.Header();
     this.MovBtn();
-    this.MoviesButton();
     navigate.init();
   }
 
