@@ -4,12 +4,12 @@ import { Search } from "../Home_Page_Header/Search_Button";
 
 import { navigate } from "../Navigate_History/Navigate_History";
 import { Pages } from "../Navigate_History/Navigate_Pages";
+import { RegisterForm } from "../Pages/Register_Form/Register_Form";
 
 export class Header {
   constructor() {
     this.Header();
     this.MovBtn();
-    this.MoviesButton();
     navigate.init();
   }
 
@@ -31,6 +31,7 @@ export class Header {
 
     let search = new Search();
     let pages = new Pages();
+    let register = new RegisterForm();
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
@@ -40,29 +41,12 @@ export class Header {
     imgLogo.classList.add("nav-link","home");
     imgLogo.setAttribute("data-target", "home");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
+
+    
     logoBtn.appendChild(imgLogo);
     header.appendChild(logoBtn);
     login.appendChild(anchorLogin);
     header.appendChild(login);
-  }
-
-  MoviesButton() {
-    const header = document.getElementById("header");
-
-    const moviesButtonWrapper = document.createElement("div");
-    moviesButtonWrapper.id = "movies-btn-wrapper";
-
-    const movies = document.createElement("button");
-    movies.id = "movBtn";
-    movies.classList.add("nav-link", "movies-btn", "btn");
-    movies.setAttribute("data-target", "movies");
-    movies.innerText = "Movies";
-
-    moviesButtonWrapper.appendChild(movies);
-
-    createFilters().forEach(_ => moviesButtonWrapper.appendChild(_));
-
-    header.appendChild(moviesButtonWrapper);
   }
 
   MovBtn() {
@@ -70,13 +54,12 @@ export class Header {
 
     const buttonDiv = document.createElement("div");
     buttonDiv.id = "movBtn";
-    buttonDiv.classList.add("nav-link", "page", "active", "movies-btn", "btn");
     buttonDiv.className = "dropdown";
 
-    const button = document.createElement("p");
-    button.setAttribute("data-target", "movies");
-    button.classList.add("dropbtn");
-    button.innerText = "Movies";
+    const movies = document.createElement('button')
+      movies.setAttribute("data-target", "movies")
+      movies.classList.add("nav-link","movies-btn", "btn");
+      movies.innerText = "Movies";
 
     const buttonBody = document.createElement("div");
     buttonBody.classList.add("dropdown-content");
@@ -93,8 +76,9 @@ export class Header {
     genre.id = "mov-button-genre";
     genre.innerText = "Genre";
 
+
     header.appendChild(buttonDiv);
-    buttonDiv.appendChild(button);
+    buttonDiv.appendChild(movies);
     buttonDiv.appendChild(buttonBody);
     buttonBody.appendChild(title);
     buttonBody.appendChild(year);
