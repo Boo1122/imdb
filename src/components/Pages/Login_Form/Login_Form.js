@@ -46,6 +46,12 @@ export class LoginForm {
     loginBtn.id = "loginBtn";
     loginBtn.innerText = "Login";
 
+    const regPar = document.createElement("p");
+    regPar.id = "register-paragraph";
+    regPar.innerText = "If you dont have an account Register here";
+
+
+
     body.appendChild(containerForm);
     containerForm.appendChild(box);
 
@@ -58,5 +64,8 @@ export class LoginForm {
 
     box.appendChild(loginBtnContainer);
     loginBtnContainer.appendChild(loginBtn);
+
+    box.appendChild(regPar);
+
   }
 }

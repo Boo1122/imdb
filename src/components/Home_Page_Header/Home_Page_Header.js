@@ -31,7 +31,7 @@ export class Header {
 
     let search = new Search();
     let pages = new Pages();
-    let register = new RegisterForm();
+  
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
