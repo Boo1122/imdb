@@ -4,6 +4,7 @@ import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
 import { Pages } from "../Navigate_History/Navigate_Pages";
+// import {Switch} from "../Pages/Login_Form/Switch_Login_Register"
 
 export class Header {
   constructor() {
@@ -23,6 +24,7 @@ export class Header {
 
     new Search();
     new Pages();
+    // new Switch()
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
@@ -45,27 +47,27 @@ export class Header {
     loginDiv.className = "dropdown";
 
     const login = document.createElement("button");
+    login.classList.add("nav-link", "login");
     login.setAttribute("data-target", "login");
-    login.classList.add("nav-link", "login-btn", "btn");
-    login.innerText = "Login";
+    login.innerHTML = "Login";
 
-    const buttonBody = document.createElement("div");
-    buttonBody.classList.add("dropdown-content");
+    const loginBody = document.createElement("div");
+    loginBody.classList.add("dropdown-content");
 
-    const log = document.createElement("p");
-    log.id = "log-button";
-    log.innerText = "Login";
+    const loginP = document.createElement("p");
+    loginP.id = "log-button";
+    loginP.innerText = "Login";
 
-    const register = document.createElement("p");
-    register.id = "reg-button";
-    register.innerText = "Register";
+    const registerP = document.createElement("p");
+    registerP.id = "reg-button";
+    registerP.innerText = "Register";
 
     header.appendChild(loginDiv);
     loginDiv.appendChild(login);
-    loginDiv.appendChild(buttonBody);
+    loginDiv.appendChild(loginBody);
 
-    buttonBody.appendChild(log);
-    buttonBody.appendChild(register);
+    loginBody.appendChild(loginP);
+    loginBody.appendChild(registerP);
   }
 
   MovBtn() {
