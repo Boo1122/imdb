@@ -13,9 +13,6 @@ export function switchLogin() {
 export function switchRegister() {
   const register = document.getElementById("reg-button");
 
-  const logPage = document.getElementById("login-container");
-  const regPage = document.getElementById("form-container");
-
   register.addEventListener("click", event => {
     event.preventDefault();
     console.log(event.target.id);
