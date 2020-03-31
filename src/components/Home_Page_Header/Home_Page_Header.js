@@ -4,7 +4,7 @@ import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
 import { Pages } from "../Navigate_History/Navigate_Pages";
-// import {Switch} from "../Pages/Login_Form/Switch_Login_Register"
+
 
 export class Header {
   constructor() {
@@ -24,7 +24,7 @@ export class Header {
 
     new Search();
     new Pages();
-    // new Switch()
+  
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";

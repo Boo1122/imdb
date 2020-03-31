@@ -14,7 +14,9 @@ body {
 .header {
   height: 10vh;
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+
 }
 
 .btn {
@@ -85,6 +87,7 @@ body {
 
 .home {
   width: 100px;
+  margin-left:30px ;
 }
 
 .movie-sub-buttons {
