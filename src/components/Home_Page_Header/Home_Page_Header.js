@@ -1,5 +1,4 @@
 import "./Home_Page_Header.css";
-
 import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
 import { Pages } from "../Navigate_History/Navigate_Pages";
@@ -29,9 +28,9 @@ export class Header {
     anchorLogin.id = "login";
     anchorLogin.innerHTML = "Login";
 
-    let search = new Search();
-    let pages = new Pages();
-    let register = new RegisterForm();
+    new Search();
+    new Pages();
+    new RegisterForm();
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
