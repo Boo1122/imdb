@@ -8,6 +8,5 @@ new Header();
 
 moviesButtonEventListenerHandler();
 
-// new RegisterForm();
 new LoginForm();
 new SinglePage();

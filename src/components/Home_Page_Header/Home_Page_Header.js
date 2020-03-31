@@ -1,7 +1,6 @@
 import "./Home_Page_Header.css";
 import { createFilters } from "../Pages/Movies_Page/Create_Filters";
 import { Search } from "../Home_Page_Header/Search_Button";
-
 import { navigate } from "../Navigate_History/Navigate_History";
 import { Pages } from "../Navigate_History/Navigate_Pages";
 import { RegisterForm } from "../Pages/Register_Form/Register_Form";
@@ -29,8 +28,10 @@ export class Header {
     anchorLogin.id = "login";
     anchorLogin.innerHTML = "Login";
 
-    let search = new Search();
-    let pages = new Pages();
+    new Search();
+    new Pages();
+    new RegisterForm();
+
   
 
     const logoBtn = document.createElement("div");
