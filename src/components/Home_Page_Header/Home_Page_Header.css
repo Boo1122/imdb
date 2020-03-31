@@ -45,7 +45,6 @@ body {
 .login {
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
-  margin-top: -25px;
   margin-left: 5px;
 
   background: #272727;
@@ -79,12 +78,6 @@ body {
 }
 
 #movBtn {
-  margin-top: 20px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-#loginBtn {
   margin-top: 20px;
   margin-left: 30px;
   margin-right: 30px;
