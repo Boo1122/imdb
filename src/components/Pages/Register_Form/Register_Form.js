@@ -10,8 +10,8 @@ export class RegisterForm {
     const containerForm = document.createElement("div");
     containerForm.id = "form-container";
 
-    const box = document.createElement("div");
-    box.id = "register-box";
+    const box2 = document.createElement("div");
+    box2.id = "register-box";
 
     const h1 = document.createElement("h1");
     h1.innerText = "Register";
@@ -68,19 +68,19 @@ export class RegisterForm {
     alreadyHaveAcc.innerText = "I already have an Account";
 
     body.appendChild(containerForm);
-    containerForm.appendChild(box);
+    containerForm.appendChild(box2);
 
-    box.appendChild(h1);
-    box.appendChild(completeForm);
-    box.appendChild(usernameLabel);
-    box.appendChild(usernameInput);
-    box.appendChild(emailLabel);
-    box.appendChild(emailInput);
-    box.appendChild(passwordLabel);
-    box.appendChild(passwordInput);
+    box2.appendChild(h1);
+    box2.appendChild(completeForm);
+    box2.appendChild(usernameLabel);
+    box2.appendChild(usernameInput);
+    box2.appendChild(emailLabel);
+    box2.appendChild(emailInput);
+    box2.appendChild(passwordLabel);
+    box2.appendChild(passwordInput);
 
-    box.appendChild(registerBtn);
-    box.appendChild(alreadyHaveAcc);
-    box.appendChild(message);
+    box2.appendChild(registerBtn);
+    box2.appendChild(alreadyHaveAcc);
+    box2.appendChild(message);
   }
 }
