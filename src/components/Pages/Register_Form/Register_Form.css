@@ -17,7 +17,7 @@
 }
 
 #register-box {
-  height: 580px;
+  height: 630px;
   width: 420px;
   background: lightgray;
   display: flex;
@@ -54,6 +54,7 @@
 
 #register-message {
   text-align: center;
+  margin: 0;
 }
 
 #registerBtn {
@@ -64,8 +65,21 @@
   outline: none;
 
   padding: 1rem;
+  cursor: pointer;
 }
 
 ::placeholder {
+  color: rgba(233, 27, 16, 0.8);
+}
+
+#existing-acc {
+  text-align: center;
+  cursor: pointer;
+}
+
+#existing-acc:hover {
+  text-align: center;
+  cursor: pointer;
+  background: #ffff00;
   color: rgba(233, 27, 16, 0.8);
 }

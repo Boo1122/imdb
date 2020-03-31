@@ -63,6 +63,10 @@ export class RegisterForm {
     registerBtn.id = "registerBtn";
     registerBtn.innerText = "Register";
 
+    const alreadyHaveAcc = document.createElement("p");
+    alreadyHaveAcc.id = "existing-acc";
+    alreadyHaveAcc.innerText = "I already have an Account";
+
     body.appendChild(containerForm);
     containerForm.appendChild(box);
 
@@ -76,6 +80,7 @@ export class RegisterForm {
     box.appendChild(passwordInput);
 
     box.appendChild(registerBtn);
+    box.appendChild(alreadyHaveAcc);
     box.appendChild(message);
   }
 }

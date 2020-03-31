@@ -17,7 +17,7 @@
 }
 
 #login-box {
-  height: 370px;
+  height: 400px;
   width: 380px;
   background: lightgray;
   display: flex;
@@ -41,9 +41,22 @@
 
 #loginBtn {
   padding: 0.4rem;
-  margin-top: 2.4rem;
+  margin-top: 2rem;
+  cursor: pointer;
 }
 
 #login-submit-btn {
   align-self: center;
+}
+
+#register-paragraph {
+  text-align: center;
+  cursor: pointer;
+}
+
+#register-paragraph:hover {
+  text-align: center;
+  cursor: pointer;
+  background: #ffff00;
+  color: rgba(233, 27, 16, 0.8);
 }
