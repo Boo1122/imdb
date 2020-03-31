@@ -9,6 +9,7 @@ export class RegisterForm {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
     containerForm.id = "form-container";
+    containerForm.classList.add('show')
 
     const box = document.createElement("div");
     box.id = "register-box";

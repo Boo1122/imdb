@@ -15,6 +15,7 @@ export class Switch {
         login.addEventListener('click', event => {
             event.preventDefault();
             console.log(event.target.id)
+            logPage.style.display = 'flex'
         })
 
     }
@@ -27,6 +28,7 @@ export class Switch {
         register.addEventListener('click', event => {
             event.preventDefault();
             console.log(event.target.id)
+            regPage.style.display = 'flex'
         })
 
     }
