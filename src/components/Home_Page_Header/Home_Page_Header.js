@@ -3,11 +3,13 @@ import { createFilters } from "../Pages/Movies_Page/Create_Filters";
 import { Search } from "../Home_Page_Header/Search_Button";
 
 import { navigate } from "../Navigate_History/Navigate_History";
+import { Pages } from "../Navigate_History/Navigate_Pages";
 
 export class Header {
   constructor() {
     this.Header();
-    this.MovBtn();
+    this.MoviesButton();
+    navigate.init();
   }
 
   Header() {
@@ -21,29 +23,26 @@ export class Header {
     const login = document.createElement("div");
     login.id = "anchBtn";
     const anchorLogin = document.createElement("button");
-    anchorLogin.classList.add("nav-link", "page", "active");
+    anchorLogin.classList.add("nav-link");
     anchorLogin.setAttribute("data-target", "login");
     anchorLogin.id = "login";
     anchorLogin.innerHTML = "Login";
 
     let search = new Search();
+    let pages = new Pages();
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
-    logoBtn.classList.add("logoBtnClass");
 
     const imgLogo = document.createElement("img");
-    imgLogo.id = "logoID";
-    imgLogo.classList.add("nav-link", "page", "active");
-    imgLogo.setAttribute("data-target", "logo");
+    imgLogo.id = "home";
+    imgLogo.classList.add("home");
+    imgLogo.classList.add("nav-link");
+    imgLogo.setAttribute("data-target", "home");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
 
-    // imgLogo.addEventListener("click", () => {
-    //   location.href = "index.html";
-    // });
-
     logoBtn.appendChild(imgLogo);
-    header.prepend(logoBtn);
+    header.appendChild(logoBtn);
     login.appendChild(anchorLogin);
     header.appendChild(login);
   }
@@ -56,7 +55,7 @@ export class Header {
 
     const movies = document.createElement("button");
     movies.id = "movBtn";
-    movies.classList.add("nav-link", "page", "active", "movies-btn", "btn");
+    movies.classList.add("nav-link", "movies-btn", "btn");
     movies.setAttribute("data-target", "movies");
     movies.innerText = "Movies";
 
