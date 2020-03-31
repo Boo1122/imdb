@@ -4,8 +4,6 @@ import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
 import { Pages } from "../Navigate_History/Navigate_Pages";
-import { RegisterForm } from "../Pages/Register_Form/Register_Form";
-import { LoginForm } from "../Pages/Login_Form/Login_Form";
 
 export class Header {
   constructor() {
@@ -23,17 +21,8 @@ export class Header {
     header.id = "header";
     body.appendChild(header);
 
-    const login = document.createElement("div");
-    login.id = "anchBtn";
-    const anchorLogin = document.createElement("button");
-    anchorLogin.classList.add("nav-link");
-    anchorLogin.setAttribute("data-target", "login");
-    anchorLogin.id = "login";
-    anchorLogin.innerHTML = "Login";
-
     new Search();
     new Pages();
-    new RegisterForm();
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
