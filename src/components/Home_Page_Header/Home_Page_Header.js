@@ -1,15 +1,17 @@
 import "./Home_Page_Header.css";
 import "../Pages/Movies_Page/Movie_Button.css";
-import { createFilters } from "../Pages/Movies_Page/Create_Filters";
+import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
-
 import { navigate } from "../Navigate_History/Navigate_History";
 import { Pages } from "../Navigate_History/Navigate_Pages";
+import { RegisterForm } from "../Pages/Register_Form/Register_Form";
+import { LoginForm } from "../Pages/Login_Form/Login_Form";
 
 export class Header {
   constructor() {
     this.Header();
     this.MovBtn();
+    this.LoginBtn();
     navigate.init();
   }
 
@@ -29,42 +31,52 @@ export class Header {
     anchorLogin.id = "login";
     anchorLogin.innerHTML = "Login";
 
-    let search = new Search();
-    let pages = new Pages();
+    new Search();
+    new Pages();
+    new RegisterForm();
 
     const logoBtn = document.createElement("div");
     logoBtn.id = "home";
 
     const imgLogo = document.createElement("img");
     imgLogo.id = "home";
-    imgLogo.classList.add("home");
-    imgLogo.classList.add("nav-link");
+    imgLogo.classList.add("nav-link", "home");
     imgLogo.setAttribute("data-target", "home");
     imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
 
     logoBtn.appendChild(imgLogo);
     header.appendChild(logoBtn);
-    login.appendChild(anchorLogin);
-    header.appendChild(login);
   }
 
-  MoviesButton() {
+  LoginBtn() {
     const header = document.getElementById("header");
 
-    const moviesButtonWrapper = document.createElement("div");
-    moviesButtonWrapper.id = "movies-btn-wrapper";
+    const loginDiv = document.createElement("div");
+    loginDiv.id = "loginBtn";
+    loginDiv.className = "dropdown";
 
-    const movies = document.createElement("button");
-    movies.id = "movBtn";
-    movies.classList.add("nav-link", "movies-btn", "btn");
-    movies.setAttribute("data-target", "movies");
-    movies.innerText = "Movies";
+    const login = document.createElement("button");
+    login.setAttribute("data-target", "login");
+    login.classList.add("nav-link", "login-btn", "btn");
+    login.innerText = "Login";
 
-    moviesButtonWrapper.appendChild(movies);
+    const buttonBody = document.createElement("div");
+    buttonBody.classList.add("dropdown-content");
 
-    createFilters().forEach(_ => moviesButtonWrapper.appendChild(_));
+    const log = document.createElement("p");
+    log.id = "log-button";
+    log.innerText = "Login";
 
-    header.appendChild(moviesButtonWrapper);
+    const register = document.createElement("p");
+    register.id = "reg-button";
+    register.innerText = "Register";
+
+    header.appendChild(loginDiv);
+    loginDiv.appendChild(login);
+    loginDiv.appendChild(buttonBody);
+
+    buttonBody.appendChild(log);
+    buttonBody.appendChild(register);
   }
 
   MovBtn() {
@@ -72,13 +84,12 @@ export class Header {
 
     const buttonDiv = document.createElement("div");
     buttonDiv.id = "movBtn";
-    buttonDiv.classList.add("nav-link", "page", "active", "movies-btn", "btn");
     buttonDiv.className = "dropdown";
 
-    const button = document.createElement("p");
-    button.setAttribute("data-target", "movies");
-    button.classList.add("dropbtn");
-    button.innerText = "Movies";
+    const movies = document.createElement("button");
+    movies.setAttribute("data-target", "movies");
+    movies.classList.add("nav-link", "movies-btn", "btn");
+    movies.innerText = "Movies";
 
     const buttonBody = document.createElement("div");
     buttonBody.classList.add("dropdown-content");
@@ -96,7 +107,7 @@ export class Header {
     genre.innerText = "Genre";
 
     header.appendChild(buttonDiv);
-    buttonDiv.appendChild(button);
+    buttonDiv.appendChild(movies);
     buttonDiv.appendChild(buttonBody);
     buttonBody.appendChild(title);
     buttonBody.appendChild(year);

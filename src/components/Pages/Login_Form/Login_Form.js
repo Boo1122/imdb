@@ -10,8 +10,8 @@ export class LoginForm {
     const containerForm = document.createElement("div");
     containerForm.id = "login-container";
 
-    const box = document.createElement("div");
-    box.id = "login-box";
+    const box1 = document.createElement("div");
+    box1.id = "login-box";
 
     const h1 = document.createElement("h1");
     h1.innerText = "Login";
@@ -51,18 +51,18 @@ export class LoginForm {
     regPar.innerText = "If you dont have an account Register here";
 
     body.appendChild(containerForm);
-    containerForm.appendChild(box);
+    containerForm.appendChild(box1);
 
-    box.appendChild(h1);
-    box.appendChild(usernameLabel);
-    box.appendChild(usernameInput);
+    box1.appendChild(h1);
+    box1.appendChild(usernameLabel);
+    box1.appendChild(usernameInput);
 
-    box.appendChild(passwordLabel);
-    box.appendChild(passwordInput);
+    box1.appendChild(passwordLabel);
+    box1.appendChild(passwordInput);
 
-    box.appendChild(loginBtnContainer);
+    box1.appendChild(loginBtnContainer);
     loginBtnContainer.appendChild(loginBtn);
 
-    box.appendChild(regPar);
+    box1.appendChild(regPar);
   }
 }
