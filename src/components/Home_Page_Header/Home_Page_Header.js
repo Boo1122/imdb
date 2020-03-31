@@ -1,4 +1,6 @@
 import "./Home_Page_Header.css";
+import "../Pages/Movies_Page/Movie_Button.css";
+import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
 import { Pages } from "../Navigate_History/Navigate_Pages";
@@ -9,6 +11,7 @@ export class Header {
   constructor() {
     this.Header();
     this.MovBtn();
+    this.LoginBtn();
     navigate.init();
   }
 
@@ -43,8 +46,37 @@ export class Header {
 
     logoBtn.appendChild(imgLogo);
     header.appendChild(logoBtn);
-    login.appendChild(anchorLogin);
-    header.appendChild(login);
+  }
+
+  LoginBtn() {
+    const header = document.getElementById("header");
+
+    const loginDiv = document.createElement("div");
+    loginDiv.id = "loginBtn";
+    loginDiv.className = "dropdown";
+
+    const login = document.createElement("button");
+    login.setAttribute("data-target", "login");
+    login.classList.add("nav-link", "login-btn", "btn");
+    login.innerText = "Login";
+
+    const buttonBody = document.createElement("div");
+    buttonBody.classList.add("dropdown-content");
+
+    const log = document.createElement("p");
+    log.id = "log-button";
+    log.innerText = "Login";
+
+    const register = document.createElement("p");
+    register.id = "reg-button";
+    register.innerText = "Register";
+
+    header.appendChild(loginDiv);
+    loginDiv.appendChild(login);
+    loginDiv.appendChild(buttonBody);
+
+    buttonBody.appendChild(log);
+    buttonBody.appendChild(register);
   }
 
   MovBtn() {
