@@ -2,7 +2,6 @@ import "./Home_Page.css";
 
 export class HomePage {
   constructor() {
-    this.HomeContent();
     this.generateUrl();
     this.getMovies();
   }
@@ -11,15 +10,23 @@ export class HomePage {
     return `https://movies-api-siit.herokuapp.com/movies`;
   }
 
-  getMovies(movieData) {
+  getMovies() {
     const url = this.generateUrl();
 
     fetch(url)
       .then(response => response.json())
-      .then(movieData => movieData);
+      .then(movieData => {
+        this.movieData = movieData;
+        this.renderMovieList();
+      });
+  }
+  renderMovieList() {
+    for (const movie of this.movieData.results) {
+      this.HomeContent(movie);
+    }
   }
 
-  HomeContent(movieData) {
+  HomeContent(movie) {
     const body = document.getElementById("body");
 
     const container = document.createElement("div");
@@ -30,10 +37,14 @@ export class HomePage {
 
     const img = document.createElement("img");
     img.classList.add("detail-posters");
-    img.setAttribute("src", this.movieData.results[0].Poster);
+    img.setAttribute("src", movie.Poster);
+
+    const p = document.createElement("p");
+    p.innerHTML = movie.Title;
 
     body.appendChild(container);
     container.appendChild(posters);
     posters.appendChild(img);
+    posters.appendChild(p);
   }
 }

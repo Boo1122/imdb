@@ -13,5 +13,3 @@ new SinglePage();
 new Switch();
 
 new HomePage();
-
-getMovies();
