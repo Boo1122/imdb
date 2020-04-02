@@ -14,7 +14,7 @@ body {
 .header {
   height: 10vh;
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .btn {
