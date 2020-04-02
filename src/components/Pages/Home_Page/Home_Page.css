@@ -1,4 +1,30 @@
-#home-page-container {
-  height: 100vh;
+#home-page-details {
   display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+}
+
+#home-page-container {
+  display: flex;
+}
+
+.detail-posters {
+  height: 444px;
+  width: 300px;
+}
+
+#posters {
+  height: 540px;
+  width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#posters p {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  margin: 0 0 1rem 0;
 }

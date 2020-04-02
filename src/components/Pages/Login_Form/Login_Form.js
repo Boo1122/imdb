@@ -2,10 +2,10 @@ import "./Login_Form.css";
 
 export class LoginForm {
   constructor() {
-    this.Login();
+    this.login();
   }
 
-  Login() {
+  login() {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
     containerForm.id = "login-container";

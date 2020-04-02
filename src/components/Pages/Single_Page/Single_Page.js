@@ -2,10 +2,10 @@ import "./Single_Page.css";
 
 export class SinglePage {
   constructor() {
-    this.MainContent();
+    this.mainContent();
   }
 
-  MainContent() {
+  mainContent() {
     const main = document.getElementById("body");
     const contentDiv = document.createElement("div");
     contentDiv.id = "main-div";

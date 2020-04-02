@@ -4,6 +4,7 @@ export class HomePage {
   constructor() {
     this.generateUrl();
     this.getMovies();
+    this.homeContainerBox();
   }
 
   generateUrl() {
@@ -22,12 +23,12 @@ export class HomePage {
   }
   renderMovieList() {
     for (const movie of this.movieData.results) {
-      this.HomeContent(movie);
+      this.homeContent(movie);
     }
   }
 
-  HomeContent(movie) {
-    const body = document.getElementById("body");
+  homeContent(movie) {
+    const body = document.getElementById("home-page-details");
 
     const container = document.createElement("div");
     container.id = "home-page-container";
@@ -35,16 +36,25 @@ export class HomePage {
     const posters = document.createElement("div");
     posters.id = "posters";
 
+    const p = document.createElement("p");
+    p.innerHTML = movie.Title;
+
     const img = document.createElement("img");
     img.classList.add("detail-posters");
     img.setAttribute("src", movie.Poster);
 
-    const p = document.createElement("p");
-    p.innerHTML = movie.Title;
-
     body.appendChild(container);
     container.appendChild(posters);
-    posters.appendChild(img);
     posters.appendChild(p);
+    posters.appendChild(img);
+  }
+
+  homeContainerBox() {
+    const body = document.getElementById("body");
+
+    const container = document.createElement("div");
+    container.id = "home-page-details";
+
+    body.appendChild(container);
   }
 }

@@ -1,12 +1,12 @@
 export class Switch {
   constructor() {
-    this.Login();
-    this.Register();
-    this.DontHaveAccount();
-    this.HaveAccount();
+    this.login();
+    this.register();
+    this.dontHaveAccount();
+    this.haveAccount();
   }
 
-  Login() {
+  login() {
     const login = document.getElementById("log-button");
     const logPage = document.getElementById("login-container");
     const regPage = document.getElementById("form-container");
@@ -18,7 +18,7 @@ export class Switch {
     });
   }
 
-  Register() {
+  register() {
     const register = document.getElementById("reg-button");
     const logPage = document.getElementById("login-container");
     const regPage = document.getElementById("form-container");
@@ -30,7 +30,7 @@ export class Switch {
     });
   }
 
-  DontHaveAccount() {
+  dontHaveAccount() {
     const login = document.getElementById("register-paragraph");
     const logPage = document.getElementById("login-container");
     const regPage = document.getElementById("form-container");
@@ -43,7 +43,7 @@ export class Switch {
     });
   }
 
-  HaveAccount() {
+  haveAccount() {
     const register = document.getElementById("existing-acc");
     const logPage = document.getElementById("login-container");
     const regPage = document.getElementById("form-container");

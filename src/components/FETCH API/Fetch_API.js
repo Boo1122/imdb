@@ -7,5 +7,5 @@ export function getMovies() {
 
   fetch(url)
     .then(response => response.json())
-    .then(movieData => console.log(movieData));
+    .then(movieData => movieData);
 }

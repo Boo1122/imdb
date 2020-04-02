@@ -8,13 +8,13 @@ import { Pages } from "../Navigate_History/Navigate_Pages";
 
 export class Header {
   constructor() {
-    this.Header();
-    this.MovBtn();
-    this.LoginBtn();
+    this.header();
+    this.movBtn();
+    this.loginBtn();
     navigate.init();
   }
 
-  Header() {
+  header() {
     const body = document.getElementById("body");
 
     const header = document.createElement("div");
@@ -39,7 +39,7 @@ export class Header {
     header.appendChild(logoBtn);
   }
 
-  LoginBtn() {
+  loginBtn() {
     const header = document.getElementById("header");
 
     const loginDiv = document.createElement("div");
@@ -70,7 +70,7 @@ export class Header {
     loginBody.appendChild(registerP);
   }
 
-  MovBtn() {
+  movBtn() {
     const header = document.getElementById("header");
 
     const buttonDiv = document.createElement("div");
