@@ -22,7 +22,6 @@ export class Header {
     header.id = "header";
     body.appendChild(header);
 
- 
   }
 
       homeButton() {
@@ -79,8 +78,8 @@ export class Header {
     buttonDiv.className = "dropdown";
 
     const movies = document.createElement("button");
-    movies.setAttribute("data-target", "movies"); //id movies si clasa page la crearea paginii movies
-    movies.classList.add("nav-link", "movies-btn", "btn");
+    movies.classList.add("nav-link", 'movies', "movies-btn", "btn");
+    movies.setAttribute("data-target", "movie-page"); //id movies si clasa page la crearea paginii movies
     movies.innerText = "Movies";
 
     const buttonBody = document.createElement("div");
