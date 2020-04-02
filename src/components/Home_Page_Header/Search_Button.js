@@ -2,11 +2,12 @@ import "./Search_Button.css";
 
 export class Search {
   constructor() {
-    this.CreateImage();
-    this.AddSearchInput();
-    this.CreateInput();
+    this.createImage();
+    this.addSearchInput();
+    this.createInput();
   }
-  CreateInput() {
+
+  createInput() {
     let inputDiv = document.createElement("div");
     inputDiv.className = "input";
     inputDiv.id = "input-div";
@@ -21,7 +22,7 @@ export class Search {
     header.appendChild(img);
   }
 
-  CreateImage() {
+  createImage() {
     let img = document.createElement("img");
     img.id = "img";
     img.src = "./src/components/Home_Page_Header/search.png";
@@ -32,7 +33,7 @@ export class Search {
     document.getElementById("body").appendChild(img);
   }
 
-  AddSearchInput() {
+  addSearchInput() {
     let showInput = false;
 
     img.addEventListener("click", () => {

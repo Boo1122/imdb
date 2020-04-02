@@ -15,8 +15,6 @@ body {
   height: 10vh;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
-
 }
 
 .btn {
@@ -72,10 +70,16 @@ body {
   outline: none;
 }
 
+#loginBtnHeader {
+  margin-left: auto;
+  order: 3;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
 #loginBtn {
   margin-top: 20px;
   margin-left: auto;
-  margin-right: 30px;
   order: 3;
 }
 

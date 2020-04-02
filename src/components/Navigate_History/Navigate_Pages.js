@@ -1,9 +1,9 @@
 export class Pages {
   constructor() {
-    this.Pages();
+    this.pages();
   }
 
-  Pages() {
+  pages() {
     let header = document.getElementById("header");
 
     let home = document.createElement("div");
