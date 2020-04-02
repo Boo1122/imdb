@@ -43,7 +43,7 @@ export class Header {
     const header = document.getElementById("header");
 
     const loginDiv = document.createElement("div");
-    loginDiv.id = "loginBtn";
+    loginDiv.id = "loginBtnHeader";
     loginDiv.className = "dropdown";
 
     const login = document.createElement("button");
