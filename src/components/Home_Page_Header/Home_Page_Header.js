@@ -5,7 +5,6 @@ import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
 
 
-
 export class Header {
   constructor() {
     this.header();
@@ -13,7 +12,6 @@ export class Header {
     this.moviesButton();
     this.loginButton();
     navigate.init();
-  
   }
 
   header() {
@@ -24,12 +22,11 @@ export class Header {
     header.id = "header";
     body.appendChild(header);
 
-    new Search();
+ 
   }
 
-  
-  
       homeButton() {
+        new Search();
     const homeButton = document.createElement("div");
     homeButton.id = "home";
 

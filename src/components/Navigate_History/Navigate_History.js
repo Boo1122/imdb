@@ -17,10 +17,9 @@ export const navigate = {
          window.addEventListener('popstate', navigate.poppin)
     },
 
-    nav:  ev => { console.log('click')
+    nav:  ev => { 
         ev.preventDefault();
         let currentPage = ev.target.getAttribute('data-target');
-        console.log(currentPage, document.querySelector('.active') )
         document.querySelector('.active').classList.remove('active');
         document.getElementById(currentPage).classList.add('active');
         history.pushState({}, currentPage, `#${currentPage}`)
