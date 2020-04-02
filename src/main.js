@@ -7,6 +7,6 @@ import { HomePage } from "./components/Pages/Home_Page/Home_Page";
 new Header();
 new LoginForm();
 new RegisterForm();
-new Switch();
 
 new HomePage();
+new Switch();

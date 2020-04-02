@@ -7,12 +7,12 @@ export class HomePage {
     this.homeContainerBox();
   }
 
-  generateUrl() {
-    return `https://movies-api-siit.herokuapp.com/movies`;
+  generateUrl(par) {
+    return `https://movies-api-siit.herokuapp.com/movies${par}`;
   }
 
   getMovies() {
-    const url = this.generateUrl();
+    const url = this.generateUrl("?take=10");
 
     fetch(url)
       .then(response => response.json())
@@ -21,6 +21,7 @@ export class HomePage {
         this.renderMovieList();
       });
   }
+
   renderMovieList() {
     for (const movie of this.movieData.results) {
       this.homeContent(movie);
@@ -34,7 +35,7 @@ export class HomePage {
     container.id = "home-page-container";
 
     const posters = document.createElement("div");
-    posters.id = "posters";
+    posters.className = "posters";
 
     const p = document.createElement("p");
     p.innerHTML = movie.Title;

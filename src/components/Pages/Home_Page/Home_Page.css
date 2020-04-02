@@ -1,28 +1,30 @@
 #home-page-details {
   display: flex;
   flex-direction: row;
-  margin-top: 100px;
+  margin-top: 150px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 #home-page-container {
   display: flex;
 }
 
-.detail-posters {
-  height: 444px;
+.posters img {
+  height: 450px;
   width: 300px;
 }
 
-#posters {
-  height: 540px;
-  width: 420px;
+.posters {
+  height: 520px;
+  width: 340px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-#posters p {
+.posters p {
   font-size: 20px;
   text-align: center;
   color: white;
