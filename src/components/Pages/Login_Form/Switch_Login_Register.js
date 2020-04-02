@@ -8,9 +8,9 @@ export class Switch {
 
   login() {
     const login = document.getElementById("log-button");
-    const logPage = document.getElementById("login-container");
+    const logPage = document.getElementById("login-page");
     const regPage = document.getElementById("form-container");
-    const home = document.getElementById("home-page-details");
+    const home = document.getElementById("home-page");
 
     login.addEventListener("click", event => {
       event.preventDefault();
@@ -22,9 +22,9 @@ export class Switch {
 
   register() {
     const register = document.getElementById("reg-button");
-    const logPage = document.getElementById("login-container");
+    const logPage = document.getElementById("login-page");
     const regPage = document.getElementById("form-container");
-    const home = document.getElementById("home-page-details");
+    const home = document.getElementById("home-page");
 
     register.addEventListener("click", event => {
       event.preventDefault();
@@ -36,9 +36,9 @@ export class Switch {
 
   dontHaveAccount() {
     const login = document.getElementById("register-paragraph");
-    const logPage = document.getElementById("login-container");
+    const logPage = document.getElementById("login-page");
     const regPage = document.getElementById("form-container");
-    const home = document.getElementById("home-page-details");
+    const home = document.getElementById("home-page");
 
     login.addEventListener("click", event => {
       event.preventDefault();
@@ -51,9 +51,9 @@ export class Switch {
 
   haveAccount() {
     const register = document.getElementById("existing-acc");
-    const logPage = document.getElementById("login-container");
+    const logPage = document.getElementById("login-page");
     const regPage = document.getElementById("form-container");
-    const home = document.getElementById("home-page-details");
+    const home = document.getElementById("home-page");
 
     register.addEventListener("click", event => {
       event.preventDefault();

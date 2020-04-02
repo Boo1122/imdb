@@ -31,7 +31,7 @@ export class HomePage {
   }
 
   homeContent(movie) {
-    const body = document.getElementById("home-page-details");
+    const body = document.getElementById("home-page");
 
     const container = document.createElement("div");
     container.id = "home-page-container";
@@ -57,7 +57,8 @@ export class HomePage {
     const body = document.getElementById("body");
 
     const container = document.createElement("div");
-    container.id = "home-page-details";
+    container.id = "home-page";
+    container.classList.add('page','active');
 
     body.appendChild(container);
   }

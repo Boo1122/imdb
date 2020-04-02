@@ -1,5 +1,5 @@
-#home-page-details {
-  display: flex;
+#home-page {
+
   flex-direction: row;
   margin-top: 150px;
   justify-content: space-evenly;

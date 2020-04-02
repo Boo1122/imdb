@@ -8,7 +8,8 @@ export class LoginForm {
   login() {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
-    containerForm.id = "login-container";
+    containerForm.id = "login-page";
+    containerForm.classList.add('page');
 
     const box1 = document.createElement("div");
     box1.id = "login-box";

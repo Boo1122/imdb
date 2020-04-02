@@ -3,16 +3,17 @@ import "../Pages/Movies_Page/Movie_Button.css";
 import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
-import { Pages } from "../Navigate_History/Navigate_Pages";
+
 
 
 export class Header {
   constructor() {
     this.header();
-    this.movBtn();
-    this.loginBtn();
+    this.homeButton();
+    this.moviesButton();
+    this.loginButton();
     navigate.init();
-    navigate.poppin();
+  
   }
 
   header() {
@@ -24,33 +25,35 @@ export class Header {
     body.appendChild(header);
 
     new Search();
-    new Pages();
-  
-
-    const logoBtn = document.createElement("div");
-    logoBtn.id = "home";
-
-    const imgLogo = document.createElement("img");
-    imgLogo.id = "home";
-    imgLogo.classList.add("nav-link", "home");
-    imgLogo.setAttribute("data-target", "home");
-    imgLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
-
-    logoBtn.appendChild(imgLogo);
-    header.appendChild(logoBtn);
   }
 
-  loginBtn() {
+  
+  
+      homeButton() {
+    const homeButton = document.createElement("div");
+    homeButton.id = "home";
+
+    const homeLogo = document.createElement("img");
+    homeLogo.id = "home";
+    homeLogo.classList.add("nav-link", "home");
+    homeLogo.setAttribute("data-target", "home-page");
+    homeLogo.src = "./src/components/Home_Page_Header/logoFINAL.png";
+
+    homeButton.appendChild(homeLogo);
+    header.appendChild(homeButton);
+  }
+
+  loginButton() {
     const header = document.getElementById("header");
 
     const loginDiv = document.createElement("div");
-    loginDiv.id = "loginBtnHeader";
+    loginDiv.id = "loginBtn";
     loginDiv.className = "dropdown";
 
-    const login = document.createElement("button");
-    login.classList.add("nav-link", "login");
-    login.setAttribute("data-target", "login");
-    login.innerHTML = "Login";
+    const loginButton = document.createElement("button");
+    loginButton.classList.add("nav-link", "login");
+    loginButton.setAttribute("data-target", "login-page");
+    loginButton.innerHTML = "Login";
 
     const loginBody = document.createElement("div");
     loginBody.classList.add("dropdown-content");
@@ -64,14 +67,14 @@ export class Header {
     registerP.innerText = "Register";
 
     header.appendChild(loginDiv);
-    loginDiv.appendChild(login);
+    loginDiv.appendChild(loginButton);
     loginDiv.appendChild(loginBody);
 
     loginBody.appendChild(loginP);
     loginBody.appendChild(registerP);
   }
 
-  movBtn() {
+  moviesButton() {
     const header = document.getElementById("header");
 
     const buttonDiv = document.createElement("div");
@@ -79,7 +82,7 @@ export class Header {
     buttonDiv.className = "dropdown";
 
     const movies = document.createElement("button");
-    movies.setAttribute("data-target", "movies");
+    movies.setAttribute("data-target", "movies"); //id movies si clasa page la crearea paginii movies
     movies.classList.add("nav-link", "movies-btn", "btn");
     movies.innerText = "Movies";
 
