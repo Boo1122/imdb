@@ -1,25 +1,24 @@
-#img{
-   height: 18px;
-   margin-top: 35px;
-   order: 3;
-   margin-right: 80px;
-   
+#img {
+  height: 18px;
+  margin-top: 48px;
+  order: 3;
+  margin-left: auto;
 }
 
-
 #input {
-   text-align: center;
-   margin-top: 35px;
-   width: 140px;
-   height: 20px;
-   border-radius: 40px;
-   outline: 0;
-   border: 1px solid black;
-   background-color: #eeee3f;
-   display: none;
- }
- 
- #input-div {
-   order: 2;
-   margin-left: 550px;
- }
+  text-align: center;
+  margin-top: 45px;
+  margin-left: 500px;
+  width: 180px;
+  height: 20px;
+  border-radius: 40px;
+  outline: 0;
+  border: 1px solid black;
+  background-color: #eeee3f;
+  display: none;
+}
+
+#input-div {
+  order: 2;
+  margin-left: auto;
+}
