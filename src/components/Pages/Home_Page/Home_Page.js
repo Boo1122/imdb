@@ -1,10 +1,12 @@
 import "./Home_Page.css";
 
+
 export class HomePage {
   constructor() {
     this.generateUrl();
     this.getMovies();
     this.homeContainerBox();
+    
   }
 
   generateUrl(par) {
@@ -33,6 +35,7 @@ export class HomePage {
 
     const container = document.createElement("div");
     container.id = "home-page-container";
+
 
     const posters = document.createElement("div");
     posters.className = "posters";

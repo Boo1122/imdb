@@ -1,10 +1,12 @@
+import { navigate } from "./Navigate_History";
+
 export class Pages {
   constructor() {
     this.pages();
   }
 
   pages() {
-    let header = document.getElementById("header");
+    let body = document.getElementById("body");
 
     let home = document.createElement("div");
     home.id = "home";
@@ -12,14 +14,14 @@ export class Pages {
 
     let movies = document.createElement("div");
     movies.id = "movies";
-    movies.classList.add("page", "hide-page");
+    movies.classList.add('active',"page", "hide-page");
 
     let login = document.createElement("div");
     login.id = "login";
     login.classList.add("page", "hide-page");
 
-    header.appendChild(home);
-    header.appendChild(movies);
-    header.appendChild(login);
+    body.appendChild(home);
+    body.appendChild(movies);
+    body.appendChild(login);
   }
 }

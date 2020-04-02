@@ -12,6 +12,7 @@ export class Header {
     this.movBtn();
     this.loginBtn();
     navigate.init();
+    navigate.poppin();
   }
 
   header() {

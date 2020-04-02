@@ -3,6 +3,7 @@ import { RegisterForm } from "./components/Pages/Register_Form/Register_Form";
 import { LoginForm } from "./components/Pages/Login_Form/Login_Form";
 import { Switch } from "./components/Pages/Login_Form/Switch_Login_Register";
 import { HomePage } from "./components/Pages/Home_Page/Home_Page";
+import { Pages } from "./components/Navigate_History/Navigate_Pages"
 
 new Header();
 new LoginForm();
@@ -10,3 +11,5 @@ new RegisterForm();
 
 new HomePage();
 new Switch();
+new Pages();
+
