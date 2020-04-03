@@ -6,6 +6,8 @@ import { MoviePage } from "./components/Pages/Movie_Page/Movie_Page";
 import { Switch } from "./components/Pages/Login_Form/Switch_Login_Register";
 import { RegisterPage } from "./components/Pages/Register_Form/Register_Page";
 import "./main.css";
+import { HomePage } from "./components/Pages/Home_Page/Home_Page";
+import { Footer } from "./components/Footer/Footer";
 
 new Header();
 new RegisterForm();
@@ -16,3 +18,4 @@ new MoviePage();
 new Switch();
 
 new RegisterPage();
+new Footer();
