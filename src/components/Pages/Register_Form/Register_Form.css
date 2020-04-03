@@ -57,7 +57,7 @@
   margin: 0;
 }
 
-#registerBtn {
+/* #registerBtn {
   align-self: center;
   margin-top: 1.4rem;
   color: rgba(233, 27, 16, 0.8);
@@ -66,7 +66,7 @@
 
   padding: 1rem;
   cursor: pointer;
-}
+} */
 
 ::placeholder {
   color: rgba(233, 27, 16, 0.8);

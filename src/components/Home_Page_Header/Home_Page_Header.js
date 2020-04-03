@@ -50,23 +50,8 @@ export class Header {
     loginButton.setAttribute("data-target", "login-page");
     loginButton.innerHTML = "Login";
 
-    const loginBody = document.createElement("div");
-    loginBody.classList.add("dropdown-content");
-
-    const loginP = document.createElement("p");
-    loginP.id = "log-button";
-    loginP.innerText = "Login";
-
-    const registerP = document.createElement("p");
-    registerP.id = "reg-button";
-    registerP.innerText = "Register";
-
     header.appendChild(loginDiv);
     loginDiv.appendChild(loginButton);
-    loginDiv.appendChild(loginBody);
-
-    loginBody.appendChild(loginP);
-    loginBody.appendChild(registerP);
   }
 
   moviesButton() {
