@@ -1,3 +1,5 @@
+import { RegisterForm } from "./Register_Form";
+
 export class RegisterPage {
   constructor() {
     this.registerPage();

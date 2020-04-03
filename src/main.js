@@ -9,13 +9,14 @@ import "./main.css";
 import { Footer } from "./components/Footer/Footer";
 
 new Header();
-new RegisterForm();
 
 new HomePage();
 new LoginForm();
 new MoviePage();
 
 new RegisterPage();
+new RegisterForm();
+
 new Footer();
 
 new Switch();
