@@ -4,13 +4,13 @@ import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
 
-
 export class Header {
   constructor() {
     this.header();
     this.homeButton();
     this.moviesButton();
     this.loginButton();
+    this.registerButton();
     navigate.init();
   }
 
@@ -21,11 +21,10 @@ export class Header {
     header.classList.add("header");
     header.id = "header";
     body.appendChild(header);
-
   }
 
-      homeButton() {
-        new Search();
+  homeButton() {
+    new Search();
     const homeButton = document.createElement("div");
     homeButton.id = "home";
 
@@ -78,7 +77,7 @@ export class Header {
     buttonDiv.className = "dropdown";
 
     const movies = document.createElement("button");
-    movies.classList.add("nav-link", 'movies', "movies-btn", "btn");
+    movies.classList.add("nav-link", "movies", "movies-btn", "btn");
     movies.setAttribute("data-target", "movie-page"); //id movies si clasa page la crearea paginii movies
     movies.innerText = "Movies";
 
@@ -103,5 +102,20 @@ export class Header {
     buttonBody.appendChild(title);
     buttonBody.appendChild(year);
     buttonBody.appendChild(genre);
+  }
+
+  registerButton() {
+    const header = document.getElementById("header");
+
+    const registerDiv = document.createElement("div");
+    registerDiv.id = "registerBtn";
+
+    const registerButton = document.createElement("button");
+    registerButton.classList.add("nav-link", "register");
+    registerButton.setAttribute("data-target", "register-page");
+    registerButton.innerHTML = "Register";
+
+    header.appendChild(registerDiv);
+    registerDiv.appendChild(registerButton);
   }
 }
