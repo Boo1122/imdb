@@ -9,7 +9,7 @@ export class RegisterForm {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
     containerForm.id = "form-container";
-    containerForm.classList.add('show');
+    containerForm.classList.add("show");
 
     const box2 = document.createElement("div");
     box2.id = "register-box";
@@ -61,7 +61,7 @@ export class RegisterForm {
 
     const registerBtn = document.createElement("button");
     registerBtn.setAttribute("type", "submit");
-    registerBtn.id = "registerBtn";
+    registerBtn.id = "register-btn-form";
     registerBtn.innerText = "Register";
 
     const alreadyHaveAcc = document.createElement("p");

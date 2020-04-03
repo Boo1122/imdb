@@ -22,6 +22,7 @@
   background: lightgray;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #username-input,
@@ -82,4 +83,8 @@
   cursor: pointer;
   background: #ffff00;
   color: rgba(233, 27, 16, 0.8);
+}
+
+#register-btn-form {
+  margin-top: 2.4rem;
 }

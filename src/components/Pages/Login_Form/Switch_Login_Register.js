@@ -7,7 +7,7 @@ export class Switch {
   }
 
   login() {
-    const login = document.getElementById("log-button");
+    const login = document.getElementById("login-page");
     const logPage = document.getElementById("login-page");
     const regPage = document.getElementById("form-container");
     const home = document.getElementById("home-page");
@@ -21,7 +21,7 @@ export class Switch {
   }
 
   register() {
-    const register = document.getElementById("reg-button");
+    const register = document.getElementById("registerBtn");
     const logPage = document.getElementById("login-page");
     const regPage = document.getElementById("form-container");
     const home = document.getElementById("home-page");
@@ -57,7 +57,6 @@ export class Switch {
 
     register.addEventListener("click", event => {
       event.preventDefault();
-      console.log(event.target);
       regPage.style.display = "none";
       logPage.style.display = "flex";
       home.style.display = "none";
