@@ -9,7 +9,7 @@ export class RegisterForm {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
     containerForm.id = "register-page";
-    containerForm.classList.add("show", "page");
+    containerForm.classList.add("page");
 
     const box2 = document.createElement("div");
     box2.id = "register-box";
@@ -17,6 +17,7 @@ export class RegisterForm {
     const h1 = document.createElement("h1");
     h1.innerText = "Register";
     h1.id = "register-h1";
+    
     const completeForm = document.createElement("h4");
     completeForm.id = "register-msg";
     completeForm.innerText = "Please fill in this form to create an account.";

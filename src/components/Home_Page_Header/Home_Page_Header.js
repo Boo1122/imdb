@@ -38,22 +38,7 @@ export class Header {
     header.appendChild(homeButton);
   }
 
-  loginButton() {
-    const header = document.getElementById("header");
-
-    const loginDiv = document.createElement("div");
-    loginDiv.id = "loginBtn";
-    loginDiv.className = "dropdown";
-
-    const loginButton = document.createElement("button");
-    loginButton.classList.add("nav-link", "login");
-    loginButton.setAttribute("data-target", "login-page");
-    loginButton.innerHTML = "Login";
-
-    header.appendChild(loginDiv);
-    loginDiv.appendChild(loginButton);
-  }
-
+  
   moviesButton() {
     const header = document.getElementById("header");
 
@@ -88,6 +73,23 @@ export class Header {
     buttonBody.appendChild(year);
     buttonBody.appendChild(genre);
   }
+
+  loginButton() {
+    const header = document.getElementById("header");
+
+    const loginDiv = document.createElement("div");
+    loginDiv.id = "loginBtn";
+    loginDiv.className = "dropdown";
+
+    const loginButton = document.createElement("button");
+    loginButton.classList.add("nav-link", "login");
+    loginButton.setAttribute("data-target", "login-page");
+    loginButton.innerHTML = "Login";
+
+    header.appendChild(loginDiv);
+    loginDiv.appendChild(loginButton);
+  }
+
 
   registerButton() {
     const header = document.getElementById("header");
