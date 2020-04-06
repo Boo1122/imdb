@@ -91,7 +91,6 @@ export class RegisterPage {
     const register = document.getElementById("existing-acc");
     const logPage = document.getElementById("login-page");
     const regPage = document.getElementById("register-page");
-    const home = document.getElementById("home-page");
 
     register.addEventListener('click', event => {
       event.preventDefault();

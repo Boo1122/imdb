@@ -73,12 +73,12 @@ export class LoginPage {
       const login = document.getElementById("register-paragraph");
       const logPage = document.getElementById("login-page");
       const regPage = document.getElementById("register-page");
-      const home = document.getElementById("home-page");
+      
 
       login.addEventListener('click', event => {
         event.preventDefault();
-        regPage.style.display = 'flex';
         logPage.style.display = 'none';
+        regPage.style.display = 'flex';
       });  
     }
   
