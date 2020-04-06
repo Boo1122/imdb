@@ -1,8 +1,9 @@
 import "./Register_Form.css";
 
-export class RegisterForm {
+export class RegisterPage {
   constructor() {
     this.register();
+    this.haveAccount();
   }
 
   register() {
@@ -85,4 +86,18 @@ export class RegisterForm {
     box2.appendChild(alreadyHaveAcc);
     box2.appendChild(message);
   }
+
+  haveAccount() {
+    const register = document.getElementById("existing-acc");
+    const logPage = document.getElementById("login-page");
+    const regPage = document.getElementById("register-page");
+    const home = document.getElementById("home-page");
+
+    register.addEventListener('click', event => {
+      event.preventDefault();
+      regPage.style.display = 'none';
+      logPage.style.display = 'flex';
+    });  
+  }
+  
 }
