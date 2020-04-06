@@ -23,13 +23,19 @@ export class Caroussel {
     carousselTitleDiv.id = "carousselTitleDivID";
     carousselTitleDiv.classList.add("carousselTitleDivClass");
 
-    const prev = document.createElement("button");
-    prev.id = "prevBtnID";
-    prev.classList.add("carousselButton");
+    const prev = document.createElement("div");
+    const prevTop = document.createElement("div");
+    const prevBot = document.createElement("div");
+    prevTop.classList.add("arrow-top");
+    prevBot.classList.add("arrow-bottom");
+    prev.classList.add("prev");
 
-    const next = document.createElement("button");
-    next.id = "nextBtnID";
-    prev.classList.add("carousselButton");
+    const next = document.createElement("div");
+    const nextTop = document.createElement("div");
+    const nextBot = document.createElement("div");
+    nextTop.classList.add("arrow-top2");
+    nextBot.classList.add("arrow-bottom2");
+    next.classList.add("next");
     /*
     for (let i = 0; i < 7; i++) {
       const innerDiv = document.createElement("div");
@@ -39,37 +45,37 @@ export class Caroussel {
       outsideCaroussel.appendChild(innerDiv);
     } */
 
-    const innerDiv1 = document.createElement("div1");
+    const innerDiv1 = document.createElement("div");
     innerDiv1.id = "innerDivID1";
     innerDiv1.classList.add("innerDivClass");
     innerDiv1.innerText = 1;
 
-    const innerDiv2 = document.createElement("div2");
+    const innerDiv2 = document.createElement("div");
     innerDiv2.id = "innerDivID2";
     innerDiv2.classList.add("innerDivClass");
     innerDiv2.innerText = 2;
 
-    const innerDiv3 = document.createElement("div3");
+    const innerDiv3 = document.createElement("div");
     innerDiv3.id = "innerDivID3";
     innerDiv3.classList.add("innerDivClass");
     innerDiv3.innerText = 3;
 
-    const innerDiv4 = document.createElement("div4");
+    const innerDiv4 = document.createElement("div");
     innerDiv4.id = "innerDivID4";
     innerDiv4.classList.add("innerDivClass");
     innerDiv4.innerText = 4;
 
-    const innerDiv5 = document.createElement("div5");
+    const innerDiv5 = document.createElement("div");
     innerDiv5.id = "innerDivID5";
     innerDiv5.classList.add("innerDivClass");
     innerDiv5.innerText = 5;
 
-    const innerDiv6 = document.createElement("div6");
+    const innerDiv6 = document.createElement("div");
     innerDiv6.id = "innerDivID6";
     innerDiv6.classList.add("innerDivClass");
     innerDiv6.innerText = 6;
 
-    const innerDiv7 = document.createElement("div7");
+    const innerDiv7 = document.createElement("div");
     innerDiv7.id = "innerDivID7";
     innerDiv7.classList.add("innerDivClass");
     innerDiv7.innerText = 7;
@@ -80,6 +86,8 @@ export class Caroussel {
     carousselTitleDiv.appendChild(carousselTitle);
 
     outsideCaroussel.appendChild(prev);
+    prev.appendChild(prevTop);
+    prev.appendChild(prevBot);
 
     outsideCaroussel.appendChild(innerDiv1);
     outsideCaroussel.appendChild(innerDiv2);
@@ -90,5 +98,7 @@ export class Caroussel {
     outsideCaroussel.appendChild(innerDiv7);
 
     outsideCaroussel.appendChild(next);
+    next.appendChild(nextTop);
+    next.appendChild(nextBot);
   }
 }
