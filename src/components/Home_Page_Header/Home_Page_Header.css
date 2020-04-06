@@ -1,20 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 
-/* font-family: "Great Vibes", cursive;
-   font-family: "Pacifico", cursive; */
-
-body {
-  height: 100vh;
-  background: #272727;
-  margin: 0;
-  width: 100%;
-}
-
 .header {
-  height: 10vh;
   display: flex;
   flex-wrap: wrap;
+  height: 104px;
+  z-index: 1;
 }
 
 .btn {
