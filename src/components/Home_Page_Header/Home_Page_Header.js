@@ -63,7 +63,7 @@ export class Header {
 
     const movies = document.createElement("button");
     movies.classList.add("nav-link", "movies", "movies-btn", "btn");
-    movies.setAttribute("data-target", "movie-page"); //id movies si clasa page la crearea paginii movies
+    movies.setAttribute("data-target", "movie-page"); 
     movies.innerText = "Movies";
 
     const buttonBody = document.createElement("div");
