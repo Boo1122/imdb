@@ -2,23 +2,40 @@
 
 /* font-family: "Pacifico", cursive; */
 
-#main-div {
-  height: 100vh;
-  margin: 0;
-  font-family: "Pacifico", cursive;
-  background: black;
-  display: none;
+#single-movie-page {
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+  overflow: auto;
 }
 
-#movie-content {
-  height: 80%;
-  width: 80%;
-  background: lightgray;
+#main-div {
   display: flex;
 }
 
-#single-movie-poster .single-poster-img {
-  height: 749px;
+#movie-content {
+  display: flex;
+}
+
+#single-movie-poster {
+  margin: 2rem;
+}
+
+#poster-wrapper {
+  margin-top: 3rem;
+  margin-left: 2rem;
+}
+
+.single-movie-title {
+  font-size: 2rem;
+}
+
+.movie-facts {
+  font-size: 1.4rem;
+}
+
+.poster-info p {
+  font-size: 1rem;
 }
