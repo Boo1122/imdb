@@ -11,7 +11,7 @@ export class Header {
     this.moviesButton();
     this.loginButton();
     this.registerButton();
-    navigate.init();
+   
   }
 
   header() {
