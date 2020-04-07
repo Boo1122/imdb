@@ -1,10 +1,12 @@
 import "./Home_Page.css";
 
+
 export class HomePage {
   constructor() {
     this.generateUrl();
     this.getMovies();
     this.homeContainerBox();
+    
   }
 
   generateUrl(par) {
@@ -29,10 +31,11 @@ export class HomePage {
   }
 
   homeContent(movie) {
-    const body = document.getElementById("home-page-details");
+    const body = document.getElementById("home-page");
 
     const container = document.createElement("div");
     container.id = "home-page-container";
+
 
     const posters = document.createElement("div");
     posters.className = "posters";
@@ -54,7 +57,8 @@ export class HomePage {
     const body = document.getElementById("body");
 
     const container = document.createElement("div");
-    container.id = "home-page-details";
+    container.id = "home-page";
+    container.classList.add('page','active');
 
     body.appendChild(container);
   }

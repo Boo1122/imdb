@@ -27,9 +27,6 @@ export class Search {
     img.id = "img";
     img.src = "./src/components/Home_Page_Header/search.png";
 
-    img.addEventListener("click", () => {
-      console.log("clicked");
-    });
     document.getElementById("body").appendChild(img);
   }
 
@@ -41,7 +38,6 @@ export class Search {
         document.getElementById("input").style.display = "none";
       } else {
         document.getElementById("input").style.display = "block";
-        document.getElementById("img").style.display = "none";
       }
       showInput = !showInput;
     });

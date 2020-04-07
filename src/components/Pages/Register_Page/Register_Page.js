@@ -1,15 +1,16 @@
 import "./Register_Form.css";
 
-export class RegisterForm {
+export class RegisterPage {
   constructor() {
     this.register();
+    this.haveAccount();
   }
 
   register() {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
-    containerForm.id = "form-container";
-    containerForm.classList.add("show");
+    containerForm.id = "register-page";
+    containerForm.classList.add("page");
 
     const box2 = document.createElement("div");
     box2.id = "register-box";
@@ -17,6 +18,7 @@ export class RegisterForm {
     const h1 = document.createElement("h1");
     h1.innerText = "Register";
     h1.id = "register-h1";
+    
     const completeForm = document.createElement("h4");
     completeForm.id = "register-msg";
     completeForm.innerText = "Please fill in this form to create an account.";
@@ -61,7 +63,7 @@ export class RegisterForm {
 
     const registerBtn = document.createElement("button");
     registerBtn.setAttribute("type", "submit");
-    registerBtn.id = "registerBtn";
+    registerBtn.id = "register-btn-form";
     registerBtn.innerText = "Register";
 
     const alreadyHaveAcc = document.createElement("p");
@@ -84,4 +86,17 @@ export class RegisterForm {
     box2.appendChild(alreadyHaveAcc);
     box2.appendChild(message);
   }
+
+  haveAccount() {
+    const register = document.getElementById("existing-acc");
+    const logPage = document.getElementById("login-page");
+    const regPage = document.getElementById("register-page");
+
+    register.addEventListener('click', event => {
+      event.preventDefault();
+      regPage.style.display = 'none';
+      logPage.style.display = 'flex';
+    });  
+  }
+  
 }

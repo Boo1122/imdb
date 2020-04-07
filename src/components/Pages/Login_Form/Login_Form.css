@@ -2,9 +2,8 @@
 
 /* font-family: "Pacifico", cursive; */
 
-#login-container {
+#login-page {
   height: 100vh;
-  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
