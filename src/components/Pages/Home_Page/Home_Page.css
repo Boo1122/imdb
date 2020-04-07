@@ -1,9 +1,10 @@
 #home-page {
-
   flex-direction: row;
-  margin-top: 150px;
+  padding-top: 50px;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  flex: 1;
+  overflow: auto;
 }
 
 #home-page-container {

@@ -10,7 +10,7 @@ export class Footer {
 
     footerContainer.style.width = "100%";
 
-    footerContainer.style.backgroundImage = "url(./public/bck.jpg)";
+    footerContainer.style.backgroundImage = "url(./public/img/bck.jpg)";
     footerContainer.style.display = "flex";
     footerContainer.style.backgroundColor = "white";
 
