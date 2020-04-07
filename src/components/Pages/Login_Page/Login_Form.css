@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 
-/* font-family: "Pacifico", cursive; */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 
 #login-page {
   height: 100vh;
