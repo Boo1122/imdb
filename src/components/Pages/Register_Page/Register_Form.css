@@ -1,23 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 
-/* font-family: "Pacifico", cursive; */
 
-#form-container {
+#register-page {
   height: 100vh;
-  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   background: #272727;
   color: rgba(233, 27, 16, 0.8);
-  /* color: #ffff00; */
-
+ 
   font-family: "Pacifico", cursive;
 }
 
 #register-box {
-  height: 630px;
+  height: 580px;
   width: 420px;
   background: lightgray;
   display: flex;
