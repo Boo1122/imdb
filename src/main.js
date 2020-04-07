@@ -10,8 +10,8 @@ import { Footer } from "./components/Footer/Footer";
 new Header();
 
 new HomePage();
-new LoginPage();
 new MoviePage();
+new LoginPage();
 new RegisterPage();
 
 
