@@ -101,7 +101,9 @@ export class SinglePage {
 
     const container = document.createElement("div");
     container.id = "single-movie-page";
-    container.classList.add("page", "active");
+    container.classList.add("nav-link");
+    alreadyHaveAcc.setAttribute("data-target", "single-movie-page");
+    container.classList.add("page");
 
     body.appendChild(container);
   }

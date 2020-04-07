@@ -1,10 +1,10 @@
 import "./Login_Form.css";
 
+
 export class LoginPage {
   constructor() {
     this.login();
-    this.dontHaveAccount();
-    
+  
   }
 
   login() {
@@ -52,6 +52,10 @@ export class LoginPage {
     const regPar = document.createElement("p");
     regPar.id = "register-paragraph";
     regPar.innerText = "If you dont have an account Register here";
+    regPar.classList.add('nav-link');
+    regPar.setAttribute('data-target', 'register-page');
+
+
     body.appendChild(containerForm);
     containerForm.appendChild(box1);
 
@@ -69,18 +73,6 @@ export class LoginPage {
 
     }
 
-    dontHaveAccount() {
-      const login = document.getElementById("register-paragraph");
-      const logPage = document.getElementById("login-page");
-      const regPage = document.getElementById("register-page");
-      
-
-      login.addEventListener('click', event => {
-        event.preventDefault();
-        logPage.style.display = 'none';
-        regPage.style.display = 'flex';
-      });  
-    }
   
   }
 

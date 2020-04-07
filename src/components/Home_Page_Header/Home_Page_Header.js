@@ -11,7 +11,7 @@ export class Header {
     this.moviesButton();
     this.loginButton();
     this.registerButton();
-    navigate.init();
+   
   }
 
   header() {
@@ -79,7 +79,7 @@ export class Header {
 
     const loginDiv = document.createElement("div");
     loginDiv.id = "loginBtn";
-    loginDiv.className = "dropdown";
+   
 
     const loginButton = document.createElement("button");
     loginButton.classList.add("nav-link", "login");

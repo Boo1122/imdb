@@ -3,7 +3,6 @@ import "./Register_Form.css";
 export class RegisterPage {
   constructor() {
     this.register();
-    this.haveAccount();
   }
 
   register() {
@@ -69,6 +68,8 @@ export class RegisterPage {
     const alreadyHaveAcc = document.createElement("p");
     alreadyHaveAcc.id = "existing-acc";
     alreadyHaveAcc.innerText = "I already have an Account";
+    alreadyHaveAcc.classList.add('nav-link');
+    alreadyHaveAcc.setAttribute('data-target', 'login-page');
 
     body.appendChild(containerForm);
     containerForm.appendChild(box2);
@@ -87,16 +88,5 @@ export class RegisterPage {
     box2.appendChild(message);
   }
 
-  haveAccount() {
-    const register = document.getElementById("existing-acc");
-    const logPage = document.getElementById("login-page");
-    const regPage = document.getElementById("register-page");
 
-    register.addEventListener('click', event => {
-      event.preventDefault();
-      regPage.style.display = 'none';
-      logPage.style.display = 'flex';
-    });  
-  }
-  
 }
