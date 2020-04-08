@@ -13,11 +13,11 @@ export const navigate = {
   
         }) 
   
-         history.replaceState({}, 'Home', '');
-         window.addEventListener('popstate', navigate.poppin)
+         history.replaceState({}, 'Home', ' ');
+         window.addEventListener('popstate', navigate.poppin);
     },
 
-    nav:  ev => {
+    nav:  ev => { 
         ev.preventDefault();
         let currentPage = ev.target.getAttribute('data-target');
         document.querySelector('.active').classList.remove('active');
@@ -34,7 +34,7 @@ export const navigate = {
     },
     poppin: ev => {
         console.log(location.hash, 'popstate event');
-        let hash = location.hash.replace('#', '')
+        let hash = location.hash.replace('#', '');
         document.querySelector('.active').classList.remove('active');
         document.getElementById(hash).classList.add('active');
         document.getElementById(hash).dispatchEvent(navigate.show);

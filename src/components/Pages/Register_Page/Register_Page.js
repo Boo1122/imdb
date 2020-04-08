@@ -1,6 +1,6 @@
 import "./Register_Form.css";
 
-export class RegisterForm {
+export class RegisterPage {
   constructor() {
     this.register();
   }
@@ -8,8 +8,10 @@ export class RegisterForm {
   register() {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
-    containerForm.id = "form-container";
-    containerForm.classList.add("show");
+    containerForm.id = "register-page";
+    containerForm.classList.add("page");
+    containerForm.style.backgroundImage =
+      "url(./public/img/star_wars_rise.jpg)";
 
     const box2 = document.createElement("div");
     box2.id = "register-box";
@@ -17,6 +19,7 @@ export class RegisterForm {
     const h1 = document.createElement("h1");
     h1.innerText = "Register";
     h1.id = "register-h1";
+
     const completeForm = document.createElement("h4");
     completeForm.id = "register-msg";
     completeForm.innerText = "Please fill in this form to create an account.";
@@ -61,12 +64,14 @@ export class RegisterForm {
 
     const registerBtn = document.createElement("button");
     registerBtn.setAttribute("type", "submit");
-    registerBtn.id = "registerBtn";
+    registerBtn.id = "register-btn-form";
     registerBtn.innerText = "Register";
 
     const alreadyHaveAcc = document.createElement("p");
     alreadyHaveAcc.id = "existing-acc";
     alreadyHaveAcc.innerText = "I already have an Account";
+    alreadyHaveAcc.classList.add("nav-link");
+    alreadyHaveAcc.setAttribute("data-target", "login-page");
 
     body.appendChild(containerForm);
     containerForm.appendChild(box2);
