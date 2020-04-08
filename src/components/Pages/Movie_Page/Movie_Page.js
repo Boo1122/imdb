@@ -83,6 +83,7 @@ export class MoviePage {
     next.className = "next";
     next.innerText = `Next =>`;
 
+    body.appendChild(paginationMovie)
     paginationMovie.appendChild(paginationDiv)
     paginationDiv.appendChild(previous);
     paginationDiv.appendChild(next);
