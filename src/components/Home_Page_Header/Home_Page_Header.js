@@ -11,11 +11,11 @@ export class Header {
     this.moviesButton();
     this.loginButton();
     this.registerButton();
-    navigate.init();
   }
 
   header() {
     const body = document.getElementById("body");
+    body.style.backgroundImage = "url(./public/img/Dark_Knight_back1.jpg)";
 
     const header = document.createElement("div");
     header.classList.add("header");
@@ -38,7 +38,6 @@ export class Header {
     header.appendChild(homeButton);
   }
 
-  
   moviesButton() {
     const header = document.getElementById("header");
 
@@ -48,7 +47,7 @@ export class Header {
 
     const movies = document.createElement("button");
     movies.classList.add("nav-link", "movies", "movies-btn", "btn");
-    movies.setAttribute("data-target", "movie-page"); 
+    movies.setAttribute("data-target", "movie-page");
     movies.innerText = "Movies";
 
     const buttonBody = document.createElement("div");
@@ -79,7 +78,6 @@ export class Header {
 
     const loginDiv = document.createElement("div");
     loginDiv.id = "loginBtn";
-    loginDiv.className = "dropdown";
 
     const loginButton = document.createElement("button");
     loginButton.classList.add("nav-link", "login");
@@ -89,7 +87,6 @@ export class Header {
     header.appendChild(loginDiv);
     loginDiv.appendChild(loginButton);
   }
-
 
   registerButton() {
     const header = document.getElementById("header");

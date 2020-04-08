@@ -13,7 +13,7 @@ export const navigate = {
   
         }) 
   
-         history.replaceState({}, 'Home', '');
+         history.replaceState({}, 'Home', ' ');
          window.addEventListener('popstate', navigate.poppin);
     },
 

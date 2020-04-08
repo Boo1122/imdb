@@ -3,16 +3,14 @@ body {
   flex-direction: column;
 }
 
-#home-page {
+#movie-page {
   flex-direction: row;
   padding-top: 50px;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  flex: 1;
-  overflow: auto;
 }
 
-#home-page-container {
+#movie-page-container {
   display: flex;
 }
 
@@ -35,4 +33,21 @@ body {
   text-align: center;
   color: white;
   margin: 0 0 1rem 0;
+}
+
+#pagination-div {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.previous {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.next {
+  color: white;
+  font-size: 1.4rem;
 }

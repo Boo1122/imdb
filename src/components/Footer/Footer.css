@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+
 #Micro1 {
     color: aliceblue;
     text-align: center;
