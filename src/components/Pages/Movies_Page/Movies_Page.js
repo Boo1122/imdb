@@ -1,10 +1,10 @@
-import "./Home_Page.css";
+import "./Movies_Page.css";
 
-export class HomePage {
+export class MoviesPage {
   constructor() {
     this.generateUrl();
     this.getMovies();
-    this.homeContainerBox();
+    this.moviesPagination();
   }
 
   generateUrl(par) {
@@ -12,7 +12,7 @@ export class HomePage {
   }
 
   getMovies() {
-    const url = this.generateUrl("?take=10");
+    const url = this.generateUrl("?take=10&skip=10");
 
     fetch(url)
       .then((response) => response.json())
@@ -24,15 +24,15 @@ export class HomePage {
 
   renderMovieList() {
     for (const movie of this.movieData.results) {
-      this.homeContent(movie);
+      this.moviesContent(movie);
     }
   }
 
-  homeContent(movie) {
-    const body = document.getElementById("home-page");
+  moviesContent(movie) {
+    const body = document.getElementById("movie-page");
 
     const container = document.createElement("div");
-    container.id = "home-page-container";
+    container.id = "movie-page-container";
 
     const posters = document.createElement("div");
     posters.className = "posters";
@@ -43,7 +43,7 @@ export class HomePage {
     const img = document.createElement("img");
     img.classList.add("detail-posters");
     img.setAttribute("src", movie.Poster);
-    img.classList.add("nav-link", "poster");
+    img.classList.add("nav-link");
     img.setAttribute("data-target", "single-movie-page");
 
     body.appendChild(container);
@@ -52,13 +52,24 @@ export class HomePage {
     posters.appendChild(img);
   }
 
-  homeContainerBox() {
+  moviesPagination() {
     const body = document.getElementById("body");
 
-    const container = document.createElement("div");
-    container.id = "home-page";
-    container.classList.add("page", "active");
+    const paginationDiv = document.createElement("div");
+    paginationDiv.id = "pagination-div";
 
-    body.appendChild(container);
+    const previous = document.createElement("p");
+    previous.id = "previous-movie";
+    previous.className = "previous";
+    previous.innerText = `<= Previous`;
+
+    const next = document.createElement("p");
+    next.id = "next-movie";
+    next.className = "next";
+    next.innerText = `Next =>`;
+
+    body.appendChild(paginationDiv);
+    paginationDiv.appendChild(previous);
+    paginationDiv.appendChild(next);
   }
 }

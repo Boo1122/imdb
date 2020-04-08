@@ -3,7 +3,6 @@
 /* font-family: "Pacifico", cursive; */
 
 #single-movie-page {
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;

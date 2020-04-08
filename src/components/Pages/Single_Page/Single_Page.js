@@ -5,7 +5,7 @@ export class SinglePage {
     this.generateUrl();
     this.getMovies();
     this.homeContainerBox();
-    this.posterClicked();
+    this.clickedPoster();
   }
 
   generateUrl(par) {
@@ -101,10 +101,21 @@ export class SinglePage {
 
     const container = document.createElement("div");
     container.id = "single-movie-page";
-    container.classList.add("nav-link");
-    alreadyHaveAcc.setAttribute("data-target", "single-movie-page");
     container.classList.add("page");
 
     body.appendChild(container);
+  }
+
+  clickedPoster() {
+    const posters = document.getElementsByClassName("detail-posters");
+    console.log(posters);
+
+    for (const poster of posters) {
+      poster.addEventListener("click", () => {
+        console.log("click");
+        poster.classList.add("nav-link", "poster");
+        poster.setAttribute("data-target", "single-movie-page");
+      });
+    }
   }
 }

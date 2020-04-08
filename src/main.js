@@ -6,14 +6,16 @@ import { MoviePage } from "./components/Pages/Movie_Page/Movie_Page";
 import "./main.css";
 import { Footer } from "./components/Footer/Footer";
 import { navigate } from "./components/Navigate_History/Navigate_History";
-import { PosterClicked } from "./components/Pages/Single_Page/Poster_Clicked";
+import { SinglePage } from "./components/Pages/Single_Page/Single_Page";
+import { MoviesPage } from "./components/Pages/Movies_Page/Movies_Page";
 
 new Header();
 new HomePage();
 new MoviePage();
 new LoginPage();
 new RegisterPage();
-new PosterClicked();
+new SinglePage();
+new MoviesPage();
 
 new Footer();
 navigate.init();
