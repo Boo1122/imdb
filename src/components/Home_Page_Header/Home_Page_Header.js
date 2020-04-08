@@ -1,5 +1,5 @@
 import "./Home_Page_Header.css";
-import "../Pages/Movies_Page/Movie_Button.css";
+import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import { navigate } from "../Navigate_History/Navigate_History";
