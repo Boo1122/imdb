@@ -3,6 +3,7 @@ import "./Caroussel.css";
 export class Caroussel {
   constructor() {
     this.carousselSkeleton();
+    this.index = 0;
   }
 
   carousselSkeleton() {
@@ -47,7 +48,7 @@ export class Caroussel {
 
     const innerDiv1 = document.createElement("div");
     innerDiv1.id = "innerDivID1";
-    innerDiv1.classList.add("innerDivClass");
+    innerDiv1.classList.add("innerDivClassStart");
     innerDiv1.innerText = 1;
 
     const innerDiv2 = document.createElement("div");

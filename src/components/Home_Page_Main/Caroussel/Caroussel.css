@@ -1,12 +1,13 @@
 #carousselWrapID {
-  width: 900px;
-  height: 900px;
+  width: 90%;
+  height: 300px;
   border: 2px solid red;
+  box-sizing: border-box;
 }
 
 #outsideCarousselID {
   width: 900px;
-  height: 900px;
+  height: 300px;
   border: 2px solid blue;
 }
 
@@ -16,12 +17,20 @@
   width: 900px;
 }
 
-.innerDivClass {
+.innerDivClass,
+.innerDivClassStart {
   background: orange;
-  width: 200px;
-  height: 300px;
-  display: inline-block;
-  margin: 0px 10px;
+  opacity: 1; /* aici trebuie opacitate 0, a.i. sa apara doar un div, pozitie ABSOLUTA*/
+  top: 0;
+  width: 100%;
+  margin: auto;
+  z-index: 100;
+  transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+}
+
+.innerDivClassStart {
+  opacity: 1; /*aici trebuie pozitie relativa, doar pentru primul DIV */
+  z-index: 900;
 }
 
 #carousselWrapID,
