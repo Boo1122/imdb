@@ -18,3 +18,4 @@ new MoviePage();
 
 new Footer();
 navigate.init();
+

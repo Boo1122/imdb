@@ -6,7 +6,7 @@ export class MoviePage {
     this.generateUrl();
     this.getMovies();
     this.moviesPagination();
-
+    
   }
 
   moviePage() {
@@ -16,30 +16,31 @@ export class MoviePage {
     container.classList.add("page");
 
     body.appendChild(container);
-
+   
   }
-
+  
   generateUrl(par) {
     return `https://movies-api-siit.herokuapp.com/movies${par}`;
   }
-
+  
   getMovies() {
     const url = this.generateUrl("?take=10&skip=10");
-
+    
     fetch(url)
-      .then((response) => response.json())
-      .then((movieData) => {
-        this.movieData = movieData;
-        this.renderMovieList();
-      });
+    .then((response) => response.json())
+    .then((movieData) => {
+      this.movieData = movieData;
+      this.renderMovieList();
+    });
   }
-
+  
   renderMovieList() {
     for (const movie of this.movieData.results) {
       this.moviesContent(movie);
     }
+   
   }
-
+  
   moviesContent(movie) {
     const body = document.getElementById("movie-page");
 
@@ -57,6 +58,7 @@ export class MoviePage {
     img.setAttribute("src", movie.Poster);
     img.classList.add("nav-link");
     img.setAttribute("data-target", "single-movie-page");
+   
 
     body.appendChild(container);
     container.appendChild(posters);
@@ -73,19 +75,20 @@ export class MoviePage {
     const paginationDiv = document.createElement("div");
     paginationDiv.className = "pagination-div";
 
-    const previous = document.createElement("div");
+    const previous = document.createElement("button");
     previous.id = "previous-movie";
     previous.className = "previous";
-    previous.innerText = `<= Previous`;
+    previous.innerText = `Previous`;
 
-    const next = document.createElement("div");
+    const next = document.createElement("button");
     next.id = "next-movie";
     next.className = "next";
-    next.innerText = `Next =>`;
+    next.innerText = `Next`;
 
-    body.appendChild(paginationMovie)
-    paginationMovie.appendChild(paginationDiv)
+    body.appendChild(paginationMovie);
+    paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(previous);
     paginationDiv.appendChild(next);
+ 
   }
 }
