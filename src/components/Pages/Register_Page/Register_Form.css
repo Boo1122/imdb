@@ -58,7 +58,7 @@ body {
 #username,
 #email-label,
 #password-label {
-  /* margin: 1rem 1rem 1rem 5rem; */
+  margin: 1rem 1rem 1rem 5rem;
 }
 
 #username-input,

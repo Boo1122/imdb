@@ -9,6 +9,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  background-repeat: repeat;
 }
 
 div.page {
