@@ -1,0 +1,69 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.previous {
+  display: flex;
+  margin-top: auto;
+  color: red;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.next {
+  display: flex;
+  margin-top: auto;
+  color: red;
+  font-size: 1.4rem;
+  display: flex;
+}
+
+#movie-page {
+  flex-direction: column;
+  padding-top: 50px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex: 1;
+  overflow: auto;
+}
+
+#movie-list-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex: 1;
+  overflow: auto;
+}
+
+.movie-page-container {
+  display: flex;
+}
+
+.posters img {
+  height: 430px;
+  width: 300px;
+}
+
+.posters {
+  height: 520px;
+  width: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.posters p {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
