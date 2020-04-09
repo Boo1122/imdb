@@ -20,7 +20,7 @@
 .innerDivClass,
 .visibile {
   background: orange;
-  opacity: 0;
+  opacity: 1;
   top: 0;
   width: 90%;
   height: auto;

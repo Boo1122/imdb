@@ -8,9 +8,6 @@ export class Caroussel {
     this.rightButton();
     this.nextSlide();
     this.prevSlide();
-    this.slides = document.querySelectorAll(
-      "#outsideCarousselID, .innerDivClass"
-    );
   }
 
   carousselSkeleton() {
@@ -127,16 +124,22 @@ export class Caroussel {
   }
 
   nextSlide() {
-    this.current = (this.current + 1) % this.slides.length;
-    this.slides[this.current].className = "visible";
+    let slides = document.querySelectorAll(
+      "#outsideCarousselID, .innerDivClass"
+    );
+    this.current = (this.current + 1) % slides.length;
+    slides[this.current].className = "visible";
   }
 
   prevSlide() {
-    this.current = (this.current - 1) % this.slides.length;
+    let slides = document.querySelectorAll(
+      "#outsideCarousselID, .innerDivClass"
+    );
+    this.current = (this.current - 1) % slides.length;
 
     if (this.current == -1) {
-      this.current === this.slides.length - 1;
+      this.current === slides.length - 1;
     }
-    this.slides[this.current].className = "visible";
+    slides[this.current].className = "visible";
   }
 }
