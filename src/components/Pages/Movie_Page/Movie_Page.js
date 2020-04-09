@@ -82,11 +82,13 @@ export class MoviePage {
 
     const previous = document.createElement("button");
     previous.id = "previous-movie";
+    previous.classList.add("nav-link");
     previous.className = "previous";
     previous.innerText = `Previous`;
 
     const next = document.createElement("button");
     next.id = "next-movie";
+    next.classList.add("nav-link");
     next.className = "next";
     next.innerText = `Next`;
 
