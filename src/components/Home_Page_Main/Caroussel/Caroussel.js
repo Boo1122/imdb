@@ -57,37 +57,37 @@ export class Caroussel {
 
     const innerDiv1 = document.createElement("div");
     innerDiv1.id = "innerDivID1";
-
+    innerDiv1.classList.add("innerDivClass");
     innerDiv1.innerText = 1;
 
     const innerDiv2 = document.createElement("div");
     innerDiv2.id = "innerDivID2";
-
+    innerDiv2.classList.add("innerDivClass");
     innerDiv2.innerText = 2;
 
     const innerDiv3 = document.createElement("div");
     innerDiv3.id = "innerDivID3";
-
+    innerDiv3.classList.add("innerDivClass");
     innerDiv3.innerText = 3;
 
     const innerDiv4 = document.createElement("div");
     innerDiv4.id = "innerDivID4";
-
+    innerDiv4.classList.add("innerDivClass");
     innerDiv4.innerText = 4;
 
     const innerDiv5 = document.createElement("div");
     innerDiv5.id = "innerDivID5";
-
+    innerDiv5.classList.add("innerDivClass");
     innerDiv5.innerText = 5;
 
     const innerDiv6 = document.createElement("div");
     innerDiv6.id = "innerDivID6";
-
+    innerDiv6.classList.add("innerDivClass");
     innerDiv6.innerText = 6;
 
     const innerDiv7 = document.createElement("div");
     innerDiv7.id = "innerDivID7";
-
+    innerDiv7.classList.add("innerDivClass");
     innerDiv7.innerText = 7;
 
     carousselWrap.appendChild(prev);
@@ -127,13 +127,11 @@ export class Caroussel {
   }
 
   nextSlide() {
-    this.slides[this.current].className = "innerDivClass";
     this.current = (this.current + 1) % this.slides.length;
     this.slides[this.current].className = "visible";
   }
 
   prevSlide() {
-    this.slides[this.current].className = "innerDivClass";
     this.current = (this.current - 1) % this.slides.length;
 
     if (this.current == -1) {
