@@ -12,10 +12,9 @@ new Header();
 new HomePage();
 new LoginPage();
 new RegisterPage();
-new SinglePage();
+const singlePage = new SinglePage();
 new MoviePage();
 
-
 new Footer();
-navigate.init();
 
+navigate.init(singlePage);
