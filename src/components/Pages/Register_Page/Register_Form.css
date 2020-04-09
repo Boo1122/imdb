@@ -13,9 +13,9 @@ body {
   flex-direction: column;
 }
 
-body.homePage {
+/* body.registerPage {
   background-image: url('./public/img/bck.jpg');
-}
+} */
 
 
 #register-page {
