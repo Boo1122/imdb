@@ -21,12 +21,8 @@ export const navigate = {
     let currentPage = ev.currentTarget.getAttribute("data-target");
     document.querySelector(".active").classList.remove("active");
     document.getElementById(currentPage).classList.add("active");
+    history.pushState({}, currentPage, `#${currentPage}`);
 
-    if (currentPage === "single-movie-page") {
-      history.pushState({}, currentPage, `#${currentPage}`);
-    } else {
-      history.pushState({}, currentPage, `#${currentPage}`);
-    }
     document.getElementById(currentPage).dispatchEvent(
       new CustomEvent("show", {
         detail: {
