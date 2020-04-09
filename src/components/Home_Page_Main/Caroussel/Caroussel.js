@@ -3,11 +3,11 @@ import "./Caroussel.css";
 export class Caroussel {
   constructor() {
     this.carousselSkeleton();
-    this.current = 1;
-    this.leftButton();
-    this.rightButton();
+    this.current = 0;
     this.nextSlide();
-    this.prevSlide();
+    //this.prevSlide();
+    this.rightButton();
+    //this.leftButton();
   }
 
   carousselSkeleton() {
@@ -54,38 +54,45 @@ export class Caroussel {
 
     const innerDiv1 = document.createElement("div");
     innerDiv1.id = "innerDivID1";
-    innerDiv1.classList.add("innerDivClass");
-    innerDiv1.innerText = 1;
+    //innerDiv1.classList.add("innerDivClass");
+    innerDiv1.classList.add("visible");
+    innerDiv1.innerText = "1";
 
     const innerDiv2 = document.createElement("div");
     innerDiv2.id = "innerDivID2";
     innerDiv2.classList.add("innerDivClass");
-    innerDiv2.innerText = 2;
+    //innerDiv2.classList.add("visible");
+    innerDiv2.innerText = "2";
 
     const innerDiv3 = document.createElement("div");
     innerDiv3.id = "innerDivID3";
     innerDiv3.classList.add("innerDivClass");
-    innerDiv3.innerText = 3;
+    //innerDiv3.classList.add("visible");
+    innerDiv3.innerText = "3";
 
     const innerDiv4 = document.createElement("div");
     innerDiv4.id = "innerDivID4";
     innerDiv4.classList.add("innerDivClass");
-    innerDiv4.innerText = 4;
+    //innerDiv4.classList.add("visible");
+    innerDiv4.innerText = "4";
 
     const innerDiv5 = document.createElement("div");
     innerDiv5.id = "innerDivID5";
     innerDiv5.classList.add("innerDivClass");
-    innerDiv5.innerText = 5;
+    //innerDiv5.classList.add("visible");
+    innerDiv5.innerText = "5";
 
     const innerDiv6 = document.createElement("div");
     innerDiv6.id = "innerDivID6";
     innerDiv6.classList.add("innerDivClass");
-    innerDiv6.innerText = 6;
+    //innerDiv6.classList.add("visible");
+    innerDiv6.innerText = "6";
 
     const innerDiv7 = document.createElement("div");
     innerDiv7.id = "innerDivID7";
     innerDiv7.classList.add("innerDivClass");
-    innerDiv7.innerText = 7;
+    //innerDiv7.classList.add("visible");
+    innerDiv7.innerText = "7";
 
     carousselWrap.appendChild(prev);
     prev.appendChild(prevTop);
@@ -109,13 +116,6 @@ export class Caroussel {
     next.appendChild(nextBot);
   }
 
-  leftButton() {
-    let prev = document.getElementById("prev");
-    prev.addEventListener("click", () => {
-      this.prevSlide();
-    });
-  }
-
   rightButton() {
     let next = document.getElementById("next");
     next.addEventListener("click", () => {
@@ -124,22 +124,58 @@ export class Caroussel {
   }
 
   nextSlide() {
-    let slides = document.querySelectorAll(
-      "#outsideCarousselID, .innerDivClass"
+    const slides = document.querySelectorAll(
+      "#outsideCaroussel, .innerDivClass"
     );
-    this.current = (this.current + 1) % slides.length;
+    for (let i = 0; i <= slides.length; i++) {
+      if ((slides.className = "visible")) {
+        slides[i].classList.remove("visible");
+        slides[i].classList.add("innerDivClass");
+      }
+      if ((slides.className = "innerDivClass")) {
+        slides[i].classList.add("visible");
+        slides[i].classList.remove("innerDivClass");
+      }
+      this.current++;
+      console.log(slides);
+      console.log(this.current);
+    }
+  }
+  /*
+  prevSlide() {
+    const slides = document.getElementsByClassName("innerDivClass");
     slides[this.current].className = "visible";
+    this.current = (this.current - 1) % slides.length;
+
+    if (this.current == -1) {
+      this.current === slides.length - 1;
+    }
+    slides[this.current].className = "innerDivClass";
+  } */
+
+  leftButton() {
+    let prev = document.getElementById("prev");
+    prev.addEventListener("click", () => {
+      this.prevSlide();
+    });
+  }
+}
+
+/*  nextSlide() {
+    this.current++;
+    console.log(this.current);
+    const slides = document.getElementsByClassName("comments");
+    console.log(slides);
+    if (this.current <= slides.length) {
+      for (const slide of slides) {
+        slide.classList.remove("visible");
+        slide.classList.add("innerDivClass");
+      }
+    }
   }
 
   prevSlide() {
     let slides = document.querySelectorAll(
       "#outsideCarousselID, .innerDivClass"
     );
-    this.current = (this.current - 1) % slides.length;
-
-    if (this.current == -1) {
-      this.current === slides.length - 1;
-    }
-    slides[this.current].className = "visible";
-  }
-}
+  } */
