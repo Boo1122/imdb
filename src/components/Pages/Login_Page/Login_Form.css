@@ -29,7 +29,7 @@ body {
 #login-box {
   height: 400px;
   width: 380px;
-  background: lightgray;
+  background: black;
   display: flex;
   flex-direction: column;
 }
@@ -49,12 +49,23 @@ body {
   align-self: center;
 }
 
-#loginBtn {
+#loginButton {
   cursor: pointer;
+  border-radius: 15px;
+  padding-left:15px;
+  padding-right:15px;
+  background-color: rgb(207, 83, 34);
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid black;
+  margin-top: 25px;
+  
 }
 
 #login-submit-btn {
   align-self: center;
+  
 }
 
 #register-paragraph {

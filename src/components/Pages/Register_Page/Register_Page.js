@@ -52,7 +52,7 @@ export class RegisterPage {
     const passwordInput = document.createElement("input");
     passwordInput.id = "password-input";
     passwordInput.setAttribute("type", "password");
-    passwordInput.setAttribute("placeholder", "Enter Email");
+    passwordInput.setAttribute("placeholder", "Enter Password");
     passwordInput.setAttribute("name", "email");
 
     const message = document.createElement("p");
