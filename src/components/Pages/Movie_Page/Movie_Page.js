@@ -5,6 +5,7 @@ export class MoviePage {
     this.moviePage();
     this.generateUrl();
     this.getMovies();
+    this.moviesPagination();
    
  
   }
@@ -30,7 +31,7 @@ export class MoviePage {
     fetch(url)
     .then((response) => response.json())
     .then((movieData) => {
-      this.movieData = movieData;ko
+      this.movieData = movieData;
       this.renderMovieList();
     });
   }
@@ -39,7 +40,7 @@ export class MoviePage {
     for (const movie of this.movieData.results) {
       this.moviesContent(movie);
     }
-    this.moviesPagination();
+
   }
   
   moviesContent(movie) {
@@ -88,7 +89,7 @@ export class MoviePage {
     next.className = "next";
     next.innerText = `Next`;
     
-    body.appendChild(paginationMovie;
+    body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(previous);
     paginationDiv.appendChild(next);
