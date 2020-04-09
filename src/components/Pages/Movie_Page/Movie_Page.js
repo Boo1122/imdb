@@ -17,9 +17,10 @@ export class MoviePage {
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
-    container.appendChild(movieListContainer);
 
     body.appendChild(container);
+    container.appendChild(movieListContainer);
+
   }
 
   generateUrl(par) {
@@ -80,12 +81,12 @@ export class MoviePage {
     const previous = document.createElement("button");
     previous.id = "previous-movie";
     previous.className = "previous";
-    previous.innerText = `Previous`;
+    previous.innerText = `< Previous`;
 
     const next = document.createElement("button");
     next.id = "next-movie";
     next.className = "next";
-    next.innerText = `Next`;
+    next.innerText = `Next >`;
 
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
