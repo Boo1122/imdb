@@ -10,8 +10,6 @@ export class RegisterPage {
     const containerForm = document.createElement("div");
     containerForm.id = "register-page";
     containerForm.classList.add("page");
-    containerForm.style.backgroundImage =
-      "url(./public/img/star_wars_rise.jpg)";
 
     const box2 = document.createElement("div");
     box2.id = "register-box";

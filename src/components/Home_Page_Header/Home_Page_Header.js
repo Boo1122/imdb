@@ -15,7 +15,7 @@ export class Header {
 
   header() {
     const body = document.getElementById("body");
-    body.style.backgroundImage = "url(./public/img/Dark_Knight_back1.jpg)";
+    //body.style.backgroundImage = "url(./public/img/Dark_Knight_back1.jpg)";
 
     const header = document.createElement("div");
     header.classList.add("header");

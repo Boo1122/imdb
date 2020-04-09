@@ -10,8 +10,6 @@ export class LoginPage {
     const containerForm = document.createElement("div");
     containerForm.id = "login-page";
     containerForm.classList.add("page");
-    containerForm.style.backgroundImage =
-      "url(./public/img/star_wars_sword.jpg)";
 
     const box1 = document.createElement("div");
     box1.id = "login-box";
