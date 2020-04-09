@@ -13,6 +13,10 @@ body {
   flex-direction: column;
 }
 
+body.homePage {
+  background-image: url('./public/img/bck.jpg');
+}
+
 
 #register-page {
   height: 100vh;

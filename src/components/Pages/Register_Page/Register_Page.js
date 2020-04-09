@@ -7,6 +7,7 @@ export class RegisterPage {
 
   register() {
     const body = document.getElementById("body");
+    
     const containerForm = document.createElement("div");
     containerForm.id = "register-page";
     containerForm.classList.add("page");
