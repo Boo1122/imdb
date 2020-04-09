@@ -5,13 +5,11 @@ body {
 
 .pagination-div {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .previous {
   display: flex;
-  margin-top: auto;
   color: red;
   font-size: 1.4rem;
   display: flex;
@@ -20,7 +18,6 @@ body {
 
 .next {
   display: flex;
-  margin-top: auto;
   color: red;
   font-size: 1.4rem;
   display: flex;
@@ -39,9 +36,9 @@ body {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   flex: 1;
   overflow: auto;
+  justify-content: space-evenly;
 }
 
 .movie-page-container {
@@ -66,4 +63,10 @@ body {
   font-size: 20px;
   text-align: center;
   color: white;
+}
+
+.pagination-div p {
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
 }
