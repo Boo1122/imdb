@@ -6,31 +6,33 @@
 }
 
 #outsideCarousselID {
-  width: 900px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   border: 2px solid blue;
 }
 
 #carousselTitleDivID {
   border: 2px solid white;
   height: 100px;
-  width: 900px;
+  width: 100%;
 }
 
-.innerDivClass,
-.innerDivClassStart {
+.innerDivClass {
   background: orange;
-  opacity: 1; /* aici trebuie opacitate 0, a.i. sa apara doar un div, pozitie ABSOLUTA*/
+  opacity: 0;
   top: 0;
-  width: 100%;
-  margin: auto;
+  width: 90%;
+  height: auto;
+  margin: 0;
   z-index: 100;
   transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+  position: relative;
+  z-index: 1;
 }
 
-.innerDivClassStart {
-  opacity: 1; /*aici trebuie pozitie relativa, doar pentru primul DIV */
-  z-index: 900;
+.visible {
+  opacity: 1;
+  z-index: 2;
 }
 
 #carousselWrapID,

@@ -3,7 +3,11 @@ import "./Caroussel.css";
 export class Caroussel {
   constructor() {
     this.carousselSkeleton();
-    this.index = 0;
+    this.current = 0;
+    this.leftButton();
+    this.rightButton();
+    this.slides = [];
+    this.nextSlide();
   }
 
   carousselSkeleton() {
@@ -30,6 +34,7 @@ export class Caroussel {
     prevTop.classList.add("arrow-top");
     prevBot.classList.add("arrow-bottom");
     prev.classList.add("prev");
+    prev.id = "prev";
 
     const next = document.createElement("div");
     const nextTop = document.createElement("div");
@@ -37,6 +42,7 @@ export class Caroussel {
     nextTop.classList.add("arrow-top2");
     nextBot.classList.add("arrow-bottom2");
     next.classList.add("next");
+    next.id = "next";
     /*
     for (let i = 0; i < 7; i++) {
       const innerDiv = document.createElement("div");
@@ -48,7 +54,7 @@ export class Caroussel {
 
     const innerDiv1 = document.createElement("div");
     innerDiv1.id = "innerDivID1";
-    innerDiv1.classList.add("innerDivClassStart");
+    innerDiv1.classList.add("innerDivClass");
     innerDiv1.innerText = 1;
 
     const innerDiv2 = document.createElement("div");
@@ -81,14 +87,14 @@ export class Caroussel {
     innerDiv7.classList.add("innerDivClass");
     innerDiv7.innerText = 7;
 
+    carousselWrap.appendChild(prev);
+    prev.appendChild(prevTop);
+    prev.appendChild(prevBot);
+
     body.appendChild(carousselWrap);
     carousselWrap.appendChild(outsideCaroussel);
     outsideCaroussel.appendChild(carousselTitleDiv);
     carousselTitleDiv.appendChild(carousselTitle);
-
-    outsideCaroussel.appendChild(prev);
-    prev.appendChild(prevTop);
-    prev.appendChild(prevBot);
 
     outsideCaroussel.appendChild(innerDiv1);
     outsideCaroussel.appendChild(innerDiv2);
@@ -98,8 +104,44 @@ export class Caroussel {
     outsideCaroussel.appendChild(innerDiv6);
     outsideCaroussel.appendChild(innerDiv7);
 
-    outsideCaroussel.appendChild(next);
+    carousselWrap.appendChild(next);
     next.appendChild(nextTop);
     next.appendChild(nextBot);
+  }
+
+  leftButton() {
+    let prev = document.getElementById("prev");
+    prev.addEventListener("click", () => {
+      this.prevSlide();
+    });
+  }
+
+  rightButton() {
+    let next = document.getElementById("next");
+    next.addEventListener("click", () => {
+      this.nextSlide();
+    });
+  }
+
+  nextSlide() {
+    let slides = document.querySelectorAll(
+      "#outsideCarousselID, .innerDivClass"
+    );
+    slides[this.current].className = "innerDivClass";
+    this.current = (this.current + 1) % slides.length;
+    slides[this.current].className = "visible";
+  }
+
+  prevSlide() {
+    let slides = document.querySelectorAll(
+      "#outsideCarousselID, .innerDivClass"
+    );
+    slides[this.current].className = "innerDivClass";
+    this.current = (this.current - 1) % slides.length;
+
+    if (this.current === -1) {
+      this.current = slides.length - 1;
+    }
+    slides[this.current].className = "visible";
   }
 }
