@@ -5,8 +5,8 @@ export class MoviePage {
     this.moviePage();
     this.generateUrl();
     this.getMovies();
-    this.moviesPagination();
-    
+   
+ 
   }
 
   moviePage() {
@@ -25,11 +25,12 @@ export class MoviePage {
   
   getMovies() {
     const url = this.generateUrl("?take=10&skip=10");
+   
     
     fetch(url)
     .then((response) => response.json())
     .then((movieData) => {
-      this.movieData = movieData;
+      this.movieData = movieData;ko
       this.renderMovieList();
     });
   }
@@ -38,32 +39,34 @@ export class MoviePage {
     for (const movie of this.movieData.results) {
       this.moviesContent(movie);
     }
-   
+    this.moviesPagination();
   }
   
   moviesContent(movie) {
     const body = document.getElementById("movie-page");
-
+    
     const container = document.createElement("div");
     container.id = "movie-page-container";
-
+    
     const posters = document.createElement("div");
     posters.className = "posters";
-
+    
     const p = document.createElement("p");
     p.innerHTML = movie.Title;
-
+    
+    
+    
     const img = document.createElement("img");
     img.classList.add("detail-posters");
     img.setAttribute("src", movie.Poster);
     img.classList.add("nav-link");
     img.setAttribute("data-target", "single-movie-page");
-   
-
+    
     body.appendChild(container);
     container.appendChild(posters);
     posters.appendChild(p);
     posters.appendChild(img);
+  
   }
 
 
@@ -84,11 +87,11 @@ export class MoviePage {
     next.id = "next-movie";
     next.className = "next";
     next.innerText = `Next`;
-
-    body.appendChild(paginationMovie);
+    
+    body.appendChild(paginationMovie;
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(previous);
     paginationDiv.appendChild(next);
- 
   }
+  
 }

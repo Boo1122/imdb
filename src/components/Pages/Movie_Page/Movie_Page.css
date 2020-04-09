@@ -3,24 +3,32 @@ body {
     flex-direction: column;
   }
 
-  .pagination-div {
+  .pagination-div { 
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    
    
-  }
+  } 
 
-.previous {
-    margin-top:auto;
+ .previous {
+    display: flex;
+    margin-top: auto;
     color: red;
     font-size: 1.4rem;
+    display: flex;
+   align-items: center;
+    
     
   }
 
 .next {
+    display: flex;
     margin-top: auto;
     color: red;
     font-size: 1.4rem;
+    display: flex;
+    
 
   }
 

@@ -5,7 +5,7 @@ export class SinglePage {
     this.generateUrl();
     this.getMovies();
     this.homeContainerBox();
-    this.clickedPoster();
+   
   }
 
   generateUrl(par) {
@@ -94,6 +94,7 @@ export class SinglePage {
     posterInfo.appendChild(language);
     posterInfo.appendChild(country);
     posterInfo.appendChild(runtime);
+
   }
 
   homeContainerBox() {
@@ -104,6 +105,7 @@ export class SinglePage {
     container.classList.add("page");
 
     body.appendChild(container);
+    this.clickedPoster();
   }
 
   clickedPoster() {
@@ -111,7 +113,7 @@ export class SinglePage {
     console.log(posters);
 
     for (const poster of posters) {
-      poster.addEventListener("click", () => {
+    poster.addEventListener("click", () => {
         console.log("click");
         poster.classList.add("nav-link", "poster");
         poster.setAttribute("data-target", "single-movie-page");
