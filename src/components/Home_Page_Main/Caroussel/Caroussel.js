@@ -3,11 +3,14 @@ import "./Caroussel.css";
 export class Caroussel {
   constructor() {
     this.carousselSkeleton();
-    this.current = 0;
+    this.current = 1;
     this.leftButton();
     this.rightButton();
-    this.slides = [];
     this.nextSlide();
+    this.prevSlide();
+    this.slides = document.querySelectorAll(
+      "#outsideCarousselID, .innerDivClass"
+    );
   }
 
   carousselSkeleton() {
@@ -124,24 +127,18 @@ export class Caroussel {
   }
 
   nextSlide() {
-    let slides = document.querySelectorAll(
-      "#outsideCarousselID, .innerDivClass"
-    );
-    slides[this.current].className = "innerDivClass";
-    this.current = (this.current + 1) % slides.length;
-    slides[this.current].className = "visible";
+    this.slides[this.current].className = "innerDivClass";
+    this.current = (this.current + 1) % this.slides.length;
+    this.slides[this.current].className = "visible";
   }
 
   prevSlide() {
-    let slides = document.querySelectorAll(
-      "#outsideCarousselID, .innerDivClass"
-    );
-    slides[this.current].className = "innerDivClass";
-    this.current = (this.current - 1) % slides.length;
+    this.slides[this.current].className = "innerDivClass";
+    this.current = (this.current - 1) % this.slides.length;
 
-    if (this.current === -1) {
-      this.current = slides.length - 1;
+    if (this.current == -1) {
+      this.current === this.slides.length - 1;
     }
-    slides[this.current].className = "visible";
+    this.slides[this.current].className = "visible";
   }
 }
