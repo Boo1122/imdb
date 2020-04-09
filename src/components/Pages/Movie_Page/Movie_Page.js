@@ -93,7 +93,7 @@ export class MoviePage {
     const page1 = document.createElement("p");
     page1.innerText = "1";
     page1.classList.add("nav-link", "page1");
-    page1.setAttribute("data-target", "movie-page2");
+    page1.setAttribute("data-target", ""); //"movie-page1" intre ghilimele
 
     const page2 = document.createElement("p");
     page2.innerText = "2";
