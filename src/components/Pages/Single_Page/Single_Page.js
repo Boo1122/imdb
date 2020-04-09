@@ -6,13 +6,19 @@ export class SinglePage {
   }
 
   mainContent(movie) {
+    console.log(movie)
     const main = document.getElementById("single-movie-page");
+    main.style.backgroundImage = 
+    "url(./public/img/star_wars_rise.jpg)";
+    
     main.innerHTML = null;
     const contentDiv = document.createElement("div");
     contentDiv.id = "main-div";
+    
 
     const movieContent = document.createElement("div");
     movieContent.id = "movie-content";
+   
 
     const poster = document.createElement("div");
     const img = document.createElement("img");

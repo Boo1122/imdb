@@ -33,6 +33,7 @@ export class HomePage {
 
     const container = document.createElement("div");
     container.id = "home-page-container";
+  
 
     const posters = document.createElement("div");
     posters.className = "posters";
@@ -58,6 +59,8 @@ export class HomePage {
     const container = document.createElement("div");
     container.id = "home-page";
     container.classList.add("page", "active");
+    container.style.backgroundImage = 
+    "url(./public/img/joker_2019.jpg)";
 
     body.appendChild(container);
   }
