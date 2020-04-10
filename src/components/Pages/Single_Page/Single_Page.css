@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   flex: 1;
   overflow: auto;
+  font-family: "Pacifico", cursive;
 }
 
 #main-div {
@@ -23,18 +24,27 @@
 }
 
 #poster-wrapper {
-  margin-top: 3rem;
-  margin-left: 2rem;
+  margin-left: 6rem;
 }
 
 .single-movie-title {
-  font-size: 2rem;
+  font-size: 3rem;
+  margin: 0;
 }
 
 .movie-facts {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 .poster-info p {
-  font-size: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.poster-info {
+  margin-top: 4rem;
+}
+
+.single-poster-img {
+  height: 35.938rem;
 }
