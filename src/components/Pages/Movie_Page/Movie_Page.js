@@ -14,15 +14,13 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
-    container.style.backgroundImage = 
-    "url(./public/img/star_wars_sword.jpg)";
+    container.style.backgroundImage = "url(./public/img/star_wars_sword.jpg)";
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
 
     body.appendChild(container);
     container.appendChild(movieListContainer);
-
   }
 
   generateUrl(par) {
@@ -99,7 +97,7 @@ export class MoviePage {
     const page1 = document.createElement("p");
     page1.innerText = "1";
     page1.classList.add("nav-link", "pageNumber");
-    page1.setAttribute("data-target", `${this.movies.next}`); //"movie-page1" intre ghilimele
+    page1.setAttribute("data-target", ``); //"movie-page1" intre ghilimele
 
     const page2 = document.createElement("p");
     page2.innerText = "2";
