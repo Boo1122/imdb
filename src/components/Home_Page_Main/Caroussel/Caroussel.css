@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
 #carousselWrapID {
   width: 90%;
   height: 300px;
@@ -22,10 +24,13 @@
   display: flex;
 }
 
-#carousselTitleDivID {
-  border: 2px solid white;
+.carousselTitleDivClass {
   height: 100px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pacifico", cursive;
 }
 
 .innerDivClass {

@@ -59,6 +59,9 @@ export class Caroussel {
     const icon1 = document.createElement("div");
     icon1.classList.add("userIcon");
     icon1.id = "icon1";
+    const img1 = document.createElement("img");
+    img1.setAttribute("src", "../icons/avatar1.png");
+    icon1.appendChild(img1);
 
     const p1 = document.createElement("p");
     p1.classList.add("review");
