@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer/Footer";
 import { navigate } from "./components/Navigate_History/Navigate_History";
 import { SinglePage } from "./components/Pages/Single_Page/Single_Page";
 import { MoviePage } from "./components/Pages/Movie_Page/Movie_Page";
+import { Caroussel } from "./components/Home_Page_Main/Caroussel/Caroussel";
 
 new Header();
 new HomePage();
@@ -18,3 +19,6 @@ new MoviePage();
 new Footer();
 
 navigate.init(singlePage);
+new RegisterForm();
+new LoginForm();
+new Caroussel();
