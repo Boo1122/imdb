@@ -34,7 +34,6 @@ export class MoviePage {
       .then((response) => response.json())
       .then((movieData) => {
         this.movieData = movieData;
-        console.log(this.movieData);
         this.renderMovieList();
       });
   }
@@ -168,7 +167,7 @@ export class MoviePage {
             .json()
             .then((moviesData) => {
               movies = movies.concat(moviesData);
-              console.log(moviesData.pagination.links.next);
+              //console.log(moviesData.pagination.links.next);
               if (moviesData.pagination.links.next) {
                 progress && progress(movies);
                 this.paginationFetch(
