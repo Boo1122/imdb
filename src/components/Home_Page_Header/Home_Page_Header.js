@@ -1,8 +1,7 @@
 import "./Home_Page_Header.css";
-import "../Pages/Movies_Page/Movie_Button.css";
+import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
-import { navigate } from "../Navigate_History/Navigate_History";
 
 export class Header {
   constructor() {
@@ -15,7 +14,8 @@ export class Header {
 
   header() {
     const body = document.getElementById("body");
-    body.style.backgroundImage = "url(./public/img/Dark_Knight_back1.jpg)";
+    //body.style.backgroundImage = "url(./public/img/Dark_Knight_back1.jpg)";
+    //document.body.style.backgroundRepeat = "repeat-y";
 
     const header = document.createElement("div");
     header.classList.add("header");
