@@ -9,6 +9,29 @@ body {
 .pagination-div {
   display: flex;
   justify-content: center;
+
+}
+
+
+#pages-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+ #pages-container > p {
+  color: black;
+  cursor: pointer; 
+  border: 1px solid black;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  background-color: cyan;  
+  width: 25px; 
+  height: 25px; 
+  align-items: center;
+  padding-left: 15px;
+  font-weight: bold;
 }
 
 .previous {
@@ -22,6 +45,8 @@ body {
   padding-right: 15px;
   border: 1px solid black;
   font-family: "Pacifico", cursive;
+
+  
  
 }
 
@@ -80,8 +105,5 @@ body {
   color: white;
 }
 
-.pagination-div p {
-  color: white;
-  margin-left: 20px;
-  margin-right: 20px;
-}
+
+
