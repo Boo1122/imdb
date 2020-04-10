@@ -45,6 +45,7 @@ body {
     -10px -10px 30px rgba(233, 27, 16, 0.8);
   outline: none;
 }
+
 #home {
   order: 0;
 }
@@ -82,12 +83,14 @@ body {
   order: 3;
   margin-top: 20px;
   margin-right: 50px;
+ 
 }
 
 #loginBtn {
   margin-top: 20px;
   margin-right: 20px;
   order: 3;
+ 
 }
 
 #movBtn {

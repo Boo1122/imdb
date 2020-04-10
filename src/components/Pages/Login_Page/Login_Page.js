@@ -46,7 +46,7 @@ export class LoginPage {
     loginBtnContainer.id = "login-submit-btn";
     const loginBtn = document.createElement("button");
     loginBtn.setAttribute("type", "submit");
-    loginBtn.id = "loginBtn";
+    loginBtn.id = "loginButton";
     loginBtn.innerText = "Login";
 
     const regPar = document.createElement("p");

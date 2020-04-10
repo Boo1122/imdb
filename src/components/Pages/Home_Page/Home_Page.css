@@ -2,6 +2,7 @@
 body {
   display: flex;
   flex-direction: column;
+  
 }
 
 #home-page {
@@ -11,7 +12,9 @@ body {
   flex-wrap: wrap;
   flex: 1;
   overflow: auto;
+
 }
+
 
 #home-page-container {
   display: flex;

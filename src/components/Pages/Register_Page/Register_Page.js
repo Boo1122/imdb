@@ -7,6 +7,7 @@ export class RegisterPage {
 
   register() {
     const body = document.getElementById("body");
+    
     const containerForm = document.createElement("div");
     containerForm.id = "register-page";
     containerForm.classList.add("page");
@@ -54,7 +55,7 @@ export class RegisterPage {
     const passwordInput = document.createElement("input");
     passwordInput.id = "password-input";
     passwordInput.setAttribute("type", "password");
-    passwordInput.setAttribute("placeholder", "Enter Email");
+    passwordInput.setAttribute("placeholder", "Enter Password");
     passwordInput.setAttribute("name", "email");
 
     const message = document.createElement("p");

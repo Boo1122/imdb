@@ -13,6 +13,10 @@ body {
   flex-direction: column;
 }
 
+/* body.registerPage {
+  background-image: url('./public/img/bck.jpg');
+} */
+
 
 #register-page {
   height: 100vh;
@@ -28,7 +32,7 @@ body {
 #register-box {
   height: 580px;
   width: 420px;
-  background: lightgray;
+  background: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +58,7 @@ body {
 #username,
 #email-label,
 #password-label {
-  margin: 1rem 1rem 1rem 3.5rem;
+  margin: 1rem 1rem 1rem 5rem;
 }
 
 #username-input,
@@ -98,4 +102,13 @@ body {
 
 #register-btn-form {
   margin-top: 2.4rem;
+  border-radius: 15px;
+  padding-left:15px;
+  padding-right:15px;
+  background-color: rgb(207, 83, 34);
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid black;
+  cursor: pointer;
 }
