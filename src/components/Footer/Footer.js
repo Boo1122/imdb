@@ -13,6 +13,7 @@ export class Footer {
     footerContainer.style.backgroundImage = "url(./public/img/bck.jpg)";
     footerContainer.style.display = "flex";
     footerContainer.style.backgroundColor = "white";
+    
 
     const MicroContainer1 = document.createElement("div");
     const MicroContainer2 = document.createElement("div");

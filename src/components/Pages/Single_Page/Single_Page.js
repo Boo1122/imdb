@@ -2,40 +2,23 @@ import "./Single_Page.css";
 
 export class SinglePage {
   constructor() {
-    this.generateUrl();
-    this.getMovies();
     this.homeContainerBox();
-    this.clickedPoster();
-  }
-
-  generateUrl(par) {
-    return `https://movies-api-siit.herokuapp.com/movies${par}`;
-  }
-
-  getMovies() {
-    const url = this.generateUrl("?take=1");
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((movieData) => {
-        this.movieData = movieData;
-        this.renderMovieList();
-      });
-  }
-
-  renderMovieList() {
-    for (const movie of this.movieData.results) {
-      this.mainContent(movie);
-    }
   }
 
   mainContent(movie) {
+    console.log(movie)
     const main = document.getElementById("single-movie-page");
+    main.style.backgroundImage = 
+    "url(./public/img/star_wars_rise.jpg)";
+    
+    main.innerHTML = null;
     const contentDiv = document.createElement("div");
     contentDiv.id = "main-div";
+    
 
     const movieContent = document.createElement("div");
     movieContent.id = "movie-content";
+   
 
     const poster = document.createElement("div");
     const img = document.createElement("img");
@@ -106,16 +89,14 @@ export class SinglePage {
     body.appendChild(container);
   }
 
-  clickedPoster() {
-    const posters = document.getElementsByClassName("detail-posters");
-    console.log(posters);
-
-    for (const poster of posters) {
-      poster.addEventListener("click", () => {
-        console.log("click");
-        poster.classList.add("nav-link", "poster");
-        poster.setAttribute("data-target", "single-movie-page");
-      });
+  renderMovie(movieId) {
+    if (movieId) {
+      console.log(movieId);
+      fetch(`https://movies-api-siit.herokuapp.com/movies/${movieId}`)
+        .then((response) => response.json())
+        .then((json) => {
+          this.mainContent(json);
+        });
     }
   }
 }

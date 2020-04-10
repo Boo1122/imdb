@@ -11,7 +11,7 @@ export class LoginPage {
     containerForm.id = "login-page";
     containerForm.classList.add("page");
     containerForm.style.backgroundImage =
-      "url(./public/img/star_wars_sword.jpg)";
+      "url(./public/img/the_dark_knight_dark.jpg)";
 
     const box1 = document.createElement("div");
     box1.id = "login-box";
@@ -46,7 +46,7 @@ export class LoginPage {
     loginBtnContainer.id = "login-submit-btn";
     const loginBtn = document.createElement("button");
     loginBtn.setAttribute("type", "submit");
-    loginBtn.id = "loginBtn";
+    loginBtn.id = "loginButton";
     loginBtn.innerText = "Login";
 
     const regPar = document.createElement("p");
