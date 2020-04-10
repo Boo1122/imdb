@@ -15,10 +15,7 @@ new LoginPage();
 new RegisterPage();
 const singlePage = new SinglePage();
 new MoviePage();
-
+new Caroussel();
 new Footer();
 
 navigate.init(singlePage);
-new RegisterForm();
-new LoginForm();
-new Caroussel();
