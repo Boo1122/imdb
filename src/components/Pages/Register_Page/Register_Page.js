@@ -37,17 +37,6 @@ export class RegisterPage {
     usernameInput.setAttribute("placeholder", "Enter Username");
     usernameInput.setAttribute("name", "name");
 
-    const emailLabel = document.createElement("label");
-    emailLabel.setAttribute("for", "email");
-    emailLabel.id = "email-label";
-    emailLabel.innerText = "Email:";
-
-    const emailInput = document.createElement("input");
-    emailInput.id = "email-input";
-    emailInput.setAttribute("type", "text");
-    emailInput.setAttribute("placeholder", "Enter Email");
-    emailInput.setAttribute("name", "email");
-
     const passwordLabel = document.createElement("label");
     passwordLabel.setAttribute("for", "password");
     passwordLabel.id = "password-label";
@@ -82,8 +71,7 @@ export class RegisterPage {
     box2.appendChild(completeForm);
     box2.appendChild(usernameLabel);
     box2.appendChild(usernameInput);
-    box2.appendChild(emailLabel);
-    box2.appendChild(emailInput);
+
     box2.appendChild(passwordLabel);
     box2.appendChild(passwordInput);
 
