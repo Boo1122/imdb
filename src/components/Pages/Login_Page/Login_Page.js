@@ -3,6 +3,7 @@ import "./Login_Form.css";
 export class LoginPage {
   constructor() {
     this.login();
+    this.loginClicked();
   }
 
   login() {
@@ -69,5 +70,13 @@ export class LoginPage {
     loginBtnContainer.appendChild(loginBtn);
 
     box1.appendChild(regPar);
+  }
+
+  loginClicked() {
+    const logButton = document.getElementById("loginButton");
+
+    logButton.addEventListener("click", (event) => {
+      console.log(event.target);
+    });
   }
 }
