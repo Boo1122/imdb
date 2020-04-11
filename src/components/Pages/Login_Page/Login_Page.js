@@ -97,8 +97,11 @@ export class LoginPage {
         .then(response => response.json())
         .then(json => {
           console.log(json);
-    
+         
+        
           document.cookie = `token=${json.accessToken}`;
+          
+         
         });
     });
     

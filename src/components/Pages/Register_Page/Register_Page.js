@@ -107,7 +107,16 @@ export class RegisterPage {
           console.log(json);
 
           document.cookie = `token=${json.accessToken}`;
+          const token = document.cookie
+          .split(";")
+          .find(element => {
+            if (element.includes("token")) return true;
+          })
+          .split("=")[1];
+          
+        console.log(token)
         });
     });
+  
   }
 }
