@@ -93,20 +93,25 @@ export class RegisterPage {
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *client
         body: JSON.stringify({
           username: `${userName.value}`,
-          password: `${userPass.value}`,
-        }),
+          password: `${userPass.value}`
+        })
       })
-        .then((response) => response.json())
-        .then((json) => {
+        .then(response => response.json())
+        .then(json => {
           console.log(json);
-
           document.cookie = `token=${json.accessToken}`;
+          const token = document.cookie
+            .split(";")
+            .find(element => {
+              if (element.includes("token")) return true;
+            })
+            .split("=")[1];
         });
     });
   }
