@@ -95,6 +95,9 @@ export class RegisterPage {
   registration() {
     const regButton = document.getElementById("register-btn-form");
 
+    const userName = document.getElementById("username-input");
+    const userPass = document.getElementById("password-input");
+
     regButton.addEventListener("click", () => {
       fetch("https://movies-api-siit.herokuapp.com/auth/register", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -107,9 +110,8 @@ export class RegisterPage {
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *client
         body: JSON.stringify({
-          username: " ",
-          email: " ",
-          password: " ",
+          username: `${userName.value}`,
+          password: `${userPass.value}`,
         }),
       })
         .then((response) => response.json())
