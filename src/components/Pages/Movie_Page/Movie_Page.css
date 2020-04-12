@@ -114,7 +114,20 @@ body {
 }
 
 .posters p {
-  font-size: 20px;
-  text-align: center;
-  color: white;
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25%;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.posters p:hover {
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
 }
