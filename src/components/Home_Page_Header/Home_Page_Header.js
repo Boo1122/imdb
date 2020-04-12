@@ -40,7 +40,7 @@ export class Header {
 
   moviesButton() {
     const header = document.getElementById("header");
-
+    header.style.backgroundImage = "url(./public/img/55376.jpg)";
     const buttonDiv = document.createElement("div");
     buttonDiv.id = "movBtn";
     buttonDiv.className = "dropdown";

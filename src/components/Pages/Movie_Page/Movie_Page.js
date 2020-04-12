@@ -3,6 +3,7 @@ import { navigate } from "../../Navigate_History/Navigate_History";
 
 export class MoviePage {
   constructor() {
+    this.number = 10;
     this.moviePage();
     this.generateUrl();
     this.getMovies();
@@ -27,13 +28,19 @@ export class MoviePage {
     return `https://movies-api-siit.herokuapp.com/movies${par}`;
   }
 
-  getMovies() {
-    const url = this.generateUrl("?take=10&skip=10");
+  updateUrl() {
+    this.number = this.number + 70;
+  }
+
+  getMovies(number) {
+    this.updateUrl();
+    const url = this.generateUrl(`?take=10&skip=${this.number}`);
 
     fetch(url)
       .then((response) => response.json())
       .then((movieData) => {
         this.movieData = movieData;
+        console.log(this.movieData);
         this.renderMovieList();
       });
   }
@@ -45,7 +52,7 @@ export class MoviePage {
   }
 
   moviesContent(movie) {
-    this.paginationFetch();
+    // this.paginationFetch();
 
     const body = document.getElementById("movie-list-container");
 
@@ -142,8 +149,8 @@ export class MoviePage {
 
     const page10 = document.createElement("p");
     page10.innerText = "10";
-    page10.classList.add("nav-link", "pageNumber");
-    page10.setAttribute("data-target", "next-movie");
+    page10.classList.add("pageNumber");
+    page10.setAttribute("onClick", "this.reRender");
 
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
@@ -161,52 +168,41 @@ export class MoviePage {
     pagesContainer.appendChild(page9);
     pagesContainer.appendChild(page10);
 
-    // paginationDiv.appendChild(page1);
-    // paginationDiv.appendChild(page2);
-    // paginationDiv.appendChild(page3);
-    // paginationDiv.appendChild(page4);
-    // paginationDiv.appendChild(page5);
-    // paginationDiv.appendChild(page6);
-    // paginationDiv.appendChild(page7);
-    // paginationDiv.appendChild(page8);
-    // paginationDiv.appendChild(page9);
-    // paginationDiv.appendChild(page10);
-
     pagesContainer.appendChild(next);
   }
-
-  paginationFetch(
-    progress,
-    url = "https://movies-api-siit.herokuapp.com/movies",
-    movies = []
-  ) {
-    return new Promise((resolve, reject) =>
-      fetch(url)
-        .then((response) => {
-          if (response.status !== 200) {
-            throw `${response.status}: ${response.statusText}`;
-          }
-          response
-            .json()
-            .then((moviesData) => {
-              movies = movies.concat(moviesData);
-              //console.log(moviesData.pagination.links.next);
-              if (moviesData.pagination.links.next) {
-                progress && progress(movies);
-                this.paginationFetch(
-                  progress,
-                  moviesData.pagination.links.next,
-                  movies
-                )
-                  .then(resolve)
-                  .catch(reject);
-              } else {
-                resolve(movies);
-              }
-            })
-            .catch(reject);
-        })
-        .catch(reject)
-    );
-  }
 }
+//   paginationFetch(
+//     progress,
+//     url = "https://movies-api-siit.herokuapp.com/movies",
+//     movies = []
+//   ) {
+//     return new Promise((resolve, reject) =>
+//       fetch(url)
+//         .then((response) => {
+//           if (response.status !== 200) {
+//             throw `${response.status}: ${response.statusText}`;
+//           }
+//           response
+//             .json()
+//             .then((moviesData) => {
+//               movies = movies.concat(moviesData);
+//               console.log(moviesData.pagination.links.next);
+//               if (moviesData.pagination.links.next) {
+//                 progress && progress(movies);
+//                 this.paginationFetch(
+//                   progress,
+//                   moviesData.pagination.links.next,
+//                   movies
+//                 )
+//                   .then(resolve)
+//                   .catch(reject);
+//               } else {
+//                 resolve(movies);
+//               }
+//             })
+//             .catch(reject);
+//         })
+//         .catch(reject)
+//     );
+//   }
+// }
