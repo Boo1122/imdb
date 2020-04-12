@@ -97,6 +97,11 @@ body {
 .posters img {
   height: 430px;
   width: 300px;
+  border-radius: 10%;
+}
+.posters img:hover {
+  border: 1.5px solid rgba(255, 0, 0, 0.486);
+  cursor: pointer;
 }
 
 .posters {
