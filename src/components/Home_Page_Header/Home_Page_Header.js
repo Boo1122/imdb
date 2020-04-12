@@ -21,6 +21,8 @@ export class Header {
     header.classList.add("header");
     header.id = "header";
     body.appendChild(header);
+    header.style.backgroundImage = "url(./public/img/55376.jpg)";
+    header.style.borderBottom = "5px solid salmon";
   }
 
   homeButton() {
