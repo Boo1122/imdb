@@ -5,7 +5,6 @@ export class HomePage {
     this.generateUrl();
     this.getMovies();
     this.homeContainerBox();
-    //this.scrollbar();
   }
 
   generateUrl(par) {
@@ -63,10 +62,4 @@ export class HomePage {
 
     body.appendChild(container);
   }
-
-  /*scrollbar() {
-    const body = document.getElementById("body");
-
-    const scrollBar = document.createElement("");
-  }*/
 }
