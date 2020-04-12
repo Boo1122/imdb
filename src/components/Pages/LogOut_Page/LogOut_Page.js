@@ -9,8 +9,10 @@ export class LogOutPage {
   logout() {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
-    containerForm.id = "logOut-page";
+    containerForm.id = "logout-page";
     containerForm.classList.add("page");
+
+    body.appendChild(containerForm);
   }
 
   logOutClicked() {
