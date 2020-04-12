@@ -5,6 +5,7 @@ export class HomePage {
     this.generateUrl();
     this.getMovies();
     this.homeContainerBox();
+    //this.scrollbar();
   }
 
   generateUrl(par) {
@@ -15,8 +16,8 @@ export class HomePage {
     const url = this.generateUrl("?take=10");
 
     fetch(url)
-      .then((response) => response.json())
-      .then((movieData) => {
+      .then(response => response.json())
+      .then(movieData => {
         this.movieData = movieData;
         this.renderMovieList();
       });
@@ -33,7 +34,6 @@ export class HomePage {
 
     const container = document.createElement("div");
     container.id = "home-page-container";
-  
 
     const posters = document.createElement("div");
     posters.className = "posters";
@@ -59,9 +59,14 @@ export class HomePage {
     const container = document.createElement("div");
     container.id = "home-page";
     container.classList.add("page", "active");
-    container.style.backgroundImage = 
-    "url(./public/img/joker_2019.jpg)";
+    container.style.backgroundImage = "url(./public/img/joker_2019.jpg)";
 
     body.appendChild(container);
   }
+
+  /*scrollbar() {
+    const body = document.getElementById("body");
+
+    const scrollBar = document.createElement("");
+  }*/
 }
