@@ -12,10 +12,6 @@ body {
   flex-direction: column;
 }
 
-/* body.registerPage {
-  background-image: url('./public/img/bck.jpg');
-} */
-
 #register-page {
   height: 100vh;
   justify-content: center;
@@ -28,7 +24,7 @@ body {
 }
 
 #register-box {
-  height: 580px;
+  height: 522px;
   width: 420px;
   background: black;
   display: flex;

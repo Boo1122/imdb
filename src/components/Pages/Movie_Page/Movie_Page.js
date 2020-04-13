@@ -18,6 +18,7 @@ export class MoviePage {
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
+    
 
     body.appendChild(container);
     container.appendChild(movieListContainer);
@@ -28,7 +29,7 @@ export class MoviePage {
   }
 
   getMovies() {
-    const url = this.generateUrl("?take=10&skip=10");
+    const url = this.generateUrl("?take=10");
 
     fetch(url)
       .then((response) => response.json())
@@ -160,40 +161,5 @@ export class MoviePage {
     pagesContainer.appendChild(page10);
 
     pagesContainer.appendChild(next);
-  }
-
-  paginationFetch(
-    progress,
-    url = "https://movies-api-siit.herokuapp.com/movies",
-    movies = []
-  ) {
-    return new Promise((resolve, reject) =>
-      fetch(url)
-        .then((response) => {
-          if (response.status !== 200) {
-            throw `${response.status}: ${response.statusText}`;
-          }
-          response
-            .json()
-            .then((moviesData) => {
-              movies = movies.concat(moviesData);
-              //console.log(moviesData.pagination.links.next);
-              if (moviesData.pagination.links.next) {
-                progress && progress(movies);
-                this.paginationFetch(
-                  progress,
-                  moviesData.pagination.links.next,
-                  movies
-                )
-                  .then(resolve)
-                  .catch(reject);
-              } else {
-                resolve(movies);
-              }
-            })
-            .catch(reject);
-        })
-        .catch(reject)
-    );
   }
 }
