@@ -18,36 +18,38 @@ export class MoviePage {
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
-    
 
     body.appendChild(container);
     container.appendChild(movieListContainer);
   }
 
-  generateUrl(par) {
-    return `https://movies-api-siit.herokuapp.com/movies${par}`;
+  generateUrl(skip) {
+    return `https://movies-api-siit.herokuapp.com/movies?take=10${
+      skip ? "&skip=" + skip : ""
+    }`;
   }
 
-  getMovies() {
-    const url = this.generateUrl("?take=10");
+  getMovies(skip) {
+    const url = this.generateUrl(skip);
 
     fetch(url)
       .then((response) => response.json())
       .then((movieData) => {
         this.movieData = movieData;
+        console.log(movieData);
         this.renderMovieList();
       });
   }
 
   renderMovieList() {
+    const body = document.getElementById("movie-list-container");
+    body.innerHTML = null;
     for (const movie of this.movieData.results) {
-      this.moviesContent(movie);
+      this.moviesContent(movie, body);
     }
   }
 
-  moviesContent(movie) {
-    const body = document.getElementById("movie-list-container");
-
+  moviesContent(movie, body) {
     const container = document.createElement("div");
     container.setAttribute("data-target", "single-movie-page");
     container.addEventListener("click", navigate.nav);
@@ -91,23 +93,23 @@ export class MoviePage {
     next.classList.add("nav-link");
     next.className = "next";
     next.innerText = `Next >`;
+    next.addEventListener("click", () => {
+      this.getMovies(this.movieData.pagination.currentPage * 10);
+    });
 
     const pagesContainer = document.createElement("div");
     pagesContainer.id = "pages-container";
     const page1 = document.createElement("p");
     page1.innerText = "1";
-    page1.classList.add("nav-link", "pageNumber");
-    page1.setAttribute("data-target", "next-movie"); //"movie-page1" intre ghilimele
 
     const page2 = document.createElement("p");
     page2.innerText = "2";
-    page2.classList.add("nav-link", "pageNumber");
-    page2.setAttribute("data-target", "next-movie");
 
     const page3 = document.createElement("p");
     page3.innerText = "3";
-    page3.classList.add("nav-link", "pageNumber");
-    page3.setAttribute("data-target", "next-movie");
+    page3.addEventListener("click", () => {
+      this.getMovies(20);
+    });
 
     const page4 = document.createElement("p");
     page4.innerText = "4";
