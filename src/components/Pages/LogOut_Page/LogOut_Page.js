@@ -1,4 +1,5 @@
 import "./LogOut_Page.css";
+//import { HomePage } from "../Home_Page/Home_Page";
 
 export class LogOutPage {
   constructor() {
@@ -13,6 +14,7 @@ export class LogOutPage {
     containerForm.classList.add("page", "active");
 
     body.appendChild(containerForm);
+    // new HomePage();
   }
 
   logOutClicked() {
