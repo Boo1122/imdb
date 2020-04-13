@@ -15,8 +15,8 @@ export class HomePage {
     const url = this.generateUrl("?take=10");
 
     fetch(url)
-      .then((response) => response.json())
-      .then((movieData) => {
+      .then(response => response.json())
+      .then(movieData => {
         this.movieData = movieData;
         this.renderMovieList();
       });

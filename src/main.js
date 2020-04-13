@@ -8,6 +8,7 @@ import { navigate } from "./components/Navigate_History/Navigate_History";
 import { SinglePage } from "./components/Pages/Single_Page/Single_Page";
 import { MoviePage } from "./components/Pages/Movie_Page/Movie_Page";
 import { Caroussel } from "./components/Home_Page_Main/Caroussel/Caroussel";
+import { LogOutPage } from "./components/Pages/LogOut_Page/LogOut_Page";
 
 new Header();
 new HomePage();
@@ -16,6 +17,8 @@ new RegisterPage();
 const singlePage = new SinglePage();
 new MoviePage();
 new Caroussel();
+new LogOutPage();
+
 new Footer();
 
 navigate.init(singlePage);

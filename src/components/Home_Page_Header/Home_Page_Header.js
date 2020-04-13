@@ -2,6 +2,7 @@ import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
+import "../Pages/LogOut_Page/LogOut_Page.css";
 
 export class Header {
   constructor() {
@@ -9,6 +10,7 @@ export class Header {
     this.homeButton();
     this.moviesButton();
     this.loginButton();
+    this.logOutButton();
     this.registerButton();
   }
 
@@ -88,6 +90,21 @@ export class Header {
 
     header.appendChild(loginDiv);
     loginDiv.appendChild(loginButton);
+  }
+
+  logOutButton() {
+    const header = document.getElementById("header");
+
+    const logOutDiv = document.createElement("div");
+    logOutDiv.id = "logOutBtn";
+
+    const logOutButton = document.createElement("button");
+    logOutButton.classList.add("nav-link", "logout");
+    logOutButton.setAttribute("data-target", "logout-page");
+    logOutButton.innerHTML = "LogOut";
+
+    header.appendChild(logOutDiv);
+    logOutDiv.appendChild(logOutButton);
   }
 
   registerButton() {

@@ -45,8 +45,6 @@ export class MoviePage {
   }
 
   moviesContent(movie) {
-    // this.paginationFetch();
-
     const body = document.getElementById("movie-list-container");
 
     const container = document.createElement("div");
@@ -160,17 +158,6 @@ export class MoviePage {
     pagesContainer.appendChild(page8);
     pagesContainer.appendChild(page9);
     pagesContainer.appendChild(page10);
-
-    // paginationDiv.appendChild(page1);
-    // paginationDiv.appendChild(page2);
-    // paginationDiv.appendChild(page3);
-    // paginationDiv.appendChild(page4);
-    // paginationDiv.appendChild(page5);
-    // paginationDiv.appendChild(page6);
-    // paginationDiv.appendChild(page7);
-    // paginationDiv.appendChild(page8);
-    // paginationDiv.appendChild(page9);
-    // paginationDiv.appendChild(page10);
 
     pagesContainer.appendChild(next);
   }

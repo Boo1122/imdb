@@ -3,11 +3,12 @@ import "./Register_Form.css";
 export class RegisterPage {
   constructor() {
     this.register();
+    this.registration();
   }
 
   register() {
     const body = document.getElementById("body");
-    
+
     const containerForm = document.createElement("div");
     containerForm.id = "register-page";
     containerForm.classList.add("page");
@@ -35,17 +36,6 @@ export class RegisterPage {
     usernameInput.setAttribute("type", "text");
     usernameInput.setAttribute("placeholder", "Enter Username");
     usernameInput.setAttribute("name", "name");
-
-    const emailLabel = document.createElement("label");
-    emailLabel.setAttribute("for", "email");
-    emailLabel.id = "email-label";
-    emailLabel.innerText = "Email:";
-
-    const emailInput = document.createElement("input");
-    emailInput.id = "email-input";
-    emailInput.setAttribute("type", "text");
-    emailInput.setAttribute("placeholder", "Enter Email");
-    emailInput.setAttribute("name", "email");
 
     const passwordLabel = document.createElement("label");
     passwordLabel.setAttribute("for", "password");
@@ -81,13 +71,48 @@ export class RegisterPage {
     box2.appendChild(completeForm);
     box2.appendChild(usernameLabel);
     box2.appendChild(usernameInput);
-    box2.appendChild(emailLabel);
-    box2.appendChild(emailInput);
+
     box2.appendChild(passwordLabel);
     box2.appendChild(passwordInput);
 
     box2.appendChild(registerBtn);
     box2.appendChild(alreadyHaveAcc);
     box2.appendChild(message);
+  }
+
+  registration() {
+    const regButton = document.getElementById("register-btn-form");
+
+    const userName = document.getElementById("username-input");
+    const userPass = document.getElementById("password-input");
+
+    regButton.addEventListener("click", () => {
+      fetch("https://movies-api-siit.herokuapp.com/auth/register", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json"
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+          username: `${userName.value}`,
+          password: `${userPass.value}`
+        })
+      })
+        .then(response => response.json())
+        .then(json => {
+          console.log(json);
+          document.cookie = `token=${json.accessToken}`;
+          const token = document.cookie
+            .split(";")
+            .find(element => {
+              if (element.includes("token")) return true;
+            })
+            .split("=")[1];
+        });
+    });
   }
 }

@@ -9,72 +9,68 @@ body {
 .pagination-div {
   display: flex;
   justify-content: center;
-
 }
-
 
 #pages-container {
   display: flex;
   justify-content: center;
-
 }
 
- #pages-container > p {
-  color: black;
-  cursor: pointer; 
-  border: 1px solid cyan;
+#pages-container > p {
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  border-radius: 25%;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-left: 5px;
   margin-right: 5px;
-  display: flex;
-  background-color: cyan;  
-  width: 25px; 
-  height: 25px; 
-  align-items: center;
-  padding-left: 15px;
-  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid #68095b;
+  font-family: "Pacifico", cursive;
 }
 
 #pages-container > p:hover {
-  background-color: #ffff00;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
 }
-
 
 .previous {
   display: flex;
   color: red;
-  font-size: 1.4rem;
-  display: flex;
-  border-radius: 20px;
+  font-size: 1.2rem;
+  border-radius: 25%;
   outline: none;
-  padding-left: 15px;
-  padding-right: 15px;
-  border: 1px solid rgb(165, 162, 162);
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: 1px solid #68095b;
   font-family: "Pacifico", cursive;
 }
 
-  .previous:hover {
-    background-color: black;
-  
- 
+.previous:hover {
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
 }
 
 .next {
   display: flex;
   color: red;
-  font-size: 1.4rem;
-  border-radius: 20px;
+  font-size: 1.2rem;
+  border-radius: 25%;
   outline: none;
-  padding-left: 15px;
-  padding-right: 15px;
-  border: 1px solid #ffff00;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: 1px solid #68095b;
   font-family: "Pacifico", cursive;
 }
 
-  .next:hover {
+.next:hover {
   background-color: black;
-  }
-  
-
+  border: 1px solid rgba(255, 255, 0, 0.788);
+}
 
 #movie-page {
   flex-direction: column;
@@ -101,6 +97,11 @@ body {
 .posters img {
   height: 430px;
   width: 300px;
+  border-radius: 10%;
+}
+.posters img:hover {
+  border: 1.5px solid rgba(255, 0, 0, 0.486);
+  cursor: pointer;
 }
 
 .posters {
@@ -113,10 +114,20 @@ body {
 }
 
 .posters p {
-  font-size: 20px;
-  text-align: center;
-  color: white;
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25%;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
 }
 
-
-
+.posters p:hover {
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
+}
