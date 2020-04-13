@@ -6,7 +6,6 @@ export class MoviePage {
     this.moviePage();
     this.generateUrl();
     this.getMovies();
-    // this.moviesPagination();
   }
 
   moviePage() {
@@ -45,8 +44,6 @@ export class MoviePage {
   }
 
   moviesContent(movie) {
-    // this.paginationFetch();
-
     const body = document.getElementById("movie-list-container");
 
     const container = document.createElement("div");
@@ -161,52 +158,6 @@ export class MoviePage {
     pagesContainer.appendChild(page9);
     pagesContainer.appendChild(page10);
 
-    // paginationDiv.appendChild(page1);
-    // paginationDiv.appendChild(page2);
-    // paginationDiv.appendChild(page3);
-    // paginationDiv.appendChild(page4);
-    // paginationDiv.appendChild(page5);
-    // paginationDiv.appendChild(page6);
-    // paginationDiv.appendChild(page7);
-    // paginationDiv.appendChild(page8);
-    // paginationDiv.appendChild(page9);
-    // paginationDiv.appendChild(page10);
-
     pagesContainer.appendChild(next);
   }
 }
-//   paginationFetch(
-//     progress,
-//     url = "https://movies-api-siit.herokuapp.com/movies",
-//     movies = []
-//   ) {
-//     return new Promise((resolve, reject) =>
-//       fetch(url)
-//         .then((response) => {
-//           if (response.status !== 200) {
-//             throw `${response.status}: ${response.statusText}`;
-//           }
-//           response
-//             .json()
-//             .then((moviesData) => {
-//               movies = movies.concat(moviesData);
-//               //console.log(moviesData.pagination.links.next);
-//               if (moviesData.pagination.links.next) {
-//                 progress && progress(movies);
-//                 this.paginationFetch(
-//                   progress,
-//                   moviesData.pagination.links.next,
-//                   movies
-//                 )
-//                   .then(resolve)
-//                   .catch(reject);
-//               } else {
-//                 resolve(movies);
-//               }
-//             })
-//             .catch(reject);
-//         })
-//         .catch(reject)
-//     );
-//   }
-// }

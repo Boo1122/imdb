@@ -1,0 +1,33 @@
+.logout {
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  margin-left: 5px;
+
+  background: #272727;
+
+  color: #ffff00;
+  font-size: 1.8rem;
+  border: none;
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  outline: none;
+  order: 4;
+}
+
+.logout:hover {
+  font-family: "Pacifico", cursive;
+  color: rgba(233, 27, 16, 0.8);
+  border-radius: 20px;
+  border: none;
+
+  background: #ffff00;
+  box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
+    -10px -10px 30px rgba(233, 27, 16, 0.8);
+  outline: none;
+}
+
+#logOutBtn {
+  margin-top: 20px;
+  margin-right: 20px;
+  order: 3;
+}
