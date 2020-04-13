@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+#carousselWrapID {
+  width: 90%;
+  height: 300px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#outsideCarousselID {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#carousselTitleDivID {
+  font-family: "Pacifico", cursive;
+  padding: 15px;
+}
+
+.reviewContainerClass {
+  height: 100%;
+  display: flex;
+}
+
+.userIcon {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  padding: 20px;
+}
+
+.username {
+  font-size: 30px;
+  color: yellow;
+  margin-top: 15px;
+  font-weight: bold;
+  text-shadow: 2px 2px red;
+}
+
+.iconImg {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-top: -20px;
+}
+
+.review {
+  font-size: 25px;
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Pacifico", cursive;
+  text-shadow: 2px 2px black;
+}
+
+.reviewBkgr {
+  opacity: 1;
+  width: 100%;
+  height: 20%;
+}
+
+.usDiv {
+  height: 70px;
+  width: 300px;
+  border: 2px solid orange;
+  display: inline-flex;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 1px 21px 7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 21px 7px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 21px 7px rgba(0, 0, 0, 0.75);
+}
+
+.usDiv:after {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 42px solid transparent;
+  border-bottom-color: #ffbb00;
+  border-top: 0;
+  border-right: 0;
+  margin-left: -21px;
+  margin-top: -42px;
+}
+
+.activity {
+  display: flex;
+  margin-top: -20px;
+  font-size: 17px;
+  font-weight: 700;
+  text-shadow: 2px 2px gray;
+}
+
+.carousselTitleDivClass {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Press Start 2P", cursive;
+}
+
+.innerDivClass {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: none;
+}
+
+#innerDivID1,
+#innerDivID2,
+#innerDivID3,
+#innerDivID4,
+#innerDivID5,
+#innerDivID6,
+#innerDivID7 {
+  -webkit-box-shadow: 2px 2px 24px 9px rgba(255, 191, 0, 1);
+  -moz-box-shadow: 2px 2px 24px 9px rgba(255, 191, 0, 1);
+  box-shadow: 2px 2px 24px 9px rgba(255, 191, 0, 1);
+}
+
+.visible {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+
+#carousselWrapID,
+#outsideCarousselID,
+#carousselTitleDivID,
+.innerDivClass {
+  margin: 0px auto;
+}
+
+.prevBtn,
+.nextBtn {
+  cursor: pointer;
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 0.1s;
+  width: 80px;
+  margin-left: 50px;
+  margin-top: 120px;
+}
+
+.arrow-top,
+.arrow-bottom,
+.arrow-top2,
+.arrow-bottom2 {
+  background-color: #666;
+  height: 4px;
+  left: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.arrow-top:after,
+.arrow-bottom:after,
+.arrow-top2:after,
+.arrow-bottom2:after {
+  background-color: #fff;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+.arrow-top {
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+.arrow-top2 {
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+.arrow-top:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0.3s;
+}
+.arrow-top2:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0s;
+}
+.arrow-bottom {
+  transform: rotate(-45deg);
+  transform-origin: top left;
+}
+.arrow-bottom2 {
+  transform: rotate(-45deg);
+  transform-origin: bottom right;
+}
+.arrow-bottom2:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+.arrow-bottom:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+
+.nextBtn:hover .arrow-top2:after {
+  left: 0;
+  transition-delay: 0.15s;
+}
+.prevBtn:hover .arrow-top:after {
+  left: 0;
+  transition-delay: 0s;
+}
+.nextBtn:hover .arrow-bottom2:after {
+  right: 0;
+  transition-delay: 0s;
+}
+.prevBtn:hover .arrow-bottom:after {
+  right: 0;
+  transition-delay: 0.15s;
+}
+.prevBtn:active,
+.nextBtn:active {
+  transform: translateX(-50%) translateY(-50%) scale(0.9);
+}
