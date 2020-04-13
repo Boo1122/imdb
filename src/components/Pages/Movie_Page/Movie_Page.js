@@ -6,7 +6,6 @@ export class MoviePage {
     this.moviePage();
     this.generateUrl();
     this.getMovies();
-    // this.moviesPagination();
   }
 
   moviePage() {
@@ -162,38 +161,3 @@ export class MoviePage {
     pagesContainer.appendChild(next);
   }
 }
-//   paginationFetch(
-//     progress,
-//     url = "https://movies-api-siit.herokuapp.com/movies",
-//     movies = []
-//   ) {
-//     return new Promise((resolve, reject) =>
-//       fetch(url)
-//         .then((response) => {
-//           if (response.status !== 200) {
-//             throw `${response.status}: ${response.statusText}`;
-//           }
-//           response
-//             .json()
-//             .then((moviesData) => {
-//               movies = movies.concat(moviesData);
-//               //console.log(moviesData.pagination.links.next);
-//               if (moviesData.pagination.links.next) {
-//                 progress && progress(movies);
-//                 this.paginationFetch(
-//                   progress,
-//                   moviesData.pagination.links.next,
-//                   movies
-//                 )
-//                   .then(resolve)
-//                   .catch(reject);
-//               } else {
-//                 resolve(movies);
-//               }
-//             })
-//             .catch(reject);
-//         })
-//         .catch(reject)
-//     );
-//   }
-// }
