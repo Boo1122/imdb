@@ -1,4 +1,5 @@
 import "./Home_Page.css";
+import { Caroussel } from "./Caroussel";
 
 export class HomePage {
   constructor() {
@@ -14,8 +15,9 @@ export class HomePage {
     container.id = "home-page";
     container.classList.add("page", "active");
     container.style.backgroundImage = "url(./public/img/joker_2019.jpg)";
-    container.style.opacity = '0.2'
+    
 
     body.appendChild(container);
+    new Caroussel(Caroussel)
   }
 }
