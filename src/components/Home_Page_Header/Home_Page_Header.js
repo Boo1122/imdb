@@ -1,8 +1,8 @@
 import "./Home_Page_Header.css";
-import "../Pages/Movies_Page/Movie_Button.css";
+import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
-import { navigate } from "../Navigate_History/Navigate_History";
+import "../Pages/LogOut_Page/LogOut_Page.css";
 
 export class Header {
   constructor() {
@@ -10,17 +10,21 @@ export class Header {
     this.homeButton();
     this.moviesButton();
     this.loginButton();
+    this.logOutButton();
     this.registerButton();
-    navigate.init();
   }
 
   header() {
     const body = document.getElementById("body");
+    //body.style.backgroundImage = "url(./public/img/Dark_Knight_back1.jpg)";
+    //document.body.style.backgroundRepeat = "repeat-y";
 
     const header = document.createElement("div");
     header.classList.add("header");
     header.id = "header";
     body.appendChild(header);
+    header.style.backgroundImage = "url(./public/img/55376.jpg)";
+    header.style.borderBottom = "5px solid salmon";
   }
 
   homeButton() {
@@ -38,22 +42,6 @@ export class Header {
     header.appendChild(homeButton);
   }
 
-  loginButton() {
-    const header = document.getElementById("header");
-
-    const loginDiv = document.createElement("div");
-    loginDiv.id = "loginBtn";
-    loginDiv.className = "dropdown";
-
-    const loginButton = document.createElement("button");
-    loginButton.classList.add("nav-link", "login");
-    loginButton.setAttribute("data-target", "login-page");
-    loginButton.innerHTML = "Login";
-
-    header.appendChild(loginDiv);
-    loginDiv.appendChild(loginButton);
-  }
-
   moviesButton() {
     const header = document.getElementById("header");
 
@@ -63,7 +51,7 @@ export class Header {
 
     const movies = document.createElement("button");
     movies.classList.add("nav-link", "movies", "movies-btn", "btn");
-    movies.setAttribute("data-target", "movie-page"); 
+    movies.setAttribute("data-target", "movie-page");
     movies.innerText = "Movies";
 
     const buttonBody = document.createElement("div");
@@ -87,6 +75,36 @@ export class Header {
     buttonBody.appendChild(title);
     buttonBody.appendChild(year);
     buttonBody.appendChild(genre);
+  }
+
+  loginButton() {
+    const header = document.getElementById("header");
+
+    const loginDiv = document.createElement("div");
+    loginDiv.id = "loginBtn";
+
+    const loginButton = document.createElement("button");
+    loginButton.classList.add("nav-link", "login");
+    loginButton.setAttribute("data-target", "login-page");
+    loginButton.innerHTML = "Login";
+
+    header.appendChild(loginDiv);
+    loginDiv.appendChild(loginButton);
+  }
+
+  logOutButton() {
+    const header = document.getElementById("header");
+
+    const logOutDiv = document.createElement("div");
+    logOutDiv.id = "logOutBtn";
+
+    const logOutButton = document.createElement("button");
+    logOutButton.classList.add("nav-link", "logout");
+    logOutButton.setAttribute("data-target", "logout-page");
+    logOutButton.innerHTML = "LogOut";
+
+    header.appendChild(logOutDiv);
+    logOutDiv.appendChild(logOutButton);
   }
 
   registerButton() {

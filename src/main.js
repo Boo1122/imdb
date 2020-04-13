@@ -1,24 +1,22 @@
 import { Header } from "./components/Home_Page_Header/Home_Page_Header";
-import { RegisterForm } from "./components/Pages/Register_Form/Register_Form";
+import { RegisterPage } from "./components/Pages/Register_Page/Register_Page";
+import { LoginPage } from "./components/Pages/Login_Page/Login_Page";
 import { HomePage } from "./components/Pages/Home_Page/Home_Page";
-import { LoginForm } from "./components/Pages/Login_Form/Login_Form";
-import { MoviePage } from "./components/Pages/Movie_Page/Movie_Page";
-
-import { Switch } from "./components/Pages/Login_Form/Switch_Login_Register";
-// import { RegisterPage } from "./components/Pages/Register_Form/Register_Page";
 import "./main.css";
 import { Footer } from "./components/Footer/Footer";
+import { navigate } from "./components/Navigate_History/Navigate_History";
+import { SinglePage } from "./components/Pages/Single_Page/Single_Page";
+import { MoviePage } from "./components/Pages/Movie_Page/Movie_Page";
+import { LogOutPage } from "./components/Pages/LogOut_Page/LogOut_Page";
 
 new Header();
-
 new HomePage();
-new LoginForm();
+new LoginPage();
+new RegisterPage();
+const singlePage = new SinglePage();
 new MoviePage();
-
-
-// new RegisterPage();
-new RegisterForm();
+new LogOutPage();
 
 new Footer();
 
-new Switch();
+navigate.init(singlePage);

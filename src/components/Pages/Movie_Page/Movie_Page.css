@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination-div {
+  display: flex;
+  justify-content: center;
+}
+
+#pages-container {
+  display: flex;
+  justify-content: center;
+}
+
+#pages-container > p {
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  border-radius: 25%;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px solid #68095b;
+  font-family: "Pacifico", cursive;
+}
+
+#pages-container > p:hover {
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
+}
+
+.previous {
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  border-radius: 25%;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: 1px solid #68095b;
+  font-family: "Pacifico", cursive;
+}
+
+.previous:hover {
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
+}
+
+.next {
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  border-radius: 25%;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: 1px solid #68095b;
+  font-family: "Pacifico", cursive;
+}
+
+.next:hover {
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
+}
+
+#movie-page {
+  flex-direction: column;
+  padding-top: 50px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex: 1;
+  overflow: auto;
+}
+
+#movie-list-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  overflow: auto;
+  justify-content: space-evenly;
+}
+
+.movie-page-container {
+  display: flex;
+}
+
+.posters img {
+  height: 430px;
+  width: 300px;
+  border-radius: 10%;
+}
+.posters img:hover {
+  border: 1.5px solid rgba(255, 0, 0, 0.486);
+  cursor: pointer;
+}
+
+.posters {
+  height: 520px;
+  width: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.posters p {
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25%;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.posters p:hover {
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
+}

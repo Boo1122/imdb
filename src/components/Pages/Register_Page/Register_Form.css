@@ -1,17 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 
-/* font-family: "Pacifico", cursive; */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* body.registerPage {
+  background-image: url('./public/img/bck.jpg');
+} */
 
 #register-page {
   height: 100vh;
-  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   background: #272727;
   color: rgba(233, 27, 16, 0.8);
-  /* color: #ffff00; */
 
   font-family: "Pacifico", cursive;
 }
@@ -19,10 +30,9 @@
 #register-box {
   height: 580px;
   width: 420px;
-  background: lightgray;
+  background: black;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 #username-input,
@@ -43,7 +53,7 @@
 #username,
 #email-label,
 #password-label {
-  margin: 1rem 1rem 1rem 3.5rem;
+  margin: 1rem 1rem 1rem 3.8rem;
 }
 
 #username-input,
@@ -87,4 +97,15 @@
 
 #register-btn-form {
   margin-top: 2.4rem;
+  border-radius: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(207, 83, 34);
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid black;
+  cursor: pointer;
+  width: 6.25rem;
+  align-self: center;
 }

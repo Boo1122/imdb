@@ -1,12 +1,10 @@
 import "./Home_Page.css";
 
-
 export class HomePage {
   constructor() {
     this.generateUrl();
     this.getMovies();
     this.homeContainerBox();
-    
   }
 
   generateUrl(par) {
@@ -36,7 +34,6 @@ export class HomePage {
     const container = document.createElement("div");
     container.id = "home-page-container";
 
-
     const posters = document.createElement("div");
     posters.className = "posters";
 
@@ -46,6 +43,8 @@ export class HomePage {
     const img = document.createElement("img");
     img.classList.add("detail-posters");
     img.setAttribute("src", movie.Poster);
+    img.classList.add("nav-link", "poster");
+    img.setAttribute("data-target", "single-movie-page");
 
     body.appendChild(container);
     container.appendChild(posters);
@@ -58,7 +57,8 @@ export class HomePage {
 
     const container = document.createElement("div");
     container.id = "home-page";
-    container.classList.add('page','active');
+    container.classList.add("page", "active");
+    container.style.backgroundImage = "url(./public/img/joker_2019.jpg)";
 
     body.appendChild(container);
   }
