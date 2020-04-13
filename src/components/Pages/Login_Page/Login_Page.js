@@ -73,10 +73,9 @@ export class LoginPage {
   }
 
   loginClicked() {
-
     const logButton = document.getElementById("loginButton");
     const userName = document.getElementById("username-input-login");
-    const passWord = document.getElementById("password-label-login");
+    const passWord = document.getElementById("password-input-login");
 
     logButton.addEventListener("click", (event) => {
       fetch("https://movies-api-siit.herokuapp.com/auth/login", {
@@ -85,23 +84,21 @@ export class LoginPage {
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *client
         body: JSON.stringify({
           username: `${userName.value}`,
-          password: `${passWord.value}`
-        })
+          password: `${passWord.value}`,
+        }),
       })
-        .then(response => response.json())
-        .then(json => {
+        .then((response) => response.json())
+        .then((json) => {
           console.log(json);
-    
+
           document.cookie = `token=${json.accessToken}`;
         });
     });
-    
   }
-
 }
