@@ -53,7 +53,8 @@
 .review {
   font-size: 25px;
   color: white;
-  padding: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
   font-family: "Pacifico", cursive;
   text-shadow: 2px 2px black;
 }
@@ -149,12 +150,10 @@
   transform: translateX(-50%) translateY(-50%);
   transition: transform 0.1s;
   width: 80px;
-}
-.prevBtn,
-.nextBtn {
   margin-left: 50px;
-  margin-top: 100px;
+  margin-top: 120px;
 }
+
 .arrow-top,
 .arrow-bottom,
 .arrow-top2,

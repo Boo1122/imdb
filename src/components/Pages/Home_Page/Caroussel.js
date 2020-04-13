@@ -13,7 +13,7 @@ export class Caroussel {
 
   carousselSkeleton() {
     const body = document.getElementById("body");
-    const carousselToHomepage = document.getElementById("home-page")
+    const carousselToHomepage = document.getElementById("home-page");
 
     const carousselWrap = document.createElement("div");
     carousselWrap.id = "carousselWrapID";
@@ -247,7 +247,7 @@ export class Caroussel {
     p6.classList.add("review");
     p6.id = "p6";
     p6.innerText =
-      "gr8 website i cannot wait 'til i add more moviez in my list, i need to devour them haha #movieaddict #goodlife #myIMDb. ";
+      "gr8 website i cannot wait 'til i add more moviez in my list, i need to devour them haha. i also <3 the fact that i can add movies in my own library like i will never be bored haha #movieaddict #goodlife #myIMDb. ";
 
     const innerDiv7 = document.createElement("div");
     innerDiv7.id = "innerDivID7";
