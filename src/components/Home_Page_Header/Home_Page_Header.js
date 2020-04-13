@@ -57,24 +57,11 @@ export class Header {
     const buttonBody = document.createElement("div");
     buttonBody.classList.add("dropdown-content");
 
-    const title = document.createElement("p");
-    title.id = "mov-button-title";
-    title.innerText = "Title";
-
-    const year = document.createElement("p");
-    year.id = "mov-button-year";
-    year.innerText = "Year";
-
-    const genre = document.createElement("p");
-    genre.id = "mov-button-genre";
-    genre.innerText = "Genre";
 
     header.appendChild(buttonDiv);
     buttonDiv.appendChild(movies);
     buttonDiv.appendChild(buttonBody);
-    buttonBody.appendChild(title);
-    buttonBody.appendChild(year);
-    buttonBody.appendChild(genre);
+    
   }
 
   loginButton() {

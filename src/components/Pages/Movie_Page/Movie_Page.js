@@ -18,6 +18,7 @@ export class MoviePage {
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
+    
 
     body.appendChild(container);
     container.appendChild(movieListContainer);
@@ -28,7 +29,7 @@ export class MoviePage {
   }
 
   getMovies() {
-    const url = this.generateUrl("?take=10&skip=10");
+    const url = this.generateUrl("?take=10");
 
     fetch(url)
       .then((response) => response.json())
