@@ -6,6 +6,7 @@ export class MoviePage {
     this.moviePage();
     this.generateUrl();
     this.getMovies();
+    this.moviesPagination();
   }
 
   moviePage() {
