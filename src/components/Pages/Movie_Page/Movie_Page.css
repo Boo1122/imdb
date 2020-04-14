@@ -128,6 +128,14 @@ body {
 
 .posters p:hover {
   cursor: pointer;
-  background-color: black; 
+  background-color: black;
   border: 1px solid rgba(255, 255, 0, 0.788);
+}
+
+.delete-single-movie {
+  align-self: flex-end;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  background: black;
 }
