@@ -1,7 +1,5 @@
 import "./Movie_Page.css";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History";
+import { navigate } from "../../Navigate_History/Navigate_History";
 
 export class MoviePage {
   constructor() {
@@ -93,7 +91,6 @@ export class MoviePage {
       this.getMovies(this.movieData.pagination.currentPage / 10);
     });
 
-
     const next = document.createElement("button");
     next.id = "next-movie";
     next.classList.add("nav-link");
@@ -103,31 +100,23 @@ export class MoviePage {
       this.getMovies(this.movieData.pagination.currentPage * 10);
     });
 
-
     let store = [];
     let pagesContainer = document.createElement("div");
-    pagesContainer.id = 'pages-container'
+    pagesContainer.id = "pages-container";
     let page = document.createElement("p");
-    // page.innerText = `${}`
+
     for (let i = 0; i <= paginationMovie.length; i++) {
-      page.addEventListener('click', () => {
-        page.innerText = `${page}`;
-        store.push(page)
-        this.getMovies(20);
-
-      })
+      page.innerHTML = `${page}`;
+      store.push(page);
+      console.log(page);
+      this.getMovies(20);
     }
-
-
-
 
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(pagesContainer);
     pagesContainer.appendChild(previous);
-    pagesContainer.appendChild(page)
-
-
+    pagesContainer.appendChild(page);
 
     pagesContainer.appendChild(next);
   }
