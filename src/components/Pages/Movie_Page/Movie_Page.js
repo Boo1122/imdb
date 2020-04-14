@@ -88,6 +88,7 @@ export class MoviePage {
     previous.classList.add("nav-link");
     previous.className = "previous";
     previous.innerText = `< Previous`;
+
     previous.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage / 10);
     });
@@ -128,7 +129,7 @@ export class MoviePage {
     for (const page of pages) {
       page.addEventListener("click", (event) => {
         console.log(event.target.innerText);
-        this.getMovies(event.target.innerText * 10);
+        this.getMovies((event.target.innerText - 1) * 10);
       });
     }
   }
