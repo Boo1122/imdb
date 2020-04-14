@@ -3,12 +3,14 @@ import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
+import "./Edit_Movies.css";
 
 export class Header {
   constructor() {
     this.header();
     this.homeButton();
     this.moviesButton();
+    this.editMovies();
     this.loginButton();
     this.logOutButton();
     this.registerButton();
@@ -16,8 +18,6 @@ export class Header {
 
   header() {
     const body = document.getElementById("body");
-    //body.style.backgroundImage = "url(./public/img/Dark_Knight_back1.jpg)";
-    //document.body.style.backgroundRepeat = "repeat-y";
 
     const header = document.createElement("div");
     header.classList.add("header");
@@ -60,6 +60,21 @@ export class Header {
     header.appendChild(buttonDiv);
     buttonDiv.appendChild(movies);
     buttonDiv.appendChild(buttonBody);
+  }
+
+  editMovies() {
+    const header = document.getElementById("header");
+
+    const editDiv = document.createElement("div");
+    editDiv.id = "editButton";
+
+    const editButton = document.createElement("button");
+    editButton.classList.add("nav-link", "edit");
+    editButton.setAttribute("data-target", "edit");
+    editButton.innerHTML = "Edit";
+
+    header.appendChild(editDiv);
+    editDiv.appendChild(editButton);
   }
 
   loginButton() {
