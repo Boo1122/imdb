@@ -7,6 +7,7 @@ export class MoviePage {
     this.generateUrl();
     this.getMovies();
     this.moviesPagination();
+    this.numberPages();
   }
 
   moviePage() {
@@ -101,23 +102,34 @@ export class MoviePage {
     });
 
     let store = [];
-    let pagesContainer = document.createElement("div");
+    const pagesContainer = document.createElement("div");
     pagesContainer.id = "pages-container";
-    let page = document.createElement("p");
-
-    for (let i = 0; i <= paginationMovie.length; i++) {
-      page.innerHTML = `${page}`;
-      store.push(page);
-      console.log(page);
-      this.getMovies(20);
-    }
 
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(pagesContainer);
     pagesContainer.appendChild(previous);
-    pagesContainer.appendChild(page);
+
+    for (let i = 1; i <= 10; i++) {
+      const page = document.createElement("p");
+      page.classList.add("nr-of-pages");
+      page.innerText = `${i}`;
+      store.push(page[i]);
+
+      pagesContainer.appendChild(page);
+    }
 
     pagesContainer.appendChild(next);
+  }
+
+  numberPages() {
+    const pages = document.getElementsByClassName("nr-of-pages");
+
+    for (const page of pages) {
+      page.addEventListener("click", (event) => {
+        console.log(event.target.innerText);
+        this.getMovies(event.target.innerText * 10);
+      });
+    }
   }
 }
