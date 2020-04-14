@@ -128,7 +128,7 @@ export class MoviePage {
     for (const page of pages) {
       page.addEventListener("click", (event) => {
         console.log(event.target.innerText);
-        this.getMovies(event.target.innerText * 10);
+        this.getMovies((event.target.innerText - 1) * 10);
       });
     }
   }
