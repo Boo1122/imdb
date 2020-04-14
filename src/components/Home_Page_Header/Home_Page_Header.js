@@ -57,11 +57,9 @@ export class Header {
     const buttonBody = document.createElement("div");
     buttonBody.classList.add("dropdown-content");
 
-
     header.appendChild(buttonDiv);
     buttonDiv.appendChild(movies);
     buttonDiv.appendChild(buttonBody);
-    
   }
 
   loginButton() {

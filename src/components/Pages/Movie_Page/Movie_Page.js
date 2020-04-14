@@ -8,6 +8,7 @@ export class MoviePage {
     this.getMovies();
     this.moviesPagination();
     this.numberPages();
+    this.deleteMovie();
   }
 
   moviePage() {
@@ -37,7 +38,6 @@ export class MoviePage {
       .then((response) => response.json())
       .then((movieData) => {
         this.movieData = movieData;
-        console.log(movieData);
         this.renderMovieList();
       });
   }
@@ -65,6 +65,11 @@ export class MoviePage {
     const p = document.createElement("p");
     p.innerHTML = movie.Title;
 
+    const deleteMov = document.createElement("span");
+    deleteMov.classList.add("delete-single-movie");
+    deleteMov.setAttribute("title", "Delete Movie");
+    deleteMov.innerText = "X";
+
     const img = document.createElement("img");
     img.classList.add("detail-posters");
     img.setAttribute("src", movie.Poster);
@@ -72,6 +77,7 @@ export class MoviePage {
     body.appendChild(container);
     container.appendChild(posters);
     posters.appendChild(p);
+    posters.appendChild(deleteMov);
     posters.appendChild(img);
   }
 
@@ -129,6 +135,16 @@ export class MoviePage {
       page.addEventListener("click", (event) => {
         console.log(event.target.innerText);
         this.getMovies((event.target.innerText - 1) * 10);
+      });
+    }
+  }
+
+  deleteMovie() {
+    const allMovies = document.getElementsByClassName("delete-single-movie");
+
+    for (const movie of allMovies) {
+      movie.addEventListener("click", (event) => {
+        console.log(event.target);
       });
     }
   }
