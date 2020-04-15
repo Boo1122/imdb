@@ -96,7 +96,6 @@ export class SinglePage {
 
   renderMovie(movieId) {
     if (movieId) {
-      console.log(movieId);
       fetch(`https://movies-api-siit.herokuapp.com/movies/${movieId}`)
         .then(response => response.json())
         .then(json => {

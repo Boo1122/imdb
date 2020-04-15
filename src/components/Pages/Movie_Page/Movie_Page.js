@@ -7,6 +7,8 @@ export class MoviePage {
     this.generateUrl();
     this.getMovies();
     this.moviesPagination();
+    this.numberPages();
+    this.deleteMovie();
   }
 
   moviePage() {
@@ -18,18 +20,19 @@ export class MoviePage {
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
-    
 
     body.appendChild(container);
     container.appendChild(movieListContainer);
   }
 
-  generateUrl(par) {
-    return `https://movies-api-siit.herokuapp.com/movies${par}`;
+  generateUrl(skip) {
+    return `https://movies-api-siit.herokuapp.com/movies?take=10${
+      skip ? "&skip=" + skip : ""
+    }`;
   }
 
-  getMovies() {
-    const url = this.generateUrl("?take=10");
+  getMovies(skip) {
+    const url = this.generateUrl(skip);
 
     fetch(url)
       .then((response) => response.json())
@@ -40,14 +43,14 @@ export class MoviePage {
   }
 
   renderMovieList() {
+    const body = document.getElementById("movie-list-container");
+    body.innerHTML = null;
     for (const movie of this.movieData.results) {
-      this.moviesContent(movie);
+      this.moviesContent(movie, body);
     }
   }
 
-  moviesContent(movie) {
-    const body = document.getElementById("movie-list-container");
-
+  moviesContent(movie, body) {
     const container = document.createElement("div");
     container.setAttribute("data-target", "single-movie-page");
     container.addEventListener("click", navigate.nav);
@@ -62,6 +65,11 @@ export class MoviePage {
     const p = document.createElement("p");
     p.innerHTML = movie.Title;
 
+    const deleteMov = document.createElement("span");
+    deleteMov.classList.add("delete-single-movie");
+    deleteMov.setAttribute("title", "Delete Movie");
+    deleteMov.innerText = "X";
+
     const img = document.createElement("img");
     img.classList.add("detail-posters");
     img.setAttribute("src", movie.Poster);
@@ -69,6 +77,7 @@ export class MoviePage {
     body.appendChild(container);
     container.appendChild(posters);
     posters.appendChild(p);
+    posters.appendChild(deleteMov);
     posters.appendChild(img);
   }
 
@@ -85,81 +94,58 @@ export class MoviePage {
     previous.classList.add("nav-link");
     previous.className = "previous";
     previous.innerText = `< Previous`;
+    previous.addEventListener("click", () => {
+      this.getMovies(this.movieData.pagination.currentPage / 10);
+    });
 
     const next = document.createElement("button");
     next.id = "next-movie";
     next.classList.add("nav-link");
     next.className = "next";
     next.innerText = `Next >`;
+    next.addEventListener("click", () => {
+      this.getMovies(this.movieData.pagination.currentPage * 10);
+    });
 
+    let store = [];
     const pagesContainer = document.createElement("div");
     pagesContainer.id = "pages-container";
-    const page1 = document.createElement("p");
-    page1.innerText = "1";
-    page1.classList.add("nav-link", "pageNumber");
-    page1.setAttribute("data-target", "next-movie"); //"movie-page1" intre ghilimele
-
-    const page2 = document.createElement("p");
-    page2.innerText = "2";
-    page2.classList.add("nav-link", "pageNumber");
-    page2.setAttribute("data-target", "next-movie");
-
-    const page3 = document.createElement("p");
-    page3.innerText = "3";
-    page3.classList.add("nav-link", "pageNumber");
-    page3.setAttribute("data-target", "next-movie");
-
-    const page4 = document.createElement("p");
-    page4.innerText = "4";
-    page4.classList.add("nav-link", "pageNumber");
-    page4.setAttribute("data-target", "next-movie");
-
-    const page5 = document.createElement("p");
-    page5.innerText = "5";
-    page5.classList.add("nav-link", "pageNumber");
-    page5.setAttribute("data-target", "next-movie");
-
-    const page6 = document.createElement("p");
-    page6.innerText = "6";
-    page6.classList.add("nav-link", "pageNumber");
-    page6.setAttribute("data-target", "next-movie");
-
-    const page7 = document.createElement("p");
-    page7.innerText = "7";
-    page7.classList.add("nav-link", "pageNumber");
-    page7.setAttribute("data-target", "next-movie");
-
-    const page8 = document.createElement("p");
-    page8.innerText = "8";
-    page8.classList.add("nav-link", "pageNumber");
-    page8.setAttribute("data-target", "next-movie");
-
-    const page9 = document.createElement("p");
-    page9.innerText = "9";
-    page9.classList.add("nav-link", "pageNumber");
-    page9.setAttribute("data-target", "next-movie");
-
-    const page10 = document.createElement("p");
-    page10.innerText = "10";
-    page10.classList.add("nav-link", "pageNumber");
-    page10.setAttribute("data-target", "next-movie");
 
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(pagesContainer);
     pagesContainer.appendChild(previous);
 
-    pagesContainer.appendChild(page1);
-    pagesContainer.appendChild(page2);
-    pagesContainer.appendChild(page3);
-    pagesContainer.appendChild(page4);
-    pagesContainer.appendChild(page5);
-    pagesContainer.appendChild(page6);
-    pagesContainer.appendChild(page7);
-    pagesContainer.appendChild(page8);
-    pagesContainer.appendChild(page9);
-    pagesContainer.appendChild(page10);
+    for (let i = 1; i <= 10; i++) {
+      const page = document.createElement("p");
+      page.classList.add("nr-of-pages");
+      page.innerText = `${i}`;
+      store.push(page[i]);
+
+      pagesContainer.appendChild(page);
+    }
 
     pagesContainer.appendChild(next);
+  }
+
+  numberPages() {
+    const pages = document.getElementsByClassName("nr-of-pages");
+
+    for (const page of pages) {
+      page.addEventListener("click", (event) => {
+        console.log(event.target.innerText);
+        this.getMovies((event.target.innerText - 1) * 10);
+      });
+    }
+  }
+
+  deleteMovie() {
+    const allMovies = document.getElementsByClassName("delete-single-movie");
+
+    for (const movie of allMovies) {
+      movie.addEventListener("click", (event) => {
+        console.log(event.target);
+      });
+    }
   }
 }
