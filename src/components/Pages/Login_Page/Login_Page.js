@@ -97,21 +97,25 @@ export class LoginPage {
         .then((json) => {
           console.log(json);
           document.cookie = `token=${json.accessToken}`;
+
+          this.handleButtonTransferLogin();
         });
-
-      const loginButton = document.getElementById("loginBtn");
-      loginButton.style.display = "none";
-      const logoutButton = document.getElementById("logOutBtn");
-      logoutButton.style.display = "block";
-      const editbutton = document.getElementById("editButton");
-      editbutton.style.display = "block";
-
-      const deleteMovieButton = document.getElementsByClassName(
-        "delete-single-movie"
-      );
-      for (const movie of deleteMovieButton) {
-        movie.style.display = "block";
-      }
     });
+  }
+
+  handleButtonTransferLogin() {
+    const loginButton = document.getElementById("loginBtn");
+    loginButton.style.display = "none";
+    const logoutButton = document.getElementById("logOutBtn");
+    logoutButton.style.display = "block";
+    const editbutton = document.getElementById("editButton");
+    editbutton.style.display = "block";
+
+    const deleteMovieButton = document.getElementsByClassName(
+      "delete-single-movie"
+    );
+    for (const movie of deleteMovieButton) {
+      movie.style.display = "block";
+    }
   }
 }

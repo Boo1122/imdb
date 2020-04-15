@@ -112,21 +112,25 @@ export class RegisterPage {
               if (element.includes("token")) return true;
             })
             .split("=")[1];
+
+          this.handleButtonsTransfetLogout();
         });
-
-      const loginButton = document.getElementById("loginBtn");
-      loginButton.style.display = "none";
-      const logoutButton = document.getElementById("logOutBtn");
-      logoutButton.style.display = "block";
-      const editbutton = document.getElementById("editButton");
-      editbutton.style.display = "block";
-
-      const deleteMovieButton = document.getElementsByClassName(
-        "delete-single-movie"
-      );
-      for (const movie of deleteMovieButton) {
-        movie.style.display = "block";
-      }
     });
+  }
+
+  handleButtonsTransfetLogout() {
+    const loginButton = document.getElementById("loginBtn");
+    loginButton.style.display = "none";
+    const logoutButton = document.getElementById("logOutBtn");
+    logoutButton.style.display = "block";
+    const editbutton = document.getElementById("editButton");
+    editbutton.style.display = "block";
+
+    const deleteMovieButton = document.getElementsByClassName(
+      "delete-single-movie"
+    );
+    for (const movie of deleteMovieButton) {
+      movie.style.display = "block";
+    }
   }
 }
