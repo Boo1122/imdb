@@ -88,32 +88,45 @@ export class RegisterPage {
 
     regButton.addEventListener("click", () => {
       fetch("https://movies-api-siit.herokuapp.com/auth/register", {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors", // no-cors, *cors, same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json"
-          },
-          redirect: "follow", // manual, *follow, error
-          referrerPolicy: "no-referrer", // no-referrer, *client
-          body: JSON.stringify({
-            username: `${userName.value}`,
-            password: `${userPass.value}`
-          })
-        })
-        .then(response => response.json())
-        .then(json => {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+          username: `${userName.value}`,
+          password: `${userPass.value}`,
+        }),
+      })
+        .then((response) => response.json())
+        .then((json) => {
           console.log(json);
           document.cookie = `token=${json.accessToken}`;
           const token = document.cookie
             .split(";")
-            .find(element => {
+            .find((element) => {
               if (element.includes("token")) return true;
             })
             .split("=")[1];
         });
-    });
 
+      const loginButton = document.getElementById("loginBtn");
+      loginButton.style.display = "none";
+      const logoutButton = document.getElementById("logOutBtn");
+      logoutButton.style.display = "block";
+      const editbutton = document.getElementById("editButton");
+      editbutton.style.display = "block";
+
+      const deleteMovieButton = document.getElementsByClassName(
+        "delete-single-movie"
+      );
+      for (const movie of deleteMovieButton) {
+        movie.style.display = "block";
+      }
+    });
   }
 }

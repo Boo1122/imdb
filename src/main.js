@@ -14,8 +14,8 @@ new HomePage();
 new LoginPage();
 new RegisterPage();
 const singlePage = new SinglePage();
-new MoviePage();
 new LogOutPage();
+new MoviePage();
 
 new Footer();
 
