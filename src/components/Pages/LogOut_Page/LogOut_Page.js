@@ -11,7 +11,6 @@ export class LogOutPage {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
     containerForm.id = "logout-page";
-    containerForm.classList.add("page", "active");
 
     body.appendChild(containerForm);
     // new HomePage();
@@ -43,7 +42,25 @@ export class LogOutPage {
           console.log(json);
 
           document.cookie = `token=${json.accessToken} '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
+
+          this.handleButtonsTransfetLogout();
         });
     });
+  }
+
+  handleButtonsTransfetLogout() {
+    const loginButton = document.getElementById("loginBtn");
+    loginButton.style.display = "block";
+    const logoutButton = document.getElementById("logOutBtn");
+    logoutButton.style.display = "none";
+    const editbutton = document.getElementById("editButton");
+    editbutton.style.display = "none";
+
+    const deleteMovieButton = document.getElementsByClassName(
+      "delete-single-movie"
+    );
+    for (const movie of deleteMovieButton) {
+      movie.style.display = "none";
+    }
   }
 }
