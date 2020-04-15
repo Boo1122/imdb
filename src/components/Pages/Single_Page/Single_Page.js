@@ -3,12 +3,14 @@ import "./Single_Page.css";
 export class SinglePage {
   constructor() {
     this.homeContainerBox();
+
   }
 
   mainContent(movie) {
     console.log(movie);
     const main = document.getElementById("single-movie-page");
-    //main.style.backgroundImage = "url(./public/img/star_wars_rise.jpg)";
+    main.style.backgroundImage =
+      "url(./public/img/batman_wallpaper_movie_pg.jpg)";
 
     main.innerHTML = null;
     const contentDiv = document.createElement("div");
@@ -39,49 +41,44 @@ export class SinglePage {
 
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
-    const year = document.createElement("p");
-    year.innerText = `Year: ${movie.Year}`;
-    const language = document.createElement("p");
-    language.innerText = `Language: ${movie.Language}`;
-    const country = document.createElement("p");
-    country.className = "country";
-    country.innerText = `Country: ${movie.Country}`;
-    const runtime = document.createElement("p");
-    runtime.innerText = `Runtime: ${movie.Runtime}`;
+    const movieInfo = document.createElement("p");
+    movieInfo.innerText = `Realised in: ${movie.Released}   |   ${movie.Country}   |   ${movie.Language}   |   ${movie.Runtime}`;
 
-    /*const iMDBratings = document.createElement("div");
-    iMDBratings.className = "imdb-ratings";
-    iMDBratings.id = "imdb-ratings-container";*/
+    //Here is the personalities container
+    const peopleDiv = document.createElement("div");
+    peopleDiv.className = "people-info";
+    const director = document.createElement("p");
+    director.innerText = `Director: ${movie.Director}`;
+    const writer = document.createElement("p");
+    writer.innerText = `Writer: ${movie.Writer}`;
+    const actors = document.createElement("p");
+    actors.innerText = `Actors: ${movie.Actors}`;
 
-    const imdbRating = document.createElement("p");
-    imdbRating.innerText = `IMDb Rating: ${movie.imdbRating}`;
-    const imdbVotes = document.createElement("p");
-    imdbVotes.innerText = `IMDb Votes: ${movie.imdbVotes}`;
+    //Here is the short description
+    const plotDiv = document.createElement("div");
+    plotDiv.className = "plot-container";
+    const plot = document.createElement("p");
+    plot.innerText = `${movie.Plot}`;
 
     main.appendChild(contentDiv);
     contentDiv.appendChild(movieContent);
-    //movieDetails.appendChild(iMDBratings);
-
     movieContent.appendChild(poster);
     poster.appendChild(img);
-
     movieContent.appendChild(movieDetails);
     movieDetails.appendChild(titleDiv);
     titleDiv.appendChild(movieTitle);
     titleDiv.appendChild(facts);
     facts.appendChild(genres);
-
     titleDiv.appendChild(posterInfo);
-    posterInfo.appendChild(year);
-    posterInfo.appendChild(language);
-    posterInfo.appendChild(country);
-    posterInfo.appendChild(runtime);
+    posterInfo.appendChild(movieInfo);
 
-    /*iMDBratings.appendChild(imdbRating);
-    iMDBratings.appendChild(imdbVotes);*/
+    posterInfo.appendChild(peopleDiv);
+    peopleDiv.appendChild(director);
+    peopleDiv.appendChild(writer);
+    peopleDiv.appendChild(actors);
 
-    posterInfo.appendChild(imdbRating);
-    posterInfo.appendChild(imdbVotes);
+    posterInfo.appendChild(plotDiv);
+    plotDiv.appendChild(plot);
   }
 
   homeContainerBox() {
@@ -100,7 +97,30 @@ export class SinglePage {
         .then(response => response.json())
         .then(json => {
           this.mainContent(json);
+          this.renderMovieTrailer(json.imdbID);
         });
     }
+
+  }
+
+  renderMovieTrailer(searchString) {
+    fetch(`https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`)
+        .then(response => response.json())
+        .then(json => {
+            if(json.data && json.data.movies && json.data.movies.length > 0 && json.data.movies[0].trailer.qualities.length > 0){
+              const body = document.getElementById("body");
+
+              const trailerContainer = document.createElement('iframe');
+              trailerContainer.id = "trailer-container";
+              trailerContainer.width="640";
+              trailerContainer.height="360";
+              trailerContainer.frameBorder="0";
+              trailerContainer.allowFullscreen=true;
+              trailerContainer.src = json.data.movies[0].trailer.qualities[0].videoURL;
+              body.appendChild(trailerContainer);
+              console.log(trailerContainer);
+            }
+            
+        })
   }
 }

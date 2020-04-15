@@ -16,7 +16,7 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
-    container.style.backgroundImage = "url(./public/img/star_wars_sword.jpg)";
+    container.style.backgroundImage = "url(./public/img/batman_wallpaper_movie_pg.jpg)";
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
