@@ -41,6 +41,7 @@ export class MoviePage {
       .then((movieData) => {
         this.movieData = movieData;
         this.renderMovieList();
+        console.log(this.movieData.pagination);
       });
   }
 
@@ -99,7 +100,7 @@ export class MoviePage {
     previous.innerText = `< Previous`;
 
     previous.addEventListener("click", () => {
-      this.getMovies(this.movieData.pagination.currentPage / 10);
+      this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
     });
 
     const next = document.createElement("button");
