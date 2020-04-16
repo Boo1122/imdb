@@ -1,26 +1,32 @@
 #img {
   display: flex;
-  height: 18px;
+  height: 28px;
+  width: 30px;
   margin-top: 48px;
   order: 3;
   margin-right: 80px;
   cursor: pointer;
+  color: red;
 }
+
 
 #input {
   text-align: center;
   margin-top: 45px;
   margin-right: 5px;
   width: 180px;
-  height: 20px;
+  height: 30px;
   border-radius: 40px;
   outline: 0;
   border: 1px solid black;
   background-color: #eeee3f;
   display: none;
+
+
 }
 
 #input-div {
   order: 2;
   margin-left: auto;
+  transition: 0.4s;
 }
