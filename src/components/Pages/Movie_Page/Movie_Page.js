@@ -71,6 +71,7 @@ export class MoviePage {
     deleteMov.classList.add("delete-single-movie");
     deleteMov.setAttribute("title", "Delete Movie");
     deleteMov.innerText = "X";
+    deleteMov.style.display = "none";
 
     const img = document.createElement("img");
     img.classList.add("detail-posters");

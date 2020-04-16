@@ -67,6 +67,7 @@ export class Header {
 
     const editDiv = document.createElement("div");
     editDiv.id = "editButton";
+    editDiv.style.display = "none";
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
@@ -97,6 +98,7 @@ export class Header {
 
     const logOutDiv = document.createElement("div");
     logOutDiv.id = "logOutBtn";
+    logOutDiv.style.display = "none";
 
     const logOutButton = document.createElement("button");
     logOutButton.classList.add("nav-link", "logout");
