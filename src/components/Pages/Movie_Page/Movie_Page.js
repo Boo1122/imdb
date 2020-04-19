@@ -1,7 +1,5 @@
 import "./Movie_Page.css";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History";
+import { navigate } from "../../Navigate_History/Navigate_History";
 
 export class MoviePage {
   constructor() {
@@ -19,7 +17,6 @@ export class MoviePage {
     container.id = "movie-page";
     container.classList.add("page");
     container.style.backgroundImage = "url(./public/img/star_wars_rise.jpg)";
-
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
@@ -100,8 +97,6 @@ export class MoviePage {
     previous.className = "previous";
     previous.innerText = `< Previous`;
 
-
-
     previous.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
       if (this.movieData.pagination.currentPage < +3) {
@@ -112,7 +107,6 @@ export class MoviePage {
         next.disabled = false;
         next.style.opacity = 1.0;
       }
-
     });
 
     const next = document.createElement("button");
@@ -126,7 +120,6 @@ export class MoviePage {
       if (this.movieData.pagination.currentPage > 0) {
         previous.disabled = false;
         previous.style.opacity = 1.0;
-
       }
       if (this.movieData.pagination.currentPage >= +9) {
         next.disabled = true;
@@ -141,10 +134,10 @@ export class MoviePage {
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(pagesContainer);
-    pagesContainer.appendChild(previous);
+    paginationDiv.appendChild(previous);
 
     for (let i = 1; i <= 10; i++) {
-      const page = document.createElement("p");
+      const page = document.createElement("button");
       page.classList.add("nr-of-pages");
       page.innerText = `${i}`;
       store.push(page[i]);
@@ -152,7 +145,7 @@ export class MoviePage {
       pagesContainer.appendChild(page);
     }
 
-    pagesContainer.appendChild(next);
+    paginationDiv.appendChild(next);
   }
 
   numberPages() {
