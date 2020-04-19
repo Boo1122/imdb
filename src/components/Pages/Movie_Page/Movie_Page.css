@@ -31,9 +31,13 @@ body {
   margin-bottom: 10px;
 }
 
-#pages-container>button:hover {
+#pages-container>button.active {
   background-color: black;
   border: 1px solid rgba(255, 255, 0, 0.788);
+}
+
+#pages-container>button:hover:not(.active) {
+  background-color: yellow;
 }
 
 
@@ -134,7 +138,6 @@ body {
   padding: 5px;
 
 }
-
 
 
 

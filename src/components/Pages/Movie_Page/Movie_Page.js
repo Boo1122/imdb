@@ -138,7 +138,7 @@ export class MoviePage {
 
     for (let i = 1; i <= 10; i++) {
       const page = document.createElement("button");
-      page.classList.add("nr-of-pages");
+      page.classList.add("nr-of-pages", "active");
       page.innerText = `${i}`;
       store.push(page[i]);
 
