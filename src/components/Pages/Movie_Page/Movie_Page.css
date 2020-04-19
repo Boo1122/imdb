@@ -16,7 +16,7 @@ body {
   justify-content: center;
 }
 
-#pages-container > p {
+#pages-container>p {
   display: flex;
   color: red;
   font-size: 1.2rem;
@@ -31,7 +31,7 @@ body {
   font-family: "Pacifico", cursive;
 }
 
-#pages-container > p:hover {
+#pages-container>p:hover {
   background-color: black;
   border: 1px solid rgba(255, 255, 0, 0.788);
 }
@@ -99,9 +99,12 @@ body {
   width: 300px;
   border-radius: 10%;
 }
+
 .posters img:hover {
-  border: 1.5px solid rgba(255, 0, 0, 0.486);
+  border: 2.5px solid rgba(233, 16, 16, 0.904);
   cursor: pointer;
+  box-sizing: border-box;
+
 }
 
 .posters {
@@ -120,17 +123,11 @@ body {
   outline: none;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 25%;
   text-transform: uppercase;
   font-weight: bold;
   padding: 5px;
 }
 
-.posters p:hover {
-  cursor: pointer;
-  background-color: black;
-  border: 1px solid rgba(255, 255, 0, 0.788);
-}
 
 .delete-single-movie {
   align-self: flex-end;

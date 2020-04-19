@@ -107,7 +107,9 @@ body {
   border-radius: 50%;
   border: 1px solid yellow;
   animation: mymove 2s infinite;
+  box-sizing: border-box;
 }
+
 @keyframes mymove {
   50% {
     border: 1.5px solid rgba(255, 0, 0, 0.76);
