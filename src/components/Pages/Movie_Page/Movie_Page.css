@@ -13,7 +13,6 @@ body {
 
 #pages-container {
   display: flex;
-  justify-content: center;
 }
 
 #pages-container>p {
