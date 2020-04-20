@@ -104,23 +104,26 @@ export class SinglePage {
   }
 
   renderMovieTrailer(searchString) {
-    fetch(`https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`)
-        .then(response => response.json())
-        .then(json => {
-            if(json.data && json.data.movies && json.data.movies.length > 0 && json.data.movies[0].trailer.qualities.length > 0){
-              const body = document.getElementById("body");
+    fetch(`https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`)
+      .then(response => response.json())
+      .then(json => {
+        if (json.data && json.data.movies && json.data.movies.length > 0 && json.data.movies[0].trailer.qualities.length > 0) {
+          const targetContainer = document.getElementsByClassName("title-div");
 
-              const trailerContainer = document.createElement('iframe');
-              trailerContainer.id = "trailer-container";
-              trailerContainer.width="640";
-              trailerContainer.height="360";
-              trailerContainer.frameBorder="0";
-              trailerContainer.allowFullscreen=true;
-              trailerContainer.src = json.data.movies[0].trailer.qualities[0].videoURL;
-              body.appendChild(trailerContainer);
-              console.log(trailerContainer);
-            }
-            
-        })
+          const trailerContainer = document.createElement('div');
+          trailerContainer.style.textAlign = 'center';
+
+          const trailerIframe = document.createElement('iframe');
+          trailerIframe.id = "trailer-container";
+          trailerIframe.width = "640";
+          trailerIframe.height = "360";
+          trailerIframe.frameBorder = "0";
+          trailerIframe.allowFullscreen = true;
+          trailerIframe.src = json.data.movies[0].trailer.qualities.slice(-1)[0].videoURL;
+
+          trailerContainer.appendChild(trailerIframe);
+          targetContainer[0].appendChild(trailerContainer);
+        }
+      })
   }
 }
