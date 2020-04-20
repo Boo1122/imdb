@@ -88,14 +88,18 @@ export class MoviePage {
   moviesPagination() {
     const body = document.getElementById("body");
     const paginationMovie = document.getElementById("movie-page");
+    paginationMovie.classList.add("actives");
+
 
     const paginationDiv = document.createElement("div");
     paginationDiv.className = "pagination-div";
     paginationDiv.id = "pagDiv";
 
+
+
+
     const previous = document.createElement("button");
     previous.id = "previous-movie";
-    previous.classList.add("nav-link");
     previous.className = "previous";
     previous.innerText = `< Previous`;
 
@@ -113,7 +117,6 @@ export class MoviePage {
 
     const next = document.createElement("button");
     next.id = "next-movie";
-    next.classList.add("nav-link");
     next.className = "next";
     next.innerText = `Next >`;
     next.addEventListener("click", () => {
@@ -133,6 +136,7 @@ export class MoviePage {
     const pagesContainer = document.createElement("div");
     pagesContainer.id = "pages-container";
 
+
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(pagesContainer);
@@ -140,7 +144,7 @@ export class MoviePage {
 
     for (let i = 1; i <= 10; i++) {
       const page = document.createElement("button");
-      page.classList.add("nr-of-pages", "active");
+      page.classList.add("nr-of-pages");
       page.innerText = `${i}`;
       store.push(page[i]);
 
@@ -154,15 +158,16 @@ export class MoviePage {
     const pages = document.getElementsByClassName("nr-of-pages");
 
     for (let i = 0; i < pages.length; i++) {
-      pages[i].addEventListener("click", (event) => {
-
-        if (pages.length >= 0) {
-          pages[i].className = pages[i].className.replace("active", "");
-        }
-        this.className += "active";
-
-        console.log(event.target.innerText);
+      pages[i].addEventListener("click", event => {
         this.getMovies((event.target.innerText - 1) * 10);
+        console.log(event.target.innerText);
+
+        let current = document.getElementsByClassName('actives')
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace(" actives", " ");
+        }
+
+        event.target.className += " actives";
       });
     }
   }
