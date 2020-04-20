@@ -31,6 +31,8 @@ export class SinglePage {
     movieTitle.className = "single-movie-title";
     movieTitle.innerText = `${movie.Title}`;
 
+
+    //Here are the movie properties 
     const facts = document.createElement("div");
     facts.className = "movie-facts";
 
@@ -38,7 +40,6 @@ export class SinglePage {
     genres.className = "movie-genres";
     genres.innerText = `Genre: ${movie.Genre}`;
 
-    //movie properties
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
     const movieInfo = document.createElement("p");
@@ -69,30 +70,32 @@ export class SinglePage {
     const imdbVotes = document.createElement("p");
     imdbVotes.innerText = `Votes: ${movie.imdbVotes}`;
 
-    //here aare the rating buttons
+    //Here are the rating buttons
     const buttonsDiv = document.createElement("div");
     buttonsDiv.className = "buttons-div";
-
     const loveButton = document.createElement("button");
     loveButton.className = "love-button";
     const loveParagraph = document.createElement("p");
     loveParagraph.innerText = "Love";
-    const loveImage = document.createElement("div");
-    loveImage.className = "love-image";
+    const loveImage = document.createElement("img");
+    loveImage.className = "love-image"; 
+    loveImage.src = "./public/heart_button.png";
 
     const likeButton = document.createElement("button");
     likeButton.className = "like-button";
     const likeParagraph = document.createElement("p");
     likeParagraph.innerText = "Like";
-    const likeImage = document.createElement("div");
+    const likeImage = document.createElement("img");
     likeImage.className = "like-image";
+    likeImage.src = "./public/like_button.png";
 
     const dislikeButton = document.createElement("button");
     dislikeButton.className = "dislike-button";
     const dislikeParagraph = document.createElement("p");
     dislikeParagraph.innerText = "Dislike";
-    const dislikeImage = document.createElement("div");
+    const dislikeImage = document.createElement("img");
     dislikeImage.className = "dislike-image";
+    dislikeImage.src = "./public/dislike_button.png";
 
     //appendings
     main.appendChild(contentDiv);

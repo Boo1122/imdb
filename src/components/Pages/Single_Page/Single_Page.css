@@ -96,6 +96,7 @@
 }
 .love-button {
   display: inline-flex;
+  align-items: center;
   cursor: pointer;
   line-height: 1;
   color: rgb(255, 255, 255);
@@ -114,8 +115,9 @@
 }
 
 .like-button {
-  cursor: pointer;
   display: inline-flex;
+  align-items: center;
+  cursor: pointer;
   line-height: 1;
   color: rgb(255, 255, 255);
   white-space: nowrap;
@@ -134,6 +136,7 @@
 
 .dislike-button {
   display: inline-flex;
+  align-items: center;
   cursor: pointer;
   line-height: 1;
   color: rgb(255, 255, 255);
@@ -177,4 +180,10 @@
 .imdb-heart-votes {
   height: 20px;
   margin: 0px 5px 5px 15px;
+}
+
+.buttons-div img {
+  height: 20px;
+  color: black;
+  margin-left: 5px;
 }
