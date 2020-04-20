@@ -3,7 +3,6 @@ import "./Single_Page.css";
 export class SinglePage {
   constructor() {
     this.homeContainerBox();
-
   }
 
   mainContent(movie) {
@@ -44,22 +43,52 @@ export class SinglePage {
     const movieInfo = document.createElement("p");
     movieInfo.innerText = `Realised in: ${movie.Released}   |   ${movie.Country}   |   ${movie.Language}   |   ${movie.Runtime}`;
 
-    //Here is the personalities container
-    const peopleDiv = document.createElement("div");
-    peopleDiv.className = "people-info";
-    const director = document.createElement("p");
-    director.innerText = `Director: ${movie.Director}`;
-    const writer = document.createElement("p");
-    writer.innerText = `Writer: ${movie.Writer}`;
-    const actors = document.createElement("p");
-    actors.innerText = `Actors: ${movie.Actors}`;
-
     //Here is the short description
     const plotDiv = document.createElement("div");
     plotDiv.className = "plot-container";
     const plot = document.createElement("p");
     plot.innerText = `${movie.Plot}`;
 
+    //Here are the rating buttons
+    const ratingContainer = document.createElement("div");
+    ratingContainer.className = "rating-container";
+
+    const bubblesDiv = document.createElement("div");
+    bubblesDiv.className = "bubbles-div";
+    const imdbLogo = document.createElement("img");
+    imdbLogo.src = "./public/imdb_logo.png";
+    imdbLogo.className = "imdb-logo";
+    const imdbStar = document.createElement("img");
+    imdbStar.src = "./public/star.png";
+    imdbStar.className = "imdb-star";
+    const imdbRating = document.createElement("p");
+    imdbRating.innerText = `${movie.imdbRating}`;
+
+    const buttonsDiv = document.createElement("div");
+    buttonsDiv.className = "buttons-div";
+
+    const loveButton = document.createElement("button");
+    loveButton.className = "love-button";
+    const loveParagraph = document.createElement("p");
+    loveParagraph.innerText = "Love";
+    const loveImage = document.createElement("div");
+    loveImage.className = "love-image";
+
+    const likeButton = document.createElement("button");
+    likeButton.className = "like-button";
+    const likeParagraph = document.createElement("p");
+    likeParagraph.innerText = "Like";
+    const likeImage = document.createElement("div");
+    likeImage.className = "like-image";
+
+    const dislikeButton = document.createElement("button");
+    dislikeButton.className = "dislike-button";
+    const dislikeParagraph = document.createElement("p");
+    dislikeParagraph.innerText = "Dislike";
+    const dislikeImage = document.createElement("div");
+    dislikeImage.className = "dislike-image";
+
+    //appendings
     main.appendChild(contentDiv);
     contentDiv.appendChild(movieContent);
     movieContent.appendChild(poster);
@@ -72,13 +101,24 @@ export class SinglePage {
     titleDiv.appendChild(posterInfo);
     posterInfo.appendChild(movieInfo);
 
-    posterInfo.appendChild(peopleDiv);
-    peopleDiv.appendChild(director);
-    peopleDiv.appendChild(writer);
-    peopleDiv.appendChild(actors);
-
     posterInfo.appendChild(plotDiv);
     plotDiv.appendChild(plot);
+
+    posterInfo.appendChild(ratingContainer);
+    ratingContainer.appendChild(buttonsDiv);
+    ratingContainer.appendChild(bubblesDiv);
+    bubblesDiv.appendChild(imdbRating);
+    bubblesDiv.appendChild(imdbLogo);
+    bubblesDiv.appendChild(imdbStar);
+    buttonsDiv.appendChild(loveButton);
+    loveButton.appendChild(loveParagraph);
+    loveButton.appendChild(loveImage);
+    buttonsDiv.appendChild(likeButton);
+    likeButton.appendChild(likeParagraph);
+    likeButton.appendChild(likeImage);
+    buttonsDiv.appendChild(dislikeButton);
+    dislikeButton.appendChild(dislikeParagraph);
+    dislikeButton.appendChild(dislikeImage);
   }
 
   homeContainerBox() {
@@ -100,30 +140,37 @@ export class SinglePage {
           this.renderMovieTrailer(json.imdbID);
         });
     }
-
   }
 
   renderMovieTrailer(searchString) {
-    fetch(`https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`)
+    fetch(
+      `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
+    )
       .then(response => response.json())
       .then(json => {
-        if (json.data && json.data.movies && json.data.movies.length > 0 && json.data.movies[0].trailer.qualities.length > 0) {
+        if (
+          json.data &&
+          json.data.movies &&
+          json.data.movies.length > 0 &&
+          json.data.movies[0].trailer.qualities.length > 0
+        ) {
           const targetContainer = document.getElementsByClassName("title-div");
 
-          const trailerContainer = document.createElement('div');
-          trailerContainer.style.textAlign = 'center';
+          const trailerContainer = document.createElement("div");
 
-          const trailerIframe = document.createElement('iframe');
+          const trailerIframe = document.createElement("iframe");
           trailerIframe.id = "trailer-container";
-          trailerIframe.width = "640";
-          trailerIframe.height = "360";
+          trailerIframe.width = "560";
+          trailerIframe.height = "280";
           trailerIframe.frameBorder = "0";
           trailerIframe.allowFullscreen = true;
-          trailerIframe.src = json.data.movies[0].trailer.qualities.slice(-1)[0].videoURL;
+          trailerIframe.src = json.data.movies[0].trailer.qualities.slice(
+            -1
+          )[0].videoURL;
 
           trailerContainer.appendChild(trailerIframe);
           targetContainer[0].appendChild(trailerContainer);
         }
-      })
+      });
   }
 }
