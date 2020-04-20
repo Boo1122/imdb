@@ -1,13 +1,12 @@
 import "./Home_Page.css";
+import { Random } from "./random";
 import { Caroussel } from "./Caroussel";
 
 export class HomePage {
   constructor() {
-
     this.homeContainerBox();
   }
 
-  
   homeContainerBox() {
     const body = document.getElementById("body");
 
@@ -15,9 +14,9 @@ export class HomePage {
     container.id = "home-page";
     container.classList.add("page", "active");
     container.style.backgroundImage = "url(./public/img/joker_2019.jpg)";
-    
 
     body.appendChild(container);
-    new Caroussel(Caroussel)
+    new Random(Random);
+    new Caroussel(Caroussel);
   }
 }

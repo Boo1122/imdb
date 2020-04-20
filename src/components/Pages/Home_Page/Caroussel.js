@@ -370,6 +370,7 @@ export class Caroussel {
       console.log(this);
     });
   }
+
   rightButton() {
     const next = document.getElementById("next");
     next.addEventListener("click", () => {
