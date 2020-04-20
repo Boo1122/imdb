@@ -38,6 +38,7 @@ export class SinglePage {
     genres.className = "movie-genres";
     genres.innerText = `Genre: ${movie.Genre}`;
 
+    //movie properties
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
     const movieInfo = document.createElement("p");
@@ -49,21 +50,26 @@ export class SinglePage {
     const plot = document.createElement("p");
     plot.innerText = `${movie.Plot}`;
 
-    //Here are the rating buttons
+    //Here are the ratings
     const ratingContainer = document.createElement("div");
     ratingContainer.className = "rating-container";
-
     const bubblesDiv = document.createElement("div");
     bubblesDiv.className = "bubbles-div";
     const imdbLogo = document.createElement("img");
-    imdbLogo.src = "./public/imdb_logo.png";
     imdbLogo.className = "imdb-logo";
+    imdbLogo.src = "./public/imdb_logo2.png";
     const imdbStar = document.createElement("img");
-    imdbStar.src = "./public/star.png";
     imdbStar.className = "imdb-star";
+    imdbStar.src = "./public/star.png";
     const imdbRating = document.createElement("p");
-    imdbRating.innerText = `${movie.imdbRating}`;
+    imdbRating.innerText = `${movie.imdbRating} /10`;
+    const imdbHeart = document.createElement("img");
+    imdbHeart.className = "imdb-heart-votes";
+    imdbHeart.src = "./public/imdb_heart.png";
+    const imdbVotes = document.createElement("p");
+    imdbVotes.innerText = `Votes: ${movie.imdbVotes}`;
 
+    //here aare the rating buttons
     const buttonsDiv = document.createElement("div");
     buttonsDiv.className = "buttons-div";
 
@@ -107,9 +113,12 @@ export class SinglePage {
     posterInfo.appendChild(ratingContainer);
     ratingContainer.appendChild(buttonsDiv);
     ratingContainer.appendChild(bubblesDiv);
-    bubblesDiv.appendChild(imdbRating);
+
     bubblesDiv.appendChild(imdbLogo);
     bubblesDiv.appendChild(imdbStar);
+    bubblesDiv.appendChild(imdbRating);
+    bubblesDiv.appendChild(imdbHeart);
+    bubblesDiv.appendChild(imdbVotes);
     buttonsDiv.appendChild(loveButton);
     loveButton.appendChild(loveParagraph);
     loveButton.appendChild(loveImage);

@@ -153,12 +153,28 @@
 
 .rating-container {
   display: inline-flex;
+  align-items: center;
 }
 
-.imbd-star{
-  width: 20px;
+.bubbles-div {
+  display: inline-flex;
+  align-items: center;
 }
 
-.imbd-logo{
-  width: 16px;
+.bubbles-div p {
+  font-size: large;
+}
+
+.imdb-star {
+  height: 20px;
+  margin: 0px 5px 5px 5px;
+}
+
+.imdb-logo {
+  height: 60px;
+}
+
+.imdb-heart-votes {
+  height: 20px;
+  margin: 0px 5px 5px 15px;
 }
