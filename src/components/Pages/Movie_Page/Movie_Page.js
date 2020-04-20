@@ -1,5 +1,7 @@
 import "./Movie_Page.css";
-import { navigate } from "../../Navigate_History/Navigate_History";
+import {
+  navigate
+} from "../../Navigate_History/Navigate_History";
 
 export class MoviePage {
   constructor() {
@@ -151,8 +153,14 @@ export class MoviePage {
   numberPages() {
     const pages = document.getElementsByClassName("nr-of-pages");
 
-    for (const page of pages) {
-      page.addEventListener("click", (event) => {
+    for (let i = 0; i < pages.length; i++) {
+      pages[i].addEventListener("click", (event) => {
+
+        if (pages.length >= 0) {
+          pages[i].className = pages[i].className.replace("active", "");
+        }
+        this.className += "active";
+
         console.log(event.target.innerText);
         this.getMovies((event.target.innerText - 1) * 10);
       });

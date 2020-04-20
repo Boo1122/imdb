@@ -33,10 +33,10 @@ body {
 
 #pages-container>button.active {
   background-color: black;
-  border: 1px solid rgba(255, 255, 0, 0.788);
+  border: 1px solid transparent rgba(255, 255, 0, 0.788);
 }
 
-#pages-container>button:hover:not(.active) {
+#pages-container>button:hover {
   background-color: yellow;
 }
 
