@@ -181,7 +181,9 @@
   height: 20px;
   margin: 0px 5px 5px 15px;
 }
-
+.buttons-div {
+  margin-top: 10px;
+}
 .buttons-div img {
   height: 20px;
   color: black;

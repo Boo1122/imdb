@@ -31,8 +31,7 @@ export class SinglePage {
     movieTitle.className = "single-movie-title";
     movieTitle.innerText = `${movie.Title}`;
 
-
-    //Here are the movie properties 
+    //Here are the movie properties
     const facts = document.createElement("div");
     facts.className = "movie-facts";
 
@@ -78,7 +77,7 @@ export class SinglePage {
     const loveParagraph = document.createElement("p");
     loveParagraph.innerText = "Love";
     const loveImage = document.createElement("img");
-    loveImage.className = "love-image"; 
+    loveImage.className = "love-image";
     loveImage.src = "./public/heart_button.png";
 
     const likeButton = document.createElement("button");
@@ -172,6 +171,9 @@ export class SinglePage {
 
           const trailerIframe = document.createElement("iframe");
           trailerIframe.id = "trailer-container";
+          trailerIframe.style.backgroundImage =
+            "url(./public/play_button_trailer)";
+
           trailerIframe.width = "560";
           trailerIframe.height = "280";
           trailerIframe.frameBorder = "0";
