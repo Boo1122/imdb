@@ -109,7 +109,11 @@ body {
 }
 
 .posters img:hover {
+<<<<<<< HEAD
   border: 2.5px solid rgba(233, 16, 16, 0.904);
+=======
+  /*border: 1.5px solid rgba(255, 0, 0, 0.486);*/
+>>>>>>> origin/maria-branch
   cursor: pointer;
   box-sizing: border-box;
 
@@ -128,7 +132,7 @@ body {
 .posters p {
   display: flex;
   color: red;
-  font-size: 1.2rem;
+  font-size: 0.85rem;
   outline: none;
   padding-left: 10px;
   padding-right: 10px;

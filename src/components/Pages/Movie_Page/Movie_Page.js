@@ -18,7 +18,11 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
+<<<<<<< HEAD
     container.style.backgroundImage = "url(./public/img/star_wars_rise.jpg)";
+=======
+    container.style.backgroundImage = "url(./public/img/batman_wallpaper_movie_pg.jpg)";
+>>>>>>> origin/maria-branch
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
