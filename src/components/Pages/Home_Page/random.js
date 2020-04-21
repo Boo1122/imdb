@@ -47,7 +47,5 @@ export class Random {
     divText.appendChild(text1);
     divText.appendChild(text2);
     divText.appendChild(text3);
-
-    console.log(word);
   }
 }
