@@ -1,4 +1,4 @@
-class AdvancedSearch {
+export class AdvancedSearch {
   constructor() {
     this.searchBox();
   }
@@ -42,28 +42,28 @@ class AdvancedSearch {
     titleBox.appendChild(titleInput);
   }
 
-  searchYear() {
-    const yearBox = document.createElement("div");
+  // searchYear() {
+  //   const yearBox = document.createElement("div");
 
-    const yearLabel = document.createElement("p");
-    yearLabel.className = "search-year-label";
-    yearLabel.innerText = "Select year:";
-    const yearInput = document.createElement("select");
-    yearInput.className = "search-year";
+  //   const yearLabel = document.createElement("p");
+  //   yearLabel.className = "search-year-label";
+  //   yearLabel.innerText = "Select year:";
+  //   const yearInput = document.createElement("select");
+  //   yearInput.className = "search-year";
 
-    const firstYear = 2020;
-    const lastYear = 1900;
-    for (let i = firstYear; i >= lastYear; i--) {
-      let option = document.createElement("option");
-      option.classList.add("drop-all-years");
-      option.innerText = `${i}`;
-    }
+  //   const firstYear = 2020;
+  //   const lastYear = 1900;
+  //   for (let i = firstYear; i >= lastYear; i--) {
+  //     let option = document.createElement("option");
+  //     option.classList.add("drop-all-years");
+  //     option.innerText = `${i}`;
+  //   }
 
-    document.getElementById("advancedBox").appendChild(yearBox);
-    yearBox.appendChild(yearLabel);
-    yearBox.appendChild(yearInput);
-    yearInput.appendChild(option);
-  }
+  //   document.getElementById("advancedBox").appendChild(yearBox);
+  //   yearBox.appendChild(yearLabel);
+  //   yearBox.appendChild(yearInput);
+  //   yearInput.appendChild(option);
+  // }
 
   searchRunetime() {
     const runtimeBox = document.createElement("div");
@@ -183,16 +183,22 @@ class AdvancedSearch {
     typeLabel.classList = "search-type-label";
     typeLabel.innerText = "Search by Type:";
 
-    const typeInput = document.createElement("input");
-    typeInput.className = "search-type-input";
+    const typeInput1 = document.createElement("input");
+    typeInput1.className = "search-type-input";
+    typeInput1.setAttribute("type", "radio");
+    typeInput1.innerText = "Movie";
+
+    const typeInput2 = document.createElement("input");
+    typeInput2.className = "search-type-input";
+    typeInput2.setAttribute("type", "radio");
+    typeInput2.innerText = "TV Series";
 
     document.getElementById("advancedBox").appendChild(typeBox);
     typeBox.appendChild(typeLabel);
-    typeBox.appendChild(typeInput);
+    typeBox.appendChild(typeInput1);
+    typeBox.appendChild(typeInput2);
   }
 }
-
-new AdvancedSearch();
 
 function allYears() {
   const firstYear = 2020;
@@ -201,5 +207,3 @@ function allYears() {
     console.log(i);
   }
 }
-
-allYears();
