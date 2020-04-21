@@ -96,6 +96,18 @@ export class SinglePage {
     dislikeImage.className = "dislike-image";
     dislikeImage.src = "./public/dislike_button.png";
 
+    //Here you have the extra info
+    const extraInfo = document.createElement("div");
+    extraInfo.className = "extra-info";
+    const awards = document.createElement("p");
+    awards.innerText = `AWARDS: ${movie.Awards}`;
+    /*const director = document.createElement("p");
+    director.innerText = `Director: ${movie.Director}`;
+    const writer = document.createElement("p");
+    writer.innerText = `Writer: ${movie.Writer}`;
+    const actors = document.createElement("p");
+    actors.innerText = `Actors: ${movie.Actors}`;*/
+
     //appendings
     main.appendChild(contentDiv);
     contentDiv.appendChild(movieContent);
@@ -130,6 +142,12 @@ export class SinglePage {
     buttonsDiv.appendChild(dislikeButton);
     dislikeButton.appendChild(dislikeParagraph);
     dislikeButton.appendChild(dislikeImage);
+
+    posterInfo.appendChild(extraInfo);
+    extraInfo.appendChild(awards);
+    /*extraInfo.appendChild(director);
+    extraInfo.appendChild(writer);
+    extraInfo.appendChild(actors);*/
   }
 
   homeContainerBox() {
@@ -171,8 +189,9 @@ export class SinglePage {
 
           const trailerIframe = document.createElement("iframe");
           trailerIframe.id = "trailer-container";
-          trailerIframe.style.backgroundImage =
+          /*trailerIframe.style.backgroundImage =
             "url(./public/play_button_trailer)";
+          trailerIframe.style.backgroundSize = "20px 20px";*/
 
           trailerIframe.width = "560";
           trailerIframe.height = "280";

@@ -33,7 +33,7 @@
     format("woff2");
 }
 .single-movie-title {
-  padding: 1em;
+  padding: 0.5em;
   font-family: Nintendoid1;
   color: #eee;
   font-size: 2em;
