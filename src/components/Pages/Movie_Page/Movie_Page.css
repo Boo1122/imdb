@@ -32,13 +32,11 @@ body {
   cursor: pointer;
 }
 
-
 .actives,
 .nr-of-pages:hover {
   background-color: transparent;
   color: black;
 }
-
 
 .next {
   display: flex;
@@ -109,14 +107,9 @@ body {
 }
 
 .posters img:hover {
-<<<<<<< HEAD
-  border: 2.5px solid rgba(233, 16, 16, 0.904);
-=======
   /*border: 1.5px solid rgba(255, 0, 0, 0.486);*/
->>>>>>> origin/maria-branch
   cursor: pointer;
   box-sizing: border-box;
-
 }
 
 .posters {
@@ -126,7 +119,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
 .posters p {
@@ -139,11 +131,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   padding: 5px;
-
 }
-
-
-
 
 .delete-single-movie {
   align-self: flex-end;

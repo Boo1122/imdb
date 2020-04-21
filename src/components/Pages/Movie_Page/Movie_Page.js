@@ -1,7 +1,5 @@
 import "./Movie_Page.css";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History";
+import { navigate } from "../../Navigate_History/Navigate_History";
 
 export class MoviePage {
   constructor() {
@@ -18,11 +16,8 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
-<<<<<<< HEAD
-    container.style.backgroundImage = "url(./public/img/star_wars_rise.jpg)";
-=======
-    container.style.backgroundImage = "url(./public/img/batman_wallpaper_movie_pg.jpg)";
->>>>>>> origin/maria-branch
+    container.style.backgroundImage =
+      "url(./public/img/batman_wallpaper_movie_pg.jpg)";
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
@@ -94,13 +89,9 @@ export class MoviePage {
     const paginationMovie = document.getElementById("movie-page");
     paginationMovie.classList.add("actives");
 
-
     const paginationDiv = document.createElement("div");
     paginationDiv.className = "pagination-div";
     paginationDiv.id = "pagDiv";
-
-
-
 
     const previous = document.createElement("button");
     previous.id = "previous-movie";
@@ -140,7 +131,6 @@ export class MoviePage {
     const pagesContainer = document.createElement("div");
     pagesContainer.id = "pages-container";
 
-
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(pagesContainer);
@@ -162,11 +152,11 @@ export class MoviePage {
     const pages = document.getElementsByClassName("nr-of-pages");
 
     for (let i = 0; i < pages.length; i++) {
-      pages[i].addEventListener("click", event => {
+      pages[i].addEventListener("click", (event) => {
         this.getMovies((event.target.innerText - 1) * 10);
         console.log(event.target.innerText);
 
-        let current = document.getElementsByClassName('actives')
+        let current = document.getElementsByClassName("actives");
         if (current.length > 0) {
           current[0].className = current[0].className.replace(" actives", " ");
         }
