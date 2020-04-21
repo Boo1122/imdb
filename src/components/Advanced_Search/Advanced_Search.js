@@ -15,7 +15,7 @@ export class AdvancedSearch {
     centerbox.appendChild(containerBox);
 
     this.searchTitle();
-    //this.searchYear();
+    this.searchYear();
     this.searchRunetime();
     this.searchGenre();
     this.searchLanguage();
@@ -42,28 +42,28 @@ export class AdvancedSearch {
     titleBox.appendChild(titleInput);
   }
 
-  // searchYear() {
-  //   const yearBox = document.createElement("div");
+  searchYear() {
+    const yearBox = document.createElement("div");
 
-  //   const yearLabel = document.createElement("p");
-  //   yearLabel.className = "search-year-label";
-  //   yearLabel.innerText = "Select year:";
-  //   const yearInput = document.createElement("select");
-  //   yearInput.className = "search-year";
+    const yearLabel = document.createElement("p");
+    yearLabel.className = "search-year-label";
+    yearLabel.innerText = "Select year:";
+    const yearInput = document.createElement("select");
+    yearInput.className = "search-year";
 
-  //   const firstYear = 2020;
-  //   const lastYear = 1900;
-  //   for (let i = firstYear; i >= lastYear; i--) {
-  //     let option = document.createElement("option");
-  //     option.classList.add("drop-all-years");
-  //     option.innerText = `${i}`;
-  //   }
+    const firstYear = 2020;
+    for (let i = firstYear - 120; i <= firstYear; i++) {
+      let option = document.createElement("option");
+      option.value = option.innerHTML = i;
+      if (i === firstYear) option.selected = true;
+      yearInput.appendChild(option);
+    }
 
-  //   document.getElementById("advancedBox").appendChild(yearBox);
-  //   yearBox.appendChild(yearLabel);
-  //   yearBox.appendChild(yearInput);
-  //   yearInput.appendChild(option);
-  // }
+    document.getElementById("advancedBox").appendChild(yearBox);
+    yearBox.appendChild(yearLabel);
+    yearBox.appendChild(yearInput);
+    yearInput.appendChild(option);
+  }
 
   searchRunetime() {
     const runtimeBox = document.createElement("div");
@@ -204,13 +204,5 @@ export class AdvancedSearch {
     typeBox.appendChild(typeInput1);
     typeBox.appendChild(p2);
     typeBox.appendChild(typeInput2);
-  }
-}
-
-function allYears() {
-  const firstYear = 2020;
-  const lastYear = 1900;
-  for (i = firstYear; i >= lastYear; i--) {
-    console.log(i);
   }
 }
