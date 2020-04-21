@@ -2,10 +2,17 @@ import "./random.css";
 
 export class Random {
   constructor() {
-    this.getWord();
+    let self = this;
+    self.container();
+
+    setInterval(() => {
+      let words = ["Movies", "Series", "DC Comics", "Batman"];
+      let word = words[Math.floor(Math.random() * words.length)];
+      document.getElementById("randomDiv").innerHTML = word;
+    }, 1000);
   }
 
-  getWord() {
+  container() {
     let words = ["Movies", "Series", "DC Comics", "Batman"];
     let word = words[Math.floor(Math.random() * words.length)];
     let text = document.createTextNode(word);
@@ -40,5 +47,7 @@ export class Random {
     divText.appendChild(text1);
     divText.appendChild(text2);
     divText.appendChild(text3);
+
+    console.log(word);
   }
 }
