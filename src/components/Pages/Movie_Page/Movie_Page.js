@@ -18,7 +18,7 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
-    container.style.backgroundImage = "url(./public/img/star_wars_sword.jpg)";
+    container.style.backgroundImage = "url(./public/img/star_wars_rise.jpg)";
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
@@ -88,41 +88,62 @@ export class MoviePage {
   moviesPagination() {
     const body = document.getElementById("body");
     const paginationMovie = document.getElementById("movie-page");
+    paginationMovie.classList.add("actives");
+
 
     const paginationDiv = document.createElement("div");
     paginationDiv.className = "pagination-div";
     paginationDiv.id = "pagDiv";
 
+
+
+
     const previous = document.createElement("button");
     previous.id = "previous-movie";
-    previous.classList.add("nav-link");
     previous.className = "previous";
     previous.innerText = `< Previous`;
 
     previous.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
+      if (this.movieData.pagination.currentPage < +3) {
+        previous.disabled = true;
+        previous.style.opacity = 0.5;
+      }
+      if (this.movieData.pagination.currentPage <= +10) {
+        next.disabled = false;
+        next.style.opacity = 1.0;
+      }
     });
 
     const next = document.createElement("button");
     next.id = "next-movie";
-    next.classList.add("nav-link");
     next.className = "next";
     next.innerText = `Next >`;
     next.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10);
+
+      if (this.movieData.pagination.currentPage > 0) {
+        previous.disabled = false;
+        previous.style.opacity = 1.0;
+      }
+      if (this.movieData.pagination.currentPage >= +9) {
+        next.disabled = true;
+        next.style.opacity = 0.5;
+      }
     });
 
     let store = [];
     const pagesContainer = document.createElement("div");
     pagesContainer.id = "pages-container";
 
+
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(pagesContainer);
-    pagesContainer.appendChild(previous);
+    paginationDiv.appendChild(previous);
 
     for (let i = 1; i <= 10; i++) {
-      const page = document.createElement("p");
+      const page = document.createElement("button");
       page.classList.add("nr-of-pages");
       page.innerText = `${i}`;
       store.push(page[i]);
@@ -130,16 +151,23 @@ export class MoviePage {
       pagesContainer.appendChild(page);
     }
 
-    pagesContainer.appendChild(next);
+    paginationDiv.appendChild(next);
   }
 
   numberPages() {
     const pages = document.getElementsByClassName("nr-of-pages");
 
-    for (const page of pages) {
-      page.addEventListener("click", (event) => {
-        console.log(event.target.innerText);
+    for (let i = 0; i < pages.length; i++) {
+      pages[i].addEventListener("click", event => {
         this.getMovies((event.target.innerText - 1) * 10);
+        console.log(event.target.innerText);
+
+        let current = document.getElementsByClassName('actives')
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace(" actives", " ");
+        }
+
+        event.target.className += " actives";
       });
     }
   }

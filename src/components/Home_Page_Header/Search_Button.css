@@ -1,7 +1,6 @@
 #img {
   display: flex;
   height: 28px;
-  width: 30px;
   margin-top: 48px;
   order: 3;
   margin-right: 80px;
@@ -13,7 +12,7 @@
   text-align: center;
   margin-top: 45px;
   margin-right: 5px;
-  width: 180px;
+  width: 220px;
   height: 30px;
   border-radius: 40px;
   outline: 0;
@@ -25,5 +24,9 @@
 #input-div {
   order: 2;
   margin-left: auto;
+<<<<<<< HEAD
   transition: 0.4s;
 }
+=======
+}
+>>>>>>> 341c9908ecd09b40c3771368f6ce73616d874759
