@@ -67,20 +67,24 @@ export class SinglePage {
     imdbHeart.className = "imdb-heart-votes";
     imdbHeart.src = "./public/imdb_heart.png";
     const imdbVotes = document.createElement("p");
+    imdbVotes.id = "imdb-votes";
     imdbVotes.innerText = `Votes: ${movie.imdbVotes}`;
 
     //Here are the rating buttons
     const buttonsDiv = document.createElement("div");
     buttonsDiv.className = "buttons-div";
     const loveButton = document.createElement("button");
+    loveButton.id = "love-button-id";
     loveButton.className = "love-button";
     const loveParagraph = document.createElement("p");
     loveParagraph.innerText = "Love";
     const loveImage = document.createElement("img");
+    loveImage.id = "love-image-id";
     loveImage.className = "love-image";
     loveImage.src = "./public/heart_button.png";
 
     const likeButton = document.createElement("button");
+    likeButton.id = "like-button-id";
     likeButton.className = "like-button";
     const likeParagraph = document.createElement("p");
     likeParagraph.innerText = "Like";
@@ -89,6 +93,7 @@ export class SinglePage {
     likeImage.src = "./public/like_button.png";
 
     const dislikeButton = document.createElement("button");
+    dislikeButton.id = "dislike-button-id";
     dislikeButton.className = "dislike-button";
     const dislikeParagraph = document.createElement("p");
     dislikeParagraph.innerText = "Dislike";
@@ -148,6 +153,8 @@ export class SinglePage {
     /*extraInfo.appendChild(director);
     extraInfo.appendChild(writer);
     extraInfo.appendChild(actors);*/
+
+    this.ratingButtonsOnClick();
   }
 
   homeContainerBox() {
@@ -158,6 +165,35 @@ export class SinglePage {
     container.classList.add("page");
 
     body.appendChild(container);
+  }
+
+  ratingButtonsOnClick() {
+    const loveButton = document.getElementById("love-button-id");
+    const likeButton = document.getElementById("like-button-id");
+    const dislikeButton = document.getElementById("dislike-button-id");
+
+    loveButton.addEventListener("click", movie => {
+      console.log("love");
+      /*const imdbVotes = document.getElementById("imdb-votes");
+      imdbVotes.innerText = `Votes: ${movie.imdbVotes + 1}`;*/
+      loveButton.style.backgroundColor = "red";
+      likeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+      dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+    });
+
+    likeButton.addEventListener("click", () => {
+      console.log("like");
+      likeButton.style.backgroundColor = "yellow";
+      loveButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+      dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+    });
+
+    dislikeButton.addEventListener("click", () => {
+      console.log("dislike");
+      dislikeButton.style.backgroundColor = "gray";
+      loveButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+      likeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+    });
   }
 
   renderMovie(movieId) {

@@ -114,6 +114,11 @@
   border-radius: 16px 0px 0px 16px;
 }
 
+.love-button-clicked {
+  background: rgba(218, 221, 35, 0.76);
+ 
+}
+
 .like-button {
   display: inline-flex;
   align-items: center;
