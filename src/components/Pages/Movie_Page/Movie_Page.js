@@ -41,7 +41,19 @@ export class MoviePage {
         this.movieData = movieData;
         this.renderMovieList();
         console.log(this.movieData.pagination);
+        this.currentPage = this.movieData.pagination.currentPage;
+        this.setCurrentPage();
       });
+  }
+
+  setCurrentPage() {
+    const allPageButtons = document.getElementsByClassName("nr-of-pages");
+    for (const pageButton of allPageButtons) {
+      pageButton.classList.remove("actives");
+    }
+
+    const id = `${this.currentPage}_pageButton`;
+    document.getElementById(id).classList.add("actives");
   }
 
   renderMovieList() {
@@ -71,6 +83,8 @@ export class MoviePage {
     deleteMov.classList.add("delete-single-movie");
     deleteMov.setAttribute("title", "Delete Movie");
     deleteMov.innerText = "X";
+
+    // if from cookies token
     deleteMov.style.display = "none";
 
     const img = document.createElement("img");
@@ -138,7 +152,9 @@ export class MoviePage {
 
     for (let i = 1; i <= 10; i++) {
       const page = document.createElement("button");
+      page.id = `${i}_pageButton`;
       page.classList.add("nr-of-pages");
+
       page.innerText = `${i}`;
       store.push(page[i]);
 
@@ -154,14 +170,14 @@ export class MoviePage {
     for (let i = 0; i < pages.length; i++) {
       pages[i].addEventListener("click", (event) => {
         this.getMovies((event.target.innerText - 1) * 10);
-        console.log(event.target.innerText);
+        // console.log(event.target.innerText);
 
-        let current = document.getElementsByClassName("actives");
-        if (current.length > 0) {
-          current[0].className = current[0].className.replace(" actives", " ");
-        }
+        // let current = document.getElementsByClassName("actives");
+        // if (current.length > 0) {
+        //   current[0].className = current[0].className.replace(" actives", " ");
+        // }
 
-        event.target.className += " actives";
+        // event.target.className += " actives";
       });
     }
   }
