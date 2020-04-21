@@ -183,11 +183,16 @@ export class AdvancedSearch {
     typeLabel.classList = "search-type-label";
     typeLabel.innerText = "Search by Type:";
 
+    const p1 = document.createElement("p");
+    p1.classList.add("radio-slect-movie");
+    p1.innerText = "Movie";
     const typeInput1 = document.createElement("input");
     typeInput1.className = "search-type-input";
     typeInput1.setAttribute("type", "radio");
-    typeInput1.innerText = "Movie";
 
+    const p2 = document.createElement("p");
+    p2.classList.add("radio-slect-movie");
+    p2.innerText = "TV Series";
     const typeInput2 = document.createElement("input");
     typeInput2.className = "search-type-input";
     typeInput2.setAttribute("type", "radio");
@@ -195,7 +200,9 @@ export class AdvancedSearch {
 
     document.getElementById("advancedBox").appendChild(typeBox);
     typeBox.appendChild(typeLabel);
+    typeBox.appendChild(p1);
     typeBox.appendChild(typeInput1);
+    typeBox.appendChild(p2);
     typeBox.appendChild(typeInput2);
   }
 }
