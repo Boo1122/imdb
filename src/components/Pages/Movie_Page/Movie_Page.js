@@ -1,5 +1,7 @@
 import "./Movie_Page.css";
-import { navigate } from "../../Navigate_History/Navigate_History";
+import {
+  navigate
+} from "../../Navigate_History/Navigate_History";
 
 export class MoviePage {
   constructor() {
@@ -135,7 +137,7 @@ export class MoviePage {
         previous.disabled = false;
         previous.style.opacity = 1.0;
       }
-      if (this.movieData.pagination.currentPage >= +9) {
+      if (this.movieData.pagination.currentPage >= 10) {
         next.disabled = true;
         next.style.opacity = 0.5;
       }
