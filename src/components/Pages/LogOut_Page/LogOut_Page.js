@@ -24,7 +24,7 @@ export class LogOutPage {
         .split("=")[1];
       console.log(token);
 
-      fetch("https://movies-api-siit.herokuapp.com/auth/logout", {
+      fetch("https://movies-app-siit.herokuapp.com/auth/logout", {
         method: "GET", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

@@ -62,7 +62,6 @@ export class AdvancedSearch {
     document.getElementById("advancedBox").appendChild(yearBox);
     yearBox.appendChild(yearLabel);
     yearBox.appendChild(yearInput);
-    yearInput.appendChild(option);
   }
 
   searchRunetime() {

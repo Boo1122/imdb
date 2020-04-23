@@ -26,7 +26,7 @@ export class MoviePage {
   }
 
   generateUrl(skip) {
-    return `https://movies-api-siit.herokuapp.com/movies?take=10${
+    return `https://movies-app-siit.herokuapp.com/movies?take=10${
       skip ? "&skip=" + skip : ""
     }`;
   }
@@ -39,7 +39,6 @@ export class MoviePage {
       .then((movieData) => {
         this.movieData = movieData;
         this.renderMovieList();
-        console.log(this.movieData.pagination);
       });
   }
 

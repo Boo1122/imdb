@@ -78,7 +78,7 @@ export class LoginPage {
     const passWord = document.getElementById("password-input-login");
 
     logButton.addEventListener("click", (event) => {
-      fetch("https://movies-api-siit.herokuapp.com/auth/login", {
+      fetch("https://movies-app-siit.herokuapp.com/auth/login", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

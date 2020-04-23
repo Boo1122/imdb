@@ -22,4 +22,4 @@ new Footer();
 
 navigate.init(singlePage);
 
-new AdvancedSearch();
+//new AdvancedSearch();

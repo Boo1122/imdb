@@ -87,7 +87,7 @@ export class RegisterPage {
     const userPass = document.getElementById("password-input");
 
     regButton.addEventListener("click", () => {
-      fetch("https://movies-api-siit.herokuapp.com/auth/register", {
+      fetch("https://movies-app-siit.herokuapp.com/auth/register", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
