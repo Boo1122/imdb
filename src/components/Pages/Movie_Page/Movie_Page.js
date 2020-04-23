@@ -1,7 +1,5 @@
 import "./Movie_Page.css";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History";
+import { navigate } from "../../Navigate_History/Navigate_History";
 
 export class MoviePage {
   constructor() {
@@ -29,7 +27,7 @@ export class MoviePage {
   }
 
   generateUrl(skip) {
-    return `https://movies-api-siit.herokuapp.com/movies?take=10${
+    return `https://movies-app-siit.herokuapp.com/movies?take=10${
       skip ? "&skip=" + skip : ""
     }`;
   }
@@ -116,7 +114,7 @@ export class MoviePage {
 
     previous.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
-      if (this.movieData.pagination.currentPage < +3) {
+      if (this.movieData.pagination.currentPage >= 1) {
         previous.disabled = true;
         previous.style.opacity = 0.5;
       }
@@ -137,7 +135,7 @@ export class MoviePage {
         previous.disabled = false;
         previous.style.opacity = 1.0;
       }
-      if (this.movieData.pagination.currentPage >= 10) {
+      if (this.movieData.pagination.currentPage >= 9) {
         next.disabled = true;
         next.style.opacity = 0.5;
       }
