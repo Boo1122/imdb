@@ -76,21 +76,23 @@ export class MoviePage {
     const p = document.createElement("p");
     p.innerHTML = movie.Title;
 
-    const deleteMov = document.createElement("span");
-    deleteMov.classList.add("delete-single-movie");
-    deleteMov.setAttribute("title", "Delete Movie");
-    deleteMov.innerText = "X";
-
     let token = document.cookie;
-    console.log(token.value);
-
-    if (token.value === token.value) {
-      deleteMov.style.display = "block";
-    } else if (token.value === "") {
-      deleteMov.style.display = "none";
-    } else {
-      deleteMov.style.display = "none";
+    console.log(token);
+    if (token) {
+      const deleteMov = document.createElement("span");
+      deleteMov.classList.add("delete-single-movie");
+      deleteMov.setAttribute("title", "Delete Movie");
+      deleteMov.innerText = "X";
+      posters.appendChild(deleteMov);
     }
+
+    // if (token.value === token.value) {
+    //   deleteMov.style.display = "block";
+    // } else if (token.value === "") {
+    //   deleteMov.style.display = "none";
+    // } else {
+    //   deleteMov.style.display = "none";
+    // }
     // if from cookies token
 
     const img = document.createElement("img");
@@ -100,7 +102,7 @@ export class MoviePage {
     body.appendChild(container);
     container.appendChild(posters);
     posters.appendChild(p);
-    posters.appendChild(deleteMov);
+
     posters.appendChild(img);
   }
 

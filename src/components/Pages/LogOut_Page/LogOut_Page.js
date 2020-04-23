@@ -53,17 +53,6 @@ export class LogOutPage {
     logoutButton.style.display = "none";
     const editbutton = document.getElementById("editButton");
     editbutton.style.display = "none";
-    const deleteAllX = document.getElementsByClassName("delete-single-movie");
-    for (const x of deleteAllX) {
-      let token = document.cookie;
-      if (token.value === token.value) {
-        x.style.display = "block";
-      } else if (token.value === "") {
-        x.style.display = "none";
-      } else {
-        x.style.display = "none";
-      }
-    }
 
     const deleteMovieButton = document.getElementsByClassName(
       "delete-single-movie"
