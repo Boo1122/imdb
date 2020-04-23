@@ -9,7 +9,7 @@ export class Random {
       let words = ["Movies", "Series", "DC Comics", "Batman"];
       let word = words[Math.floor(Math.random() * words.length)];
       document.getElementById("randomDiv").innerHTML = word;
-    }, 1000);
+    }, 3000);
   }
 
   container() {
