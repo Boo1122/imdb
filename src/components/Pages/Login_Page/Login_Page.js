@@ -128,12 +128,5 @@ export class LoginPage {
         x.prepend(deleteMov);
       }
     }
-
-    // const deleteMovieButton = document.getElementsByClassName(
-    //   "delete-single-movie"
-    // );
-    // for (const movie of deleteMovieButton) {
-    //   movie.style.display = "block";
-    // }
   }
 }

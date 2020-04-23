@@ -1,3 +1,5 @@
+import "./Advanced_Search.css";
+
 export class AdvancedSearch {
   constructor() {
     this.searchBox();
@@ -24,6 +26,7 @@ export class AdvancedSearch {
     this.searchByimdbVotes();
     this.searchImdbID();
     this.searchByType();
+    this.executeSearch();
   }
 
   searchTitle() {
@@ -82,18 +85,49 @@ export class AdvancedSearch {
 
   searchGenre() {
     const genreBox = document.createElement("div");
+    genreBox.id = "genreBox";
 
-    const genrelabel = document.createElement("p");
-    genrelabel.classList = "search-genre-label";
-    genrelabel.innerText = "Search movie by genre:";
+    const actionLabel = document.createElement("p");
+    actionLabel.innerText = "Action";
+    const action = document.createElement("input");
+    action.setAttribute("type", "checkbox");
 
-    const genreInput = document.createElement("input");
-    genreInput.className = "search-genre-input";
-    genreInput.setAttribute("type", "text");
+    const animationLabel = document.createElement("p");
+    animationLabel.innerText = "Animation";
+    const animation = document.createElement("input");
+    animation.setAttribute("type", "checkbox");
+
+    const comedyLabel = document.createElement("p");
+    comedyLabel.innerText = "Comedy";
+    const comedy = document.createElement("input");
+    comedy.setAttribute("type", "checkbox");
+
+    const horrorLabel = document.createElement("p");
+    horrorLabel.innerText = "Horror";
+    const horror = document.createElement("input");
+    horror.setAttribute("type", "checkbox");
+
+    const sciFiLabel = document.createElement("p");
+    sciFiLabel.innerText = "Sci-Fi";
+    const sciFi = document.createElement("input");
+    sciFi.setAttribute("type", "checkbox");
 
     document.getElementById("advancedBox").appendChild(genreBox);
-    genreBox.appendChild(genrelabel);
-    genreBox.appendChild(genreInput);
+
+    genreBox.appendChild(actionLabel);
+    genreBox.appendChild(action);
+
+    genreBox.appendChild(animationLabel);
+    genreBox.appendChild(animation);
+
+    genreBox.appendChild(comedyLabel);
+    genreBox.appendChild(comedy);
+
+    genreBox.appendChild(horrorLabel);
+    genreBox.appendChild(horror);
+
+    genreBox.appendChild(sciFiLabel);
+    genreBox.appendChild(sciFi);
   }
 
   searchLanguage() {
@@ -187,14 +221,14 @@ export class AdvancedSearch {
     p1.innerText = "Movie";
     const typeInput1 = document.createElement("input");
     typeInput1.className = "search-type-input";
-    typeInput1.setAttribute("type", "radio");
+    typeInput1.setAttribute("type", "checkbox");
 
     const p2 = document.createElement("p");
     p2.classList.add("radio-slect-movie");
     p2.innerText = "TV Series";
     const typeInput2 = document.createElement("input");
     typeInput2.className = "search-type-input";
-    typeInput2.setAttribute("type", "radio");
+    typeInput2.setAttribute("type", "checkbox");
     typeInput2.innerText = "TV Series";
 
     document.getElementById("advancedBox").appendChild(typeBox);
@@ -203,5 +237,16 @@ export class AdvancedSearch {
     typeBox.appendChild(typeInput1);
     typeBox.appendChild(p2);
     typeBox.appendChild(typeInput2);
+  }
+
+  executeSearch() {
+    const searchButtonBox = document.createElement("div");
+    searchButtonBox.in = "searchButtonBox";
+
+    const searchButton = document.createElement("button");
+    searchButton.innerText = "Search";
+
+    document.getElementById("advancedBox").appendChild(searchButtonBox);
+    searchButtonBox.appendChild(searchButton);
   }
 }
