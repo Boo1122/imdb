@@ -54,6 +54,8 @@ export class LogOutPage {
     const editbutton = document.getElementById("editButton");
     editbutton.style.display = "none";
 
+    location.reload(false);
+
     const deleteMovieButton = document.getElementsByClassName(
       "delete-single-movie"
     );
