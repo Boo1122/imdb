@@ -27,6 +27,7 @@ export class Search {
     img.id = "img";
     img.src = "./src/components/Home_Page_Header/search.png";
 
+
     document.getElementById("body").appendChild(img);
   }
 

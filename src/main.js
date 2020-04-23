@@ -7,14 +7,19 @@ import { Footer } from "./components/Footer/Footer";
 import { navigate } from "./components/Navigate_History/Navigate_History";
 import { SinglePage } from "./components/Pages/Single_Page/Single_Page";
 import { MoviePage } from "./components/Pages/Movie_Page/Movie_Page";
+import { LogOutPage } from "./components/Pages/LogOut_Page/LogOut_Page";
+import { AdvancedSearch } from "./components/Advanced_Search/Advanced_Search";
 
 new Header();
 new HomePage();
 new LoginPage();
 new RegisterPage();
 const singlePage = new SinglePage();
+new LogOutPage();
 new MoviePage();
 
 new Footer();
 
 navigate.init(singlePage);
+
+//new AdvancedSearch();

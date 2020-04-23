@@ -2,25 +2,29 @@ import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
+import "../Pages/LogOut_Page/LogOut_Page.css";
+import "./Edit_Movies.css";
 
 export class Header {
   constructor() {
     this.header();
     this.homeButton();
     this.moviesButton();
+    this.editMovies();
     this.loginButton();
+    this.logOutButton();
     this.registerButton();
   }
 
   header() {
     const body = document.getElementById("body");
-    //body.style.backgroundImage = "url(./public/img/Dark_Knight_back1.jpg)";
-    //document.body.style.backgroundRepeat = "repeat-y";
 
     const header = document.createElement("div");
     header.classList.add("header");
     header.id = "header";
     body.appendChild(header);
+    header.style.backgroundImage = "url(./public/img/55376.jpg)";
+    header.style.borderBottom = "5px solid salmon";
   }
 
   homeButton() {
@@ -53,24 +57,25 @@ export class Header {
     const buttonBody = document.createElement("div");
     buttonBody.classList.add("dropdown-content");
 
-    const title = document.createElement("p");
-    title.id = "mov-button-title";
-    title.innerText = "Title";
-
-    const year = document.createElement("p");
-    year.id = "mov-button-year";
-    year.innerText = "Year";
-
-    const genre = document.createElement("p");
-    genre.id = "mov-button-genre";
-    genre.innerText = "Genre";
-
     header.appendChild(buttonDiv);
     buttonDiv.appendChild(movies);
     buttonDiv.appendChild(buttonBody);
-    buttonBody.appendChild(title);
-    buttonBody.appendChild(year);
-    buttonBody.appendChild(genre);
+  }
+
+  editMovies() {
+    const header = document.getElementById("header");
+
+    const editDiv = document.createElement("div");
+    editDiv.id = "editButton";
+    editDiv.style.display = "none";
+
+    const editButton = document.createElement("button");
+    editButton.classList.add("nav-link", "edit");
+    editButton.setAttribute("data-target", "edit");
+    editButton.innerHTML = "Edit";
+
+    header.appendChild(editDiv);
+    editDiv.appendChild(editButton);
   }
 
   loginButton() {
@@ -86,6 +91,22 @@ export class Header {
 
     header.appendChild(loginDiv);
     loginDiv.appendChild(loginButton);
+  }
+
+  logOutButton() {
+    const header = document.getElementById("header");
+
+    const logOutDiv = document.createElement("div");
+    logOutDiv.id = "logOutBtn";
+    logOutDiv.style.display = "none";
+
+    const logOutButton = document.createElement("button");
+    logOutButton.classList.add("nav-link", "logout");
+    logOutButton.setAttribute("data-target", "logout-page");
+    logOutButton.innerHTML = "LogOut";
+
+    header.appendChild(logOutDiv);
+    logOutDiv.appendChild(logOutButton);
   }
 
   registerButton() {

@@ -9,76 +9,78 @@ body {
 .pagination-div {
   display: flex;
   justify-content: center;
-
 }
-
 
 #pages-container {
   display: flex;
-  justify-content: center;
-
 }
 
- #pages-container > p {
-  color: black;
-  cursor: pointer; 
-  border: 1px solid cyan;
-  margin-left: 5px;
-  margin-right: 5px;
+.nr-of-pages {
   display: flex;
-  background-color: cyan;  
-  width: 25px; 
-  height: 25px; 
-  align-items: center;
-  padding-left: 15px;
-  font-weight: bold;
-}
-
-#pages-container > p:hover {
-  background-color: #ffff00;
-}
-
-
-.previous {
-  display: flex;
-  color: red;
-  font-size: 1.4rem;
-  display: flex;
-  border-radius: 20px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 50%;
   outline: none;
   padding-left: 15px;
   padding-right: 15px;
-  border: 1px solid rgb(165, 162, 162);
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px solid #68095b;
   font-family: "Pacifico", cursive;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-  .previous:hover {
-    background-color: black;
-  
- 
+.actives,
+.nr-of-pages:hover {
+  background-color: black;
+  color: white;
 }
 
 .next {
   display: flex;
   color: red;
-  font-size: 1.4rem;
-  border-radius: 20px;
+  font-size: 1.2rem;
   outline: none;
-  padding-left: 15px;
-  padding-right: 15px;
-  border: 1px solid #ffff00;
+  border-radius: 10%;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: transparent;
+  border: 1px solid #68095b;
   font-family: "Pacifico", cursive;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
-  .next:hover {
+.next:hover {
   background-color: black;
-  }
-  
+  border: 1px solid rgba(255, 255, 0, 0.788);
+}
 
+.previous {
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  outline: none;
+  border-radius: 10%;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: transparent;
+  border: 1px solid #68095b;
+  font-family: "Pacifico", cursive;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.previous:hover {
+  background-color: black;
+  border: 1px solid rgba(255, 255, 0, 0.788);
+}
 
 #movie-page {
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 20px;
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex: 1;
@@ -101,6 +103,13 @@ body {
 .posters img {
   height: 430px;
   width: 300px;
+  border-radius: 10%;
+}
+
+.posters img:hover {
+  /*border: 1.5px solid rgba(255, 0, 0, 0.486);*/
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 .posters {
@@ -113,10 +122,21 @@ body {
 }
 
 .posters p {
-  font-size: 20px;
-  text-align: center;
-  color: white;
+  display: flex;
+  color: red;
+  font-size: 0.85rem;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
 }
 
-
-
+.delete-single-movie {
+  align-self: flex-end;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  background: black;
+}

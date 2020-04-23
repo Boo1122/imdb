@@ -3,6 +3,7 @@ import "./Login_Form.css";
 export class LoginPage {
   constructor() {
     this.login();
+    this.loginClicked();
   }
 
   login() {
@@ -69,5 +70,57 @@ export class LoginPage {
     loginBtnContainer.appendChild(loginBtn);
 
     box1.appendChild(regPar);
+  }
+
+  loginClicked() {
+    const logButton = document.getElementById("loginButton");
+    const userName = document.getElementById("username-input-login");
+    const passWord = document.getElementById("password-input-login");
+
+    logButton.addEventListener("click", (event) => {
+      fetch("https://movies-app-siit.herokuapp.com/auth/login", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+          username: `${userName.value}`,
+          password: `${passWord.value}`,
+        }),
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          document.cookie = `token=${json.accessToken}`;
+
+          let eraseInputUser = document.getElementById("username-input-login");
+          eraseInputUser.value = "";
+
+          let eraseInputPass = document.getElementById("password-input-login");
+          eraseInputPass.value = "";
+          this.handleButtonTransferLogin();
+        });
+    });
+  }
+
+  handleButtonTransferLogin() {
+    const loginButton = document.getElementById("loginBtn");
+    loginButton.style.display = "none";
+    const logoutButton = document.getElementById("logOutBtn");
+    logoutButton.style.display = "block";
+    const editbutton = document.getElementById("editButton");
+    editbutton.style.display = "block";
+
+    const deleteMovieButton = document.getElementsByClassName(
+      "delete-single-movie"
+    );
+    for (const movie of deleteMovieButton) {
+      movie.style.display = "block";
+    }
   }
 }
