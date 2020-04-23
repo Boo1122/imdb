@@ -86,15 +86,6 @@ export class MoviePage {
       posters.appendChild(deleteMov);
     }
 
-    // if (token.value === token.value) {
-    //   deleteMov.style.display = "block";
-    // } else if (token.value === "") {
-    //   deleteMov.style.display = "none";
-    // } else {
-    //   deleteMov.style.display = "none";
-    // }
-    // if from cookies token
-
     const img = document.createElement("img");
     img.classList.add("detail-posters");
     img.setAttribute("src", movie.Poster);
@@ -195,6 +186,7 @@ export class MoviePage {
 
     for (const movie of allMovies) {
       movie.addEventListener("click", (event) => {
+        event.preventDefault();
         console.log(event.target);
       });
     }
