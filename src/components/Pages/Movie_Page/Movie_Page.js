@@ -81,10 +81,17 @@ export class MoviePage {
     deleteMov.setAttribute("title", "Delete Movie");
     deleteMov.innerText = "X";
 
-    const token = (document.cookie = `token=${json.accessToken}`);
+    let token = document.cookie;
+    console.log(token.value);
 
+    if (token.value === token.value) {
+      deleteMov.style.display = "block";
+    } else if (token.value === "") {
+      deleteMov.style.display = "none";
+    } else {
+      deleteMov.style.display = "none";
+    }
     // if from cookies token
-    deleteMov.style.display = "none";
 
     const img = document.createElement("img");
     img.classList.add("detail-posters");
@@ -189,24 +196,5 @@ export class MoviePage {
         console.log(event.target);
       });
     }
-  }
-
-  getCookie(token) {
-    var dc = document.cookie;
-    var prefix = token + "=";
-    var begin = dc.indexOf("; " + prefix);
-    if (begin == -1) {
-      begin = dc.indexOf(prefix);
-      if (begin != 0) return null;
-    } else {
-      begin += 2;
-      var end = document.cookie.indexOf(";", begin);
-      if (end == -1) {
-        end = dc.length;
-      }
-    }
-    // because unescape has been deprecated, replaced with decodeURI
-    //return unescape(dc.substring(begin + prefix.length, end));
-    return decodeURI(dc.substring(begin + prefix.length, end));
   }
 }
