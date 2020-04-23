@@ -98,6 +98,11 @@ export class LoginPage {
           console.log(json);
           document.cookie = `token=${json.accessToken}`;
 
+          let eraseInputUser = document.getElementById("username-input-login");
+          eraseInputUser.value = "";
+
+          let eraseInputPass = document.getElementById("password-input-login");
+          eraseInputPass.value = "";
           this.handleButtonTransferLogin();
         });
     });

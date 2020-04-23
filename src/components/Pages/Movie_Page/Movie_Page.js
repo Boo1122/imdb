@@ -16,7 +16,8 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
-    container.style.backgroundImage = "url(./public/img/star_wars_sword.jpg)";
+    container.style.backgroundImage =
+      "url(./public/img/batman_wallpaper_movie_pg.jpg)";
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
@@ -40,6 +41,16 @@ export class MoviePage {
         this.movieData = movieData;
         this.renderMovieList();
       });
+  }
+
+  setCurrentPage() {
+    const allPageButtons = document.getElementsByClassName("nr-of-pages");
+    for (const pageButton of allPageButtons) {
+      pageButton.classList.remove("actives");
+    }
+
+    const id = `${this.currentPage}_pageButton`;
+    document.getElementById(id).classList.add("actives");
   }
 
   renderMovieList() {
@@ -69,6 +80,8 @@ export class MoviePage {
     deleteMov.classList.add("delete-single-movie");
     deleteMov.setAttribute("title", "Delete Movie");
     deleteMov.innerText = "X";
+
+    // if from cookies token
     deleteMov.style.display = "none";
 
     const img = document.createElement("img");
@@ -85,6 +98,7 @@ export class MoviePage {
   moviesPagination() {
     const body = document.getElementById("body");
     const paginationMovie = document.getElementById("movie-page");
+    paginationMovie.classList.add("actives");
 
     const paginationDiv = document.createElement("div");
     paginationDiv.className = "pagination-div";
@@ -92,20 +106,36 @@ export class MoviePage {
 
     const previous = document.createElement("button");
     previous.id = "previous-movie";
-    previous.classList.add("nav-link");
     previous.className = "previous";
     previous.innerText = `< Previous`;
+
     previous.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
+      if (this.movieData.pagination.currentPage < +3) {
+        previous.disabled = true;
+        previous.style.opacity = 0.5;
+      }
+      if (this.movieData.pagination.currentPage <= +10) {
+        next.disabled = false;
+        next.style.opacity = 1.0;
+      }
     });
 
     const next = document.createElement("button");
     next.id = "next-movie";
-    next.classList.add("nav-link");
     next.className = "next";
     next.innerText = `Next >`;
     next.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10);
+
+      if (this.movieData.pagination.currentPage > 0) {
+        previous.disabled = false;
+        previous.style.opacity = 1.0;
+      }
+      if (this.movieData.pagination.currentPage <= 10) {
+        next.disabled = true;
+        next.style.opacity = 0.5;
+      }
     });
 
     let store = [];
@@ -115,27 +145,36 @@ export class MoviePage {
     body.appendChild(paginationMovie);
     paginationMovie.appendChild(paginationDiv);
     paginationDiv.appendChild(pagesContainer);
-    pagesContainer.appendChild(previous);
+    paginationDiv.appendChild(previous);
 
     for (let i = 1; i <= 10; i++) {
-      const page = document.createElement("p");
+      const page = document.createElement("button");
+      page.id = `${i}_pageButton`;
       page.classList.add("nr-of-pages");
+
       page.innerText = `${i}`;
       store.push(page[i]);
 
       pagesContainer.appendChild(page);
     }
 
-    pagesContainer.appendChild(next);
+    paginationDiv.appendChild(next);
   }
 
   numberPages() {
     const pages = document.getElementsByClassName("nr-of-pages");
 
-    for (const page of pages) {
-      page.addEventListener("click", (event) => {
-        console.log(event.target.innerText);
+    for (let i = 0; i < pages.length; i++) {
+      pages[i].addEventListener("click", (event) => {
         this.getMovies((event.target.innerText - 1) * 10);
+        // console.log(event.target.innerText);
+
+        // let current = document.getElementsByClassName("actives");
+        // if (current.length > 0) {
+        //   current[0].className = current[0].className.replace(" actives", " ");
+        // }
+
+        // event.target.className += " actives";
       });
     }
   }

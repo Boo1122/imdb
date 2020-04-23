@@ -113,6 +113,12 @@ export class RegisterPage {
             })
             .split("=")[1];
 
+          let emptyUserInput = document.getElementById("username-input");
+          emptyUserInput.value = "";
+
+          let emptyPassInput = document.getElementById("password-input");
+          emptyPassInput.value = "";
+
           this.handleButtonsTransfetLogout();
         });
     });
