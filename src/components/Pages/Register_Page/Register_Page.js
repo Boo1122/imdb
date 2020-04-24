@@ -132,10 +132,9 @@ export class RegisterPage {
     const editbutton = document.getElementById("editButton");
     editbutton.style.display = "block";
 
-    const allPosters = document.getElementsByClassName("posters");
+    const allPosters = document.getElementsByClassName("deleteMovie");
+    let token = document.cookie;
     for (const x of allPosters) {
-      let token = document.cookie;
-      console.log(token);
       if (token) {
         const deleteMov = document.createElement("span");
         deleteMov.classList.add("delete-single-movie");
