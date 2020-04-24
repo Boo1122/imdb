@@ -144,5 +144,7 @@ export class RegisterPage {
         x.prepend(deleteMov);
       }
     }
+
+    location.reload(false);
   }
 }
