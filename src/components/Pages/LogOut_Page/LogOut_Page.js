@@ -67,5 +67,6 @@ export class LogOutPage {
         x.prepend(deleteMov);
       }
     }
+    location.reload(false);
   }
 }
