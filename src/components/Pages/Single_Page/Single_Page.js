@@ -8,8 +8,8 @@ export class SinglePage {
   mainContent(movie) {
     console.log(movie);
     const main = document.getElementById("single-movie-page");
-    main.style.backgroundImage =
-      "url(./public/img/batman_wallpaper_movie_pg.jpg)";
+    /*main.style.backgroundImage =
+      "url(./public/img/batman_wallpaper_movie_pg.jpg)";*/
 
     main.innerHTML = null;
     const contentDiv = document.createElement("div");

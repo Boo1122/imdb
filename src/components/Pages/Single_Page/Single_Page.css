@@ -2,6 +2,17 @@
 @import url("https://www.splintered.co.uk/experiments/132/");
 
 #single-movie-page {
+  background-image: url("batman_wallpaper_movie_pg.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
