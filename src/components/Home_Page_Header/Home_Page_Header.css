@@ -105,11 +105,6 @@ body {
   cursor: pointer;
 }
 
-.home:hover {
-  border-radius: 50%;
-  box-shadow: 10px 5px 50px 5px yellow;
-}
-
 .movie-sub-buttons {
   text-align: center;
 }
