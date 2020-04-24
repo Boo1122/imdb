@@ -32,6 +32,7 @@ body {
   font-family: "Pacifico", cursive;
   text-align: center;
   outline: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -63,6 +64,7 @@ body {
   text-align: center;
   outline: none;
   order: 4;
+  cursor: pointer;
 }
 
 .login:hover {
@@ -130,6 +132,7 @@ body {
   border: none;
   font-family: "Pacifico", cursive;
   outline: none;
+  cursor: pointer;
 }
 
 .register:hover {
