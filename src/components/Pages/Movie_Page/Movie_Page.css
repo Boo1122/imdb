@@ -40,7 +40,7 @@ body {
 
 .next {
   display: flex;
-  color: red;
+  color: whitesmoke;
   font-size: 1.2rem;
   outline: none;
   border-radius: 10%;
@@ -51,16 +51,16 @@ body {
   font-family: "Pacifico", cursive;
   margin-bottom: 10px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .next:hover {
   background-color: black;
-  border: 1px solid rgba(255, 255, 0, 0.788);
 }
 
 .previous {
   display: flex;
-  color: red;
+  color: whitesmoke;
   font-size: 1.2rem;
   outline: none;
   border-radius: 10%;
@@ -71,11 +71,11 @@ body {
   font-family: "Pacifico", cursive;
   margin-bottom: 10px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .previous:hover {
   background-color: black;
-  border: 1px solid rgba(255, 255, 0, 0.788);
 }
 
 #movie-page {
