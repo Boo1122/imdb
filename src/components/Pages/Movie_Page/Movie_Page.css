@@ -79,6 +79,11 @@ body {
 }
 
 #movie-page {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   flex-direction: column;
   padding-top: 20px;
   justify-content: space-evenly;
@@ -123,7 +128,7 @@ body {
 
 .posters p {
   display: flex;
-  color: red;
+  color: white;
   font-size: 0.85rem;
   outline: none;
   padding-left: 10px;
