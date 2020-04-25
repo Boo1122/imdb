@@ -125,7 +125,7 @@ export class LoginPage {
 
     const allPosters = document.getElementsByClassName("posters");
     for (const x of allPosters) {
-      let token = document.cookie;
+      const token = Cookie.get("token"); 
       console.log(token);
       if (token) {
         const deleteMov = document.createElement("span");

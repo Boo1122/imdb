@@ -1,5 +1,6 @@
 import "./Movie_Page.css";
 import { navigate } from "../../Navigate_History/Navigate_History";
+import Cookie from "js-cookie";
 
 export class MoviePage {
   constructor() {
@@ -78,7 +79,7 @@ export class MoviePage {
     const p = document.createElement("p");
     p.innerHTML = movie.Title;
 
-    let token = document.cookie;
+    const token = Cookie.get("token");
     console.log(token);
     if (token) {
       const deleteMov = document.createElement("span");
