@@ -1,4 +1,14 @@
 import "./Single_Page.css";
+import Cookie from "js-cookie";
+import {
+  getVotes,
+  hightLightLoveButton,
+  updateVotesOnUI,
+  loveButtonLoadingState,
+  loveButtonInitialState,
+  updateVotesOnServer,
+} from "./SingleUtils";
+import { Loader } from "../../Loader/Loader";
 
 export class SinglePage {
   constructor() {
@@ -9,7 +19,7 @@ export class SinglePage {
     console.log(movie);
     const main = document.getElementById("single-movie-page");
     main.style.backgroundImage =
-      "url(./public/img/batman_wallpaper_movie_pg.jpg)";
+      "url(./public/img/batman_background_single.jpg)";
 
     main.innerHTML = null;
     const contentDiv = document.createElement("div");
@@ -138,9 +148,11 @@ export class SinglePage {
     bubblesDiv.appendChild(imdbRating);
     bubblesDiv.appendChild(imdbHeart);
     bubblesDiv.appendChild(imdbVotes);
+
     buttonsDiv.appendChild(loveButton);
     loveButton.appendChild(loveParagraph);
     loveButton.appendChild(loveImage);
+
     buttonsDiv.appendChild(likeButton);
     likeButton.appendChild(likeParagraph);
     likeButton.appendChild(likeImage);
@@ -154,7 +166,7 @@ export class SinglePage {
     extraInfo.appendChild(writer);
     extraInfo.appendChild(actors);*/
 
-    this.ratingButtonsOnClick();
+    this.ratingButtonsOnClick(movie._id);
   }
 
   homeContainerBox() {
@@ -167,29 +179,43 @@ export class SinglePage {
     body.appendChild(container);
   }
 
-  ratingButtonsOnClick() {
+  ratingButtonsOnClick(movieId) {
     const loveButton = document.getElementById("love-button-id");
+    const loader = new Loader(loveButton);
+
     const likeButton = document.getElementById("like-button-id");
     const dislikeButton = document.getElementById("dislike-button-id");
 
     loveButton.addEventListener("click", (movie) => {
-      console.log("love");
-      /*const imdbVotes = document.getElementById("imdb-votes");
-      imdbVotes.innerText = `Votes: ${movie.imdbVotes + 1}`;*/
-      loveButton.style.backgroundColor = "red";
-      likeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
-      dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+      const token = Cookie.get("token");
+      if (token) {
+        console.log("current token", token);
+        const votes = getVotes();
+        const newVotes = votes + 1;
+        console.log("new votes", newVotes);
+
+        loveButtonLoadingState(loveButton, loader);
+        updateVotesOnServer(newVotes, movieId).then(({ message }) => {
+          if (
+            message !==
+            "You need to be authenticated to be able to update a movie"
+          ) {
+            loveButtonInitialState(loveButton, loader);
+            updateVotesOnUI(newVotes);
+          }
+        });
+
+        hightLightLoveButton(loveButton, likeButton, dislikeButton);
+      }
     });
 
     likeButton.addEventListener("click", () => {
-      console.log("like");
-      likeButton.style.backgroundColor = "yellow";
+      likeButton.style.backgroundColor = "#f4bd01";
       loveButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
       dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
     });
 
     dislikeButton.addEventListener("click", () => {
-      console.log("dislike");
       dislikeButton.style.backgroundColor = "gray";
       loveButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
       likeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
@@ -229,6 +255,13 @@ export class SinglePage {
             "url(./public/play_button_trailer)";
           trailerIframe.style.backgroundSize = "20px 20px";*/
 
+          // creeaza un div care sa acopere iframe-ul; pe el sa adaugi event onClick sa dispara img. ??
+          /*const trailerPlayButton = document.createElement("div");
+          trailerPlayButton.id = "trailer-play-button";
+          trailerPlayButton.style.backgroundImage =
+            "url(./public/play_button_trailer.png)";
+          trailerPlayButton.style.backgroundSize = "20px 20px";*/
+
           trailerIframe.width = "560";
           trailerIframe.height = "280";
           trailerIframe.frameBorder = "0";
@@ -239,6 +272,7 @@ export class SinglePage {
 
           trailerContainer.appendChild(trailerIframe);
           targetContainer[0].appendChild(trailerContainer);
+          //trailerIframe.appendChild(trailerPlayButton);
         }
       });
   }

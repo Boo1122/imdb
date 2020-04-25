@@ -18,7 +18,7 @@
 }
 
 #carousselTitleDivID {
-  font-family: "Pacifico", cursive;
+  font-family: ProximaNova-Medium, Arial, sans-serif;
   padding: 15px;
   text-shadow: 3px 3px black;
   color: rgb(255, 71, 71);
@@ -64,7 +64,7 @@
   color: white;
   margin-left: 20px;
   margin-right: 20px;
-  font-family: "Pacifico", cursive;
+  font-family: ProximaNova-Medium, Arial, sans-serif;
   text-shadow: 2px 2px black;
 }
 

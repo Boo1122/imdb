@@ -40,7 +40,7 @@ body {
 
 .next {
   display: flex;
-  color: red;
+  color: whitesmoke;
   font-size: 1.2rem;
   outline: none;
   border-radius: 10%;
@@ -51,16 +51,16 @@ body {
   font-family: "Pacifico", cursive;
   margin-bottom: 10px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .next:hover {
   background-color: black;
-  border: 1px solid rgba(255, 255, 0, 0.788);
 }
 
 .previous {
   display: flex;
-  color: red;
+  color: whitesmoke;
   font-size: 1.2rem;
   outline: none;
   border-radius: 10%;
@@ -71,14 +71,19 @@ body {
   font-family: "Pacifico", cursive;
   margin-bottom: 10px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .previous:hover {
   background-color: black;
-  border: 1px solid rgba(255, 255, 0, 0.788);
 }
 
 #movie-page {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   flex-direction: column;
   padding-top: 20px;
   justify-content: space-evenly;
@@ -123,14 +128,16 @@ body {
 
 .posters p {
   display: flex;
-  color: red;
+  color: white;
   font-size: 0.85rem;
+  font-family: ProximaNova-Medium, Arial, sans-serif;
   outline: none;
   padding-left: 10px;
   padding-right: 10px;
   text-transform: uppercase;
   font-weight: bold;
   padding: 5px;
+  cursor: pointer;
 }
 
 .delete-single-movie {
