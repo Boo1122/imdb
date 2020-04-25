@@ -1,5 +1,5 @@
 import "./Register_Form.css";
-import Cookie from "js-cookie";
+import Cookie from "js-cookie"
 
 export class RegisterPage {
   constructor() {
@@ -107,7 +107,7 @@ export class RegisterPage {
         .then((json) => {
           console.log(json);
           document.cookie = `token=${json.accessToken}`;
-          const token = Cookie.get("token")
+            const token = document.cookie
             .split(";")
             .find((element) => {
               if (element.includes("token")) return true;
