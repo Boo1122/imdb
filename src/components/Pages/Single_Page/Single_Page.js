@@ -1,4 +1,14 @@
 import "./Single_Page.css";
+import Cookie from "js-cookie";
+import {
+  getVotes,
+  hightLightLoveButton,
+  updateVotesOnUI,
+  loveButtonLoadingState,
+  loveButtonInitialState,
+  updateVotesOnServer,
+} from "./SingleUtils";
+import { Loader } from "../../Loader/Loader";
 
 export class SinglePage {
   constructor() {
@@ -138,9 +148,11 @@ export class SinglePage {
     bubblesDiv.appendChild(imdbRating);
     bubblesDiv.appendChild(imdbHeart);
     bubblesDiv.appendChild(imdbVotes);
+
     buttonsDiv.appendChild(loveButton);
     loveButton.appendChild(loveParagraph);
     loveButton.appendChild(loveImage);
+
     buttonsDiv.appendChild(likeButton);
     likeButton.appendChild(likeParagraph);
     likeButton.appendChild(likeImage);
@@ -154,7 +166,7 @@ export class SinglePage {
     extraInfo.appendChild(writer);
     extraInfo.appendChild(actors);*/
 
-    this.ratingButtonsOnClick();
+    this.ratingButtonsOnClick(movie._id);
   }
 
   homeContainerBox() {
@@ -167,22 +179,33 @@ export class SinglePage {
     body.appendChild(container);
   }
 
-  ratingButtonsOnClick() {
+  ratingButtonsOnClick(movieId) {
     const loveButton = document.getElementById("love-button-id");
+    const loader = new Loader(loveButton);
+
     const likeButton = document.getElementById("like-button-id");
     const dislikeButton = document.getElementById("dislike-button-id");
 
-    loveButton.addEventListener("click", movie => {
-      let token = document.cookie;
+    loveButton.addEventListener("click", (movie) => {
+      const token = Cookie.get("token");
       if (token) {
-      console.log("love"); 
-      console.log(token);
-      
-      /*const imdbVotes = document.getElementById("imdb-votes");
-      imdbVotes.innerText = `Votes: ${movie.imdbVotes + 1}`;*/
-      loveButton.style.backgroundColor = "red";
-      likeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
-      dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+        console.log("current token", token);
+        const votes = getVotes();
+        const newVotes = votes + 1;
+        console.log("new votes", newVotes);
+
+        loveButtonLoadingState(loveButton, loader);
+        updateVotesOnServer(newVotes, movieId).then(({ message }) => {
+          if (
+            message !==
+            "You need to be authenticated to be able to update a movie"
+          ) {
+            loveButtonInitialState(loveButton, loader);
+            updateVotesOnUI(newVotes);
+          }
+        });
+
+        hightLightLoveButton(loveButton, likeButton, dislikeButton);
       }
     });
 
@@ -202,8 +225,8 @@ export class SinglePage {
   renderMovie(movieId) {
     if (movieId) {
       fetch(`https://movies-app-siit.herokuapp.com/movies/${movieId}`)
-        .then(response => response.json())
-        .then(json => {
+        .then((response) => response.json())
+        .then((json) => {
           this.mainContent(json);
           this.renderMovieTrailer(json.imdbID);
         });
@@ -214,8 +237,8 @@ export class SinglePage {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
     )
-      .then(response => response.json())
-      .then(json => {
+      .then((response) => response.json())
+      .then((json) => {
         if (
           json.data &&
           json.data.movies &&

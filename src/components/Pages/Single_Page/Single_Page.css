@@ -192,8 +192,21 @@
 .buttons-div {
   margin-top: 10px;
 }
+
+.buttons-div {
+  margin-top: 0;
+}
+
 .buttons-div img {
   height: 20px;
   color: black;
   margin-left: 5px;
+}
+
+.hide-content {
+  pointer-events: none;
+}
+
+.hide-content * {
+  display: none;
 }
