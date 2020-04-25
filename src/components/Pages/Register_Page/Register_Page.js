@@ -105,14 +105,14 @@ export class RegisterPage {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
           document.cookie = `token=${json.accessToken}`;
-          const token = Cookie.get("token")
+          const token = document.cookie
             .split(";")
             .find((element) => {
               if (element.includes("token")) return true;
             })
             .split("=")[1];
+          console.log(token);
 
           let emptyUserInput = document.getElementById("username-input");
           emptyUserInput.value = "";
