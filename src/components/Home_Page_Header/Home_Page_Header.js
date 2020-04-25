@@ -93,6 +93,7 @@ export class Header {
     loginDiv.id = "loginBtn";
 
     const token = Cookie.get("token");
+    console.log(token);
 
     if (token) {
       loginDiv.style.display = "none";

@@ -66,7 +66,7 @@ export class MoviePage {
       deleteMovieBox.className = "deleteMovie";
       body.appendChild(deleteMovieBox);
 
-      let token = document.cookie;
+      const token = Cookie.get("token");
 
       if (token) {
         const deleteMov = document.createElement("span");
@@ -74,6 +74,13 @@ export class MoviePage {
         deleteMov.setAttribute("title", "Delete Movie");
         deleteMov.innerText = "X";
         deleteMovieBox.appendChild(deleteMov);
+      }
+
+      if (token === "undefined") {
+        const deleteX = document.getElementsByClassName("delete-single-movie");
+        for (const x of deleteX) {
+          x.style.display = "none";
+        }
       }
     }
   }

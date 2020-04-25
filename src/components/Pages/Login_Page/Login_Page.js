@@ -126,15 +126,22 @@ export class LoginPage {
     location.reload(false);
 
     const allPosters = document.getElementsByClassName("deleteMovie");
-    let token = document.cookie;
+
     for (const x of allPosters) {
       const token = Cookie.get("token");
+
       if (token) {
         const deleteMov = document.createElement("span");
         deleteMov.classList.add("delete-single-movie");
         deleteMov.setAttribute("title", "Delete Movie");
         deleteMov.innerText = "X";
         x.prepend(deleteMov);
+      }
+      if (token === "undefined") {
+        const deleteX = document.getElementsByClassName("delete-single-movie");
+        for (const x of deleteX) {
+          x.style.display = "none";
+        }
       }
     }
   }
