@@ -1,7 +1,5 @@
 import "./Movie_Page.css";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History";
+import { navigate } from "../../Navigate_History/Navigate_History";
 
 export class MoviePage {
   constructor() {
@@ -11,7 +9,6 @@ export class MoviePage {
     this.getMovies();
     this.moviesPagination();
     this.numberPages();
-
   }
 
   moviePage() {
@@ -46,7 +43,6 @@ export class MoviePage {
         this.currentPage = this.movieData.pagination.currentPage;
         this.setCurrentPage();
       });
-    this.setCurrentPage();
   }
 
   setCurrentPage() {
