@@ -1,5 +1,6 @@
 import "./Movie_Page.css";
 import { navigate } from "../../Navigate_History/Navigate_History";
+import Cookie from "js-cookie";
 
 export class MoviePage {
   constructor() {

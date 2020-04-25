@@ -1,4 +1,5 @@
 import "./Register_Form.css";
+import Cookie from "js-cookie";
 
 export class RegisterPage {
   constructor() {
@@ -106,7 +107,7 @@ export class RegisterPage {
         .then((json) => {
           console.log(json);
           document.cookie = `token=${json.accessToken}`;
-          const token = document.cookie
+          const token = Cookie.get("token")
             .split(";")
             .find((element) => {
               if (element.includes("token")) return true;
@@ -133,5 +134,18 @@ export class RegisterPage {
     editbutton.style.display = "block";
 
     location.reload(false);
+
+    const allPosters = document.getElementsByClassName("posters");
+    for (const x of allPosters) {
+      const token = Cookie.get("token");
+      console.log(token);
+      if (token) {
+        const deleteMov = document.createElement("span");
+        deleteMov.classList.add("delete-single-movie");
+        deleteMov.setAttribute("title", "Delete Movie");
+        deleteMov.innerText = "X";
+        x.prepend(deleteMov);
+      }
+    }
   }
 }

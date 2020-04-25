@@ -128,6 +128,7 @@ export class LoginPage {
     const allPosters = document.getElementsByClassName("deleteMovie");
     let token = document.cookie;
     for (const x of allPosters) {
+      const token = Cookie.get("token");
       if (token) {
         const deleteMov = document.createElement("span");
         deleteMov.classList.add("delete-single-movie");

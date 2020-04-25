@@ -69,7 +69,8 @@ export class Header {
     const editDiv = document.createElement("div");
     editDiv.id = "editButton";
 
-    let token = document.cookie;
+    const token = Cookie.get("token");
+
     if (token) {
       editDiv.style.display = "block";
     } else {
@@ -90,10 +91,10 @@ export class Header {
 
     const loginDiv = document.createElement("div");
     loginDiv.id = "loginBtn";
-    let token = document.cookie;
-    if (token === "") {
-      loginDiv.style.display = "block";
-    } else {
+
+    const token = Cookie.get("token");
+
+    if (token) {
       loginDiv.style.display = "none";
     }
 
@@ -112,7 +113,8 @@ export class Header {
     const logOutDiv = document.createElement("div");
     logOutDiv.id = "logOutBtn";
 
-    let token = Cookie.get("token");
+    const token = Cookie.get("token");
+
     if (token) {
       logOutDiv.style.display = "block";
     } else {
