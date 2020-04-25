@@ -133,17 +133,5 @@ export class RegisterPage {
     editbutton.style.display = "block";
 
     location.reload(false);
-
-    const allPosters = document.getElementsByClassName("deleteMovie");
-    let token = document.cookie;
-    for (const x of allPosters) {
-      if (token) {
-        const deleteMov = document.createElement("span");
-        deleteMov.classList.add("delete-single-movie");
-        deleteMov.setAttribute("title", "Delete Movie");
-        deleteMov.innerText = "X";
-        x.prepend(deleteMov);
-      }
-    }
   }
 }
