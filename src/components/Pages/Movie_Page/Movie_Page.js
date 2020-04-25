@@ -40,6 +40,8 @@ export class MoviePage {
       .then((movieData) => {
         this.movieData = movieData;
         this.renderMovieList();
+        this.currentPage = this.movieData.pagination.currentPage;
+        this.setCurrentPage();
       });
   }
 
@@ -114,14 +116,16 @@ export class MoviePage {
     previous.id = "previous-movie";
     previous.className = "previous";
     previous.innerText = `< Previous`;
+    previous.disabled = true;
+    previous.style.opacity = 0.5;
 
     previous.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
-      if (this.movieData.pagination.currentPage < +3) {
+      if (this.movieData.pagination.currentPage < 3) {
         previous.disabled = true;
         previous.style.opacity = 0.5;
       }
-      if (this.movieData.pagination.currentPage <= +10) {
+      if (this.movieData.pagination.currentPage >= 9) {
         next.disabled = false;
         next.style.opacity = 1.0;
       }
@@ -134,11 +138,11 @@ export class MoviePage {
     next.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10);
 
-      if (this.movieData.pagination.currentPage > 0) {
+      if (this.movieData.pagination.currentPage >= 1) {
         previous.disabled = false;
         previous.style.opacity = 1.0;
       }
-      if (this.movieData.pagination.currentPage <= 10) {
+      if (this.movieData.pagination.currentPage >= 9) {
         next.disabled = true;
         next.style.opacity = 0.5;
       }
