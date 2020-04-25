@@ -78,13 +78,15 @@ export class MoviePage {
     const p = document.createElement("p");
     p.innerHTML = movie.Title;
 
-    const deleteMov = document.createElement("span");
-    deleteMov.classList.add("delete-single-movie");
-    deleteMov.setAttribute("title", "Delete Movie");
-    deleteMov.innerText = "X";
-
-    // if from cookies token
-    deleteMov.style.display = "none";
+    let token = document.cookie;
+    console.log(token);
+    if (token) {
+      const deleteMov = document.createElement("span");
+      deleteMov.classList.add("delete-single-movie");
+      deleteMov.setAttribute("title", "Delete Movie");
+      deleteMov.innerText = "X";
+      posters.appendChild(deleteMov);
+    }
 
     const img = document.createElement("img");
     img.classList.add("detail-posters");
@@ -93,7 +95,7 @@ export class MoviePage {
     body.appendChild(container);
     container.appendChild(posters);
     posters.appendChild(p);
-    posters.appendChild(deleteMov);
+
     posters.appendChild(img);
   }
 
@@ -178,6 +180,7 @@ export class MoviePage {
 
     for (const movie of allMovies) {
       movie.addEventListener("click", (event) => {
+        event.preventDefault();
         console.log(event.target);
       });
     }
