@@ -7,6 +7,7 @@ export class Search {
     this.addSearchInput();
     this.createInput();
     this.advancedSearch();
+    this.hideAdvancedSearch();
   }
 
   createInput() {
@@ -52,9 +53,15 @@ export class Search {
       let x = document.getElementById("advancedBox");
       if ((x.style.display = "none")) {
         x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      } //aici nu merge!!
+      }
+    });
+  }
+
+  hideAdvancedSearch() {
+    const img = document.getElementById("img");
+
+    img.addEventListener("click", () => {
+      document.getElementById("advancedBox").style.display = "none";
     });
   }
 }
