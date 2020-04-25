@@ -9,7 +9,6 @@ export class MoviePage {
     this.getMovies();
     this.moviesPagination();
     this.numberPages();
-    this.deleteMovie();
   }
 
   moviePage() {
@@ -40,7 +39,6 @@ export class MoviePage {
       .then((response) => response.json())
       .then((movieData) => {
         this.movieData = movieData;
-        console.log(this.movieData);
         this.renderMovieList();
       });
   }
@@ -60,6 +58,20 @@ export class MoviePage {
     body.innerHTML = null;
     for (const movie of this.movieData.results) {
       this.moviesContent(movie, body);
+
+      const deleteMovieBox = document.createElement("div");
+      deleteMovieBox.className = "deleteMovie";
+      body.appendChild(deleteMovieBox);
+
+      let token = document.cookie;
+
+      if (token) {
+        const deleteMov = document.createElement("span");
+        deleteMov.classList.add("delete-single-movie");
+        deleteMov.setAttribute("title", "Delete Movie");
+        deleteMov.innerText = "X";
+        deleteMovieBox.appendChild(deleteMov);
+      }
     }
   }
 
@@ -77,16 +89,6 @@ export class MoviePage {
 
     const p = document.createElement("p");
     p.innerHTML = movie.Title;
-
-    let token = document.cookie;
-    console.log(token);
-    if (token) {
-      const deleteMov = document.createElement("span");
-      deleteMov.classList.add("delete-single-movie");
-      deleteMov.setAttribute("title", "Delete Movie");
-      deleteMov.innerText = "X";
-      posters.appendChild(deleteMov);
-    }
 
     const img = document.createElement("img");
     img.classList.add("detail-posters");
@@ -171,17 +173,6 @@ export class MoviePage {
     for (let i = 0; i < pages.length; i++) {
       pages[i].addEventListener("click", (event) => {
         this.getMovies((event.target.innerText - 1) * 10);
-      });
-    }
-  }
-
-  deleteMovie() {
-    const allMovies = document.getElementsByClassName("delete-single-movie");
-
-    for (const movie of allMovies) {
-      movie.addEventListener("click", (event) => {
-        event.preventDefault();
-        console.log(event.target);
       });
     }
   }
