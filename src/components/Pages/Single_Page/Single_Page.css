@@ -216,3 +216,21 @@
   margin-bottom: 5px;
   padding-left: 13px;
 }
+
+#trailer-wrapper {
+  width: 552px;
+  height: 272px;
+}
+
+#trailer-background-div {
+  position: absolute;
+  height: 272px;
+}
+#trailer-background-image {
+  height: 50px;
+  width: auto;
+}
+
+#trailer-container {
+  position: absolute;
+}

@@ -6,7 +6,7 @@ import {
   updateVotesOnUI,
   loveButtonLoadingState,
   loveButtonInitialState,
-  updateVotesOnServer,
+  updateVotesOnServer
 } from "./SingleUtils";
 import { Loader } from "../../Loader/Loader";
 
@@ -186,7 +186,7 @@ export class SinglePage {
     const likeButton = document.getElementById("like-button-id");
     const dislikeButton = document.getElementById("dislike-button-id");
 
-    loveButton.addEventListener("click", (movie) => {
+    loveButton.addEventListener("click", movie => {
       const token = Cookie.get("token");
       if (token) {
         console.log("current token", token);
@@ -225,8 +225,8 @@ export class SinglePage {
   renderMovie(movieId) {
     if (movieId) {
       fetch(`https://movies-app-siit.herokuapp.com/movies/${movieId}`)
-        .then((response) => response.json())
-        .then((json) => {
+        .then(response => response.json())
+        .then(json => {
           this.mainContent(json);
           this.renderMovieTrailer(json.imdbID);
         });
@@ -237,8 +237,8 @@ export class SinglePage {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
     )
-      .then((response) => response.json())
-      .then((json) => {
+      .then(response => response.json())
+      .then(json => {
         if (
           json.data &&
           json.data.movies &&
@@ -247,20 +247,14 @@ export class SinglePage {
         ) {
           const targetContainer = document.getElementsByClassName("title-div");
 
+          const trailerWrapper = document.createElement("div");
+          trailerWrapper.id = "trailer-wrapper";
+
           const trailerContainer = document.createElement("div");
+          trailerContainer.id = "trailer-div";
 
           const trailerIframe = document.createElement("iframe");
           trailerIframe.id = "trailer-container";
-          /*trailerIframe.style.backgroundImage =
-            "url(./public/play_button_trailer)";
-          trailerIframe.style.backgroundSize = "20px 20px";*/
-
-          // creeaza un div care sa acopere iframe-ul; pe el sa adaugi event onClick sa dispara img. ??
-          /*const trailerPlayButton = document.createElement("div");
-          trailerPlayButton.id = "trailer-play-button";
-          trailerPlayButton.style.backgroundImage =
-            "url(./public/play_button_trailer.png)";
-          trailerPlayButton.style.backgroundSize = "20px 20px";*/
 
           trailerIframe.width = "560";
           trailerIframe.height = "280";
@@ -270,9 +264,18 @@ export class SinglePage {
             -1
           )[0].videoURL;
 
+          const trailerBackground = document.createElement("div");
+          trailerBackground.id = "trailer-background-div";
+
+          const trailerBackgroundImage = document.createElement("img");
+          trailerBackgroundImage.id = "trailer-background-image";
+          trailerBackgroundImage.src = "./public/play.png";
+
+          trailerWrapper.appendChild(trailerContainer);
+          trailerWrapper.appendChild(trailerBackground);
+          trailerBackground.appendChild(trailerBackgroundImage);
           trailerContainer.appendChild(trailerIframe);
-          targetContainer[0].appendChild(trailerContainer);
-          //trailerIframe.appendChild(trailerPlayButton);
+          targetContainer[0].appendChild(trailerWrapper);
         }
       });
   }
