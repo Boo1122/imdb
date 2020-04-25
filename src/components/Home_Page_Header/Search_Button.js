@@ -7,6 +7,7 @@ export class Search {
     this.addSearchInput();
     this.createInput();
     this.advancedSearch();
+    this.hideAdvancedSearch();
   }
 
   createInput() {
@@ -49,7 +50,18 @@ export class Search {
     const searchInput = document.getElementById("input");
 
     searchInput.addEventListener("click", () => {
-      new AdvancedSearch();
+      let x = document.getElementById("advancedBox");
+      if ((x.style.display = "none")) {
+        x.style.display = "block";
+      }
+    });
+  }
+
+  hideAdvancedSearch() {
+    const img = document.getElementById("img");
+
+    img.addEventListener("click", () => {
+      document.getElementById("advancedBox").style.display = "none";
     });
   }
 }

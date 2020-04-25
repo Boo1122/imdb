@@ -4,6 +4,7 @@ import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
+import Cookie from "js-cookie";
 
 export class Header {
   constructor() {
@@ -62,7 +63,6 @@ export class Header {
     buttonDiv.appendChild(buttonBody);
   }
 
-
   editMovies() {
     const header = document.getElementById("header");
 
@@ -71,7 +71,7 @@ export class Header {
 
     let token = document.cookie;
     if (token) {
-    editDiv.style.display = "block";
+      editDiv.style.display = "block";
     } else {
       editDiv.style.display = "none";
     }
@@ -91,7 +91,7 @@ export class Header {
     const loginDiv = document.createElement("div");
     loginDiv.id = "loginBtn";
     let token = document.cookie;
-    if (token === '') {
+    if (token === "") {
       loginDiv.style.display = "block";
     } else {
       loginDiv.style.display = "none";
@@ -112,13 +112,12 @@ export class Header {
     const logOutDiv = document.createElement("div");
     logOutDiv.id = "logOutBtn";
 
-    let token = document.cookie;
+    let token = Cookie.get("token");
     if (token) {
       logOutDiv.style.display = "block";
     } else {
       logOutDiv.style.display = "none";
     }
-
 
     const logOutButton = document.createElement("button");
     logOutButton.classList.add("nav-link", "logout");
