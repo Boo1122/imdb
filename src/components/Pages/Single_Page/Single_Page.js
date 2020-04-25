@@ -172,24 +172,27 @@ export class SinglePage {
     const likeButton = document.getElementById("like-button-id");
     const dislikeButton = document.getElementById("dislike-button-id");
 
-    loveButton.addEventListener("click", (movie) => {
-      console.log("love");
+    loveButton.addEventListener("click", movie => {
+      let token = document.cookie;
+      if (token) {
+      console.log("love"); 
+      console.log(token);
+      
       /*const imdbVotes = document.getElementById("imdb-votes");
       imdbVotes.innerText = `Votes: ${movie.imdbVotes + 1}`;*/
       loveButton.style.backgroundColor = "red";
       likeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
       dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+      }
     });
 
     likeButton.addEventListener("click", () => {
-      console.log("like");
       likeButton.style.backgroundColor = "yellow";
       loveButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
       dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
     });
 
     dislikeButton.addEventListener("click", () => {
-      console.log("dislike");
       dislikeButton.style.backgroundColor = "gray";
       loveButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
       likeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
@@ -199,8 +202,8 @@ export class SinglePage {
   renderMovie(movieId) {
     if (movieId) {
       fetch(`https://movies-app-siit.herokuapp.com/movies/${movieId}`)
-        .then((response) => response.json())
-        .then((json) => {
+        .then(response => response.json())
+        .then(json => {
           this.mainContent(json);
           this.renderMovieTrailer(json.imdbID);
         });
@@ -211,8 +214,8 @@ export class SinglePage {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
     )
-      .then((response) => response.json())
-      .then((json) => {
+      .then(response => response.json())
+      .then(json => {
         if (
           json.data &&
           json.data.movies &&
@@ -229,6 +232,13 @@ export class SinglePage {
             "url(./public/play_button_trailer)";
           trailerIframe.style.backgroundSize = "20px 20px";*/
 
+          // creeaza un div care sa acopere iframe-ul; pe el sa adaugi event onClick sa dispara img. ??
+          /*const trailerPlayButton = document.createElement("div");
+          trailerPlayButton.id = "trailer-play-button";
+          trailerPlayButton.style.backgroundImage =
+            "url(./public/play_button_trailer.png)";
+          trailerPlayButton.style.backgroundSize = "20px 20px";*/
+
           trailerIframe.width = "560";
           trailerIframe.height = "280";
           trailerIframe.frameBorder = "0";
@@ -239,6 +249,7 @@ export class SinglePage {
 
           trailerContainer.appendChild(trailerIframe);
           targetContainer[0].appendChild(trailerContainer);
+          //trailerIframe.appendChild(trailerPlayButton);
         }
       });
   }
