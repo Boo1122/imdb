@@ -7,7 +7,7 @@ export class Loader {
   renderLoader() {
     const img = document.createElement("img");
     img.classList.add("loader");
-    img.setAttribute("src", "./public/3.gif");
+    img.setAttribute("src", "./public/loading.gif");
     img.style.display = "none";
 
     this.domElement = img;

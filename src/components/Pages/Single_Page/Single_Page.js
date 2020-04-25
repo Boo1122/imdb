@@ -210,7 +210,7 @@ export class SinglePage {
     });
 
     likeButton.addEventListener("click", () => {
-      likeButton.style.backgroundColor = "yellow";
+      likeButton.style.backgroundColor = "#f4bd01";
       loveButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
       dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
     });

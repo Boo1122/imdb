@@ -12,7 +12,7 @@ export function getVotes() {
 }
 
 export function hightLightLoveButton(loveButton, likeButton, dislikeButton) {
-  loveButton.style.backgroundColor = "red";
+  loveButton.style.backgroundColor = "#bb0306";
   likeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
   dislikeButton.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
 }
@@ -40,14 +40,14 @@ export function updateVotesOnServer(votes, movieId) {
     credentials: "same-origin", // include, *same-origin, omit
     headers: {
       "Content-Type": "application/json",
-      "X-Auth-Token": token,
+      "X-Auth-Token": token
     },
     redirect: "follow", // manual, *follow, error
     referrerPolicy: "no-referrer", // no-referrer, *client
     body: JSON.stringify({
-      imdbVotes: formatNumber()(votes),
-    }),
-  }).then((response) => response.json());
+      imdbVotes: formatNumber()(votes)
+    })
+  }).then(response => response.json());
 }
 
 export function loveButtonInitialState(loveButton, loader) {

@@ -210,3 +210,9 @@
 .hide-content * {
   display: none;
 }
+
+.loader {
+  max-height: 16px;
+  margin-bottom: 5px;
+  padding-left: 13px;
+}
