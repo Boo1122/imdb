@@ -49,10 +49,12 @@ export class Search {
     const searchInput = document.getElementById("input");
 
     searchInput.addEventListener("click", () => {
-      let x = document.getElementById("advancedBox");
       for (let i = 0; i < 1; i++) {
+        let x = document.getElementById("advancedBox");
         if ((x.style.display = "none")) {
           x.style.display = "block";
+        } else if ((x.style.display = "block")) {
+          x.style.display = "none"; //aici nu merge!!
         }
       }
     });
