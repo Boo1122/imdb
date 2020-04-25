@@ -123,6 +123,8 @@ export class LoginPage {
     const editbutton = document.getElementById("editButton");
     editbutton.style.display = "block";
 
+    location.reload(false);
+
     const allPosters = document.getElementsByClassName("deleteMovie");
     let token = document.cookie;
     for (const x of allPosters) {
