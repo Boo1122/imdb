@@ -1,4 +1,5 @@
 import "./Login_Form.css";
+import Cookie from "js-cookie";
 
 export class LoginPage {
   constructor() {
@@ -96,14 +97,20 @@ export class LoginPage {
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
-          document.cookie = `token=${json.accessToken}`;
 
-          let eraseInputUser = document.getElementById("username-input-login");
-          eraseInputUser.value = "";
+          if (json.accessToken) {
+            Cookie.set("token", json.accessToken);
+            let eraseInputUser = document.getElementById(
+              "username-input-login"
+            );
+            eraseInputUser.value = "";
 
-          let eraseInputPass = document.getElementById("password-input-login");
-          eraseInputPass.value = "";
-          this.handleButtonTransferLogin();
+            let eraseInputPass = document.getElementById(
+              "password-input-login"
+            );
+            eraseInputPass.value = "";
+            this.handleButtonTransferLogin();
+          }
         });
     });
   }

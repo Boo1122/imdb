@@ -56,17 +56,13 @@ export class LogOutPage {
     const editbutton = document.getElementById("editButton");
     editbutton.style.display = "none";
 
-    const allPosters = document.getElementsByClassName("deleteMovie");
-    let token = document.cookie;
-    for (const x of allPosters) {
-      if (token) {
-        const deleteMov = document.createElement("span");
-        deleteMov.classList.add("delete-single-movie");
-        deleteMov.setAttribute("title", "Delete Movie");
-        deleteMov.innerText = "X";
-        x.prepend(deleteMov);
-      }
-    }
     location.reload(false);
+
+    const deleteMovieButton = document.getElementsByClassName(
+      "delete-single-movie"
+    );
+    for (const movie of deleteMovieButton) {
+      movie.style.display = "none";
+    }
   }
 }

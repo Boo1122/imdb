@@ -10,9 +10,9 @@ export class Header {
     this.header();
     this.homeButton();
     this.moviesButton();
-    this.editMovies();
     this.loginButton();
     this.logOutButton();
+    this.editMovies();
     this.registerButton();
   }
 
@@ -62,12 +62,19 @@ export class Header {
     buttonDiv.appendChild(buttonBody);
   }
 
+
   editMovies() {
     const header = document.getElementById("header");
 
     const editDiv = document.createElement("div");
     editDiv.id = "editButton";
-    editDiv.style.display = "none";
+
+    let token = document.cookie;
+    if (token) {
+    editDiv.style.display = "block";
+    } else {
+      editDiv.style.display = "none";
+    }
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
@@ -83,6 +90,12 @@ export class Header {
 
     const loginDiv = document.createElement("div");
     loginDiv.id = "loginBtn";
+    let token = document.cookie;
+    if (token === '') {
+      loginDiv.style.display = "block";
+    } else {
+      loginDiv.style.display = "none";
+    }
 
     const loginButton = document.createElement("button");
     loginButton.classList.add("nav-link", "login");
@@ -98,7 +111,14 @@ export class Header {
 
     const logOutDiv = document.createElement("div");
     logOutDiv.id = "logOutBtn";
-    logOutDiv.style.display = "none";
+
+    let token = document.cookie;
+    if (token) {
+      logOutDiv.style.display = "block";
+    } else {
+      logOutDiv.style.display = "none";
+    }
+
 
     const logOutButton = document.createElement("button");
     logOutButton.classList.add("nav-link", "logout");
