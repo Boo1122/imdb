@@ -49,7 +49,12 @@ export class Search {
     const searchInput = document.getElementById("input");
 
     searchInput.addEventListener("click", () => {
-      new AdvancedSearch();
+      let x = document.getElementById("advancedBox");
+      for (let i = 0; i < 1; i++) {
+        if ((x.style.display = "none")) {
+          x.style.display = "block";
+        }
+      }
     });
   }
 }

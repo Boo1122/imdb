@@ -6,15 +6,15 @@ export class AdvancedSearch {
   }
 
   searchBox() {
-    const box = document.getElementById("body");
-    const centerbox = document.createElement("div");
-    centerbox.id = "centerBox";
+    const box = document.getElementById("input-div");
+    //const centerbox = document.createElement("div");
+    //centerbox.id = "centerBox";
 
     const containerBox = document.createElement("div");
     containerBox.id = "advancedBox";
 
-    box.appendChild(centerbox);
-    centerbox.appendChild(containerBox);
+    box.appendChild(containerBox);
+    //centerbox.appendChild(containerBox);
 
     this.searchTitle();
     this.searchYear();

@@ -1,15 +1,25 @@
-#centerBox {
-  height: 100%;
-  width: 100%;
-  display: flex;
+#advancedBox {
+  height: auto;
+  width: auto;
+  padding: 5px;
+  color: white;
+  font-size: 1.2rem;
+  position: absolute;
+  display: none;
   justify-content: center;
   align-items: center;
+  background-color: rgb(255, 47, 47);
+  border-radius: 8px;
+  box-shadow: 1px 1px #000000, 2px 2px #000000, 3px 3px #000000;
+  margin-left: -100px;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
 }
 
-#advancedBox {
-  margin: 10%;
-  color: white;
-  font-size: 1.4rem;
+#advancedBox:hover {
+  background: #5362ea;
 }
 
 #genreBox {
