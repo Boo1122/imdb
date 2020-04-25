@@ -117,7 +117,7 @@ export class MoviePage {
 
     previous.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
-      if (this.movieData.pagination.currentPage < +3) {
+      if (this.movieData.pagination.currentPage >= 1) {
         previous.disabled = true;
         previous.style.opacity = 0.5;
       }
@@ -138,7 +138,7 @@ export class MoviePage {
         previous.disabled = false;
         previous.style.opacity = 1.0;
       }
-      if (this.movieData.pagination.currentPage <= 10) {
+      if (this.movieData.pagination.currentPage >= 9) {
         next.disabled = true;
         next.style.opacity = 0.5;
       }
