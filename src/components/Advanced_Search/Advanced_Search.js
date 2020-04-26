@@ -137,9 +137,29 @@ export class AdvancedSearch {
     languagelabel.classList = "search-language-label";
     languagelabel.innerText = "Search movie by language:";
 
-    const languageInput = document.createElement("input");
+    const languageInput = document.createElement("select");
     languageInput.className = "search-language-input";
     languageInput.setAttribute("type", "text");
+
+    const languages = [
+      "English",
+      "French",
+      "Spanish",
+      "Japanese",
+      "Italian",
+      "German",
+      "Portuguese",
+      "Spanish",
+      "Thai",
+      "Romanian",
+      "Filipino",
+    ];
+
+    const options = languages
+      .map((language) => `<option value = ${language}> ${language} </option>`)
+      .join("\n");
+
+    languageInput.innerHTML = options;
 
     document.getElementById("advancedBox").appendChild(languageBox);
     languageBox.appendChild(languagelabel);
@@ -153,9 +173,28 @@ export class AdvancedSearch {
     countrylabel.classList = "search-country-label";
     countrylabel.innerText = "Search movie by Country:";
 
-    const countryInput = document.createElement("input");
+    const countryInput = document.createElement("select");
     countryInput.className = "search-country-input";
     countryInput.setAttribute("type", "text");
+
+    const countrys = [
+      "USA",
+      "UK",
+      "Denmark",
+      "Japan",
+      "South Korea",
+      "Canada",
+      "Denmark",
+      "Romania",
+      "Philippines",
+      "France",
+    ];
+
+    const options = countrys
+      .map((country) => `<option value = ${country}> ${country} </option>`)
+      .join("\n");
+
+    countryInput.innerHTML = options;
 
     document.getElementById("advancedBox").appendChild(countryBox);
     countryBox.appendChild(countrylabel);
