@@ -35,15 +35,21 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
-  font-family: "Pacifico", cursive;
-  color: rgba(233, 27, 16, 0.8);
-  border-radius: 20px;
+.home {
+  width: 100px;
+  margin-left: 30px;
+  cursor: pointer;
+}
 
-  background: #ffff00;
-  box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
-    -10px -10px 30px rgba(233, 27, 16, 0.8);
-  outline: none;
+.home:hover {
+  border-radius: 50%;
+  border: 1px solid yellow;
+  animation: mymove 2s infinite;
+}
+@keyframes mymove {
+  50% {
+    border: 1.5px solid rgba(255, 0, 0, 0.76);
+  }
 }
 
 #home {
@@ -105,6 +111,11 @@ body {
   cursor: pointer;
 }
 
+.home:hover {
+  border-radius: 50%;
+  box-shadow: 10px 5px 50px 5px yellow;
+}
+
 .movie-sub-buttons {
   text-align: center;
 }
@@ -131,6 +142,18 @@ body {
 }
 
 .register:hover {
+  font-family: "Pacifico", cursive;
+  color: rgba(233, 27, 16, 0.8);
+  border-radius: 20px;
+  border: none;
+
+  background: #ffff00;
+  box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
+    -10px -10px 30px rgba(233, 27, 16, 0.8);
+  outline: none;
+}
+
+.movies:hover {
   font-family: "Pacifico", cursive;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
