@@ -130,7 +130,7 @@ export class RegisterPage {
     const logoutButton = document.getElementById("logOutBtn");
     const editbutton = document.getElementById("editButton");
 
-    //location.reload(false);
+    location.reload(false);
 
     const allPosters = document.getElementsByClassName("posters");
     for (const x of allPosters) {

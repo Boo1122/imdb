@@ -5,6 +5,7 @@ import { Search } from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
 import Cookie from "js-cookie";
+import { UserOptions } from "../Pages/USER_Logged_In/User_Options";
 
 export class Header {
   constructor() {
@@ -80,10 +81,12 @@ export class Header {
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
     editButton.setAttribute("data-target", "edit");
-    editButton.innerHTML = "Edit";
+    editButton.innerHTML = "Add Movie";
 
     header.appendChild(editDiv);
     editDiv.appendChild(editButton);
+
+    new UserOptions();
   }
 
   loginButton() {
