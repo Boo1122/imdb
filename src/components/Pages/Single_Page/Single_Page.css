@@ -225,11 +225,12 @@
 
 #trailer-background-div {
   position: absolute;
-  height: 272px;
 }
 #trailer-background-image {
-  height: 50px;
+  height: 85px;
   width: auto;
+  margin-top: 70px;
+  margin-left: 235px;
 }
 
 #trailer-container {
