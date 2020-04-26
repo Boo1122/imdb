@@ -17,9 +17,7 @@ new RegisterPage();
 const singlePage = new SinglePage();
 new LogOutPage();
 new MoviePage();
-
+new AdvancedSearch();
 new Footer();
 
 navigate.init(singlePage);
-
-//new AdvancedSearch();

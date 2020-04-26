@@ -6,7 +6,7 @@ import {
   updateVotesOnUI,
   loveButtonLoadingState,
   loveButtonInitialState,
-  updateVotesOnServer
+  updateVotesOnServer,
 } from "./SingleUtils";
 import { Loader } from "../../Loader/Loader";
 
@@ -16,7 +16,6 @@ export class SinglePage {
   }
 
   mainContent(movie) {
-    console.log(movie);
     const main = document.getElementById("single-movie-page");
     main.style.backgroundImage =
       "url(./public/img/batman_background_single.jpg)";
@@ -186,7 +185,7 @@ export class SinglePage {
     const likeButton = document.getElementById("like-button-id");
     const dislikeButton = document.getElementById("dislike-button-id");
 
-    loveButton.addEventListener("click", movie => {
+    loveButton.addEventListener("click", (movie) => {
       const token = Cookie.get("token");
       if (token) {
         console.log("current token", token);
@@ -225,8 +224,8 @@ export class SinglePage {
   renderMovie(movieId) {
     if (movieId) {
       fetch(`https://movies-app-siit.herokuapp.com/movies/${movieId}`)
-        .then(response => response.json())
-        .then(json => {
+        .then((response) => response.json())
+        .then((json) => {
           this.mainContent(json);
           this.renderMovieTrailer(json.imdbID);
         });
@@ -237,8 +236,8 @@ export class SinglePage {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
     )
-      .then(response => response.json())
-      .then(json => {
+      .then((response) => response.json())
+      .then((json) => {
         if (
           json.data &&
           json.data.movies &&

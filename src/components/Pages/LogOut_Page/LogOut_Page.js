@@ -47,6 +47,8 @@ export class LogOutPage {
     });
   }
 
+  checkToken() {}
+
   handleButtonsTransfetLogout() {
     const loginButton = document.getElementById("loginBtn");
     loginButton.style.display = "block";

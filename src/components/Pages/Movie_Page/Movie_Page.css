@@ -124,6 +124,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  pointer-events: none;
 }
 
 .posters p {
@@ -144,6 +145,6 @@ body {
   align-self: flex-end;
   cursor: pointer;
   color: white;
-  padding: 5px;
+  padding: 10px;
   background: black;
 }

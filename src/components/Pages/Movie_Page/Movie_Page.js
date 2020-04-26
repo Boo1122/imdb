@@ -10,7 +10,6 @@ export class MoviePage {
     this.getMovies();
     this.moviesPagination();
     this.numberPages();
-    this.deleteMovie();
   }
 
   moviePage() {
@@ -41,8 +40,10 @@ export class MoviePage {
       .then((response) => response.json())
       .then((movieData) => {
         this.movieData = movieData;
-        console.log(this.movieData);
         this.renderMovieList();
+        this.currentPage = this.movieData.pagination.currentPage;
+        this.setCurrentPage();
+        console.log(movieData);
       });
   }
 
@@ -61,6 +62,27 @@ export class MoviePage {
     body.innerHTML = null;
     for (const movie of this.movieData.results) {
       this.moviesContent(movie, body);
+
+      const deleteMovieBox = document.createElement("div");
+      deleteMovieBox.className = "deleteMovie";
+      body.appendChild(deleteMovieBox);
+
+      const token = Cookie.get("token");
+
+      if (token) {
+        const deleteMov = document.createElement("span");
+        deleteMov.classList.add("delete-single-movie");
+        deleteMov.setAttribute("title", "Delete Movie");
+        deleteMov.innerText = "X";
+        deleteMovieBox.appendChild(deleteMov);
+      }
+
+      if (token === "undefined") {
+        const deleteX = document.getElementsByClassName("delete-single-movie");
+        for (const x of deleteX) {
+          x.style.display = "none";
+        }
+      }
     }
   }
 
@@ -78,16 +100,6 @@ export class MoviePage {
 
     const p = document.createElement("p");
     p.innerHTML = movie.Title;
-
-    const token = Cookie.get("token");
-    console.log(token);
-    if (token) {
-      const deleteMov = document.createElement("span");
-      deleteMov.classList.add("delete-single-movie");
-      deleteMov.setAttribute("title", "Delete Movie");
-      deleteMov.innerText = "X";
-      posters.appendChild(deleteMov);
-    }
 
     const img = document.createElement("img");
     img.classList.add("detail-posters");
@@ -113,14 +125,16 @@ export class MoviePage {
     previous.id = "previous-movie";
     previous.className = "previous";
     previous.innerText = `< Previous`;
+    previous.disabled = true;
+    previous.style.opacity = 0.5;
 
     previous.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
-      if (this.movieData.pagination.currentPage < +3) {
+      if (this.movieData.pagination.currentPage < 3) {
         previous.disabled = true;
         previous.style.opacity = 0.5;
       }
-      if (this.movieData.pagination.currentPage <= +10) {
+      if (this.movieData.pagination.currentPage >= 9) {
         next.disabled = false;
         next.style.opacity = 1.0;
       }
@@ -133,11 +147,11 @@ export class MoviePage {
     next.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10);
 
-      if (this.movieData.pagination.currentPage > 0) {
+      if (this.movieData.pagination.currentPage >= 1) {
         previous.disabled = false;
         previous.style.opacity = 1.0;
       }
-      if (this.movieData.pagination.currentPage <= 10) {
+      if (this.movieData.pagination.currentPage >= 9) {
         next.disabled = true;
         next.style.opacity = 0.5;
       }
@@ -172,17 +186,6 @@ export class MoviePage {
     for (let i = 0; i < pages.length; i++) {
       pages[i].addEventListener("click", (event) => {
         this.getMovies((event.target.innerText - 1) * 10);
-      });
-    }
-  }
-
-  deleteMovie() {
-    const allMovies = document.getElementsByClassName("delete-single-movie");
-
-    for (const movie of allMovies) {
-      movie.addEventListener("click", (event) => {
-        event.preventDefault();
-        console.log(event.target);
       });
     }
   }
