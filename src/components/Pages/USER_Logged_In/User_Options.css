@@ -1,0 +1,24 @@
+#newMovieContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#movieBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.movie-Title-class,
+.movieYear,
+.movie-ImdbID-class,
+.movie-Poster-class {
+  width: 200px;
+}
+
+.movie-Type-class,
+.th-series-Type-class {
+}
