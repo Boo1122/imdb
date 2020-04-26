@@ -220,6 +220,7 @@
 #trailer-wrapper {
   width: 552px;
   height: 272px;
+  position: relative;
 }
 
 #trailer-background-div {
