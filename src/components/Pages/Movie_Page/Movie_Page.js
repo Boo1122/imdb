@@ -1,5 +1,7 @@
 import "./Movie_Page.css";
-import { navigate } from "../../Navigate_History/Navigate_History";
+import {
+  navigate
+} from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
 
 export class MoviePage {
@@ -55,6 +57,25 @@ export class MoviePage {
 
     const id = `${this.currentPage}_pageButton`;
     document.getElementById(id).classList.add("actives");
+
+    let prev = document.getElementById("previous-movie")
+    if (this.currentPage === 1) {
+      prev.disabled = true;
+      prev.style.opacity = 0.5;
+    } else {
+      prev.disabled = false;
+      prev.style.opacity = 1.0;
+    }
+
+    let next = document.getElementById('next-movie')
+    if (this.currentPage === 10) {
+      next.disabled = true;
+      next.style.opacity = 0.5;
+    } else {
+      next.disabled = false;
+      next.style.opacity = 1.0;
+    }
+
   }
 
   renderMovieList() {
@@ -125,19 +146,11 @@ export class MoviePage {
     previous.id = "previous-movie";
     previous.className = "previous";
     previous.innerText = `< Previous`;
-    previous.disabled = true;
-    previous.style.opacity = 0.5;
+
 
     previous.addEventListener("click", () => {
-      this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
-      if (this.movieData.pagination.currentPage < 3) {
-        previous.disabled = true;
-        previous.style.opacity = 0.5;
-      }
-      if (this.movieData.pagination.currentPage >= 9) {
-        next.disabled = false;
-        next.style.opacity = 1.0;
-      }
+      this.getMovies((this.movieData.pagination.currentPage - 2) * 10);
+
     });
 
     const next = document.createElement("button");
@@ -146,15 +159,6 @@ export class MoviePage {
     next.innerText = `Next >`;
     next.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10);
-
-      if (this.movieData.pagination.currentPage >= 1) {
-        previous.disabled = false;
-        previous.style.opacity = 1.0;
-      }
-      if (this.movieData.pagination.currentPage >= 9) {
-        next.disabled = true;
-        next.style.opacity = 0.5;
-      }
     });
 
     let store = [];
