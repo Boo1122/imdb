@@ -8,7 +8,7 @@ export class UserOptions {
   }
 
   checkForTokenFirst() {
-    const edit = document.getElementById("editButton");
+    const edit = document.getElementById("addMovie");
 
     edit.addEventListener("click", () => {
       const token = this.token;
