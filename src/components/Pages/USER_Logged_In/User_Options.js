@@ -1,5 +1,6 @@
 import "./User_Options.css";
 import Cookie from "js-cookie";
+import { addMovieToAPI } from "./User_Utils";
 
 export class UserOptions {
   constructor() {
@@ -12,7 +13,6 @@ export class UserOptions {
 
     edit.addEventListener("click", () => {
       const token = this.token;
-      console.log(token);
       if (token) {
         this.addMovie();
       }
@@ -21,6 +21,7 @@ export class UserOptions {
 
   addMovie() {
     const body = document.getElementById("body");
+    const footer = document.getElementById("footerContainer");
 
     const newMovieWrapper = document.createElement("div");
     newMovieWrapper.id = "newMovieContainer";
@@ -44,6 +45,7 @@ export class UserOptions {
     spanTitle.innerText = "Movie Title";
     const movieTitle = document.createElement("input");
     movieTitle.classList.add("movie-Title-class");
+    movieTitle.id = "movie-Title-id";
 
     movieBox.appendChild(titleContainer);
     movieBox.appendChild(spanTitle);
@@ -54,6 +56,7 @@ export class UserOptions {
     spanYear.innerText = "Movie Year";
     const movieYear = document.createElement("input");
     movieYear.classList.add("movieYear");
+    movieYear.id = "movieYear-id";
 
     movieBox.appendChild(spanYear);
     movieBox.appendChild(movieYear);
@@ -63,6 +66,7 @@ export class UserOptions {
     spanImdbID.innerText = "Movie ImdbID";
     const movieImdbID = document.createElement("input");
     movieImdbID.classList.add("movie-ImdbID-class");
+    movieImdbID.id = "movie-ImdbID-id";
 
     movieBox.appendChild(spanImdbID);
     movieBox.appendChild(movieImdbID);
@@ -81,6 +85,7 @@ export class UserOptions {
     movieType.classList.add("movie-Type-class");
     movieType.setAttribute("type", "radio");
     movieType.setAttribute("name", "select");
+    movieType.id = "movie-Type-id";
 
     const typeSeries = document.createElement("div");
     typeSeries.id = "typeSeries";
@@ -92,6 +97,7 @@ export class UserOptions {
     tvSeriesType.classList.add("th-series-Type-class");
     tvSeriesType.setAttribute("type", "radio");
     tvSeriesType.setAttribute("name", "select");
+    tvSeriesType.id = "th-series-Type-id";
 
     movieBox.appendChild(typeMovieContainer);
     typeMovieContainer.appendChild(typeMovie);
@@ -129,5 +135,7 @@ export class UserOptions {
     addMovieButton.innerText = "Create Movie";
 
     movieBox.appendChild(addMovieButton);
+
+    addMovieToAPI();
   }
 }
