@@ -1,5 +1,6 @@
 import "./User_Options.css";
 import Cookie from "js-cookie";
+import { addMovieToAPI } from "./User_Utils";
 
 export class UserOptions {
   constructor() {
@@ -12,7 +13,6 @@ export class UserOptions {
 
     edit.addEventListener("click", () => {
       const token = this.token;
-      console.log(token);
       if (token) {
         this.addMovie();
       }
@@ -41,6 +41,7 @@ export class UserOptions {
     spanTitle.innerText = "Movie title:";
     const movieTitle = document.createElement("input");
     movieTitle.classList.add("movie-Title-class");
+    movieTitle.id = "movie-Title-id";
 
     movieBox.appendChild(spanTitle);
     movieBox.appendChild(movieTitle);
@@ -50,6 +51,7 @@ export class UserOptions {
     spanYear.innerText = "Movie year:";
     const movieYear = document.createElement("input");
     movieYear.classList.add("movieYear");
+    movieYear.id = "movieYear-id";
 
     movieBox.appendChild(spanYear);
     movieBox.appendChild(movieYear);
@@ -59,6 +61,7 @@ export class UserOptions {
     spanImdbID.innerText = "Movie ImdbID:";
     const movieImdbID = document.createElement("input");
     movieImdbID.classList.add("movie-ImdbID-class");
+    movieImdbID.id = "movie-ImdbID-id";
 
     movieBox.appendChild(spanImdbID);
     movieBox.appendChild(movieImdbID);
@@ -70,6 +73,7 @@ export class UserOptions {
     movieType.classList.add("movie-Type-class");
     movieType.setAttribute("type", "radio");
     movieType.setAttribute("name", "select");
+    movieType.id = "movie-Type-id";
 
     const spanTvSeries = document.createElement("span");
     spanTvSeries.classList.add("span-tv-Type-class");
@@ -78,6 +82,7 @@ export class UserOptions {
     tvSeriesType.classList.add("th-series-Type-class");
     tvSeriesType.setAttribute("type", "radio");
     tvSeriesType.setAttribute("name", "select");
+    tvSeriesType.id = "th-series-Type-id";
 
     movieBox.appendChild(spanType);
     movieBox.appendChild(movieType);
@@ -89,6 +94,7 @@ export class UserOptions {
     spanPoster.innerText = "Movie Poster";
     const moviePoster = document.createElement("input");
     moviePoster.classList.add("movie-Poster-class");
+    moviePoster.id = "movie-Poster-id";
 
     movieBox.appendChild(spanPoster);
     movieBox.appendChild(moviePoster);
