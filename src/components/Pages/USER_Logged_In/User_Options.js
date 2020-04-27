@@ -21,6 +21,7 @@ export class UserOptions {
 
   addMovie() {
     const body = document.getElementById("body");
+    const footer = document.getElementById("footerContainer");
 
     const newMovieWrapper = document.createElement("div");
     newMovieWrapper.id = "newMovieContainer";
