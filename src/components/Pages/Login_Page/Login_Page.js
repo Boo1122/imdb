@@ -71,6 +71,51 @@ export class LoginPage {
     loginBtnContainer.appendChild(loginBtn);
 
     box1.appendChild(regPar);
+
+    const wrapper = document.createElement("div");
+    wrapper.id = "wrapper";
+    containerForm.appendChild(wrapper);
+
+    const spiderman = document.createElement("div");
+    spiderman.id = "spiderman";
+    wrapper.appendChild(spiderman);
+
+    const head = document.createElement("div");
+    head.classList.add("head");
+    spiderman.appendChild(head);
+
+    const leftEye = document.createElement("div");
+    leftEye.classList.add("eye-left");
+    const rightEye = document.createElement("div");
+    rightEye.classList.add("eye-right");
+    head.appendChild(leftEye);
+    head.appendChild(rightEye);
+
+    const bod = document.createElement("div");
+    bod.classList.add("bod");
+    spiderman.appendChild(bod);
+
+    const spider = document.createElement("div");
+    const leftArm = document.createElement("div");
+    const rightArm = document.createElement("div");
+
+    spider.classList.add("spider");
+    leftArm.classList.add("arm-left");
+    rightArm.classList.add("arm-right");
+
+    bod.appendChild(spider);
+    bod.appendChild(rightArm);
+    bod.appendChild(leftArm);
+
+    const legs = document.createElement("div");
+    legs.classList.add("legs");
+    spiderman.appendChild(legs);
+
+    const leftBoot = document.createElement("div");
+    const rightBoot = document.createElement("div");
+
+    leftBoot.classList.add("boot-left");
+    rightBoot.classList.add("boot-right");
   }
 
   loginClicked() {
