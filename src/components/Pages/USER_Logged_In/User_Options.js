@@ -8,7 +8,7 @@ export class UserOptions {
   }
 
   checkForTokenFirst() {
-    const edit = document.getElementById("editButton");
+    const edit = document.getElementById("addMovie");
 
     edit.addEventListener("click", () => {
       const token = this.token;
@@ -26,8 +26,7 @@ export class UserOptions {
     newMovieWrapper.id = "newMovieContainer";
     newMovieWrapper.classList.add("newMovieWrapper-class");
     newMovieWrapper.classList.add("page");
-    newMovieWrapper.style.backgroundImage =
-      "url(./public/img/the_dark_knight_dark.jpg)";
+    newMovieWrapper.style.backgroundImage = "url(./public/img/batman_bk2.jpeg)";
 
     const movieBox = document.createElement("div");
     movieBox.id = "movieBox";
@@ -36,18 +35,23 @@ export class UserOptions {
     body.appendChild(newMovieWrapper);
     newMovieWrapper.appendChild(movieBox);
 
+    const titleContainer = document.createElement("span");
+    titleContainer.classList.add("title-container");
+    titleContainer.innerText = "Add New Movie";
+
     const spanTitle = document.createElement("span");
     spanTitle.classList.add("spanTitle");
-    spanTitle.innerText = "Movie title:";
+    spanTitle.innerText = "Movie Title";
     const movieTitle = document.createElement("input");
     movieTitle.classList.add("movie-Title-class");
 
+    movieBox.appendChild(titleContainer);
     movieBox.appendChild(spanTitle);
     movieBox.appendChild(movieTitle);
 
     const spanYear = document.createElement("span");
     spanYear.classList.add("spanTitle");
-    spanYear.innerText = "Movie year:";
+    spanYear.innerText = "Movie Year";
     const movieYear = document.createElement("input");
     movieYear.classList.add("movieYear");
 
@@ -56,13 +60,20 @@ export class UserOptions {
 
     const spanImdbID = document.createElement("span");
     spanImdbID.classList.add("span-ImdbID-class");
-    spanImdbID.innerText = "Movie ImdbID:";
+    spanImdbID.innerText = "Movie ImdbID";
     const movieImdbID = document.createElement("input");
     movieImdbID.classList.add("movie-ImdbID-class");
 
     movieBox.appendChild(spanImdbID);
     movieBox.appendChild(movieImdbID);
 
+    const typeMovieContainer = document.createElement("div");
+    typeMovieContainer.id = "typeMovieContainer";
+    typeMovieContainer.classList.add("type-movie-container");
+
+    const typeMovie = document.createElement("div");
+    typeMovie.id = "typeMovie";
+    typeMovie.classList.add("type-of-movie");
     const spanType = document.createElement("span");
     spanType.classList.add("span-movie-Type-class");
     spanType.innerText = "Movie";
@@ -71,6 +82,9 @@ export class UserOptions {
     movieType.setAttribute("type", "radio");
     movieType.setAttribute("name", "select");
 
+    const typeSeries = document.createElement("div");
+    typeSeries.id = "typeSeries";
+    typeSeries.classList.add("type-of-movie");
     const spanTvSeries = document.createElement("span");
     spanTvSeries.classList.add("span-tv-Type-class");
     spanTvSeries.innerText = "Tv Series";
@@ -79,23 +93,40 @@ export class UserOptions {
     tvSeriesType.setAttribute("type", "radio");
     tvSeriesType.setAttribute("name", "select");
 
-    movieBox.appendChild(spanType);
-    movieBox.appendChild(movieType);
-    movieBox.appendChild(spanTvSeries);
-    movieBox.appendChild(tvSeriesType);
+    movieBox.appendChild(typeMovieContainer);
+    typeMovieContainer.appendChild(typeMovie);
+    typeMovieContainer.appendChild(typeSeries);
+
+    typeMovie.appendChild(spanType);
+    typeMovie.appendChild(movieType);
+    typeSeries.appendChild(spanTvSeries);
+    typeSeries.appendChild(tvSeriesType);
 
     const spanPoster = document.createElement("span");
     spanPoster.classList.add("span-Poster-class");
     spanPoster.innerText = "Movie Poster";
-    const moviePoster = document.createElement("input");
-    moviePoster.classList.add("movie-Poster-class");
+
+    const moviePoster = document.createElement("div");
+    moviePoster.id = "moviePoster";
+    moviePoster.classList.add("movie-poster");
+
+    const moviePosterInput = document.createElement("input");
+    moviePosterInput.classList.add("movie-Poster-class");
+    moviePosterInput.placeholder = "Image URL";
+
+    const uploadPosterButton = document.createElement("button");
+    uploadPosterButton.id = "uploadPosterButton";
+    uploadPosterButton.innerText = "Upload Image";
 
     movieBox.appendChild(spanPoster);
     movieBox.appendChild(moviePoster);
 
+    moviePoster.appendChild(moviePosterInput);
+    moviePoster.appendChild(uploadPosterButton);
+
     const addMovieButton = document.createElement("button");
     addMovieButton.id = "addMovieButton";
-    addMovieButton.innerText = "Add Movie";
+    addMovieButton.innerText = "Create Movie";
 
     movieBox.appendChild(addMovieButton);
   }

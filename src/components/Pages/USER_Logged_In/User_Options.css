@@ -4,6 +4,11 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-size: large;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #movieBox {
@@ -12,6 +17,9 @@
   justify-content: center;
   align-items: center;
   color: white;
+  background-color: rgba(0, 0, 0, 0.699);
+  width: 400px;
+  height: 600px;
 }
 
 .movie-Title-class,
@@ -19,8 +27,93 @@
 .movie-ImdbID-class,
 .movie-Poster-class {
   width: 200px;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 5%;
+}
+
+#movieBox span {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.type-movie-container {
+  width: 200px;
+  display: inline-flex;
+  justify-content: space-around;
 }
 
 .movie-Type-class,
 .th-series-Type-class {
+  width: 10px;
+  height: 15px;
+}
+
+.type-of-movie {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#addMovieButton {
+  box-shadow: inset 0px 1px 3px 0px #91b8b3;
+  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  background-color: #768d87;
+  border-radius: 5px;
+  border: 1px solid #566963;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 11px 23px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #2b665e;
+  margin-top: 30px;
+}
+#addMovieButton:hover {
+  background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  background-color: #6c7c7c;
+  color: #346178;
+}
+
+.title-container {
+  color: #346178;
+  font-weight: bold;
+  font-size: larger;
+  padding-bottom: 20px;
+}
+
+.movie-poster {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 300px;
+}
+
+.movie-poster input {
+  width: 150px;
+}
+
+.movie-poster input::placeholder {
+  color: rgb(58, 55, 55);
+  opacity: 1;
+}
+
+.movie-poster button {
+  height: 30px;
+  width: 105px;
+  box-shadow: inset 0px 1px 3px 0px #91b8b3;
+  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  background-color: #768d87;
+  border-radius: 5px;
+  border: 1px solid #566963;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #2b665e;
 }

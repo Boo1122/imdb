@@ -18,17 +18,22 @@ body {
   align-items: center;
   flex-direction: column;
   background: #272727;
-  color: rgba(233, 27, 16, 0.8);
+  color: rgb(81, 99, 123);
 
-  font-family: "Pacifico", cursive;
+  /*font-family: "Pacifico", cursive;*/
+  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-size: large;
 }
 
 #register-box {
   height: 522px;
   width: 420px;
-  background: black;
+  background: rgba(0, 0, 0, 0.799);
   display: flex;
   flex-direction: column;
+}
+#register-box h1 {
+  font-family: "Pacifico", cursive;
 }
 
 #username-input,
@@ -43,25 +48,27 @@ body {
 
 #register-msg {
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 #username,
 #email-label,
 #password-label {
-  margin: 1rem 1rem 1rem 3.8rem;
+  margin: 1rem 1rem 0.5rem 0rem;
+  align-self: center;
+  font-weight: bold;
 }
 
 #username-input,
 #email-input,
 #password-input {
-  width: 18.75rem;
+  width: 330px;
+  height: 50px;
   align-self: center;
 }
 
 #register-message {
+  margin-top: 15px;
   text-align: center;
-  margin: 0;
 }
 
 /* #registerBtn {
@@ -76,32 +83,47 @@ body {
 } */
 
 ::placeholder {
-  color: rgba(233, 27, 16, 0.8);
+  color: rgb(78, 77, 77);
 }
 
 #existing-acc {
   text-align: center;
   cursor: pointer;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #existing-acc:hover {
   text-align: center;
   cursor: pointer;
-  background: #ffff00;
-  color: rgba(233, 27, 16, 0.8);
+  background: #768d87;
+  color: whitesmoke;
 }
 
 #register-btn-form {
-  margin-top: 2.4rem;
-  border-radius: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: rgb(207, 83, 34);
-  outline: none;
-  font-size: 16px;
-  font-weight: bold;
-  border: 1px solid black;
+  box-shadow: inset 0px 1px 3px 0px #91b8b3;
+  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  background-color: #768d87;
+  border-radius: 5px;
+  border: 1px solid #566963;
+  display: inline-block;
   cursor: pointer;
-  width: 6.25rem;
+  color: white;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 11px 23px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #2b665e;
+  width: 110px;
   align-self: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+#register-btn-form:hover {
+  background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  background-color: #6c7c7c;
+  color: black;
 }

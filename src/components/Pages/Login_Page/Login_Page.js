@@ -12,8 +12,7 @@ export class LoginPage {
     const containerForm = document.createElement("div");
     containerForm.id = "login-page";
     containerForm.classList.add("page");
-    containerForm.style.backgroundImage =
-      "url(./public/img/the_dark_knight_dark.jpg)";
+    containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
     const box1 = document.createElement("div");
     box1.id = "login-box";
@@ -25,7 +24,7 @@ export class LoginPage {
     const usernameLabel = document.createElement("label");
     usernameLabel.setAttribute("for", "name");
     usernameLabel.id = "username-login";
-    usernameLabel.innerText = "Username:";
+    usernameLabel.innerText = "Username";
 
     const usernameInput = document.createElement("input");
     usernameInput.id = "username-input-login";
@@ -36,7 +35,7 @@ export class LoginPage {
     const passwordLabel = document.createElement("label");
     passwordLabel.setAttribute("for", "password");
     passwordLabel.id = "password-label-login";
-    passwordLabel.innerText = "Password:";
+    passwordLabel.innerText = "Password";
 
     const passwordInput = document.createElement("input");
     passwordInput.id = "password-input-login";
@@ -53,7 +52,7 @@ export class LoginPage {
 
     const regPar = document.createElement("p");
     regPar.id = "register-paragraph";
-    regPar.innerText = "If you dont have an account Register here";
+    regPar.innerText = "If you dont have an account Register here!";
     regPar.classList.add("nav-link");
     regPar.setAttribute("data-target", "register-page");
 
@@ -120,7 +119,7 @@ export class LoginPage {
     loginButton.style.display = "none";
     const logoutButton = document.getElementById("logOutBtn");
     logoutButton.style.display = "block";
-    const editbutton = document.getElementById("editButton");
+    const editbutton = document.getElementById("addMovie");
     editbutton.style.display = "block";
 
     location.reload(false);

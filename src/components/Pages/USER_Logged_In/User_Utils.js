@@ -16,7 +16,7 @@ export function addMovie() {
           .split("=")[1];
       
         fetch(
-          "https://movies-api-siit.herokuapp.com/movies/5e725d024fb1460022d1d4c4",
+          "https://movies-api-siit.herokuapp.com/movies",
           {
             method: "PUT", // *GET, POST, PUT, DELETE, etc.
             mode: "cors", // no-cors, *cors, same-origin

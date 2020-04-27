@@ -1,11 +1,15 @@
 import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
-import { Search } from "../Home_Page_Header/Search_Button";
+import {
+  Search
+} from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
 import Cookie from "js-cookie";
-import { UserOptions } from "../Pages/USER_Logged_In/User_Options";
+import {
+  UserOptions
+} from "../Pages/USER_Logged_In/User_Options";
 
 export class Header {
   constructor() {
@@ -68,7 +72,7 @@ export class Header {
     const header = document.getElementById("header");
 
     const editDiv = document.createElement("div");
-    editDiv.id = "editButton";
+    editDiv.id = "addMovie";
 
     const token = Cookie.get("token");
 
@@ -80,7 +84,7 @@ export class Header {
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
-    editButton.setAttribute("data-target", "edit");
+    editButton.setAttribute("data-target", "addMovie");
     editButton.innerHTML = "Add Movie";
 
     header.appendChild(editDiv);
