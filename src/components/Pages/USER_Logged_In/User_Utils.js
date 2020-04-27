@@ -13,9 +13,9 @@
 //         console.log(token);
 
 //         fetch(
-//           "https://movies-api-siit.herokuapp.com/movies/5e725d024fb1460022d1d4c4",
+//           "https://movies-api-siit.herokuapp.com/movies",
 //           {
-//             method: "PUT", // *GET, POST, PUT, DELETE, etc.
+//             method: "POST", // *GET, POST, PUT, DELETE, etc.
 //             mode: "cors", // no-cors, *cors, same-origin
 //             cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
 //             credentials: "same-origin", // include, *same-origin, omit
@@ -26,11 +26,11 @@
 //             redirect: "follow", // manual, *follow, error
 //             referrerPolicy: "no-referrer", // no-referrer, *client
 //             body: JSON.stringify({
-//               Title: `${title}`,
-//               Year:​ ​`${year}`,
-//               imdbID: `${imdbID}`,
-//               Type: `${type}`,
-//               Poster: `${posterUrl}`,
+//               Title: title,
+//               Year:​ ​year,
+//               imdbID: imdbID,
+//               Type: type,
+//               Poster: posterUrl,
 //             })
 //           }
 //         )
