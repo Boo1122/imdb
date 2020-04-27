@@ -19,9 +19,14 @@ body {
   flex-direction: column;
 
   background: #272727;
-  color: rgba(233, 27, 16, 0.8);
-  /* color: #ffff00; */
+  color: rgb(81, 99, 123);
 
+  /*font-family: "Pacifico", cursive;*/
+  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-size: large;
+}
+
+#login-h1 {
   font-family: "Pacifico", cursive;
 }
 
@@ -39,26 +44,43 @@ body {
 
 #username-login,
 #password-label-login {
-  margin: 1rem 1rem 1rem 5rem;
+  margin: 1rem 1rem 0.5rem 0rem;
+  align-self: center;
+  font-weight: bold;
 }
 
 #username-input-login,
 #password-input-login {
-  width: 220px;
+  width: 300px;
+  height: 20px;
   align-self: center;
 }
 
 #loginButton {
+  box-shadow: inset 0px 1px 3px 0px #91b8b3;
+  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  background-color: #768d87;
+  border-radius: 5px;
+  border: 1px solid #566963;
+  display: inline-block;
   cursor: pointer;
-  border-radius: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: rgb(207, 83, 34);
-  outline: none;
-  font-size: 16px;
+  color: white;
+  font-family: Arial;
+  font-size: 15px;
   font-weight: bold;
-  border: 1px solid black;
-  margin-top: 25px;
+  padding: 11px 23px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #2b665e;
+  width: 110px;
+  align-self: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#loginButton:hover {
+  background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  background-color: #6c7c7c;
+  color: black;
 }
 
 #login-submit-btn {
@@ -68,11 +90,14 @@ body {
 #register-paragraph {
   text-align: center;
   cursor: pointer;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #register-paragraph:hover {
   text-align: center;
   cursor: pointer;
-  background: #ffff00;
-  color: rgba(233, 27, 16, 0.8);
+  background: #768d87;
+  color: whitesmoke;
 }
