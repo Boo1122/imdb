@@ -12,8 +12,7 @@ export class LoginPage {
     const containerForm = document.createElement("div");
     containerForm.id = "login-page";
     containerForm.classList.add("page");
-    containerForm.style.backgroundImage =
-      "url(./public/img/the_dark_knight_dark.jpg)";
+    containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
     const box1 = document.createElement("div");
     box1.id = "login-box";
@@ -78,24 +77,24 @@ export class LoginPage {
     const userName = document.getElementById("username-input-login");
     const passWord = document.getElementById("password-input-login");
 
-    logButton.addEventListener("click", (event) => {
+    logButton.addEventListener("click", event => {
       fetch("https://movies-app-siit.herokuapp.com/auth/login", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *client
         body: JSON.stringify({
           username: `${userName.value}`,
-          password: `${passWord.value}`,
-        }),
+          password: `${passWord.value}`
+        })
       })
-        .then((response) => response.json())
-        .then((json) => {
+        .then(response => response.json())
+        .then(json => {
           console.log(json);
 
           if (json.accessToken) {

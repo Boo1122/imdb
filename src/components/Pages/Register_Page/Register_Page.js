@@ -1,5 +1,5 @@
 import "./Register_Form.css";
-import Cookie from "js-cookie"
+import Cookie from "js-cookie";
 
 export class RegisterPage {
   constructor() {
@@ -13,8 +13,7 @@ export class RegisterPage {
     const containerForm = document.createElement("div");
     containerForm.id = "register-page";
     containerForm.classList.add("page");
-    containerForm.style.backgroundImage =
-      "url(./public/img/the_dark_knight_dark.jpg)";
+    containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
     const box2 = document.createElement("div");
     box2.id = "register-box";
@@ -30,7 +29,7 @@ export class RegisterPage {
     const usernameLabel = document.createElement("label");
     usernameLabel.setAttribute("for", "name");
     usernameLabel.id = "username";
-    usernameLabel.innerText = "Username:";
+    usernameLabel.innerText = "Username";
 
     const usernameInput = document.createElement("input");
     usernameInput.id = "username-input";
@@ -41,7 +40,7 @@ export class RegisterPage {
     const passwordLabel = document.createElement("label");
     passwordLabel.setAttribute("for", "password");
     passwordLabel.id = "password-label";
-    passwordLabel.innerText = "Password:";
+    passwordLabel.innerText = "Password";
 
     const passwordInput = document.createElement("input");
     passwordInput.id = "password-input";
@@ -94,21 +93,21 @@ export class RegisterPage {
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *client
         body: JSON.stringify({
           username: `${userName.value}`,
-          password: `${userPass.value}`,
-        }),
+          password: `${userPass.value}`
+        })
       })
-        .then((response) => response.json())
-        .then((json) => {
+        .then(response => response.json())
+        .then(json => {
           document.cookie = `token=${json.accessToken}`;
           const token = document.cookie
             .split(";")
-            .find((element) => {
+            .find(element => {
               if (element.includes("token")) return true;
             })
             .split("=")[1];
