@@ -1,15 +1,21 @@
 // import Cookie from "js-cookie";
 
 // export function addMovieToAPI() {
-//   const title = document.getElementById('movie-Title-id').value;
-//   const year = document.getElementById('movieYear-id').value
-//   const imdbID = document.getElementById('movie-ImdbID-id').value
-//   const type = document.getElementById('movie-Type-id')
-//   const posterUrl = document.getElementById('movie-Poster-id').value
 
 //     document.getElementById("addMovieButton").addEventListener("click", () => {
 
-//         const token = Cookie.get("token");
+//       const title = document.getElementById('movie-Title-id');
+//       const year = document.getElementById('movieYear-id');
+//       const imdbID = document.getElementById('movie-ImdbID-id');
+//       const type = document.getElementById('movie-Type-id');
+//       const posterUrl = document.getElementById('movie-Poster-id');
+
+//       const token = document.cookie
+//       .split(";")
+//       .find(element => {
+//         if (element.includes("token")) return true;
+//       })
+//       .split("=")[1];
 //         console.log(token);
 
 //         fetch(
@@ -26,11 +32,11 @@
 //             redirect: "follow", // manual, *follow, error
 //             referrerPolicy: "no-referrer", // no-referrer, *client
 //             body: JSON.stringify({
-//               Title: title,
-//               Year:​ ​year,
-//               imdbID: imdbID,
-//               Type: type,
-//               Poster: posterUrl,
+//               Title: `${title}`,
+//               Year:​ ​`${year}`,
+//               imdbID: `${imdbID}`,
+//               Type: `${type}`,
+//               Poster: `${posterUrl}`,
 //             })
 //           }
 //         )
