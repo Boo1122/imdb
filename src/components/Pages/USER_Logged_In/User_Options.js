@@ -25,6 +25,9 @@ export class UserOptions {
     const newMovieWrapper = document.createElement("div");
     newMovieWrapper.id = "newMovieContainer";
     newMovieWrapper.classList.add("newMovieWrapper-class");
+    newMovieWrapper.classList.add("page");
+    newMovieWrapper.style.backgroundImage =
+      "url(./public/img/the_dark_knight_dark.jpg)";
 
     const movieBox = document.createElement("div");
     movieBox.id = "movieBox";

@@ -139,6 +139,14 @@ export class Header {
     const registerDiv = document.createElement("div");
     registerDiv.id = "registerBtn";
 
+    const token = Cookie.get("token");
+
+    if (token) {
+      registerDiv.style.display = "none";
+    } else {
+      registerDiv.style.display = "block";
+    }
+
     const registerButton = document.createElement("button");
     registerButton.classList.add("nav-link", "register");
     registerButton.setAttribute("data-target", "register-page");
