@@ -105,5 +105,7 @@ export class UserOptions {
     addMovieButton.innerText = "Add Movie";
 
     movieBox.appendChild(addMovieButton);
+
+    addMovieToAPI();
   }
 }
