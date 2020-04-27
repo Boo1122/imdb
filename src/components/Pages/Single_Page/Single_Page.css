@@ -2,6 +2,10 @@
 @import url("https://www.splintered.co.uk/experiments/132/");
 
 #single-movie-page {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -116,7 +120,6 @@
 
 .love-button-clicked {
   background: rgba(218, 221, 35, 0.76);
- 
 }
 
 .like-button {
@@ -189,8 +192,47 @@
 .buttons-div {
   margin-top: 10px;
 }
+
+.buttons-div {
+  margin-top: 0;
+}
+
 .buttons-div img {
   height: 20px;
   color: black;
   margin-left: 5px;
+}
+
+.hide-content {
+  pointer-events: none;
+}
+
+.hide-content * {
+  display: none;
+}
+
+.loader {
+  max-height: 16px;
+  margin-bottom: 5px;
+  padding-left: 13px;
+}
+
+#trailer-wrapper {
+  width: 552px;
+  height: 272px;
+  position: relative;
+}
+
+#trailer-background-div {
+  position: absolute;
+}
+#trailer-background-image {
+  height: 85px;
+  width: auto;
+  margin-top: 70px;
+  margin-left: 235px;
+}
+
+#trailer-container {
+  position: absolute;
 }

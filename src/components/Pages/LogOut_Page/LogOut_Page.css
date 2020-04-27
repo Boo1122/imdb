@@ -12,6 +12,7 @@
   text-align: center;
   outline: none;
   order: 4;
+  cursor: pointer;
 }
 
 .logout:hover {

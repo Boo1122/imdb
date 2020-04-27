@@ -1,11 +1,41 @@
-#centerBox {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Geo&family=Gugi&family=Patrick+Hand+SC&family=Vast+Shadow&family=Wallpoet&display=swap");
 
 #advancedBox {
-  margin: 10%;
+  height: auto;
+  width: auto;
+  padding: 5px;
+  color: white;
+  font-size: 1.2rem;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 47, 47);
+  border-radius: 8px;
+  box-shadow: 1px 1px #000000d5, 2px 2px #000000d5, 3px 3px #000000d5;
+  margin-left: -100px;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+  font-family: "Vast Shadow", cursive;
+  font-family: "Wallpoet", cursive;
+  font-family: "Gugi", cursive;
+  font-family: "Patrick Hand SC", cursive;
+  font-family: "Geo", sans-serif;
+  text-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+.search-title-input {
+  background: linear-gradient(21deg, #ffc710, #1beabd);
+}
+
+#advancedBox:hover {
+  background: #5362ea;
+}
+
+#genreBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

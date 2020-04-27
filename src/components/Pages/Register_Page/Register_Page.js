@@ -1,4 +1,5 @@
 import "./Register_Form.css";
+import Cookie from "js-cookie"
 
 export class RegisterPage {
   constructor() {
@@ -104,7 +105,6 @@ export class RegisterPage {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
           document.cookie = `token=${json.accessToken}`;
           const token = document.cookie
             .split(";")
@@ -112,6 +112,7 @@ export class RegisterPage {
               if (element.includes("token")) return true;
             })
             .split("=")[1];
+          console.log(token);
 
           let emptyUserInput = document.getElementById("username-input");
           emptyUserInput.value = "";
@@ -126,15 +127,14 @@ export class RegisterPage {
 
   handleButtonsTransfetLogout() {
     const loginButton = document.getElementById("loginBtn");
-    loginButton.style.display = "none";
     const logoutButton = document.getElementById("logOutBtn");
-    logoutButton.style.display = "block";
     const editbutton = document.getElementById("editButton");
-    editbutton.style.display = "block";
+
+    location.reload(false);
 
     const allPosters = document.getElementsByClassName("posters");
     for (const x of allPosters) {
-      let token = document.cookie;
+      const token = Cookie.get("token");
       console.log(token);
       if (token) {
         const deleteMov = document.createElement("span");
@@ -142,6 +142,29 @@ export class RegisterPage {
         deleteMov.setAttribute("title", "Delete Movie");
         deleteMov.innerText = "X";
         x.prepend(deleteMov);
+      }
+    }
+
+    const token = Cookie.get("token");
+
+    if (token) {
+      loginButton.style.display = "none";
+    } else {
+      logoutButton.style.display = "block";
+      editbutton.style.display = "block";
+    }
+
+    if (token === "undefined") {
+      loginButton.style.display = "block";
+    } else {
+      logoutButton.style.display = "none";
+      editbutton.style.display = "none";
+    }
+
+    if (token === "undefined") {
+      const deleteX = document.getElementsByClassName("delete-single-movie");
+      for (const x of deleteX) {
+        x.style.display = "none";
       }
     }
   }
