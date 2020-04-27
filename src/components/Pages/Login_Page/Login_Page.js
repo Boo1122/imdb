@@ -24,7 +24,7 @@ export class LoginPage {
     const usernameLabel = document.createElement("label");
     usernameLabel.setAttribute("for", "name");
     usernameLabel.id = "username-login";
-    usernameLabel.innerText = "Username:";
+    usernameLabel.innerText = "Username";
 
     const usernameInput = document.createElement("input");
     usernameInput.id = "username-input-login";
@@ -35,7 +35,7 @@ export class LoginPage {
     const passwordLabel = document.createElement("label");
     passwordLabel.setAttribute("for", "password");
     passwordLabel.id = "password-label-login";
-    passwordLabel.innerText = "Password:";
+    passwordLabel.innerText = "Password";
 
     const passwordInput = document.createElement("input");
     passwordInput.id = "password-input-login";
@@ -52,7 +52,7 @@ export class LoginPage {
 
     const regPar = document.createElement("p");
     regPar.id = "register-paragraph";
-    regPar.innerText = "If you dont have an account Register here";
+    regPar.innerText = "If you dont have an account Register here!";
     regPar.classList.add("nav-link");
     regPar.setAttribute("data-target", "register-page");
 
