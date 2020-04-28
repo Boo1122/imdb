@@ -93,13 +93,7 @@ export class UserOptions {
     spanTvSeries.innerText = "Tv Series";
     const tvSeriesType = document.createElement("input");
     tvSeriesType.classList.add("th-series-Type-class");
-<<<<<<< HEAD
     tvSeriesType.setAttribute("type", "checkbox");
-=======
-    tvSeriesType.setAttribute("type", "radio");
-    tvSeriesType.setAttribute("name", "select");
-    tvSeriesType.id = "th-series-Type-id";
->>>>>>> Pre-Production-3.0
 
     movieBox.appendChild(typeMovieContainer);
     typeMovieContainer.appendChild(typeMovie);

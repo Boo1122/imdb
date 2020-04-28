@@ -21,7 +21,7 @@ export function addMovieToAPI() {
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *client
-      body: JSON.stringify({ Title: title.value, Year: year.value }),
+      body: JSON.stringify({ Title: title.value, Year: year.value, Runtime: runtime.value, Genre: genre.value, Language: language.value, Country: country.value, Poster: poster.value, imdbRating: imdbRating.value, imdbVotes: imdbVotes.value, imdbID: imdbID.value, Type: type.value}),
     })
       .then((response) => response.json())
       .then((json) => {
