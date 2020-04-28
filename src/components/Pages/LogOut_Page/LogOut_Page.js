@@ -56,6 +56,7 @@ export class LogOutPage {
     logoutButton.style.display = "none";
     const editbutton = document.getElementById("editButton");
     editbutton.style.display = "none";
+    location.reload(false);
 
     location.reload(false);
 

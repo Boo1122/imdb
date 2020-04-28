@@ -6,6 +6,7 @@ export class Footer {
 
   createFooter() {
     const footerContainer = document.createElement("div");
+    footerContainer.id = "footerContainer";
     document.body.appendChild(footerContainer);
 
     footerContainer.style.width = "100%";
