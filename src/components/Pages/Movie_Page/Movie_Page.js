@@ -68,10 +68,13 @@ export class MoviePage {
     }
 
     let next = document.getElementById('next-movie')
+
     if (this.currentPage === 10) {
       next.disabled = true;
       next.style.opacity = 0.5;
+
     } else {
+
       next.disabled = false;
       next.style.opacity = 1.0;
     }
