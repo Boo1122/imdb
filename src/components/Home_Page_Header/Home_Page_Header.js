@@ -102,8 +102,6 @@ export class Header {
     const logOutDiv = document.createElement("div");
     logOutDiv.id = "logOutBtn";
 
-    const token = Cookie.get("token");
-
     const logOutButton = document.createElement("button");
     logOutButton.classList.add("nav-link", "logout");
     logOutButton.setAttribute("data-target", "logout-page");
@@ -118,8 +116,6 @@ export class Header {
 
     const registerDiv = document.createElement("div");
     registerDiv.id = "registerBtn";
-
-    const token = Cookie.get("token");
 
     const registerButton = document.createElement("button");
     registerButton.classList.add("nav-link", "register");

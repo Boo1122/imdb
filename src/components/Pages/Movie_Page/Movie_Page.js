@@ -1,8 +1,7 @@
 import "./Movie_Page.css";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History";
+import { navigate } from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
+import { deleteMovieFromApi } from "../USER_Logged_In/Delete_Movie";
 
 export class MoviePage {
   constructor() {
@@ -58,7 +57,7 @@ export class MoviePage {
     const id = `${this.currentPage}_pageButton`;
     document.getElementById(id).classList.add("actives");
 
-    let prev = document.getElementById("previous-movie")
+    let prev = document.getElementById("previous-movie");
     if (this.currentPage === 1) {
       prev.disabled = true;
       prev.style.opacity = 0.5;
@@ -67,7 +66,7 @@ export class MoviePage {
       prev.style.opacity = 1.0;
     }
 
-    let next = document.getElementById('next-movie')
+    let next = document.getElementById("next-movie");
     if (this.currentPage === 10) {
       next.disabled = true;
       next.style.opacity = 0.5;
@@ -75,7 +74,6 @@ export class MoviePage {
       next.disabled = false;
       next.style.opacity = 1.0;
     }
-
   }
 
   renderMovieList() {
@@ -85,8 +83,10 @@ export class MoviePage {
       this.moviesContent(movie, body);
 
       const deleteMovieBox = document.createElement("div");
-      deleteMovieBox.className = "deleteMovie";
+      deleteMovieBox.classList.add("deleteMovie");
       body.appendChild(deleteMovieBox);
+
+      deleteMovieBox.addEventListener("click", deleteMovieFromApi());
 
       const token = Cookie.get("token");
 
@@ -147,10 +147,8 @@ export class MoviePage {
     previous.className = "previous";
     previous.innerText = `< Previous`;
 
-
     previous.addEventListener("click", () => {
       this.getMovies((this.movieData.pagination.currentPage - 2) * 10);
-
     });
 
     const next = document.createElement("button");
