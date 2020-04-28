@@ -29,9 +29,9 @@ import {
 import {
     AdvancedSearch
 } from "./components/Advanced_Search/Advanced_Search";
-// import {
-//     UserOptions
-// } from "./components/Pages/USER_Logged_In/User_Options";
+import {
+    UserOptions
+} from "./components/Pages/USER_Logged_In/User_Options";
 
 new Header();
 new HomePage();
@@ -42,6 +42,7 @@ new LogOutPage();
 new MoviePage();
 new AdvancedSearch();
 new Footer();
-// new UserOptions();
+new UserOptions();
+
 
 navigate.init(singlePage);

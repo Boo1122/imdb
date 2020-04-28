@@ -61,12 +61,9 @@ export class Header {
     movies.setAttribute("data-target", "movie-page");
     movies.innerText = "Movies";
 
-    const buttonBody = document.createElement("div");
-    buttonBody.classList.add("dropdown-content");
-
     header.appendChild(buttonDiv);
     buttonDiv.appendChild(movies);
-    buttonDiv.appendChild(buttonBody);
+
   }
 
   editMovies() {
@@ -86,7 +83,6 @@ export class Header {
     header.appendChild(editDiv);
     editDiv.appendChild(editButton);
 
-    new UserOptions();
   }
 
   loginButton() {

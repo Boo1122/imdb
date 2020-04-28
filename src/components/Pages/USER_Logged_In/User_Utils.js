@@ -1,12 +1,13 @@
 import Cookie from "js-cookie";
 
+
 export function addMovieToAPI() {
   document.getElementById("addMovieButton").addEventListener("click", () => {
     const title = document.getElementById("movie-Title-id");
     const year = document.getElementById("movieYear-id");
-    // const imdbID = document.getElementById("movie-ImdbID-id");
-    // const type = document.getElementById("movie-Type-id");
-    // const posterUrl = document.getElementById("movie-Poster-id");
+    const imdbID = document.getElementById("movie-ImdbID-id");
+    const type = document.getElementById("movie-Type-id");
+    const posterUrl = document.getElementById("movie-Poster-id");
 
 
     const token = Cookie.get("token");
@@ -45,5 +46,6 @@ export function addMovieToAPI() {
           emptyPosterInput.value = "";
         }
       });
+
   });
 }
