@@ -77,10 +77,9 @@ export class UserOptions {
     const spanType = document.createElement("span");
     spanType.classList.add("span-movie-Type-class");
     spanType.innerText = "Movie";
-    const movieType = document.createElement("button");
+    const movieType = document.createElement("input");
     movieType.classList.add("movie-Type-class");
-    movieType.setAttribute("type", "radio");
-    movieType.setAttribute("name", "select");
+    movieType.setAttribute("type", "checkbox");
 
     const typeSeries = document.createElement("div");
     typeSeries.id = "typeSeries";
@@ -88,10 +87,9 @@ export class UserOptions {
     const spanTvSeries = document.createElement("span");
     spanTvSeries.classList.add("span-tv-Type-class");
     spanTvSeries.innerText = "Tv Series";
-    const tvSeriesType = document.createElement("button");
+    const tvSeriesType = document.createElement("input");
     tvSeriesType.classList.add("th-series-Type-class");
-    tvSeriesType.setAttribute("type", "radio");
-    tvSeriesType.setAttribute("name", "select");
+    tvSeriesType.setAttribute("type", "checkbox");
 
     movieBox.appendChild(typeMovieContainer);
     typeMovieContainer.appendChild(typeMovie);

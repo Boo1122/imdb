@@ -20,7 +20,7 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.699);
   width: 400px;
-  height: 600px;
+  height: 620px;
 }
 
 .movie-Title-class,
@@ -46,8 +46,8 @@
 
 .movie-Type-class,
 .th-series-Type-class {
-  width: 10px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
 }
 
 .type-of-movie {
