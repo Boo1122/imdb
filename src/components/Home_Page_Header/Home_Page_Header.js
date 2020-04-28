@@ -1,15 +1,11 @@
 import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
-import {
-  Search
-} from "../Home_Page_Header/Search_Button";
+import { Search } from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
 import Cookie from "js-cookie";
-import {
-  UserOptions
-} from "../Pages/USER_Logged_In/User_Options";
+import { UserOptions } from "../Pages/USER_Logged_In/User_Options";
 
 export class Header {
   constructor() {
@@ -74,14 +70,6 @@ export class Header {
     const editDiv = document.createElement("div");
     editDiv.id = "addMovie";
 
-    const token = Cookie.get("token");
-
-    if (token) {
-      editDiv.style.display = "block";
-    } else {
-      editDiv.style.display = "none";
-    }
-
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
     editButton.setAttribute("data-target", "addMovie");
@@ -98,12 +86,6 @@ export class Header {
 
     const loginDiv = document.createElement("div");
     loginDiv.id = "loginBtn";
-
-    const token = Cookie.get("token");
-
-    if (token) {
-      loginDiv.style.display = "none";
-    }
 
     const loginButton = document.createElement("button");
     loginButton.classList.add("nav-link", "login");
@@ -122,12 +104,6 @@ export class Header {
 
     const token = Cookie.get("token");
 
-    if (token) {
-      logOutDiv.style.display = "block";
-    } else {
-      logOutDiv.style.display = "none";
-    }
-
     const logOutButton = document.createElement("button");
     logOutButton.classList.add("nav-link", "logout");
     logOutButton.setAttribute("data-target", "logout-page");
@@ -144,12 +120,6 @@ export class Header {
     registerDiv.id = "registerBtn";
 
     const token = Cookie.get("token");
-
-    if (token) {
-      registerDiv.style.display = "none";
-    } else {
-      registerDiv.style.display = "block";
-    }
 
     const registerButton = document.createElement("button");
     registerButton.classList.add("nav-link", "register");

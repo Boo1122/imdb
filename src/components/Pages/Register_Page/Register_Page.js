@@ -93,21 +93,21 @@ export class RegisterPage {
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *client
         body: JSON.stringify({
           username: `${userName.value}`,
-          password: `${userPass.value}`
-        })
+          password: `${userPass.value}`,
+        }),
       })
-        .then(response => response.json())
-        .then(json => {
+        .then((response) => response.json())
+        .then((json) => {
           document.cookie = `token=${json.accessToken}`;
           const token = document.cookie
             .split(";")
-            .find(element => {
+            .find((element) => {
               if (element.includes("token")) return true;
             })
             .split("=")[1];
@@ -125,46 +125,6 @@ export class RegisterPage {
   }
 
   handleButtonsTransfetLogout() {
-    const loginButton = document.getElementById("loginBtn");
-    const logoutButton = document.getElementById("logOutBtn");
-    const editbutton = document.getElementById("editButton");
-
     location.reload(false);
-
-    const allPosters = document.getElementsByClassName("posters");
-    for (const x of allPosters) {
-      const token = Cookie.get("token");
-      console.log(token);
-      if (token) {
-        const deleteMov = document.createElement("span");
-        deleteMov.classList.add("delete-single-movie");
-        deleteMov.setAttribute("title", "Delete Movie");
-        deleteMov.innerText = "X";
-        x.prepend(deleteMov);
-      }
-    }
-
-    const token = Cookie.get("token");
-
-    if (token) {
-      loginButton.style.display = "none";
-    } else {
-      logoutButton.style.display = "block";
-      editbutton.style.display = "block";
-    }
-
-    if (token === "undefined") {
-      loginButton.style.display = "block";
-    } else {
-      logoutButton.style.display = "none";
-      editbutton.style.display = "none";
-    }
-
-    if (token === "undefined") {
-      const deleteX = document.getElementsByClassName("delete-single-movie");
-      for (const x of deleteX) {
-        x.style.display = "none";
-      }
-    }
   }
 }

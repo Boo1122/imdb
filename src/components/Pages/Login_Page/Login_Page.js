@@ -160,33 +160,6 @@ export class LoginPage {
   }
 
   handleButtonTransferLogin() {
-    const loginButton = document.getElementById("loginBtn");
-    loginButton.style.display = "none";
-    const logoutButton = document.getElementById("logOutBtn");
-    logoutButton.style.display = "block";
-    const editbutton = document.getElementById("addMovie");
-    editbutton.style.display = "block";
-
     location.reload(false);
-
-    const allPosters = document.getElementsByClassName("deleteMovie");
-
-    for (const x of allPosters) {
-      const token = Cookie.get("token");
-
-      if (token) {
-        const deleteMov = document.createElement("span");
-        deleteMov.classList.add("delete-single-movie");
-        deleteMov.setAttribute("title", "Delete Movie");
-        deleteMov.innerText = "X";
-        x.prepend(deleteMov);
-      }
-      if (token === "undefined") {
-        const deleteX = document.getElementsByClassName("delete-single-movie");
-        for (const x of deleteX) {
-          x.style.display = "none";
-        }
-      }
-    }
   }
 }
