@@ -86,7 +86,9 @@ export class MoviePage {
       deleteMovieBox.classList.add("deleteMovie");
       body.appendChild(deleteMovieBox);
 
-      //deleteMovieBox.addEventListener("click", deleteMovieFromApi());
+      deleteMovieBox.addEventListener("click", () => {
+        deleteMovieFromApi(movie._id, this.getMovies.bind(this));
+      });
 
       const token = Cookie.get("token");
 
