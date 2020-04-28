@@ -20,6 +20,7 @@ export class Header {
     this.logOutButton();
     this.editMovies();
     this.registerButton();
+
   }
 
   header() {
@@ -76,11 +77,6 @@ export class Header {
 
     const token = Cookie.get("token");
 
-    if (token) {
-      editDiv.style.display = "block";
-    } else {
-      editDiv.style.display = "none";
-    }
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");

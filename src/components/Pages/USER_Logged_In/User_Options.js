@@ -1,25 +1,21 @@
 import "./User_Options.css";
 import Cookie from "js-cookie";
-import { addMovieToAPI } from "./User_Utils";
+import {
+  addMovieToAPI
+} from "./User_Utils";
 
 export class UserOptions {
   constructor() {
     this.token = Cookie.get("token");
-    this.checkForTokenFirst();
+    // this.addMovie();
   }
 
-  checkForTokenFirst() {
-    const edit = document.getElementById("addMovie");
 
-    edit.addEventListener("click", () => {
-      const token = this.token;
-      if (token) {
-        this.addMovie();
-      }
-    });
-  }
+
+
 
   addMovie() {
+
     const body = document.getElementById("body");
     const footer = document.getElementById("footerContainer");
 
@@ -135,7 +131,7 @@ export class UserOptions {
     addMovieButton.innerText = "Create Movie";
 
     movieBox.appendChild(addMovieButton);
+    // addMovieToAPI();
 
-    addMovieToAPI();
   }
 }
