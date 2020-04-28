@@ -21,7 +21,11 @@ export function addMovieToAPI() {
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *client
-      body: JSON.stringify({ Title: title.value, Year: year.value }),
+      body: JSON.stringify({
+        Title: title.value,
+        Year: year.value,
+        //PosterUrl: posterUrl.value,
+      }),
     })
       .then((response) => response.json())
       .then((json) => {
