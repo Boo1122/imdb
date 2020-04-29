@@ -27,6 +27,7 @@ export class Header {
     const header = document.createElement("div");
     header.classList.add("header");
     header.id = "header";
+
     body.appendChild(header);
     header.style.backgroundImage = "url(./public/img/55376.jpg)";
     header.style.borderBottom = "5px solid salmon";
@@ -75,7 +76,7 @@ export class Header {
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
-    editButton.setAttribute("data-target", "newMovieContainer");
+    editButton.setAttribute("data-target", "addMovie");
     editButton.innerHTML = "Add Movie";
 
     header.appendChild(editDiv);
