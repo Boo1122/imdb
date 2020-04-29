@@ -1,5 +1,7 @@
 import "./Movie_Page.css";
-import { navigate } from "../../Navigate_History/Navigate_History";
+import {
+  navigate
+} from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
 
 export class MoviePage {
@@ -67,7 +69,7 @@ export class MoviePage {
 
     let next = document.getElementById("next-movie");
 
-    if (this.currentPage === 10) {
+    if (this.currentPage === 15) {
       next.disabled = true;
       next.style.opacity = 0.5;
     } else {
@@ -166,7 +168,7 @@ export class MoviePage {
     paginationDiv.appendChild(pagesContainer);
     paginationDiv.appendChild(previous);
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 15; i++) {
       const page = document.createElement("button");
       page.id = `${i}_pageButton`;
       page.classList.add("nr-of-pages");
