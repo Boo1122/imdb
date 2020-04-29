@@ -7,18 +7,15 @@ import {
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
 import Cookie from "js-cookie";
-import {
-  UserOptions
-} from "../Pages/USER_Logged_In/User_Options";
 
 export class Header {
   constructor() {
     this.header();
     this.homeButton();
     this.moviesButton();
+    this.editMovies();
     this.loginButton();
     this.logOutButton();
-    this.editMovies();
     this.registerButton();
 
 

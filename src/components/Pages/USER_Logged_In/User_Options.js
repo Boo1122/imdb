@@ -6,8 +6,8 @@ import {
 
 export class UserOptions {
   constructor() {
+    // this.addMovie();
     this.token = Cookie.get("token");
-    this.addMovie();
   }
 
   addMovie() {
@@ -17,8 +17,8 @@ export class UserOptions {
 
     const newMovieWrapper = document.createElement("div");
     newMovieWrapper.id = "newMovieContainer";
-    newMovieWrapper.classList.add("newMovieWrapper-class");
     newMovieWrapper.classList.add("page");
+    newMovieWrapper.classList.add("newMovieWrapper-class");
     newMovieWrapper.style.backgroundImage = "url(./public/img/batman_bk2.jpeg)";
 
     const movieBox = document.createElement("div");
