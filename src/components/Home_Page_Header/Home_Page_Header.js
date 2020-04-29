@@ -21,6 +21,7 @@ export class Header {
     this.editMovies();
     this.registerButton();
 
+
   }
 
   header() {
@@ -77,12 +78,11 @@ export class Header {
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
-    editButton.setAttribute("data-target", "addMovie");
+    editButton.setAttribute("data-target", "newMovieContainer");
     editButton.innerHTML = "Add Movie";
 
     header.appendChild(editDiv);
     editDiv.appendChild(editButton);
-
   }
 
   loginButton() {
