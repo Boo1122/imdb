@@ -26,7 +26,6 @@ body {
 }
 
 #login-box {
-  height: 400px;
   width: 380px;
   background: rgba(0, 0, 0, 0.799);
   display: flex;
