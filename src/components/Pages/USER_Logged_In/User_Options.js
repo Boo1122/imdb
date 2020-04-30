@@ -1,11 +1,13 @@
 import "./User_Options.css";
 import Cookie from "js-cookie";
-import { addMovieToAPI } from "./User_Utils";
+import {
+  addMovieToAPI
+} from "./User_Utils";
 
 export class UserOptions {
   constructor() {
-    this.token = Cookie.get("token");
     this.addMovie();
+    this.token = Cookie.get("token");
   }
 
   addMovie() {
@@ -13,8 +15,8 @@ export class UserOptions {
 
     const newMovieWrapper = document.createElement("div");
     newMovieWrapper.id = "newMovieContainer";
-    newMovieWrapper.classList.add("newMovieWrapper-class");
     newMovieWrapper.classList.add("page");
+    newMovieWrapper.classList.add("newMovieWrapper-class");
     newMovieWrapper.style.backgroundImage = "url(./public/img/batman_bk2.jpeg)";
 
     const movieBox = document.createElement("div");
@@ -63,35 +65,6 @@ export class UserOptions {
     typeMovieContainer.id = "typeMovieContainer";
     typeMovieContainer.classList.add("type-movie-container");
 
-    const typeMovie = document.createElement("div");
-    typeMovie.id = "typeMovie";
-    typeMovie.classList.add("type-of-movie");
-    const spanType = document.createElement("span");
-    spanType.classList.add("span-movie-Type-class");
-    spanType.innerText = "Movie";
-    const movieType = document.createElement("input");
-    movieType.classList.add("movie-Type-class");
-    movieType.setAttribute("type", "checkbox");
-
-    const typeSeries = document.createElement("div");
-    typeSeries.id = "typeSeries";
-    typeSeries.classList.add("type-of-movie");
-    const spanTvSeries = document.createElement("span");
-    spanTvSeries.classList.add("span-tv-Type-class");
-    spanTvSeries.innerText = "Tv Series";
-    const tvSeriesType = document.createElement("input");
-    tvSeriesType.classList.add("th-series-Type-class");
-    tvSeriesType.setAttribute("type", "checkbox");
-
-    movieBox.appendChild(typeMovieContainer);
-    typeMovieContainer.appendChild(typeMovie);
-    typeMovieContainer.appendChild(typeSeries);
-
-    typeMovie.appendChild(spanType);
-    typeMovie.appendChild(movieType);
-    typeSeries.appendChild(spanTvSeries);
-    typeSeries.appendChild(tvSeriesType);
-
     const spanPoster = document.createElement("span");
     spanPoster.classList.add("span-Poster-class");
     spanPoster.innerText = "Movie Poster";
@@ -101,6 +74,7 @@ export class UserOptions {
     moviePoster.classList.add("movie-poster");
 
     const moviePosterInput = document.createElement("input");
+    moviePosterInput.id = "GET-THIS";
     moviePosterInput.classList.add("movie-Poster-class");
     moviePosterInput.placeholder = "Image URL";
 

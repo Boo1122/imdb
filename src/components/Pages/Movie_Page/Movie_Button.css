@@ -1,8 +1,3 @@
-body {
-  display: flex;
-  flex-direction: column;
-}
-
 .dropbtn {
   background: #272727;
   padding: 10px 10px 10px 10px;
