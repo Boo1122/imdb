@@ -7,11 +7,6 @@ body {
   margin: 0;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-
 #login-page {
   height: 100vh;
   justify-content: center;
