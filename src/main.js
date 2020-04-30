@@ -20,8 +20,8 @@ const singlePage = new SinglePage();
 new LogOutPage();
 new MoviePage();
 new AdvancedSearch();
-new Footer();
 new UserOptions();
+new Footer();
 
 navigate.init(singlePage);
 switchButtons();
