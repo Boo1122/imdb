@@ -17,5 +17,5 @@ div.page {
 }
 
 div.active {
-  display: flex;
+  display: block;
 }
