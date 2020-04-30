@@ -6,7 +6,7 @@ import {
   updateVotesOnUI,
   loveButtonLoadingState,
   loveButtonInitialState,
-  updateVotesOnServer,
+  updateVotesOnServer
 } from "./SingleUtils";
 import { Loader } from "../../Loader/Loader";
 
@@ -16,7 +16,6 @@ export class SinglePage {
   }
 
   mainContent(movie) {
-    console.log(movie);
     const main = document.getElementById("single-movie-page");
     main.style.backgroundImage =
       "url(./public/img/batman_background_single.jpg)";
@@ -52,13 +51,13 @@ export class SinglePage {
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
     const movieInfo = document.createElement("p");
-    movieInfo.innerText = `Realised in: ${movie.Released}   |   ${movie.Country}   |   ${movie.Language}   |   ${movie.Runtime}`;
+    movieInfo.innerText = `Realised in:  ${movie.Country}   |   ${movie.Language}   |   ${movie.Runtime}`;
 
     //Here is the short description
-    const plotDiv = document.createElement("div");
+    /*const plotDiv = document.createElement("div");
     plotDiv.className = "plot-container";
     const plot = document.createElement("p");
-    plot.innerText = `${movie.Plot}`;
+    plot.innerText = `${movie.Plot}`;*/
 
     //Here are the ratings
     const ratingContainer = document.createElement("div");
@@ -112,7 +111,7 @@ export class SinglePage {
     dislikeImage.src = "./public/dislike_button.png";
 
     //Here you have the extra info
-    const extraInfo = document.createElement("div");
+    /*const extraInfo = document.createElement("div");
     extraInfo.className = "extra-info";
     const awards = document.createElement("p");
     awards.innerText = `AWARDS: ${movie.Awards}`;
@@ -136,8 +135,8 @@ export class SinglePage {
     titleDiv.appendChild(posterInfo);
     posterInfo.appendChild(movieInfo);
 
-    posterInfo.appendChild(plotDiv);
-    plotDiv.appendChild(plot);
+    /*posterInfo.appendChild(plotDiv);
+    plotDiv.appendChild(plot);*/
 
     posterInfo.appendChild(ratingContainer);
     ratingContainer.appendChild(buttonsDiv);
@@ -160,8 +159,8 @@ export class SinglePage {
     dislikeButton.appendChild(dislikeParagraph);
     dislikeButton.appendChild(dislikeImage);
 
-    posterInfo.appendChild(extraInfo);
-    extraInfo.appendChild(awards);
+    //posterInfo.appendChild(extraInfo);
+    //extraInfo.appendChild(awards);
     /*extraInfo.appendChild(director);
     extraInfo.appendChild(writer);
     extraInfo.appendChild(actors);*/
@@ -186,7 +185,7 @@ export class SinglePage {
     const likeButton = document.getElementById("like-button-id");
     const dislikeButton = document.getElementById("dislike-button-id");
 
-    loveButton.addEventListener("click", (movie) => {
+    loveButton.addEventListener("click", movie => {
       const token = Cookie.get("token");
       if (token) {
         console.log("current token", token);
@@ -225,8 +224,8 @@ export class SinglePage {
   renderMovie(movieId) {
     if (movieId) {
       fetch(`https://movies-app-siit.herokuapp.com/movies/${movieId}`)
-        .then((response) => response.json())
-        .then((json) => {
+        .then(response => response.json())
+        .then(json => {
           this.mainContent(json);
           this.renderMovieTrailer(json.imdbID);
         });
@@ -237,8 +236,8 @@ export class SinglePage {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
     )
-      .then((response) => response.json())
-      .then((json) => {
+      .then(response => response.json())
+      .then(json => {
         if (
           json.data &&
           json.data.movies &&
@@ -247,20 +246,14 @@ export class SinglePage {
         ) {
           const targetContainer = document.getElementsByClassName("title-div");
 
+          const trailerWrapper = document.createElement("div");
+          trailerWrapper.id = "trailer-wrapper";
+
           const trailerContainer = document.createElement("div");
+          trailerContainer.id = "trailer-div";
 
           const trailerIframe = document.createElement("iframe");
           trailerIframe.id = "trailer-container";
-          /*trailerIframe.style.backgroundImage =
-            "url(./public/play_button_trailer)";
-          trailerIframe.style.backgroundSize = "20px 20px";*/
-
-          // creeaza un div care sa acopere iframe-ul; pe el sa adaugi event onClick sa dispara img. ??
-          /*const trailerPlayButton = document.createElement("div");
-          trailerPlayButton.id = "trailer-play-button";
-          trailerPlayButton.style.backgroundImage =
-            "url(./public/play_button_trailer.png)";
-          trailerPlayButton.style.backgroundSize = "20px 20px";*/
 
           trailerIframe.width = "560";
           trailerIframe.height = "280";
@@ -270,9 +263,26 @@ export class SinglePage {
             -1
           )[0].videoURL;
 
+          const trailerBackground = document.createElement("div");
+          trailerBackground.id = "trailer-background-div";
+
+          const trailerBackgroundImage = document.createElement("img");
+          trailerBackgroundImage.id = "trailer-background-image";
+          trailerBackgroundImage.src = "./public/play.png";
+
+          trailerBackgroundImage.addEventListener("click", () => {
+            console.log("click play");
+            trailerIframe.allow = "autoplay";
+            trailerBackgroundImage.style.display = "none";
+          });
+
+          
+
+          trailerWrapper.appendChild(trailerContainer);
+          trailerWrapper.appendChild(trailerBackground);
+          trailerBackground.appendChild(trailerBackgroundImage);
           trailerContainer.appendChild(trailerIframe);
-          targetContainer[0].appendChild(trailerContainer);
-          //trailerIframe.appendChild(trailerPlayButton);
+          targetContainer[0].appendChild(trailerWrapper);
         }
       });
   }

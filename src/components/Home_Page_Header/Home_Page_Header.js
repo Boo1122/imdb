@@ -1,19 +1,20 @@
 import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
-import { Search } from "../Home_Page_Header/Search_Button";
+import {
+  Search
+} from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
-import Cookie from "js-cookie";
 
 export class Header {
   constructor() {
     this.header();
     this.homeButton();
+    this.editMovies();
     this.moviesButton();
     this.loginButton();
     this.logOutButton();
-    this.editMovies();
     this.registerButton();
   }
 
@@ -23,6 +24,7 @@ export class Header {
     const header = document.createElement("div");
     header.classList.add("header");
     header.id = "header";
+
     body.appendChild(header);
     header.style.backgroundImage = "url(./public/img/55376.jpg)";
     header.style.borderBottom = "5px solid salmon";
@@ -55,31 +57,21 @@ export class Header {
     movies.setAttribute("data-target", "movie-page");
     movies.innerText = "Movies";
 
-    const buttonBody = document.createElement("div");
-    buttonBody.classList.add("dropdown-content");
-
     header.appendChild(buttonDiv);
     buttonDiv.appendChild(movies);
-    buttonDiv.appendChild(buttonBody);
   }
 
   editMovies() {
     const header = document.getElementById("header");
 
     const editDiv = document.createElement("div");
-    editDiv.id = "editButton";
+    editDiv.id = "addMovie";
 
-    let token = document.cookie;
-    if (token) {
-      editDiv.style.display = "block";
-    } else {
-      editDiv.style.display = "none";
-    }
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
-    editButton.setAttribute("data-target", "edit");
-    editButton.innerHTML = "Edit";
+    editButton.setAttribute("data-target", "newMovieContainer");
+    editButton.innerHTML = "Add Movie";
 
     header.appendChild(editDiv);
     editDiv.appendChild(editButton);
@@ -90,12 +82,6 @@ export class Header {
 
     const loginDiv = document.createElement("div");
     loginDiv.id = "loginBtn";
-    let token = document.cookie;
-    if (token === "") {
-      loginDiv.style.display = "block";
-    } else {
-      loginDiv.style.display = "none";
-    }
 
     const loginButton = document.createElement("button");
     loginButton.classList.add("nav-link", "login");
@@ -111,13 +97,6 @@ export class Header {
 
     const logOutDiv = document.createElement("div");
     logOutDiv.id = "logOutBtn";
-
-    let token = Cookie.get("token");
-    if (token) {
-      logOutDiv.style.display = "block";
-    } else {
-      logOutDiv.style.display = "none";
-    }
 
     const logOutButton = document.createElement("button");
     logOutButton.classList.add("nav-link", "logout");

@@ -63,12 +63,14 @@
   text-transform: uppercase;
   max-width: 800px;
   margin-left: 20px;
+  margin-top: 20px;
 }
 
 .poster-info {
   font-family: ProximaNova-Medium, Arial, sans-serif;
   font-weight: 400;
   color: white;
+  margin-top: 25px;
 }
 
 .single-poster-img {
@@ -165,6 +167,7 @@
 .rating-container {
   display: inline-flex;
   align-items: center;
+  margin-top: 20px;
 }
 
 .bubbles-div {
@@ -215,4 +218,25 @@
   max-height: 16px;
   margin-bottom: 5px;
   padding-left: 13px;
+}
+
+#trailer-wrapper {
+  width: 552px;
+  height: 272px;
+  position: relative;
+  margin-top: 25px;
+}
+
+#trailer-background-div {
+  position: absolute;
+}
+#trailer-background-image {
+  height: 85px;
+  width: auto;
+  margin-top: 70px;
+  margin-left: 235px;
+}
+
+#trailer-container {
+  position: absolute;
 }

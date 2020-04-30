@@ -1,6 +1,10 @@
 import "./Home_Page.css";
-import { Random } from "./random";
-import { Caroussel } from "./Caroussel";
+import {
+  Random
+} from "./random";
+import {
+  Caroussel
+} from "./Caroussel";
 
 export class HomePage {
   constructor() {

@@ -12,8 +12,7 @@ export class LoginPage {
     const containerForm = document.createElement("div");
     containerForm.id = "login-page";
     containerForm.classList.add("page");
-    containerForm.style.backgroundImage =
-      "url(./public/img/the_dark_knight_dark.jpg)";
+    containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
     const box1 = document.createElement("div");
     box1.id = "login-box";
@@ -25,7 +24,7 @@ export class LoginPage {
     const usernameLabel = document.createElement("label");
     usernameLabel.setAttribute("for", "name");
     usernameLabel.id = "username-login";
-    usernameLabel.innerText = "Username:";
+    usernameLabel.innerText = "Username";
 
     const usernameInput = document.createElement("input");
     usernameInput.id = "username-input-login";
@@ -36,7 +35,7 @@ export class LoginPage {
     const passwordLabel = document.createElement("label");
     passwordLabel.setAttribute("for", "password");
     passwordLabel.id = "password-label-login";
-    passwordLabel.innerText = "Password:";
+    passwordLabel.innerText = "Password";
 
     const passwordInput = document.createElement("input");
     passwordInput.id = "password-input-login";
@@ -53,7 +52,7 @@ export class LoginPage {
 
     const regPar = document.createElement("p");
     regPar.id = "register-paragraph";
-    regPar.innerText = "If you dont have an account Register here";
+    regPar.innerText = "If you dont have an account Register here!";
     regPar.classList.add("nav-link");
     regPar.setAttribute("data-target", "register-page");
 
@@ -71,6 +70,51 @@ export class LoginPage {
     loginBtnContainer.appendChild(loginBtn);
 
     box1.appendChild(regPar);
+
+    const wrapper = document.createElement("div");
+    wrapper.id = "wrapper";
+    containerForm.appendChild(wrapper);
+
+    const spiderman = document.createElement("div");
+    spiderman.id = "spiderman";
+    wrapper.appendChild(spiderman);
+
+    const head = document.createElement("div");
+    head.classList.add("head");
+    spiderman.appendChild(head);
+
+    const leftEye = document.createElement("div");
+    leftEye.classList.add("eye-left");
+    const rightEye = document.createElement("div");
+    rightEye.classList.add("eye-right");
+    head.appendChild(leftEye);
+    head.appendChild(rightEye);
+
+    const bod = document.createElement("div");
+    bod.classList.add("bod");
+    spiderman.appendChild(bod);
+
+    const spider = document.createElement("div");
+    const leftArm = document.createElement("div");
+    const rightArm = document.createElement("div");
+
+    spider.classList.add("spider");
+    leftArm.classList.add("arm-left");
+    rightArm.classList.add("arm-right");
+
+    bod.appendChild(spider);
+    bod.appendChild(rightArm);
+    bod.appendChild(leftArm);
+
+    const legs = document.createElement("div");
+    legs.classList.add("legs");
+    spiderman.appendChild(legs);
+
+    const leftBoot = document.createElement("div");
+    const rightBoot = document.createElement("div");
+
+    leftBoot.classList.add("boot-left");
+    rightBoot.classList.add("boot-right");
   }
 
   loginClicked() {
@@ -116,25 +160,6 @@ export class LoginPage {
   }
 
   handleButtonTransferLogin() {
-    const loginButton = document.getElementById("loginBtn");
-    loginButton.style.display = "none";
-    const logoutButton = document.getElementById("logOutBtn");
-    logoutButton.style.display = "block";
-    const editbutton = document.getElementById("editButton");
-    editbutton.style.display = "block";
-
     location.reload(false);
-
-    const allPosters = document.getElementsByClassName("deleteMovie");
-    let token = document.cookie;
-    for (const x of allPosters) {
-      if (token) {
-        const deleteMov = document.createElement("span");
-        deleteMov.classList.add("delete-single-movie");
-        deleteMov.setAttribute("title", "Delete Movie");
-        deleteMov.innerText = "X";
-        x.prepend(deleteMov);
-      }
-    }
   }
 }

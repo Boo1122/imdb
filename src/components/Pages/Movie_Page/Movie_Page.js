@@ -1,5 +1,7 @@
 import "./Movie_Page.css";
 import { navigate } from "../../Navigate_History/Navigate_History";
+import Cookie from "js-cookie";
+import { deleteMovieFromApi } from "../USER_Logged_In/Delete_Movie";
 
 export class MoviePage {
   constructor() {
@@ -42,6 +44,7 @@ export class MoviePage {
         this.renderMovieList();
         this.currentPage = this.movieData.pagination.currentPage;
         this.setCurrentPage();
+        console.log(movieData);
       });
   }
 
@@ -53,6 +56,25 @@ export class MoviePage {
 
     const id = `${this.currentPage}_pageButton`;
     document.getElementById(id).classList.add("actives");
+
+    let prev = document.getElementById("previous-movie");
+    if (this.currentPage === 1) {
+      prev.disabled = true;
+      prev.style.opacity = 0.5;
+    } else {
+      prev.disabled = false;
+      prev.style.opacity = 1.0;
+    }
+
+    let next = document.getElementById("next-movie");
+
+    if (this.currentPage === 15) {
+      next.disabled = true;
+      next.style.opacity = 0.5;
+    } else {
+      next.disabled = false;
+      next.style.opacity = 1.0;
+    }
   }
 
   renderMovieList() {
@@ -62,10 +84,14 @@ export class MoviePage {
       this.moviesContent(movie, body);
 
       const deleteMovieBox = document.createElement("div");
-      deleteMovieBox.className = "deleteMovie";
+      deleteMovieBox.classList.add("deleteMovie");
       body.appendChild(deleteMovieBox);
 
-      let token = document.cookie;
+      deleteMovieBox.addEventListener("click", () => {
+        deleteMovieFromApi(movie._id, this.getMovies.bind(this));
+      });
+
+      const token = Cookie.get("token");
 
       if (token) {
         const deleteMov = document.createElement("span");
@@ -73,6 +99,13 @@ export class MoviePage {
         deleteMov.setAttribute("title", "Delete Movie");
         deleteMov.innerText = "X";
         deleteMovieBox.appendChild(deleteMov);
+      }
+
+      if (token === "undefined") {
+        const deleteX = document.getElementsByClassName("delete-single-movie");
+        for (const x of deleteX) {
+          x.style.display = "none";
+        }
       }
     }
   }
@@ -116,19 +149,9 @@ export class MoviePage {
     previous.id = "previous-movie";
     previous.className = "previous";
     previous.innerText = `< Previous`;
-    previous.disabled = true;
-    previous.style.opacity = 0.5;
 
     previous.addEventListener("click", () => {
-      this.getMovies(this.movieData.pagination.currentPage * 10 - 20);
-      if (this.movieData.pagination.currentPage < 3) {
-        previous.disabled = true;
-        previous.style.opacity = 0.5;
-      }
-      if (this.movieData.pagination.currentPage >= 9) {
-        next.disabled = false;
-        next.style.opacity = 1.0;
-      }
+      this.getMovies((this.movieData.pagination.currentPage - 2) * 10);
     });
 
     const next = document.createElement("button");
@@ -137,15 +160,6 @@ export class MoviePage {
     next.innerText = `Next >`;
     next.addEventListener("click", () => {
       this.getMovies(this.movieData.pagination.currentPage * 10);
-
-      if (this.movieData.pagination.currentPage >= 1) {
-        previous.disabled = false;
-        previous.style.opacity = 1.0;
-      }
-      if (this.movieData.pagination.currentPage >= 9) {
-        next.disabled = true;
-        next.style.opacity = 0.5;
-      }
     });
 
     let store = [];
@@ -157,7 +171,7 @@ export class MoviePage {
     paginationDiv.appendChild(pagesContainer);
     paginationDiv.appendChild(previous);
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 15; i++) {
       const page = document.createElement("button");
       page.id = `${i}_pageButton`;
       page.classList.add("nr-of-pages");

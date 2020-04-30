@@ -1,4 +1,5 @@
 import "./LogOut_Page.css";
+import Cookie from "js-cookie";
 
 export class LogOutPage {
   constructor() {
@@ -46,23 +47,7 @@ export class LogOutPage {
     });
   }
 
-  checkToken() {}
-
   handleButtonsTransfetLogout() {
-    const loginButton = document.getElementById("loginBtn");
-    loginButton.style.display = "block";
-    const logoutButton = document.getElementById("logOutBtn");
-    logoutButton.style.display = "none";
-    const editbutton = document.getElementById("editButton");
-    editbutton.style.display = "none";
-
     location.reload(false);
-
-    const deleteMovieButton = document.getElementsByClassName(
-      "delete-single-movie"
-    );
-    for (const movie of deleteMovieButton) {
-      movie.style.display = "none";
-    }
   }
 }

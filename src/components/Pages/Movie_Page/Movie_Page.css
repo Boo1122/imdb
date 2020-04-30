@@ -104,6 +104,7 @@ body {
 
 .movie-page-container {
   display: flex;
+  cursor: pointer;
 }
 
 .posters img {
@@ -125,6 +126,7 @@ body {
   align-items: center;
   flex-direction: column;
   pointer-events: none;
+  cursor: pointer;
 }
 
 .posters p {
