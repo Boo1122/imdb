@@ -4,8 +4,6 @@ import "./Login_Button.css";
 import { Search } from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
-import Cookie from "js-cookie";
-import { UserOptions } from "../Pages/USER_Logged_In/User_Options";
 
 export class Header {
   constructor() {

@@ -10,6 +10,7 @@ import { MoviePage } from "./components/Pages/Movie_Page/Movie_Page";
 import { LogOutPage } from "./components/Pages/LogOut_Page/LogOut_Page";
 import { AdvancedSearch } from "./components/Advanced_Search/Advanced_Search";
 import { switchButtons } from "./components/Pages/USER_Logged_In/Switch_Buttones";
+import { UserOptions } from "./components/Pages/USER_Logged_In/User_Options";
 
 new Header();
 new HomePage();
