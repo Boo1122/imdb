@@ -74,9 +74,16 @@ export class AdvancedSearch {
     runtimeLabel.classList = "search-runtime-label";
     runtimeLabel.innerText = "Search by runtime:";
 
-    const runtimeInput = document.createElement("input");
+    const runtimeInput = document.createElement("select");
     runtimeInput.className = "search-runtime-input";
-    runtimeInput.setAttribute("type", "number");
+
+    const runtimeMinutes = 0;
+    for (let i = runtimeMinutes; i <= 260; i++) {
+      let option = document.createElement("option");
+      option.value = option.innerHTML = i + ' minutes';
+      if (i === runtimeMinutes) option.selected = true;
+      runtimeInput.appendChild(option);
+    }
 
     document.getElementById("advancedBox").appendChild(runtimeBox);
     runtimeBox.appendChild(runtimeLabel);
