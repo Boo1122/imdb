@@ -66,17 +66,6 @@ body {
   text-align: center;
 }
 
-/* #registerBtn {
-  align-self: center;
-  margin-top: 1.4rem;
-  color: rgba(233, 27, 16, 0.8);
-  background: #272727;
-  outline: none;
-
-  padding: 1rem;
-  cursor: pointer;
-} */
-
 ::placeholder {
   color: rgb(78, 77, 77);
 }

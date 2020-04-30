@@ -1,7 +1,9 @@
 import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
-import { Search } from "../Home_Page_Header/Search_Button";
+import {
+  Search
+} from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
 
@@ -64,6 +66,7 @@ export class Header {
 
     const editDiv = document.createElement("div");
     editDiv.id = "addMovie";
+
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");

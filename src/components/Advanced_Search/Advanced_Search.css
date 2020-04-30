@@ -1,19 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Geo&family=Gugi&family=Patrick+Hand+SC&family=Vast+Shadow&family=Wallpoet&display=swap");
 
 #advancedBox {
-  height: auto;
-  width: auto;
+  display: none;
+
+  height: 25rem;
+  overflow: auto;
   padding: 5px;
   color: white;
   font-size: 1.2rem;
-  position: absolute;
-  display: none;
-  justify-content: center;
-  align-items: center;
+
   background-color: rgb(255, 47, 47);
   border-radius: 8px;
   box-shadow: 1px 1px #000000d5, 2px 2px #000000d5, 3px 3px #000000d5;
-  margin-left: -100px;
+
   -webkit-transition: background-color 2s ease-out;
   -moz-transition: background-color 2s ease-out;
   -o-transition: background-color 2s ease-out;
@@ -37,5 +36,6 @@
 #genreBox {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
 }
