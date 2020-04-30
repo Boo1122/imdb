@@ -51,13 +51,9 @@ export class SinglePage {
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
     const movieInfo = document.createElement("p");
-    movieInfo.innerText = `Realised in:  ${movie.Country}   |   ${movie.Language}   |   ${movie.Runtime}`;
+    movieInfo.innerText = `Country:  ${movie.Country}   | Language:  ${movie.Language}   | Runtime:  ${movie.Runtime}`;
 
-    //Here is the short description
-    /*const plotDiv = document.createElement("div");
-    plotDiv.className = "plot-container";
-    const plot = document.createElement("p");
-    plot.innerText = `${movie.Plot}`;*/
+
 
     //Here are the ratings
     const ratingContainer = document.createElement("div");
@@ -110,17 +106,6 @@ export class SinglePage {
     dislikeImage.className = "dislike-image";
     dislikeImage.src = "./public/dislike_button.png";
 
-    //Here you have the extra info
-    /*const extraInfo = document.createElement("div");
-    extraInfo.className = "extra-info";
-    const awards = document.createElement("p");
-    awards.innerText = `AWARDS: ${movie.Awards}`;
-    /*const director = document.createElement("p");
-    director.innerText = `Director: ${movie.Director}`;
-    const writer = document.createElement("p");
-    writer.innerText = `Writer: ${movie.Writer}`;
-    const actors = document.createElement("p");
-    actors.innerText = `Actors: ${movie.Actors}`;*/
 
     //appendings
     main.appendChild(contentDiv);
@@ -134,9 +119,6 @@ export class SinglePage {
     facts.appendChild(genres);
     titleDiv.appendChild(posterInfo);
     posterInfo.appendChild(movieInfo);
-
-    /*posterInfo.appendChild(plotDiv);
-    plotDiv.appendChild(plot);*/
 
     posterInfo.appendChild(ratingContainer);
     ratingContainer.appendChild(buttonsDiv);
@@ -158,12 +140,6 @@ export class SinglePage {
     buttonsDiv.appendChild(dislikeButton);
     dislikeButton.appendChild(dislikeParagraph);
     dislikeButton.appendChild(dislikeImage);
-
-    //posterInfo.appendChild(extraInfo);
-    //extraInfo.appendChild(awards);
-    /*extraInfo.appendChild(director);
-    extraInfo.appendChild(writer);
-    extraInfo.appendChild(actors);*/
 
     this.ratingButtonsOnClick(movie._id);
   }
