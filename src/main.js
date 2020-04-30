@@ -20,6 +20,7 @@ new LogOutPage();
 new MoviePage();
 new AdvancedSearch();
 new Footer();
+new UserOptions();
 
 navigate.init(singlePage);
 switchButtons();

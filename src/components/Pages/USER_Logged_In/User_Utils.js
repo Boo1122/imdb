@@ -24,7 +24,9 @@ export function addMovieToAPI() {
       body: JSON.stringify({
         Title: title.value,
         Year: year.value,
-        //PosterUrl: posterUrl.value,
+        ImdbID: imdbID.value,
+        Type: type.value,
+        Poster: posterUrl.value,
       }),
     })
       .then((response) => response.json())
