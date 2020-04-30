@@ -1,5 +1,7 @@
 import "./Advanced_Search.css";
-import { searchableFields } from "./Searchable_Fields";
+import {
+  searchableFields
+} from "./Searchable_Fields";
 
 export class AdvancedSearch {
   constructor() {
@@ -77,10 +79,16 @@ export class AdvancedSearch {
     runtimeLabel.classList = "search-runtime-label";
     runtimeLabel.innerText = "Search by runtime:";
 
-    const runtimeInput = document.createElement("input");
+    const runtimeInput = document.createElement("select");
     runtimeInput.className = "search-runtime-input";
-    runtimeInput.setAttribute("type", "number");
-    runtimeInput.id = "runtimeInput";
+
+    const runtimeMinutes = 15;
+    for (let i = runtimeMinutes; i <= 260; i++) {
+      let option = document.createElement("option");
+      option.value = option.innerHTML = i + ' minutes';
+      if (i === runtimeMinutes) option.selected = true;
+      runtimeInput.appendChild(option);
+    }
 
     document.getElementById("advancedBox").appendChild(runtimeBox);
     runtimeBox.appendChild(runtimeLabel);
