@@ -1,12 +1,10 @@
 import "./User_Options.css";
 import Cookie from "js-cookie";
-import {
-  addMovieToAPI
-} from "./User_Utils";
+import { addMovieToAPI } from "./User_Utils";
 
 export class UserOptions {
   constructor() {
-    // this.addMovie();
+    this.addMovie();
     this.token = Cookie.get("token");
   }
 

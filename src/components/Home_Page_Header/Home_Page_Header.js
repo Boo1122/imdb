@@ -1,9 +1,7 @@
 import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
-import {
-  Search
-} from "../Home_Page_Header/Search_Button";
+import { Search } from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
 import Cookie from "js-cookie";
@@ -17,8 +15,6 @@ export class Header {
     this.loginButton();
     this.logOutButton();
     this.registerButton();
-
-
   }
 
   header() {
@@ -62,7 +58,6 @@ export class Header {
 
     header.appendChild(buttonDiv);
     buttonDiv.appendChild(movies);
-
   }
 
   editMovies() {
@@ -73,10 +68,9 @@ export class Header {
 
     const token = Cookie.get("token");
 
-
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
-    editButton.setAttribute("data-target", "addMovie");
+    editButton.setAttribute("data-target", "newMovieContainer");
     editButton.innerHTML = "Add Movie";
 
     header.appendChild(editDiv);
