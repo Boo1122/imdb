@@ -81,11 +81,12 @@ export class AdvancedSearch {
 
     const runtimeInput = document.createElement("select");
     runtimeInput.className = "search-runtime-input";
+    runtimeInput.id = "runtimeInput";
 
     const runtimeMinutes = 15;
     for (let i = runtimeMinutes; i <= 260; i++) {
       let option = document.createElement("option");
-      option.value = option.innerHTML = i + ' minutes';
+      option.value = option.innerHTML = i + " min";
       if (i === runtimeMinutes) option.selected = true;
       runtimeInput.appendChild(option);
     }
