@@ -1,12 +1,6 @@
 function generateURL() {
-  const url = `https://movies-app-siit.herokuapp.com/movies?Title=${titleInput.value}&Year=${yearInput.value}&Language=${languageInput.value}&Country=${countryInput.value}`;
-
-  return url;
-}
-
-export function searchableFields() {
-  const titleInput = document.getElementById("titleInput");
-  const yearInput = document.getElementById("yearInput");
+  const title = document.getElementById("titleInput");
+  const year = document.getElementById("yearInput");
   const runtimeInput = document.getElementById("runtimeInput");
   const action = document.getElementById("action");
   const animation = document.getElementById("animation");
@@ -24,8 +18,14 @@ export function searchableFields() {
 
   const lastSearch = document.getElementById("last-search");
 
-  const url = generateURL();
+  const url = `https://movies-app-siit.herokuapp.com/movies?Title=${title.value}&Year=${year.value}`;
 
+  return url;
+}
+
+export function searchableFields() {
+  const url = generateURL();
+  console.log(url);
   fetch(url)
     .then((response) => response.json())
     .then((searchableFields) => {
