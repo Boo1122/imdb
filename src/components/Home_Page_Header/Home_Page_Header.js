@@ -12,13 +12,11 @@ export class Header {
   constructor() {
     this.header();
     this.homeButton();
-    this.moviesButton();
     this.editMovies();
+    this.moviesButton();
     this.loginButton();
     this.logOutButton();
     this.registerButton();
-
-
   }
 
   header() {
@@ -76,7 +74,7 @@ export class Header {
 
     const editButton = document.createElement("button");
     editButton.classList.add("nav-link", "edit");
-    editButton.setAttribute("data-target", "addMovie");
+    editButton.setAttribute("data-target", "newMovieContainer");
     editButton.innerHTML = "Add Movie";
 
     header.appendChild(editDiv);

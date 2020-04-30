@@ -6,7 +6,7 @@ import {
 
 export class UserOptions {
   constructor() {
-    // this.addMovie();
+    this.addMovie();
     this.token = Cookie.get("token");
   }
 
