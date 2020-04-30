@@ -77,7 +77,7 @@ export class AdvancedSearch {
     const runtimeInput = document.createElement("select");
     runtimeInput.className = "search-runtime-input";
 
-    const runtimeMinutes = 0;
+    const runtimeMinutes = 15;
     for (let i = runtimeMinutes; i <= 260; i++) {
       let option = document.createElement("option");
       option.value = option.innerHTML = i + ' minutes';
