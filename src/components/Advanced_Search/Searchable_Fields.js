@@ -1,4 +1,4 @@
-function generateURL() {
+export function generateURL() {
   const title = document.getElementById("titleInput");
   const year = document.getElementById("yearInput");
   const runtime = document.getElementById("runtimeInput");

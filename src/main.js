@@ -18,8 +18,8 @@ new LoginPage();
 new RegisterPage();
 const singlePage = new SinglePage();
 new LogOutPage();
-new MoviePage();
-new AdvancedSearch();
+const moviePage = new MoviePage();
+new AdvancedSearch(moviePage.fetchMoviesByUrl);
 new UserOptions();
 new Footer();
 

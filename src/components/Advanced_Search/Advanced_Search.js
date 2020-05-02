@@ -1,11 +1,11 @@
 import "./Advanced_Search.css";
-import {
-  searchableFields
-} from "./Searchable_Fields";
+import { generateURL } from "./Searchable_Fields";
+import { navigate } from "../Navigate_History/Navigate_History";
 
 export class AdvancedSearch {
-  constructor() {
+  constructor(fetchMoviesByUrl) {
     this.searchBox();
+    this.fetchMoviesByUrl = fetchMoviesByUrl;
   }
 
   searchBox() {
@@ -310,8 +310,11 @@ export class AdvancedSearch {
     const searchButton = document.createElement("button");
     searchButton.innerText = "Search";
     searchButton.id = "last-search";
-    searchButton.addEventListener("click", () => {
-      searchableFields();
+    searchButton.setAttribute("data-target", "movie-page");
+    searchButton.addEventListener("click", (event) => {
+      const url = generateURL();
+      this.fetchMoviesByUrl(url);
+      navigate.nav(event);
     });
 
     document.getElementById("advancedBox").appendChild(searchButtonBox);
