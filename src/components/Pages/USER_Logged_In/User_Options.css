@@ -19,7 +19,7 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.699);
   width: 400px;
-  height: 620px;
+  height: 580px;
 }
 
 .movie-Title-class,
@@ -96,7 +96,11 @@
 }
 
 .movie-poster input {
-  width: 150px;
+  width: 200px;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 5%;
+  outline: none;
 }
 
 .movie-poster input::placeholder {

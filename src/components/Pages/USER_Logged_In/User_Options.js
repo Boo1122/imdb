@@ -86,7 +86,7 @@ export class UserOptions {
     movieBox.appendChild(moviePoster);
 
     moviePoster.appendChild(moviePosterInput);
-    moviePoster.appendChild(uploadPosterButton);
+    //moviePoster.appendChild(uploadPosterButton);
 
     const addMovieButton = document.createElement("button");
     addMovieButton.id = "addMovieButton";
