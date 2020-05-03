@@ -11,6 +11,8 @@ export class MoviePage {
     this.getMovies();
     this.moviesPagination();
     this.numberPages();
+
+    this.fetchMoviesByUrl = this.fetchMoviesByUrl.bind(this);
   }
 
   moviePage() {
@@ -36,7 +38,11 @@ export class MoviePage {
 
   getMovies(skip) {
     const url = this.generateUrl(skip);
+    this.fetchMoviesByUrl(url);
+  }
 
+  fetchMoviesByUrl(url) {
+    console.log(this);
     fetch(url)
       .then((response) => response.json())
       .then((movieData) => {
