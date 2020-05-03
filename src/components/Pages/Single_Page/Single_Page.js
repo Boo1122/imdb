@@ -51,7 +51,7 @@ export class SinglePage {
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
     const movieInfo = document.createElement("p");
-    movieInfo.innerText = `Country:  ${movie.Country}   | Language:  ${movie.Language}   | Runtime:  ${movie.Runtime}`;
+    movieInfo.innerText = `Year:  ${movie.Year}  | Country:  ${movie.Country}   | Language:  ${movie.Language}   | Runtime:  ${movie.Runtime}`;
 
 
 
