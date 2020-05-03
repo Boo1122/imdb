@@ -18,31 +18,65 @@ export function generateURL() {
 
   const lastSearch = document.getElementById("last-search");
 
-  // const url = `https://movies-app-siit.herokuapp.com/movies?Title=${title.value}&Year=${year.value}&Runtime=${runtime.value}&Language=${language.value}&Country=${country.value}&imdbRating=${imdbRating.value}`;
-
   function checkTitleField() {
-    const nothing = "";
-    if (title.value !== undefined) {
-      const checkTitle = `Title=${title.value}`;
+    if (title.value) {
+      let checkTitle = `Title=${title.value}`;
       console.log(checkTitle);
       return checkTitle;
     } else {
-      return nothing;
+      let checkTitle = "";
+      console.log(checkTitle);
+      return checkTitle;
     }
   }
 
   function checkYearField() {
-    const nothing2 = "";
-    if (year.value !== undefined) {
-      const checkYear = `&Year=${year.value}`;
+    if (year.value) {
+      let checkYear = `&Year=${year.value}`;
       console.log(checkYear);
       return checkYear;
     } else {
-      return nothing2;
+      let checkYear = "";
+      return checkYear;
     }
   }
 
-  const url = `https://movies-app-siit.herokuapp.com/movies?${checkTitleField()}${checkYearField()}`;
+  function checkLanguageField() {
+    if (language.value !== undefined) {
+      let checkLanguage = `&Language=${language.value}`;
+      console.log(checkLanguage);
+      return checkLanguage;
+    } else {
+      let checkLanguage = "";
+      return checkLanguage;
+    }
+  }
+
+  function checkCountryField() {
+    if (country.value !== undefined) {
+      let checkCountry = `&Country=${country.value}`;
+      console.log(checkCountry);
+      return checkCountry;
+    } else {
+      let checkCountry = "";
+      return checkCountry;
+    }
+  }
+
+  function checkImdbRatingField() {
+    if (country.value) {
+      let checkImdbRating = `&imdbRating=${imdbRating.value}`;
+      console.log(checkImdbRating);
+      return checkImdbRating;
+    } else {
+      let checkImdbRating = "";
+      return checkImdbRating;
+    }
+  }
+
+  const url = `https://movies-app-siit.herokuapp.com/movies?${checkTitleField()}${checkYearField()}${checkLanguageField()}${checkCountryField()}${checkImdbRatingField()}`;
+
+  console.log(url);
 
   return url;
 }

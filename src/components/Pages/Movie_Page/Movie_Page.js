@@ -42,7 +42,6 @@ export class MoviePage {
   }
 
   fetchMoviesByUrl(url) {
-    console.log(this);
     fetch(url)
       .then((response) => response.json())
       .then((movieData) => {
