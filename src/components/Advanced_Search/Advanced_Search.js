@@ -15,22 +15,21 @@ export class AdvancedSearch {
 
     const containerBox = document.createElement("div");
     containerBox.id = "advancedBox";
-  
 
     box.appendChild(containerBox);
-  
+
     //centerbox.appendChild(containerBox);
-      this.searchTitle();
-      this.searchGenre();
-      this.searchYear();
-      this.searchLanguage();
-      this.searchCountry();
-      this.searchRunetime();
-      this.searchByImdbRating();
-      //this.searchByimdbVotes();
-      //this.searchImdbID();
-      this.searchByType();
-      this.executeSearch();
+    this.searchTitle();
+    this.searchGenre();
+    this.searchYear();
+    this.searchLanguage();
+    this.searchCountry();
+    this.searchRunetime();
+    this.searchByImdbRating();
+    //this.searchByimdbVotes();
+    //this.searchImdbID();
+    this.searchByType();
+    this.executeSearch();
   }
 
   searchTitle() {
@@ -60,13 +59,46 @@ export class AdvancedSearch {
     yearInput.className = "search-year";
     yearInput.id = "yearInput";
 
-    const firstYear = 2020;
-    for (let i = firstYear - 120; i <= firstYear; i++) {
-      let option = document.createElement("option");
-      option.value = option.innerHTML = i;
-      if (i === firstYear) option.selected = true;
-      yearInput.appendChild(option);
-    }
+    const ascendingYears = [
+      "1990",
+      "1991",
+      "1992",
+      "1993",
+      "1994",
+      "1995",
+      "1996",
+      "1997",
+      "1998",
+      "1999",
+      "2000",
+      "2001",
+      "2002",
+      "2003",
+      "2004",
+      "2005",
+      "2006",
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+    ];
+
+    const years = ascendingYears.reverse();
+
+    const options = years
+      .map((years) => `<option value = ${years}> ${years} </option>`)
+      .join("\n");
+    yearInput.innerHTML = options;
 
     document.getElementById("advancedBox").appendChild(yearBox);
     yearBox.appendChild(yearLabel);
@@ -153,28 +185,6 @@ export class AdvancedSearch {
     genreBox.appendChild(sciFi);
   }
 
-  searchYear() {
-    const yearBox = document.createElement("div");
-
-    const yearLabel = document.createElement("p");
-    yearLabel.className = "search-year-label";
-    yearLabel.innerText = "Select Year";
-    const yearInput = document.createElement("select");
-    yearInput.className = "search-year";
-
-    const firstYear = 2020;
-    for (let i = firstYear - 120; i <= firstYear; i++) {
-      let option = document.createElement("option");
-      option.value = option.innerHTML = i;
-      if (i === firstYear) option.selected = true;
-      yearInput.appendChild(option);
-    }
-
-    document.getElementById("advancedBox").appendChild(yearBox);
-    yearBox.appendChild(yearLabel);
-    yearBox.appendChild(yearInput);
-  }
-
   searchLanguage() {
     const languageBox = document.createElement("div");
 
@@ -198,11 +208,11 @@ export class AdvancedSearch {
       "Spanish",
       "Thai",
       "Romanian",
-      "Filipino"
+      "Filipino",
     ];
 
     const options = languages
-      .map(language => `<option value = ${language}> ${language} </option>`)
+      .map((language) => `<option value = ${language}> ${language} </option>`)
       .join("\n");
 
     languageInput.innerHTML = options;
@@ -229,16 +239,15 @@ export class AdvancedSearch {
       "UK",
       "Denmark",
       "Japan",
-      "South Korea",
       "Canada",
       "Denmark",
       "Romania",
       "Philippines",
-      "France"
+      "France",
     ];
 
     const options = countrys
-      .map(country => `<option value = ${country}> ${country} </option>`)
+      .map((country) => `<option value = ${country}> ${country} </option>`)
       .join("\n");
 
     countryInput.innerHTML = options;
