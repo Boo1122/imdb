@@ -4,7 +4,6 @@ import { AdvancedSearch } from "../Advanced_Search/Advanced_Search";
 export class Search {
   constructor() {
     this.createImage();
-    this.addSearchInput();
     this.createInput();
     this.advancedSearch();
     this.hideAdvancedSearch();
@@ -18,6 +17,7 @@ export class Search {
     let input = document.createElement("input");
     input.setAttribute("type", "text");
     input.id = "input";
+    input.style.display = "block";
     input.placeholder = "Type to search";
 
     header.appendChild(inputDiv);
@@ -31,19 +31,6 @@ export class Search {
     img.src = "./src/components/Home_Page_Header/search.png";
 
     document.getElementById("body").appendChild(img);
-  }
-
-  addSearchInput() {
-    let showInput = false;
-
-    img.addEventListener("click", () => {
-      if (showInput) {
-        document.getElementById("input").style.display = "none";
-      } else {
-        document.getElementById("input").style.display = "block";
-      }
-      showInput = !showInput;
-    });
   }
 
   advancedSearch() {
@@ -64,4 +51,17 @@ export class Search {
       document.getElementById("advancedBox").style.display = "none";
     });
   }
+
+  /*addSearchInput() {
+    let showInput = false;
+
+    img.addEventListener("click", () => {
+      if (showInput) {
+        document.getElementById("advancedBox").style.display = "none";
+      } else {
+        document.getElementById("advancedBox").style.display = "block";
+      }
+      showInput = !showInput;
+    });
+  }*/
 }

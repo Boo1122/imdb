@@ -5,8 +5,8 @@ export function addMovieToAPI() {
     const title = document.getElementById("movie-Title-id");
     const year = document.getElementById("movieYear-id");
     const imdbID = document.getElementById("movie-ImdbID-id");
-    const type = document.getElementById("movie-Type-id");
-    const posterUrl = document.getElementById("movie-Poster-id");
+    const posterUrl = document.getElementById("GET-THIS");
+    console.log(posterUrl);
 
     const token = Cookie.get("token");
 
@@ -25,7 +25,6 @@ export function addMovieToAPI() {
         Title: title.value,
         Year: year.value,
         ImdbID: imdbID.value,
-        Type: type.value,
         Poster: posterUrl.value,
       }),
     })

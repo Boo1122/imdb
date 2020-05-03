@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-
 .pagination-div {
   display: flex;
   justify-content: center;
@@ -145,8 +140,14 @@ body {
 
 .delete-single-movie {
   align-self: flex-end;
+  margin-top: 50px;
   cursor: pointer;
   color: white;
-  padding: 10px;
+  padding: 7px;
   background: black;
+  border-radius: 60%;
+}
+
+.deleteMovie {
+  margin-top: 30px;
 }
