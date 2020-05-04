@@ -88,8 +88,7 @@ export function generateURL() {
   checkCountryField();
   checkImdbRatingField();
 
-  // const newUrl = endUrl.split(" ");
-  const realUrl = endUrl.join();
+  const realUrl = endUrl.join("");
   console.log(realUrl);
   const url = `https://movies-app-siit.herokuapp.com/movies?${realUrl}`;
 
