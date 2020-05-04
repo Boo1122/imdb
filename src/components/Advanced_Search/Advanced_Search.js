@@ -58,6 +58,16 @@ export class AdvancedSearch {
     yearInput.id = "yearInput";
 
     const ascendingYears = [
+      "1980",
+      "1981",
+      "1982",
+      "1983",
+      "1984",
+      "1985",
+      "1986",
+      "1987",
+      "1988",
+      "1989",
       "1990",
       "1991",
       "1992",

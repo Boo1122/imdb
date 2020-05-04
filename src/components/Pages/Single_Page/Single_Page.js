@@ -6,7 +6,7 @@ import {
   updateVotesOnUI,
   loveButtonLoadingState,
   loveButtonInitialState,
-  updateVotesOnServer
+  updateVotesOnServer,
 } from "./SingleUtils";
 import { Loader } from "../../Loader/Loader";
 
@@ -40,6 +40,10 @@ export class SinglePage {
     movieTitle.className = "single-movie-title";
     movieTitle.innerText = `${movie.Title}`;
 
+    const movieYear = document.createElement("span");
+    movieYear.classList.add("single-movie-year-cls");
+    movieYear.innerText = `(${movie.Year})`;
+
     //Here are the movie properties
     const facts = document.createElement("div");
     facts.className = "movie-facts";
@@ -52,8 +56,6 @@ export class SinglePage {
     posterInfo.className = "poster-info";
     const movieInfo = document.createElement("p");
     movieInfo.innerText = `Country:  ${movie.Country}   | Language:  ${movie.Language}   | Runtime:  ${movie.Runtime}`;
-
-
 
     //Here are the ratings
     const ratingContainer = document.createElement("div");
@@ -106,7 +108,6 @@ export class SinglePage {
     dislikeImage.className = "dislike-image";
     dislikeImage.src = "./public/dislike_button.png";
 
-
     //appendings
     main.appendChild(contentDiv);
     contentDiv.appendChild(movieContent);
@@ -115,6 +116,9 @@ export class SinglePage {
     movieContent.appendChild(movieDetails);
     movieDetails.appendChild(titleDiv);
     titleDiv.appendChild(movieTitle);
+
+    titleDiv.appendChild(movieYear);
+
     titleDiv.appendChild(facts);
     facts.appendChild(genres);
     titleDiv.appendChild(posterInfo);
@@ -161,7 +165,7 @@ export class SinglePage {
     const likeButton = document.getElementById("like-button-id");
     const dislikeButton = document.getElementById("dislike-button-id");
 
-    loveButton.addEventListener("click", movie => {
+    loveButton.addEventListener("click", (movie) => {
       const token = Cookie.get("token");
       if (token) {
         console.log("current token", token);
@@ -200,8 +204,8 @@ export class SinglePage {
   renderMovie(movieId) {
     if (movieId) {
       fetch(`https://movies-app-siit.herokuapp.com/movies/${movieId}`)
-        .then(response => response.json())
-        .then(json => {
+        .then((response) => response.json())
+        .then((json) => {
           this.mainContent(json);
           this.renderMovieTrailer(json.imdbID);
         });
@@ -212,8 +216,8 @@ export class SinglePage {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
     )
-      .then(response => response.json())
-      .then(json => {
+      .then((response) => response.json())
+      .then((json) => {
         if (
           json.data &&
           json.data.movies &&
@@ -251,8 +255,6 @@ export class SinglePage {
             trailerIframe.allow = "autoplay";
             trailerBackgroundImage.style.display = "none";
           });
-
-          
 
           trailerWrapper.appendChild(trailerContainer);
           trailerWrapper.appendChild(trailerBackground);
