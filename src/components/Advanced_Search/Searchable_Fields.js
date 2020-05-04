@@ -32,9 +32,9 @@ export function generateURL() {
   function checkYearField() {
     if (year.value) {
       let checkYear = `Year=${year.value}`;
-      checkYear === endUrl[0]
-        ? endUrl.push("&" + checkYear)
-        : endUrl.push(checkYear);
+      year.value == endUrl[0]
+        ? endUrl.push(checkYear)
+        : endUrl.push("&" + checkYear);
     } else {
       let checkYear = "";
       return checkYear;
@@ -44,9 +44,9 @@ export function generateURL() {
   function checkLanguageField() {
     if (language.value) {
       let checkLanguage = `Language=${language.value}`;
-      checkLanguage === endUrl[0]
-        ? endUrl.push("&" + checkLanguage)
-        : endUrl.push(checkLanguage);
+      language.value == endUrl[0]
+        ? endUrl.push(checkLanguage)
+        : endUrl.push("&" + checkLanguage);
     } else {
       let checkLanguage = "";
       return checkLanguage;
@@ -56,9 +56,9 @@ export function generateURL() {
   function checkCountryField() {
     if (country.value) {
       let checkCountry = `Country=${country.value}`;
-      checkCountry === endUrl[0]
-        ? endUrl.push("&" + checkCountry)
-        : endUrl.push(checkCountry);
+      country.value === endUrl[0]
+        ? endUrl.push(checkCountry)
+        : endUrl.push("&" + checkCountry);
     } else {
       let checkCountry = "";
       return checkCountry;
@@ -69,8 +69,8 @@ export function generateURL() {
     if (imdbRating.value) {
       let checkImdbRating = `imdbRating=${imdbRating.value}`;
       checkImdbRating === endUrl[0]
-        ? endUrl.push("&" + checkImdbRating)
-        : endUrl.push(checkImdbRating);
+        ? endUrl.push(checkImdbRating)
+        : endUrl.push("&" + checkImdbRating);
       console.log(endUrl);
     } else {
       let checkImdbRating = "";
