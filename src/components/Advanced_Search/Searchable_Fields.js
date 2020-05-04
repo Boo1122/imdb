@@ -56,7 +56,7 @@ export function generateURL() {
   function checkCountryField() {
     if (country.value) {
       let checkCountry = `Country=${country.value}`;
-      country.value === endUrl[0]
+      country.value == endUrl[0]
         ? endUrl.push(checkCountry)
         : endUrl.push("&" + checkCountry);
     } else {
@@ -68,7 +68,7 @@ export function generateURL() {
   function checkImdbRatingField() {
     if (imdbRating.value) {
       let checkImdbRating = `imdbRating=${imdbRating.value}`;
-      checkImdbRating === endUrl[0]
+      checkImdbRating == endUrl[0]
         ? endUrl.push(checkImdbRating)
         : endUrl.push("&" + checkImdbRating);
       console.log(endUrl);
