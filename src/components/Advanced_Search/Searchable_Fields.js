@@ -16,23 +16,23 @@ export function generateURL() {
 
   const lastSearch = document.getElementById("last-search");
 
+  let endUrl = [];
+
   function checkTitleField() {
     if (title.value) {
       let checkTitle = `Title=${title.value}`;
-      console.log(checkTitle);
-      return checkTitle;
+      endUrl.push(checkTitle);
+      console.log(endUrl);
     } else {
       let checkTitle = "";
-      console.log(checkTitle);
       return checkTitle;
     }
   }
 
   function checkYearField() {
     if (year.value) {
-      let checkYear = `&Year=${year.value}`;
-      console.log(checkYear);
-      return checkYear;
+      let checkYear = `Year=${year.value}`;
+      endUrl.push("&" + checkYear);
     } else {
       let checkYear = "";
       return checkYear;
@@ -41,9 +41,8 @@ export function generateURL() {
 
   function checkLanguageField() {
     if (language.value !== undefined) {
-      let checkLanguage = `&Language=${language.value}`;
-      console.log(checkLanguage);
-      return checkLanguage;
+      let checkLanguage = `Language=${language.value}`;
+      endUrl.push("&" + checkLanguage);
     } else {
       let checkLanguage = "";
       return checkLanguage;
@@ -52,9 +51,8 @@ export function generateURL() {
 
   function checkCountryField() {
     if (country.value !== undefined) {
-      let checkCountry = `&Country=${country.value}`;
-      console.log(checkCountry);
-      return checkCountry;
+      let checkCountry = `Country=${country.value}`;
+      endUrl.push("&" + checkCountry);
     } else {
       let checkCountry = "";
       return checkCountry;
@@ -63,9 +61,9 @@ export function generateURL() {
 
   function checkImdbRatingField() {
     if (country.value) {
-      let checkImdbRating = `&imdbRating=${imdbRating.value}`;
-      console.log(checkImdbRating);
-      return checkImdbRating;
+      let checkImdbRating = `imdbRating=${imdbRating.value}`;
+      endUrl.push("&" + checkImdbRating);
+      console.log(endUrl);
     } else {
       let checkImdbRating = "";
       return checkImdbRating;
