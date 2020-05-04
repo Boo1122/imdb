@@ -78,17 +78,17 @@ export function generateURL() {
     }
   }
 
-  const action = document.getElementById("action");
-  action.addEventListener("click", () => {
-    checkActionBox();
-  });
+  // const action = document.getElementById("action");
+  // action.addEventListener("click", () => {
+  //   checkActionBox();
+  // });
 
-  function checkActionBox() {
-    if (action.checked == true) {
-      let checkAction = `&Genre=Action`;
-      console.log(checkAction);
-    }
-  }
+  // function checkActionBox() {
+  //   if (action.checked == true) {
+  //     let checkAction = `&Genre=Action`;
+  //     console.log(checkAction);
+  //   }
+  // }
 
   checkTitleField();
   checkYearField();
