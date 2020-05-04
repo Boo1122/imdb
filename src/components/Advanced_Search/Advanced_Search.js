@@ -10,24 +10,18 @@ export class AdvancedSearch {
 
   searchBox() {
     const box = document.getElementById("input-div");
-    //const centerbox = document.createElement("div");
-    //centerbox.id = "centerBox";
 
     const containerBox = document.createElement("div");
     containerBox.id = "advancedBox";
 
     box.appendChild(containerBox);
 
-    //centerbox.appendChild(containerBox);
     this.searchTitle();
     this.searchGenre();
     this.searchYear();
     this.searchLanguage();
     this.searchCountry();
-    this.searchRunetime();
     this.searchByImdbRating();
-    //this.searchByimdbVotes();
-    //this.searchImdbID();
     this.searchByType();
     this.executeSearch();
   }
@@ -104,30 +98,6 @@ export class AdvancedSearch {
     document.getElementById("advancedBox").appendChild(yearBox);
     yearBox.appendChild(yearLabel);
     yearBox.appendChild(yearInput);
-  }
-
-  searchRunetime() {
-    const runtimeBox = document.createElement("div");
-
-    const runtimeLabel = document.createElement("p");
-    runtimeLabel.classList = "search-runtime-label";
-    runtimeLabel.innerText = "Runtime";
-
-    const runtimeInput = document.createElement("select");
-    runtimeInput.className = "search-runtime-input";
-    runtimeInput.id = "runtimeInput";
-
-    const runtimeMinutes = 15;
-    for (let i = runtimeMinutes; i <= 260; i++) {
-      let option = document.createElement("option");
-      option.value = option.innerHTML = i + " min";
-      if (i === runtimeMinutes) option.selected = true;
-      runtimeInput.appendChild(option);
-    }
-
-    document.getElementById("advancedBox").appendChild(runtimeBox);
-    runtimeBox.appendChild(runtimeLabel);
-    runtimeBox.appendChild(runtimeInput);
   }
 
   searchGenre() {
@@ -275,39 +245,6 @@ export class AdvancedSearch {
     document.getElementById("advancedBox").appendChild(imdbRatingBox);
     imdbRatingBox.appendChild(imdbRatingLabel);
     imdbRatingBox.appendChild(imdbRatingInput);
-  }
-
-  searchByimdbVotes() {
-    const imdbVotesBox = document.createElement("div");
-
-    const imdbVotesLabel = document.createElement("p");
-    imdbVotesLabel.classList = "search-imdbVotes-label";
-    imdbVotesLabel.innerText = "Votes";
-
-    const imdbVotesInput = document.createElement("input");
-    imdbVotesInput.className = "search-imdbVotes-input";
-    imdbVotesInput.setAttribute("type", "number");
-    imdbVotesInput.id = "imdbVotesInput";
-
-    document.getElementById("advancedBox").appendChild(imdbVotesBox);
-    imdbVotesBox.appendChild(imdbVotesLabel);
-    imdbVotesBox.appendChild(imdbVotesInput);
-  }
-
-  searchImdbID() {
-    const imdbIDBox = document.createElement("div");
-
-    const imdbIDLabel = document.createElement("p");
-    imdbIDLabel.classList = "search-imdbID-label";
-    imdbIDLabel.innerText = "ImDB ID";
-
-    const imdbIDInput = document.createElement("input");
-    imdbIDInput.className = "search-imdbID-input";
-    imdbIDInput.id = "imdbIDInput";
-
-    document.getElementById("advancedBox").appendChild(imdbIDBox);
-    imdbIDBox.appendChild(imdbIDLabel);
-    imdbIDBox.appendChild(imdbIDInput);
   }
 
   searchByType() {
