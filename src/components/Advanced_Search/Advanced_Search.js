@@ -85,7 +85,7 @@ export class AdvancedSearch {
       "2018",
       "2019",
       "2020",
-      "Select year",
+      "",
     ];
 
     const years = ascendingYears.reverse();
@@ -169,7 +169,7 @@ export class AdvancedSearch {
     languageInput.id = "languageInput";
 
     const languages = [
-      "Select language",
+      "",
       "English",
       "French",
       "Spanish",
@@ -207,7 +207,7 @@ export class AdvancedSearch {
     countryInput.id = "countryInput";
 
     const countrys = [
-      "Select country",
+      "",
       "USA",
       "UK",
       "Denmark",
