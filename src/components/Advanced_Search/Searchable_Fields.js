@@ -82,7 +82,16 @@ export function generateURL() {
     }
   }
 
-  const url = `https://movies-app-siit.herokuapp.com/movies?${checkTitleField()}${checkYearField()}${checkLanguageField()}${checkCountryField()}${checkImdbRatingField()}`;
+  checkTitleField();
+  checkYearField();
+  checkLanguageField();
+  checkCountryField();
+  checkImdbRatingField();
+
+  // const newUrl = endUrl.split(" ");
+  const realUrl = endUrl.join();
+  console.log(realUrl);
+  const url = `https://movies-app-siit.herokuapp.com/movies?${realUrl}`;
 
   console.log(url);
 
