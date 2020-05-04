@@ -32,9 +32,9 @@ export function generateURL() {
   function checkYearField() {
     if (year.value) {
       let checkYear = `Year=${year.value}`;
-      checkYear === endUrl[0]
-        ? endUrl.push("&" + checkYear)
-        : endUrl.push(checkYear);
+      checkYear === endUrl[0] ?
+        endUrl.push("&" + checkYear) :
+        endUrl.push(checkYear);
     } else {
       let checkYear = "";
       return checkYear;
@@ -44,9 +44,9 @@ export function generateURL() {
   function checkLanguageField() {
     if (language.value) {
       let checkLanguage = `Language=${language.value}`;
-      checkLanguage === endUrl[0]
-        ? endUrl.push("&" + checkLanguage)
-        : endUrl.push(checkLanguage);
+      checkLanguage === endUrl[0] ?
+        endUrl.push("&" + checkLanguage) :
+        endUrl.push(checkLanguage);
     } else {
       let checkLanguage = "";
       return checkLanguage;
@@ -56,9 +56,9 @@ export function generateURL() {
   function checkCountryField() {
     if (country.value) {
       let checkCountry = `Country=${country.value}`;
-      checkCountry === endUrl[0]
-        ? endUrl.push("&" + checkCountry)
-        : endUrl.push(checkCountry);
+      checkCountry === endUrl[0] ?
+        endUrl.push("&" + checkCountry) :
+        endUrl.push(checkCountry);
     } else {
       let checkCountry = "";
       return checkCountry;
@@ -68,9 +68,9 @@ export function generateURL() {
   function checkImdbRatingField() {
     if (imdbRating.value) {
       let checkImdbRating = `imdbRating=${imdbRating.value}`;
-      checkImdbRating === endUrl[0]
-        ? endUrl.push("&" + checkImdbRating)
-        : endUrl.push(checkImdbRating);
+      checkImdbRating === endUrl[0] ?
+        endUrl.push("&" + checkImdbRating) :
+        endUrl.push(checkImdbRating);
       console.log(endUrl);
     } else {
       let checkImdbRating = "";
@@ -78,17 +78,17 @@ export function generateURL() {
     }
   }
 
-  const action = document.getElementById("action");
-  action.addEventListener("click", () => {
-    checkActionBox();
-  });
+  // const action = document.getElementById("action");
+  // action.addEventListener("click", () => {
+  //   checkActionBox();
+  // });
 
-  function checkActionBox() {
-    if (action.checked == true) {
-      let checkAction = `&Genre=Action`;
-      console.log(checkAction);
-    }
-  }
+  // function checkActionBox() {
+  //   if (action.checked == true) {
+  //     let checkAction = `&Genre=Action`;
+  //     console.log(checkAction);
+  //   }
+  // }
 
   checkTitleField();
   checkYearField();

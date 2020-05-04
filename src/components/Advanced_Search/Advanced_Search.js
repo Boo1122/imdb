@@ -1,6 +1,10 @@
 import "./Advanced_Search.css";
-import { generateURL } from "./Searchable_Fields";
-import { navigate } from "../Navigate_History/Navigate_History";
+import {
+  generateURL
+} from "./Searchable_Fields";
+import {
+  navigate
+} from "../Navigate_History/Navigate_History";
 
 export class AdvancedSearch {
   constructor(fetchMoviesByUrl) {
@@ -101,59 +105,34 @@ export class AdvancedSearch {
   }
 
   searchGenre() {
-    const genreLabel = document.createElement("p");
-    genreLabel.classList = "genre-label";
-    genreLabel.innerText = "Select Genre";
-
     const genreBox = document.createElement("div");
-    genreBox.id = "genreBox";
 
-    const actionLabel = document.createElement("p");
-    actionLabel.innerText = "Action";
-    const action = document.createElement("input");
-    action.setAttribute("type", "checkbox");
-    action.id = "action";
+    const genreLabel = document.createElement("p");
+    genreLabel.classList = "search-genre-label";
+    genreLabel.innerText = "Genre";
 
-    const animationLabel = document.createElement("p");
-    animationLabel.innerText = "Animation";
-    const animation = document.createElement("input");
-    animation.setAttribute("type", "checkbox");
-    animation.id = "animation";
+    const genreInput = document.createElement("select");
+    genreInput.className = "search-genre-input";
+    genreInput.setAttribute("type", "text");
+    genreInput.id = "genreInput";
 
-    const comedyLabel = document.createElement("p");
-    comedyLabel.innerText = "Comedy";
-    const comedy = document.createElement("input");
-    comedy.setAttribute("type", "checkbox");
-    comedy.id = "comedy";
+    const genres = [
+      '',
+      'Action',
+      'Animation',
+      'Comedy',
+      'Horror',
+      'Sci-Fi'
+    ];
+    const options = genres
+      .map((genre) => `<option value = ${genre}> ${genre} </option>`)
+      .join("\n");
 
-    const horrorLabel = document.createElement("p");
-    horrorLabel.innerText = "Horror";
-    const horror = document.createElement("input");
-    horror.setAttribute("type", "checkbox");
-    horror.id = "horror";
-
-    const sciFiLabel = document.createElement("p");
-    sciFiLabel.innerText = "Sci-Fi";
-    const sciFi = document.createElement("input");
-    sciFi.setAttribute("type", "checkbox");
-    sciFi.id = "sciFi";
+    genreInput.innerHTML = options;
 
     document.getElementById("advancedBox").appendChild(genreBox);
     genreBox.appendChild(genreLabel);
-    genreBox.appendChild(actionLabel);
-    genreBox.appendChild(action);
-
-    genreBox.appendChild(animationLabel);
-    genreBox.appendChild(animation);
-
-    genreBox.appendChild(comedyLabel);
-    genreBox.appendChild(comedy);
-
-    genreBox.appendChild(horrorLabel);
-    genreBox.appendChild(horror);
-
-    genreBox.appendChild(sciFiLabel);
-    genreBox.appendChild(sciFi);
+    genreBox.appendChild(genreInput);
   }
 
   searchLanguage() {
@@ -264,8 +243,10 @@ export class AdvancedSearch {
     p1.innerText = "Movie";
     const typeInput1 = document.createElement("input");
     typeInput1.className = "search-type-input";
-    typeInput1.setAttribute("type", "checkbox");
+    typeInput1.setAttribute("type", "radio");
     typeInput1.id = "movieInput";
+
+
 
     const typeSeries = document.createElement("div");
     typeSeries.id = "typeSeries";
@@ -274,9 +255,10 @@ export class AdvancedSearch {
     p2.innerText = "TV Series";
     const typeInput2 = document.createElement("input");
     typeInput2.className = "search-type-input";
-    typeInput2.setAttribute("type", "checkbox");
+    typeInput2.setAttribute("type", "radio");
     typeInput2.innerText = "TV Series";
     typeInput2.id = "TV-Series";
+
 
     document.getElementById("advancedBox").appendChild(typeBox);
     typeBox.appendChild(typeLabel);
