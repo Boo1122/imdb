@@ -21,6 +21,7 @@ export function generateURL() {
 
   let endUrl = [];
 
+
   function checkTitleField() {
     if (title.value) {
       let checkTitle = `Title=${title.value}`;
@@ -94,14 +95,52 @@ export function generateURL() {
     }
   }
 
+  function checkTvSeries() {
+    let series = document.getElementById('TV-Series');
+    let movies = document.getElementById('movieInput');
+
+    if (series) {
+      let tv = `Type=TV Series`;
+      tv == endUrl[0] ?
+        endUrl.push(tv) :
+        endUrl.push("&" + tv);
+      console.log(endUrl)
+
+    } else {
+      let tv = "";
+      return tv;
+    }
+
+  }
+
+  function checkMovies() {
+    let movies = document.getElementById('movieInput');
+    // let series = document.getElementById('TV-Series');
+
+    if (movies) {
+      let movie = `Type=movie`;
+      movie == endUrl[0] ?
+        endUrl.push(movie) :
+        endUrl.push("&" + movie);
+
+    } else {
+      let movie = "";
+      return movie;
+    }
+
+  }
 
 
+  checkMovies();
+  checkTvSeries();
   checkTitleField();
   checkYearField();
   checkLanguageField();
   checkCountryField();
   checkImdbRatingField();
   checkGenreField();
+
+
 
   const realUrl = endUrl.join("");
   console.log(realUrl);
@@ -111,6 +150,11 @@ export function generateURL() {
 
   return url;
 }
+
+
+
+
+
 
 export function searchableFields() {
   const url = generateURL();

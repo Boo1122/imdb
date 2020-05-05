@@ -1,6 +1,10 @@
 import "./Advanced_Search.css";
-import { generateURL } from "./Searchable_Fields";
-import { navigate } from "../Navigate_History/Navigate_History";
+import {
+  generateURL
+} from "./Searchable_Fields";
+import {
+  navigate
+} from "../Navigate_History/Navigate_History";
 
 export class AdvancedSearch {
   constructor(fetchMoviesByUrl) {
@@ -267,17 +271,8 @@ export class AdvancedSearch {
     typeMovie.appendChild(typeInput1);
     typeSeries.appendChild(p2);
     typeSeries.appendChild(typeInput2);
-
-    function checkType() {
-      if (document.getElementById("movieInput").checked === true) {
-        document.getElementById("movieInput").value = 1;
-        document.getElementById("TV-Series").value = 0;
-      } else {
-        document.getElementById("movieInput").value = 0;
-        document.getElementById("TV-Series").value = 1;
-      }
-    }
   }
+
 
   executeSearch() {
     const searchButtonBox = document.createElement("div");
