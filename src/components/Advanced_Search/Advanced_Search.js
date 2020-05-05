@@ -37,6 +37,7 @@ export class AdvancedSearch {
     titlelabel.classList = "search-title-label";
     titlelabel.innerText = "TITLE";
 
+
     const titleInput = document.createElement("input");
     titleInput.className = "search-title-input";
     titleInput.setAttribute("type", "text");
@@ -288,6 +289,26 @@ export class AdvancedSearch {
       const url = generateURL();
       this.fetchMoviesByUrl(url);
       navigate.nav(event);
+
+      let emptyTitleInput = document.getElementById("titleInput")
+      emptyTitleInput.value = '';
+
+      let emptyGenreInput = document.getElementById("genreInput")
+      emptyGenreInput.value = '';
+
+      let emptyYearInput = document.getElementById("yearInput")
+      emptyYearInput.value = '';
+
+      let emptyLanguageInput = document.getElementById("languageInput")
+      emptyLanguageInput.value = '';
+
+      let emptyCountryInput = document.getElementById("countryInput")
+      emptyCountryInput.value = '';
+
+      let emptyRatingInput = document.getElementById("imdbRatingInput")
+      emptyRatingInput.value = '';
+
+
     });
 
     document.getElementById("advancedBox").appendChild(searchButtonBox);
