@@ -25,7 +25,9 @@ export function generateURL() {
   function checkTitleField() {
     if (title.value) {
       let checkTitle = `Title=${title.value}`;
-      endUrl.push(checkTitle);
+      title.value == endUrl[0] ?
+        endUrl.push(checkTitle) :
+        endUrl.push("&" + checkTitle)
       console.log(endUrl);
     } else {
       let checkTitle = "";
@@ -97,13 +99,12 @@ export function generateURL() {
 
   function checkTvSeries() {
     let series = document.getElementById('TV-Series');
-    let movies = document.getElementById('movieInput');
 
     if (series) {
       let tv = `Type=TV Series`;
       tv == endUrl[0] ?
-        endUrl.push(tv) :
-        endUrl.push("&" + tv);
+        endUrl.push("&" + tv) :
+        endUrl.push(tv);
       console.log(endUrl)
 
     } else {
@@ -115,7 +116,7 @@ export function generateURL() {
 
   function checkMovies() {
     let movies = document.getElementById('movieInput');
-    // let series = document.getElementById('TV-Series');
+    let series = document.getElementById('TV-Series');
 
     if (movies) {
       let movie = `Type=movie`;
@@ -130,9 +131,18 @@ export function generateURL() {
 
   }
 
+  function pick() {
+    let movies = document.getElementById('movieInput');
 
-  checkMovies();
-  checkTvSeries();
+    if (movies.checked) {
+      checkMovies();
+    } else {
+      checkTvSeries();
+    }
+
+  }
+
+  pick();
   checkTitleField();
   checkYearField();
   checkLanguageField();
