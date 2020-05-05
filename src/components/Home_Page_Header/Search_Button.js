@@ -7,9 +7,8 @@ export class Search {
   constructor() {
     this.createImage();
     this.createInput();
-    this.addSearchInput();
-    this.advancedSearch();
-    this.hideAdvancedSearch();
+    this.addAdvancedSearch();
+
   }
 
   createInput() {
@@ -17,13 +16,7 @@ export class Search {
     inputDiv.className = "input";
     inputDiv.id = "input-div";
 
-    let input = document.createElement("input");
-    input.setAttribute("type", "text");
-    input.id = "input";
-    input.placeholder = "Type to search";
-
     header.appendChild(inputDiv);
-    inputDiv.appendChild(input);
     header.appendChild(img);
   }
 
@@ -35,34 +28,16 @@ export class Search {
     document.getElementById("body").appendChild(img);
   }
 
-  advancedSearch() {
-    let searchInput = document.getElementById("input");
 
-    searchInput.addEventListener("click", () => {
-      let x = document.getElementById("advancedBox");
-      if ((x.style.display = "none")) {
-        x.style.display = "block";
-      }
-    });
-  }
-
-  hideAdvancedSearch() {
-    const img = document.getElementById("img");
-
-    img.addEventListener("click", () => {
-      document.getElementById("advancedBox").style.display = "none";
-    });
-  }
-
-  addSearchInput() {
+  addAdvancedSearch() {
 
     let showInput = false;
 
     img.addEventListener("click", () => {
       if (showInput) {
-        document.getElementById("input").style.display = "none";
+        document.getElementById("advancedBox").style.display = "none";
       } else {
-        document.getElementById("input").style.display = "block";
+        document.getElementById("advancedBox").style.display = "block";
       }
       showInput = !showInput;
     });
