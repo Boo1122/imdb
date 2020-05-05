@@ -11,6 +11,7 @@ export class MoviePage {
     this.getMovies();
     this.moviesPagination();
     this.numberPages();
+    this.restMoviePage();
 
     this.fetchMoviesByUrl = this.fetchMoviesByUrl.bind(this);
   }
@@ -42,7 +43,6 @@ export class MoviePage {
   }
 
   fetchMoviesByUrl(url) {
-    console.log(this);
     fetch(url)
       .then((response) => response.json())
       .then((movieData) => {
@@ -89,9 +89,16 @@ export class MoviePage {
     for (const movie of this.movieData.results) {
       this.moviesContent(movie, body);
 
+      const anotherBox = document.createElement("div");
+      body.appendChild(anotherBox);
+
       const deleteMovieBox = document.createElement("div");
       deleteMovieBox.classList.add("deleteMovie");
-      body.appendChild(deleteMovieBox);
+      anotherBox.appendChild(deleteMovieBox);
+
+      const editMovieBox = document.createElement("div");
+      editMovieBox.classList.add("editMovieBox");
+      anotherBox.appendChild(editMovieBox);
 
       deleteMovieBox.addEventListener("click", () => {
         deleteMovieFromApi(movie._id, this.getMovies.bind(this));
@@ -105,6 +112,12 @@ export class MoviePage {
         deleteMov.setAttribute("title", "Delete Movie");
         deleteMov.innerText = "X";
         deleteMovieBox.appendChild(deleteMov);
+
+        const editMovieButton = document.createElement("span");
+        editMovieButton.classList.add("edit-movie-button-cls");
+        editMovieButton.setAttribute("title", "Edit Movie");
+        editMovieButton.innerText = "E";
+        editMovieBox.appendChild(editMovieButton);
       }
 
       if (token === "undefined") {
@@ -189,6 +202,11 @@ export class MoviePage {
     }
 
     paginationDiv.appendChild(next);
+  }
+
+  restMoviePage() {
+    const movieButton = document.getElementById("movBtn");
+    movieButton.addEventListener("click", () => this.getMovies());
   }
 
   numberPages() {

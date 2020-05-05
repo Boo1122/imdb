@@ -1,6 +1,10 @@
 import "./Advanced_Search.css";
-import { generateURL } from "./Searchable_Fields";
-import { navigate } from "../Navigate_History/Navigate_History";
+import {
+  generateURL
+} from "./Searchable_Fields";
+import {
+  navigate
+} from "../Navigate_History/Navigate_History";
 
 export class AdvancedSearch {
   constructor(fetchMoviesByUrl) {
@@ -10,27 +14,20 @@ export class AdvancedSearch {
 
   searchBox() {
     const box = document.getElementById("input-div");
-    //const centerbox = document.createElement("div");
-    //centerbox.id = "centerBox";
 
     const containerBox = document.createElement("div");
     containerBox.id = "advancedBox";
-  
 
     box.appendChild(containerBox);
-  
-    //centerbox.appendChild(containerBox);
-      this.searchTitle();
-      this.searchGenre();
-      this.searchYear();
-      this.searchLanguage();
-      this.searchCountry();
-      this.searchRunetime();
-      this.searchByImdbRating();
-      //this.searchByimdbVotes();
-      //this.searchImdbID();
-      this.searchByType();
-      this.executeSearch();
+
+    this.searchTitle();
+    this.searchGenre();
+    this.searchYear();
+    this.searchLanguage();
+    this.searchCountry();
+    this.searchByImdbRating();
+    this.searchByType();
+    this.executeSearch();
   }
 
   searchTitle() {
@@ -39,6 +36,7 @@ export class AdvancedSearch {
     const titlelabel = document.createElement("p");
     titlelabel.classList = "search-title-label";
     titlelabel.innerText = "TITLE";
+
 
     const titleInput = document.createElement("input");
     titleInput.className = "search-title-input";
@@ -60,119 +58,85 @@ export class AdvancedSearch {
     yearInput.className = "search-year";
     yearInput.id = "yearInput";
 
-    const firstYear = 2020;
-    for (let i = firstYear - 120; i <= firstYear; i++) {
-      let option = document.createElement("option");
-      option.value = option.innerHTML = i;
-      if (i === firstYear) option.selected = true;
-      yearInput.appendChild(option);
-    }
+    const ascendingYears = [
+      "1980",
+      "1981",
+      "1982",
+      "1983",
+      "1984",
+      "1985",
+      "1986",
+      "1987",
+      "1988",
+      "1989",
+      "1990",
+      "1991",
+      "1992",
+      "1993",
+      "1994",
+      "1995",
+      "1996",
+      "1997",
+      "1998",
+      "1999",
+      "2000",
+      "2001",
+      "2002",
+      "2003",
+      "2004",
+      "2005",
+      "2006",
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "",
+    ];
+
+    const years = ascendingYears.reverse();
+
+    const options = years
+      .map((years) => `<option value = ${years}> ${years} </option>`)
+      .join("\n");
+    yearInput.innerHTML = options;
 
     document.getElementById("advancedBox").appendChild(yearBox);
     yearBox.appendChild(yearLabel);
     yearBox.appendChild(yearInput);
-  }
-
-  searchRunetime() {
-    const runtimeBox = document.createElement("div");
-
-    const runtimeLabel = document.createElement("p");
-    runtimeLabel.classList = "search-runtime-label";
-    runtimeLabel.innerText = "Runtime";
-
-    const runtimeInput = document.createElement("select");
-    runtimeInput.className = "search-runtime-input";
-    runtimeInput.id = "runtimeInput";
-
-    const runtimeMinutes = 15;
-    for (let i = runtimeMinutes; i <= 260; i++) {
-      let option = document.createElement("option");
-      option.value = option.innerHTML = i + " min";
-      if (i === runtimeMinutes) option.selected = true;
-      runtimeInput.appendChild(option);
-    }
-
-    document.getElementById("advancedBox").appendChild(runtimeBox);
-    runtimeBox.appendChild(runtimeLabel);
-    runtimeBox.appendChild(runtimeInput);
   }
 
   searchGenre() {
-    const genreLabel = document.createElement("p");
-    genreLabel.classList = "genre-label";
-    genreLabel.innerText = "Select Genre";
-
     const genreBox = document.createElement("div");
-    genreBox.id = "genreBox";
 
-    const actionLabel = document.createElement("p");
-    actionLabel.innerText = "Action";
-    const action = document.createElement("input");
-    action.setAttribute("type", "checkbox");
-    action.id = "action";
+    const genreLabel = document.createElement("p");
+    genreLabel.classList = "search-genre-label";
+    genreLabel.innerText = "Genre";
 
-    const animationLabel = document.createElement("p");
-    animationLabel.innerText = "Animation";
-    const animation = document.createElement("input");
-    animation.setAttribute("type", "checkbox");
-    animation.id = "animation";
+    const genreInput = document.createElement("select");
+    genreInput.className = "search-genre-input";
+    genreInput.setAttribute("type", "text");
+    genreInput.id = "genreInput";
 
-    const comedyLabel = document.createElement("p");
-    comedyLabel.innerText = "Comedy";
-    const comedy = document.createElement("input");
-    comedy.setAttribute("type", "checkbox");
-    comedy.id = "comedy";
+    const genres = ["", "Action", "Animation", "Comedy", "Horror", "Sci-Fi"];
+    const options = genres
+      .map((genre) => `<option value = ${genre}> ${genre} </option>`)
+      .join("\n");
 
-    const horrorLabel = document.createElement("p");
-    horrorLabel.innerText = "Horror";
-    const horror = document.createElement("input");
-    horror.setAttribute("type", "checkbox");
-    horror.id = "horror";
-
-    const sciFiLabel = document.createElement("p");
-    sciFiLabel.innerText = "Sci-Fi";
-    const sciFi = document.createElement("input");
-    sciFi.setAttribute("type", "checkbox");
-    sciFi.id = "sciFi";
+    genreInput.innerHTML = options;
 
     document.getElementById("advancedBox").appendChild(genreBox);
     genreBox.appendChild(genreLabel);
-    genreBox.appendChild(actionLabel);
-    genreBox.appendChild(action);
-
-    genreBox.appendChild(animationLabel);
-    genreBox.appendChild(animation);
-
-    genreBox.appendChild(comedyLabel);
-    genreBox.appendChild(comedy);
-
-    genreBox.appendChild(horrorLabel);
-    genreBox.appendChild(horror);
-
-    genreBox.appendChild(sciFiLabel);
-    genreBox.appendChild(sciFi);
-  }
-
-  searchYear() {
-    const yearBox = document.createElement("div");
-
-    const yearLabel = document.createElement("p");
-    yearLabel.className = "search-year-label";
-    yearLabel.innerText = "Select Year";
-    const yearInput = document.createElement("select");
-    yearInput.className = "search-year";
-
-    const firstYear = 2020;
-    for (let i = firstYear - 120; i <= firstYear; i++) {
-      let option = document.createElement("option");
-      option.value = option.innerHTML = i;
-      if (i === firstYear) option.selected = true;
-      yearInput.appendChild(option);
-    }
-
-    document.getElementById("advancedBox").appendChild(yearBox);
-    yearBox.appendChild(yearLabel);
-    yearBox.appendChild(yearInput);
+    genreBox.appendChild(genreInput);
   }
 
   searchLanguage() {
@@ -188,6 +152,7 @@ export class AdvancedSearch {
     languageInput.id = "languageInput";
 
     const languages = [
+      "",
       "English",
       "French",
       "Spanish",
@@ -198,11 +163,11 @@ export class AdvancedSearch {
       "Spanish",
       "Thai",
       "Romanian",
-      "Filipino"
+      "Filipino",
     ];
 
     const options = languages
-      .map(language => `<option value = ${language}> ${language} </option>`)
+      .map((language) => `<option value = ${language}> ${language} </option>`)
       .join("\n");
 
     languageInput.innerHTML = options;
@@ -225,20 +190,20 @@ export class AdvancedSearch {
     countryInput.id = "countryInput";
 
     const countrys = [
+      "",
       "USA",
       "UK",
       "Denmark",
       "Japan",
-      "South Korea",
       "Canada",
       "Denmark",
       "Romania",
       "Philippines",
-      "France"
+      "France",
     ];
 
     const options = countrys
-      .map(country => `<option value = ${country}> ${country} </option>`)
+      .map((country) => `<option value = ${country}> ${country} </option>`)
       .join("\n");
 
     countryInput.innerHTML = options;
@@ -265,39 +230,6 @@ export class AdvancedSearch {
     imdbRatingBox.appendChild(imdbRatingInput);
   }
 
-  searchByimdbVotes() {
-    const imdbVotesBox = document.createElement("div");
-
-    const imdbVotesLabel = document.createElement("p");
-    imdbVotesLabel.classList = "search-imdbVotes-label";
-    imdbVotesLabel.innerText = "Votes";
-
-    const imdbVotesInput = document.createElement("input");
-    imdbVotesInput.className = "search-imdbVotes-input";
-    imdbVotesInput.setAttribute("type", "number");
-    imdbVotesInput.id = "imdbVotesInput";
-
-    document.getElementById("advancedBox").appendChild(imdbVotesBox);
-    imdbVotesBox.appendChild(imdbVotesLabel);
-    imdbVotesBox.appendChild(imdbVotesInput);
-  }
-
-  searchImdbID() {
-    const imdbIDBox = document.createElement("div");
-
-    const imdbIDLabel = document.createElement("p");
-    imdbIDLabel.classList = "search-imdbID-label";
-    imdbIDLabel.innerText = "ImDB ID";
-
-    const imdbIDInput = document.createElement("input");
-    imdbIDInput.className = "search-imdbID-input";
-    imdbIDInput.id = "imdbIDInput";
-
-    document.getElementById("advancedBox").appendChild(imdbIDBox);
-    imdbIDBox.appendChild(imdbIDLabel);
-    imdbIDBox.appendChild(imdbIDInput);
-  }
-
   searchByType() {
     const typeBox = document.createElement("div");
 
@@ -314,8 +246,10 @@ export class AdvancedSearch {
     p1.classList.add("radio-slect-movie");
     p1.innerText = "Movie";
     const typeInput1 = document.createElement("input");
+    typeInput1.name = "movie";
+    typeInput1.checked = true;
     typeInput1.className = "search-type-input";
-    typeInput1.setAttribute("type", "checkbox");
+    typeInput1.setAttribute("type", "radio");
     typeInput1.id = "movieInput";
 
     const typeSeries = document.createElement("div");
@@ -324,8 +258,9 @@ export class AdvancedSearch {
     p2.classList.add("radio-slect-movie");
     p2.innerText = "TV Series";
     const typeInput2 = document.createElement("input");
+    typeInput2.name = "movie";
     typeInput2.className = "search-type-input";
-    typeInput2.setAttribute("type", "checkbox");
+    typeInput2.setAttribute("type", "radio");
     typeInput2.innerText = "TV Series";
     typeInput2.id = "TV-Series";
 
@@ -340,6 +275,7 @@ export class AdvancedSearch {
     typeSeries.appendChild(typeInput2);
   }
 
+
   executeSearch() {
     const searchButtonBox = document.createElement("div");
     searchButtonBox.id = "searchButtonBox";
@@ -353,6 +289,26 @@ export class AdvancedSearch {
       const url = generateURL();
       this.fetchMoviesByUrl(url);
       navigate.nav(event);
+
+      let emptyTitleInput = document.getElementById("titleInput")
+      emptyTitleInput.value = '';
+
+      let emptyGenreInput = document.getElementById("genreInput")
+      emptyGenreInput.value = '';
+
+      let emptyYearInput = document.getElementById("yearInput")
+      emptyYearInput.value = '';
+
+      let emptyLanguageInput = document.getElementById("languageInput")
+      emptyLanguageInput.value = '';
+
+      let emptyCountryInput = document.getElementById("countryInput")
+      emptyCountryInput.value = '';
+
+      let emptyRatingInput = document.getElementById("imdbRatingInput")
+      emptyRatingInput.value = '';
+
+
     });
 
     document.getElementById("advancedBox").appendChild(searchButtonBox);
