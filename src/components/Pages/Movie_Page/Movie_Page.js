@@ -11,6 +11,7 @@ export class MoviePage {
     this.getMovies();
     this.moviesPagination();
     this.numberPages();
+    this.restMoviePage();
 
     this.fetchMoviesByUrl = this.fetchMoviesByUrl.bind(this);
   }
@@ -201,6 +202,11 @@ export class MoviePage {
     }
 
     paginationDiv.appendChild(next);
+  }
+
+  restMoviePage() {
+    const movieButton = document.getElementById("movBtn");
+    movieButton.addEventListener("click", () => this.getMovies());
   }
 
   numberPages() {
