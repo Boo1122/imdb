@@ -7,6 +7,7 @@ export class Search {
   constructor() {
     this.createImage();
     this.createInput();
+    this.addSearchInput();
     this.advancedSearch();
     this.hideAdvancedSearch();
   }
@@ -30,7 +31,7 @@ export class Search {
   createImage() {
     let img = document.createElement("img");
     img.id = "img";
-    img.src = "./src/components/Home_Page_Header/search-9-16.png";
+    img.src = "./src/components/Home_Page_Header/search-9-24.png";
 
     document.getElementById("body").appendChild(img);
   }
@@ -55,13 +56,14 @@ export class Search {
   }
 
   addSearchInput() {
+
     let showInput = false;
 
     img.addEventListener("click", () => {
       if (showInput) {
-        document.getElementById("advancedBox").style.display = "none";
+        document.getElementById("input").style.display = "none";
       } else {
-        document.getElementById("advancedBox").style.display = "block";
+        document.getElementById("input").style.display = "block";
       }
       showInput = !showInput;
     });
