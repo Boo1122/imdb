@@ -51,7 +51,7 @@ export class RegisterPage {
     const message = document.createElement("p");
     message.id = "register-message";
     message.innerText =
-      "By creating an account you agree to our Terms & Privacy";
+      "By creating an account, you agree to our Terms & Privacy.";
 
     const registerBtn = document.createElement("button");
     registerBtn.setAttribute("type", "submit");
@@ -60,7 +60,7 @@ export class RegisterPage {
 
     const alreadyHaveAcc = document.createElement("p");
     alreadyHaveAcc.id = "existing-acc";
-    alreadyHaveAcc.innerText = "I already have an Account";
+    alreadyHaveAcc.innerText = "I already have an Account!";
     alreadyHaveAcc.classList.add("nav-link");
     alreadyHaveAcc.setAttribute("data-target", "login-page");
 
@@ -109,6 +109,9 @@ export class RegisterPage {
             .split(";")
             .find((element) => {
               if (element.includes("token")) return true;
+              //  if ("username" in element == true) {     IT DOES NOT WORK YET.
+              //    alert("This user already exists!");
+              //  }
             })
             .split("=")[1];
           console.log(token);
