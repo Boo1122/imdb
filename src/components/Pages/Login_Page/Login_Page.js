@@ -153,6 +153,19 @@ export class LoginPage {
               "password-input-login"
             );
             eraseInputPass.value = "";
+
+            if (userName.value == "") {
+              userName.style.borderColor = "red";
+            } else {
+              userName.style.borderColor = "none";
+            }
+
+            if (passWord.value == "") {
+              passWord.style.borderColor = "red";
+            } else {
+              passWord.style.borderColor = "none";
+            }
+
             this.handleButtonTransferLogin();
           }
         });
