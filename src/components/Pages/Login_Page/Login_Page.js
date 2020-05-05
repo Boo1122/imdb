@@ -52,7 +52,7 @@ export class LoginPage {
 
     const regPar = document.createElement("p");
     regPar.id = "register-paragraph";
-    regPar.innerText = "If you dont have an account Register here!";
+    regPar.innerText = "If you do not have an account, register here!";
     regPar.classList.add("nav-link");
     regPar.setAttribute("data-target", "register-page");
 
