@@ -24,8 +24,8 @@ export class Header {
     header.id = "header";
 
     body.appendChild(header);
-    header.style.backgroundImage = "url(./public/img/55376.jpg)";
-    header.style.borderBottom = "5px solid salmon";
+    //header.style.backgroundImage = "url(./public/img/55376.jpg)";
+    //header.style.borderBottom = "5px solid salmon";
   }
 
   homeButton() {
@@ -45,7 +45,7 @@ export class Header {
 
   moviesButton() {
     const header = document.getElementById("header");
-    header.style.backgroundImage = "url(./public/img/55376.jpg)";
+    //header.style.backgroundImage = "url(./public/img/55376.jpg)";
     const buttonDiv = document.createElement("div");
     buttonDiv.id = "movBtn";
     buttonDiv.className = "dropdown";

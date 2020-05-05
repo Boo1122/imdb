@@ -5,7 +5,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-family: "Geo", sans-serif;
   font-size: large;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,10 +17,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.699);
+  background-color: white;
   width: 400px;
   height: 580px;
+  font-size: 1.7rem;
 }
 
 .movie-Title-class,
@@ -82,11 +82,10 @@
 }
 
 .title-container {
-  color: #346178;
   font-weight: bold;
   font-size: 30px;
   padding-bottom: 20px;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
 }
 
 .movie-poster {
@@ -120,7 +119,7 @@
   display: inline-block;
   cursor: pointer;
   color: white;
-  font-family: Arial;
+  font-family: "Geo", sans-serif;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0px -1px 0px #2b665e;

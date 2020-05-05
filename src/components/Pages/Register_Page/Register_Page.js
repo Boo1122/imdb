@@ -13,7 +13,7 @@ export class RegisterPage {
     const containerForm = document.createElement("div");
     containerForm.id = "register-page";
     containerForm.classList.add("page");
-    containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
+    //containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
     const box2 = document.createElement("div");
     box2.id = "register-box";
@@ -88,22 +88,22 @@ export class RegisterPage {
 
     regButton.addEventListener("click", () => {
       fetch("https://movies-app-siit.herokuapp.com/auth/register", {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors", // no-cors, *cors, same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json"
-          },
-          redirect: "follow", // manual, *follow, error
-          referrerPolicy: "no-referrer", // no-referrer, *client
-          body: JSON.stringify({
-            username: `${userName.value}`,
-            password: `${userPass.value}`
-          })
-        })
-        .then(response => response.json())
-        .then(json => {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+          username: `${userName.value}`,
+          password: `${userPass.value}`,
+        }),
+      })
+        .then((response) => response.json())
+        .then((json) => {
           document.cookie = `token=${json.accessToken}`;
           const token = document.cookie
             .split(";")

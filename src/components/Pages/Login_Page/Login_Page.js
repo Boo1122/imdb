@@ -12,7 +12,7 @@ export class LoginPage {
     const containerForm = document.createElement("div");
     containerForm.id = "login-page";
     containerForm.classList.add("page");
-    containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
+    //containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
     const box1 = document.createElement("div");
     box1.id = "login-box";

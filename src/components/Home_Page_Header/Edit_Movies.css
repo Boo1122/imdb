@@ -2,23 +2,23 @@
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
 
-  background: #272727;
+  background: black;
 
-  color: #ffff00;
-  font-size: 1.8rem;
+  color: #ffffff;
+  font-size: 2.8rem;
   border: none;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   text-align: center;
   outline: none;
   cursor: pointer;
 }
 
 .edit:hover {
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
 
-  background: #ffff00;
+  background: #ffffff;
   box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
     -10px -10px 30px rgba(233, 27, 16, 0.8);
   outline: none;

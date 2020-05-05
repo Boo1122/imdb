@@ -1,8 +1,6 @@
 import "./User_Options.css";
 import Cookie from "js-cookie";
-import {
-  addMovieToAPI
-} from "./User_Utils";
+import { addMovieToAPI } from "./User_Utils";
 
 export class UserOptions {
   constructor() {
@@ -17,7 +15,7 @@ export class UserOptions {
     newMovieWrapper.id = "newMovieContainer";
     newMovieWrapper.classList.add("page");
     newMovieWrapper.classList.add("newMovieWrapper-class");
-    newMovieWrapper.style.backgroundImage = "url(./public/img/batman_bk2.jpeg)";
+    //newMovieWrapper.style.backgroundImage = "url(./public/img/batman_bk2.jpeg)";
 
     const movieBox = document.createElement("div");
     movieBox.id = "movieBox";

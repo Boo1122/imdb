@@ -52,7 +52,7 @@
 
 .single-movie-year-cls {
   padding: 0.5em;
-
+  font-family: Arial;
   color: #eee;
   font-size: 2em;
   line-height: 1;
@@ -76,10 +76,11 @@
 }
 
 .poster-info {
-  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-family: Arial;
   font-weight: 400;
   color: white;
   margin-top: 25px;
+  font-size: 1.7rem;
 }
 
 .single-poster-img {
@@ -97,6 +98,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: yellow;
+  font-family: Arial;
 }
 
 #trailer-container {
@@ -201,6 +203,7 @@
   height: 20px;
   margin: 0px 5px 5px 15px;
 }
+
 .buttons-div {
   margin-top: 10px;
 }

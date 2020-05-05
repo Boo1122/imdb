@@ -22,7 +22,7 @@
   margin-right: 5px;
   background-color: transparent;
   border: 1px solid #68095b;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -43,7 +43,7 @@
   padding-right: 25px;
   background-color: transparent;
   border: 1px solid #68095b;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   margin-bottom: 10px;
   margin-left: 10px;
   cursor: pointer;
@@ -63,7 +63,7 @@
   padding-right: 25px;
   background-color: transparent;
   border: 1px solid #68095b;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   margin-bottom: 10px;
   margin-left: 10px;
   cursor: pointer;
@@ -127,8 +127,8 @@
 .posters p {
   display: flex;
   color: white;
-  font-size: 0.85rem;
-  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-size: 1.75rem;
+  font-family: "Geo", sans-serif;
   outline: none;
   padding-left: 10px;
   padding-right: 10px;

@@ -1,12 +1,12 @@
 .dropbtn {
-  background: #272727;
+  background: black;
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
   position: fixed;
-  color: #ffff00;
-  font-size: 1.8rem;
+  color: #ffffff;
+  font-size: 2.8rem;
   border: none;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   text-align: center;
   outline: none;
   cursor: pointer;
@@ -15,7 +15,7 @@
 
 .dropdown-content {
   display: none;
-  background: #ffff00;
+  background: #ffffff;
   border-radius: 20px;
   z-index: 1;
   text-align: center;
@@ -26,13 +26,13 @@
 }
 
 .dropdown-content p {
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
   font-size: 1.5rem;
   outline: none;
   margin: 3px;
-  background: #ffff00;
+  background: #ffffff;
   position: fixed;
 }
 
@@ -45,7 +45,7 @@
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
 
-  background: #ffff00;
+  background: #ffffff;
   box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
     -10px -10px 30px rgba(233, 27, 16, 0.8);
   outline: none;
