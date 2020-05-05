@@ -1,5 +1,7 @@
 import "./Search_Button.css";
-import { AdvancedSearch } from "../Advanced_Search/Advanced_Search";
+import {
+  AdvancedSearch
+} from "../Advanced_Search/Advanced_Search";
 
 export class Search {
   constructor() {
@@ -28,7 +30,7 @@ export class Search {
   createImage() {
     let img = document.createElement("img");
     img.id = "img";
-    img.src = "./src/components/Home_Page_Header/search.png";
+    img.src = "./src/components/Home_Page_Header/search-9-16.png";
 
     document.getElementById("body").appendChild(img);
   }
@@ -52,7 +54,7 @@ export class Search {
     });
   }
 
-  /*addSearchInput() {
+  addSearchInput() {
     let showInput = false;
 
     img.addEventListener("click", () => {
@@ -63,5 +65,5 @@ export class Search {
       }
       showInput = !showInput;
     });
-  }*/
+  }
 }

@@ -5,7 +5,7 @@
   order: 3;
   margin-right: 80px;
   cursor: pointer;
-  background-color: #272727;
+  /* background-color: #272727; */
   border-radius: 50%;
   padding: 3px 1px 1px 3px;
 }
