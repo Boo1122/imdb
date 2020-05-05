@@ -1,10 +1,6 @@
 import "./Advanced_Search.css";
-import {
-  generateURL
-} from "./Searchable_Fields";
-import {
-  navigate
-} from "../Navigate_History/Navigate_History";
+import { generateURL } from "./Searchable_Fields";
+import { navigate } from "../Navigate_History/Navigate_History";
 
 export class AdvancedSearch {
   constructor(fetchMoviesByUrl) {
@@ -126,14 +122,7 @@ export class AdvancedSearch {
     genreInput.setAttribute("type", "text");
     genreInput.id = "genreInput";
 
-    const genres = [
-      '',
-      'Action',
-      'Animation',
-      'Comedy',
-      'Horror',
-      'Sci-Fi'
-    ];
+    const genres = ["", "Action", "Animation", "Comedy", "Horror", "Sci-Fi"];
     const options = genres
       .map((genre) => `<option value = ${genre}> ${genre} </option>`)
       .join("\n");
@@ -252,11 +241,10 @@ export class AdvancedSearch {
     p1.classList.add("radio-slect-movie");
     p1.innerText = "Movie";
     const typeInput1 = document.createElement("input");
+    typeInput1.name = "movie";
     typeInput1.className = "search-type-input";
     typeInput1.setAttribute("type", "radio");
     typeInput1.id = "movieInput";
-
-
 
     const typeSeries = document.createElement("div");
     typeSeries.id = "typeSeries";
@@ -264,11 +252,11 @@ export class AdvancedSearch {
     p2.classList.add("radio-slect-movie");
     p2.innerText = "TV Series";
     const typeInput2 = document.createElement("input");
+    typeInput2.name = "movie";
     typeInput2.className = "search-type-input";
     typeInput2.setAttribute("type", "radio");
     typeInput2.innerText = "TV Series";
     typeInput2.id = "TV-Series";
-
 
     document.getElementById("advancedBox").appendChild(typeBox);
     typeBox.appendChild(typeLabel);
@@ -279,6 +267,16 @@ export class AdvancedSearch {
     typeMovie.appendChild(typeInput1);
     typeSeries.appendChild(p2);
     typeSeries.appendChild(typeInput2);
+
+    function checkType() {
+      if (document.getElementById("movieInput").checked === true) {
+        document.getElementById("movieInput").value = 1;
+        document.getElementById("TV-Series").value = 0;
+      } else {
+        document.getElementById("movieInput").value = 0;
+        document.getElementById("TV-Series").value = 1;
+      }
+    }
   }
 
   executeSearch() {
