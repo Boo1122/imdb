@@ -20,7 +20,6 @@ export class Search {
     let input = document.createElement("input");
     input.setAttribute("type", "text");
     input.id = "input";
-    input.style.display = "block";
     input.placeholder = "Type to search";
 
     header.appendChild(inputDiv);
@@ -37,7 +36,7 @@ export class Search {
   }
 
   advancedSearch() {
-    const searchInput = document.getElementById("input");
+    let searchInput = document.getElementById("input");
 
     searchInput.addEventListener("click", () => {
       let x = document.getElementById("advancedBox");
