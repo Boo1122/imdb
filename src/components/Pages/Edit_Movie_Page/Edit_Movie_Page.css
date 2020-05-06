@@ -23,10 +23,7 @@
   height: 580px;
 }
 
-.movie-Title-class,
-.movieYear,
-.movie-ImdbID-class,
-.movie-Poster-class {
+#editMovieBox input {
   width: 200px;
   height: 20px;
   margin-bottom: 10px;
@@ -34,8 +31,7 @@
   outline: none;
 }
 
-#movieBox span {
-  margin-top: 20px;
+#editMovieBox span {
   margin-bottom: 10px;
 }
 
