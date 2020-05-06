@@ -122,13 +122,13 @@ export class LoginPage {
     const userName = document.getElementById("username-input-login");
     const passWord = document.getElementById("password-input-login");
 
-    if (userName.value === "" && passWord.value === "") {
-      logButton.disabled = true;
+    // if (userName.value === "" && passWord.value === "") {
+    //   logButton.disabled = true;
 
-    }
-    if (userName.value === "gafencoBogdan" && passWord.value === "gafenco") {
-      logButton.disabled = false;
-    }
+    // }
+    // if (userName.value === "gafencoBogdan" && passWord.value === "gafenco") {
+    //   logButton.disabled = false;
+    // }
 
     logButton.addEventListener("click", (event) => {
 
