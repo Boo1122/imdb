@@ -2,6 +2,7 @@ import "./Movie_Page.css";
 import { navigate } from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
 import { deleteMovieFromApi } from "../USER_Logged_In/Delete_Movie";
+import { EditMoviePage } from "../Edit_Movie_Page/Edit_Movie_Page";
 
 export class MoviePage {
   constructor() {
@@ -118,6 +119,10 @@ export class MoviePage {
         editMovieButton.setAttribute("title", "Edit Movie");
         editMovieButton.innerText = "E";
         editMovieBox.appendChild(editMovieButton);
+        editMovieButton.addEventListener("click", () => {
+          console.log("click");
+          new EditMoviePage();
+        });
       }
 
       if (token === "undefined") {

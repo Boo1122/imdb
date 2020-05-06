@@ -21,11 +21,9 @@ const singlePage = new SinglePage();
 new LogOutPage();
 const moviePage = new MoviePage();
 new AdvancedSearch(moviePage.fetchMoviesByUrl);
-
 new UserOptions();
+new EditMoviePage();
 new Footer();
 
 navigate.init(singlePage);
 switchButtons();
-
-//new EditMoviePage();
