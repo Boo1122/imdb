@@ -55,7 +55,7 @@ export class SinglePage {
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
     const movieInfo = document.createElement("p");
-    movieInfo.innerText = `Country:  ${movie.Country}   | Language:  ${movie.Language}   | Runtime:  ${movie.Runtime}`;
+    movieInfo.innerText = `Year:  ${movie.Year}  | Country:  ${movie.Country}   | Language:  ${movie.Language}   | Runtime:  ${movie.Runtime}`;
 
     //Here are the ratings
     const ratingContainer = document.createElement("div");
@@ -234,7 +234,8 @@ export class SinglePage {
 
           const trailerIframe = document.createElement("iframe");
           trailerIframe.id = "trailer-container";
-
+          
+          trailerIframe.autoplay = false;
           trailerIframe.width = "560";
           trailerIframe.height = "280";
           trailerIframe.frameBorder = "0";
@@ -252,7 +253,7 @@ export class SinglePage {
 
           trailerBackgroundImage.addEventListener("click", () => {
             console.log("click play");
-            trailerIframe.allow = "autoplay";
+            trailerIframe.autoplay = true;
             trailerBackgroundImage.style.display = "none";
           });
 

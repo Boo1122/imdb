@@ -11,6 +11,7 @@ import { LogOutPage } from "./components/Pages/LogOut_Page/LogOut_Page";
 import { AdvancedSearch } from "./components/Advanced_Search/Advanced_Search";
 import { switchButtons } from "./components/Pages/USER_Logged_In/Switch_Buttones";
 import { UserOptions } from "./components/Pages/USER_Logged_In/User_Options";
+import { EditMoviePage } from "./components/Pages/Edit_Movie_Page/Edit_Movie_Page";
 
 new Header();
 new HomePage();
@@ -26,3 +27,5 @@ new Footer();
 
 navigate.init(singlePage);
 switchButtons();
+
+//new EditMoviePage();
