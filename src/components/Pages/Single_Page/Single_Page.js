@@ -230,7 +230,8 @@ export class SinglePage {
 
           const trailerIframe = document.createElement("iframe");
           trailerIframe.id = "trailer-container";
-
+          
+          trailerIframe.autoplay = false;
           trailerIframe.width = "560";
           trailerIframe.height = "280";
           trailerIframe.frameBorder = "0";
@@ -248,7 +249,7 @@ export class SinglePage {
 
           trailerBackgroundImage.addEventListener("click", () => {
             console.log("click play");
-            trailerIframe.allow = "autoplay";
+            trailerIframe.autoplay = true;
             trailerBackgroundImage.style.display = "none";
           });
 
