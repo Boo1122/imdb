@@ -125,6 +125,17 @@ export class LoginPage {
 
 
     logButton.addEventListener("click", () => {
+      if (userName.value == "") {
+        userName.style.borderColor = "red";
+      } else {
+        userName.style.borderColor = "gray";
+      }
+
+      if (passWord.value == "") {
+        passWord.style.borderColor = "red";
+      } else {
+        passWord.style.borderColor = "gray";
+      }
 
       if (!userName.value && !passWord.value) {
         return false;
@@ -164,12 +175,11 @@ export class LoginPage {
             let eraseInputPass = document.getElementById(
               "password-input-login"
             );
+
             eraseInputPass.value = "";
+
             this.handleButtonTransferLogin();
           }
-
-
-
 
         });
     });
