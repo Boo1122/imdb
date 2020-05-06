@@ -7,8 +7,7 @@ export class Search {
   constructor() {
     this.createImage();
     this.createInput();
-    this.addAdvancedSearch();
-
+    document.addEventListener('click', this.addAdvanced);
   }
 
   createInput() {
@@ -23,23 +22,20 @@ export class Search {
   createImage() {
     let img = document.createElement("img");
     img.id = "img";
+    img.classList.add('imageSearch');
     img.src = "./src/components/Home_Page_Header/search-9-24.png";
 
     document.getElementById("body").appendChild(img);
   }
 
+  addAdvanced(event) {
+    let container = document.getElementById("advancedBox")
 
-  addAdvancedSearch() {
+    if (event.target.classList.contains('imageSearch')) {
+      container.classList.toggle("showDropdown");
+    } else {
+      container.classList.add('showDropdown');
+    }
 
-    let showInput = false;
-
-    img.addEventListener("click", () => {
-      if (showInput) {
-        document.getElementById("advancedBox").style.display = "none";
-      } else {
-        document.getElementById("advancedBox").style.display = "block";
-      }
-      showInput = !showInput;
-    });
   }
 }
