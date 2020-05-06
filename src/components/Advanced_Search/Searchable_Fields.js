@@ -1,40 +1,46 @@
 export function generateURL() {
   const title = document.getElementById("titleInput");
   const year = document.getElementById("yearInput");
-  const runtime = document.getElementById("runtimeInput");
-  const action = document.getElementById("action");
+
+  const genre = document.getElementById('genreInput')
+
   const animation = document.getElementById("animation");
+  const action = document.getElementById("action");
   const comedy = document.getElementById("comedy");
   const horror = document.getElementById("horror");
   const sciFi = document.getElementById("sciFi");
+
   const language = document.getElementById("languageInput");
   const country = document.getElementById("countryInput");
   const imdbRating = document.getElementById("imdbRatingInput");
-  const imdbVotes = document.getElementById("imdbVotesInput");
-  const imdbIDInput = document.getElementById("imdbIDInput");
 
   const movieInput = document.getElementById("movieInput");
   const tvSeries = document.getElementById("TV-Series");
 
   const lastSearch = document.getElementById("last-search");
 
+  let endUrl = [];
+
+
   function checkTitleField() {
     if (title.value) {
       let checkTitle = `Title=${title.value}`;
-      console.log(checkTitle);
-      return checkTitle;
+      title.value == endUrl[0] ?
+        endUrl.push(checkTitle) :
+        endUrl.push("&" + checkTitle)
+      console.log(endUrl);
     } else {
       let checkTitle = "";
-      console.log(checkTitle);
       return checkTitle;
     }
   }
 
   function checkYearField() {
     if (year.value) {
-      let checkYear = `&Year=${year.value}`;
-      console.log(checkYear);
-      return checkYear;
+      let checkYear = `Year=${year.value}`;
+      year.value == endUrl[0] ?
+        endUrl.push(checkYear) :
+        endUrl.push("&" + checkYear);
     } else {
       let checkYear = "";
       return checkYear;
@@ -42,10 +48,11 @@ export function generateURL() {
   }
 
   function checkLanguageField() {
-    if (language.value !== undefined) {
-      let checkLanguage = `&Language=${language.value}`;
-      console.log(checkLanguage);
-      return checkLanguage;
+    if (language.value) {
+      let checkLanguage = `Language=${language.value}`;
+      language.value == endUrl[0] ?
+        endUrl.push(checkLanguage) :
+        endUrl.push("&" + checkLanguage);
     } else {
       let checkLanguage = "";
       return checkLanguage;
@@ -53,10 +60,11 @@ export function generateURL() {
   }
 
   function checkCountryField() {
-    if (country.value !== undefined) {
-      let checkCountry = `&Country=${country.value}`;
-      console.log(checkCountry);
-      return checkCountry;
+    if (country.value) {
+      let checkCountry = `Country=${country.value}`;
+      country.value == endUrl[0] ?
+        endUrl.push(checkCountry) :
+        endUrl.push("&" + checkCountry);
     } else {
       let checkCountry = "";
       return checkCountry;
@@ -64,22 +72,99 @@ export function generateURL() {
   }
 
   function checkImdbRatingField() {
-    if (country.value) {
-      let checkImdbRating = `&imdbRating=${imdbRating.value}`;
-      console.log(checkImdbRating);
-      return checkImdbRating;
+    if (imdbRating.value) {
+      let checkImdbRating = `imdbRating=${imdbRating.value}`;
+      checkImdbRating == endUrl[0] ?
+        endUrl.push(checkImdbRating) :
+        endUrl.push("&" + checkImdbRating);
+      console.log(endUrl);
     } else {
       let checkImdbRating = "";
       return checkImdbRating;
     }
   }
 
-  const url = `https://movies-app-siit.herokuapp.com/movies?${checkTitleField()}${checkYearField()}${checkLanguageField()}${checkCountryField()}${checkImdbRatingField()}`;
+  function checkGenreField() {
+    if (genre.value) {
+      let checkGenre = `Genre=${genre.value}`;
+      checkGenre == endUrl[0] ?
+        endUrl.push(checkGenre) :
+        endUrl.push("&" + checkGenre);
+      console.log(endUrl);
+    } else {
+      let checkGenre = "";
+      return checkGenre;
+    }
+  }
+
+  function checkTvSeries() {
+    let series = document.getElementById('TV-Series');
+
+    if (series) {
+      let tv = `Type=TV Series`;
+      tv == endUrl[0] ?
+        endUrl.push("&" + tv) :
+        endUrl.push(tv);
+      console.log(endUrl)
+
+    } else {
+      let tv = "";
+      return tv;
+    }
+
+  }
+
+  function checkMovies() {
+    let movies = document.getElementById('movieInput');
+    let series = document.getElementById('TV-Series');
+
+    if (movies) {
+      let movie = `Type=movie`;
+      movie == endUrl[0] ?
+        endUrl.push(movie) :
+        endUrl.push("&" + movie);
+
+    } else {
+      let movie = "";
+      return movie;
+    }
+
+  }
+
+  function pick() {
+    let movies = document.getElementById('movieInput');
+
+    if (movies.checked) {
+      checkMovies();
+    } else {
+      checkTvSeries();
+    }
+
+  }
+
+  pick();
+  checkTitleField();
+  checkYearField();
+  checkLanguageField();
+  checkCountryField();
+  checkImdbRatingField();
+  checkGenreField();
+
+
+
+  const realUrl = endUrl.join("");
+  console.log(realUrl);
+  const url = `https://movies-app-siit.herokuapp.com/movies?${realUrl}`;
 
   console.log(url);
 
   return url;
 }
+
+
+
+
+
 
 export function searchableFields() {
   const url = generateURL();
