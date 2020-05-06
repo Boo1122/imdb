@@ -90,7 +90,7 @@ export class MoviePage {
     }
   }
 
-  renderMovieList() {
+  renderMovieList(movie) {
     const body = document.getElementById("movie-list-container");
     body.innerHTML = null;
     for (const movie of this.movieData.results) {
@@ -127,6 +127,8 @@ export class MoviePage {
         editMovieButton.setAttribute("data-target", "editMovieContainer");
         editMovieButton.innerText = "E";
         editMovieBox.appendChild(editMovieButton);
+        let editMovieID = movie._id;
+        console.log(editMovieID);
 
         editMovieButton.addEventListener("click", navigate.nav);
 
