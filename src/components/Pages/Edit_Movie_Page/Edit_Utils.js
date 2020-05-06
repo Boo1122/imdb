@@ -9,7 +9,7 @@ export function editMovieToAPI() {
     const posterUrl = document.getElementById("edit-movie-poster");
 
     const token = Cookie.get("token");
-    let url = `https://movies-app-siit.herokuapp.com/movies${movie.id}`;
+    let url = `https://movies-app-siit.herokuapp.com/movies${/*this.*/movie.id}`;
 
     fetch(url, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
