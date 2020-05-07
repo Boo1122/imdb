@@ -11,7 +11,7 @@ export function editMovieToAPI(id) {
       const posterUrl = document.getElementById("edit-movie-poster");
 
       const token = Cookie.get("token");
-      let url = `https://movies-app-siit.herokuapp.com/movies?${id}`;
+      let url = `https://movies-app-siit.herokuapp.com/movies/${id}`;
 
       console.log(url);
 
