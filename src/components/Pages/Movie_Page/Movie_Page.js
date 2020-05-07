@@ -28,8 +28,8 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
-    container.style.backgroundImage =
-      "url(./public/img/batman_background_single.jpg)";
+    //container.style.backgroundImage =
+    ("url(./public/img/batman_background_single.jpg)");
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
@@ -90,10 +90,11 @@ export class MoviePage {
     }
   }
 
-  renderMovieList() {
+  renderMovieList(movie) {
     const body = document.getElementById("movie-list-container");
     body.innerHTML = null;
-    for (const movie of this.movieData.results) {
+
+    this.movieData.results.forEach((movie) => {
       this.moviesContent(movie, body);
 
       const anotherBox = document.createElement("div");
@@ -120,13 +121,20 @@ export class MoviePage {
         deleteMov.innerText = "X";
         deleteMovieBox.appendChild(deleteMov);
 
-        const editMovieButton = document.createElement("span");
+        const x = (id) => () => {
+          console.log(id);
+        };
+
+        const editMovieButton = document.createElement("button");
         editMovieButton.classList.add("edit-movie-button-cls");
         editMovieButton.classList.add("nav-link", "movie");
         editMovieButton.setAttribute("title", "Edit Movie");
         editMovieButton.setAttribute("data-target", "editMovieContainer");
         editMovieButton.innerText = "E";
+        editMovieButton.addEventListener("click", x(movie._id));
         editMovieBox.appendChild(editMovieButton);
+        let editMovieID = movie._id;
+        console.log(editMovieID);
 
         editMovieButton.addEventListener("click", navigate.nav);
 
@@ -138,7 +146,7 @@ export class MoviePage {
           x.style.display = "none";
         }
       }
-    }
+    });
   }
 
   moviesContent(movie, body) {
