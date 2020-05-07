@@ -99,7 +99,7 @@
   flex-wrap: wrap;
   flex: 1;
   overflow: auto;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .movie-page-container {
