@@ -119,19 +119,30 @@ export class LoginPage {
 
   loginClicked() {
     const logButton = document.getElementById("loginButton");
-    const userName = document.getElementById("username-input-login");
-    const passWord = document.getElementById("password-input-login");
+    let userName = document.getElementById("username-input-login");
+    let passWord = document.getElementById("password-input-login");
 
-    // if (userName.value === "" && passWord.value === "") {
-    //   logButton.disabled = true;
 
-    // }
-    // if (userName.value === "gafencoBogdan" && passWord.value === "gafenco") {
-    //   logButton.disabled = false;
-    // }
 
-    logButton.addEventListener("click", (event) => {
+    logButton.addEventListener("click", () => {
 
+      if (!userName.value && !passWord.value) {
+        if (userName.value == "") {
+          userName.style.borderColor = "red";
+        } else {
+          userName.style.borderColor = "none";
+        }
+
+        if (passWord.value == "") {
+          passWord.style.borderColor = "red";
+        } else {
+          passWord.style.borderColor = "none";
+        }
+        alert('Please fill in your username and password')
+        return false;
+      } else {
+        logButton.disabled = false;
+      }
 
       fetch("https://movies-app-siit.herokuapp.com/auth/login", {
           method: "POST", // *GET, POST, PUT, DELETE, etc.

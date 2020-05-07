@@ -9,6 +9,16 @@
   padding: 3px 1px 1px 3px;
 }
 
+.showDropdown {
+  display: none;
+}
+
+.hiddenDropdown {
+  display: block;
+}
+
+
+
 #input {
   text-align: center;
   margin-top: 45px;
