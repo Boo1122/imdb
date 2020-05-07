@@ -86,7 +86,8 @@ export class MoviePage {
   renderMovieList() {
     const body = document.getElementById("movie-list-container");
     body.innerHTML = null;
-    for (const movie of this.movieData.results) {
+
+    this.movieData.results.forEach((movie) => {
       this.moviesContent(movie, body);
 
       const anotherBox = document.createElement("div");
@@ -113,10 +114,15 @@ export class MoviePage {
         deleteMov.innerText = "X";
         deleteMovieBox.appendChild(deleteMov);
 
-        const editMovieButton = document.createElement("span");
+        const x = (id) => () => {
+          console.log(id);
+        };
+
+        const editMovieButton = document.createElement("button");
         editMovieButton.classList.add("edit-movie-button-cls");
         editMovieButton.setAttribute("title", "Edit Movie");
         editMovieButton.innerText = "E";
+        editMovieButton.addEventListener("click", x(movie._id));
         editMovieBox.appendChild(editMovieButton);
       }
 
@@ -126,7 +132,7 @@ export class MoviePage {
           x.style.display = "none";
         }
       }
-    }
+    });
   }
 
   moviesContent(movie, body) {
