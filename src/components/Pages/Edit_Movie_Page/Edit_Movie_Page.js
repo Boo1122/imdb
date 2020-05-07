@@ -1,8 +1,7 @@
-import "./Edit_Movie_Page.css"
+import "./Edit_Movie_Page.css";
 import Cookie from "js-cookie";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History"
+import { navigate } from "../../Navigate_History/Navigate_History";
+import { editMovieToAPI } from "./Edit_Utils";
 
 export class EditMoviePage {
   constructor() {
@@ -17,8 +16,8 @@ export class EditMoviePage {
     editMovieWrapper.id = "editMovieContainer";
     editMovieWrapper.classList.add("page");
     editMovieWrapper.classList.add("editMovieWrapper-class");
-    editMovieWrapper.style.backgroundImage = "url(./public/img/batman_bk2.jpeg)";
-
+    editMovieWrapper.style.backgroundImage =
+      "url(./public/img/batman_bk2.jpeg)";
 
     const editMovieBox = document.createElement("div");
     editMovieBox.id = "editMovieBox";
@@ -90,5 +89,5 @@ export class EditMoviePage {
 
     editMovieBox.appendChild(editMovieDetailsButton);
   }
-
+  // editMovieToAPI()
 }

@@ -1,6 +1,6 @@
 import Cookie from "js-cookie";
 
-export function editMovieToAPI() {
+export function editMovieToAPI(id) {
   document
     .getElementById("editMovieDetailsButton")
     .addEventListener("click", () => {
@@ -11,9 +11,9 @@ export function editMovieToAPI() {
       const posterUrl = document.getElementById("edit-movie-poster");
 
       const token = Cookie.get("token");
-      let url = `https://movies-app-siit.herokuapp.com/movies${
-        /*this.*/ movie.id
-      }`;
+      let url = `https://movies-app-siit.herokuapp.com/movies?${id}`;
+
+      console.log(url);
 
       fetch(url, {
         method: "PUT", // *GET, POST, PUT, DELETE, etc.
@@ -37,23 +37,6 @@ export function editMovieToAPI() {
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
-
-          /*if (json.accessToken) {
-          let emptyTitleInput = document.getElementById("edit-movie-title");
-          emptyTitleInput.value = "";
-
-          let emptyYearInput = document.getElementById("edit-movie-year");
-          emptyYearInput.value = "";
-
-          let emptyImdbIDInput = document.getElementById("edit-movie-ImdbID");
-          emptyImdbIDInput.value = "";
-
-          let emptyTypeInput = document.getElementById("edit-movie-type");
-          emptyImdbIDInput.value = "";
-
-          let emptyPosterInput = document.getElementById("edit-movie-poster");
-          emptyPosterInput.value = "";
-        }*/
         });
     });
 }

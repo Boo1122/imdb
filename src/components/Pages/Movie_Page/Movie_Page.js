@@ -1,15 +1,9 @@
 import "./Movie_Page.css";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History";
+import { navigate } from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
-import {
-  deleteMovieFromApi
-} from "../USER_Logged_In/Delete_Movie";
-import {
-  EditMoviePage
-} from "../Edit_Movie_Page/Edit_Movie_Page";
-
+import { deleteMovieFromApi } from "../USER_Logged_In/Delete_Movie";
+import { EditMoviePage } from "../Edit_Movie_Page/Edit_Movie_Page";
+import { editMovieToAPI } from "../Edit_Movie_Page/Edit_Utils";
 export class MoviePage {
   constructor() {
     this.number = 10;
@@ -122,7 +116,8 @@ export class MoviePage {
         deleteMovieBox.appendChild(deleteMov);
 
         const x = (id) => () => {
-          console.log(id);
+          editMovieToAPI(id);
+          // console.log(id);
         };
 
         const editMovieButton = document.createElement("button");
@@ -133,11 +128,8 @@ export class MoviePage {
         editMovieButton.innerText = "E";
         editMovieButton.addEventListener("click", x(movie._id));
         editMovieBox.appendChild(editMovieButton);
-        let editMovieID = movie._id;
-        console.log(editMovieID);
 
         editMovieButton.addEventListener("click", navigate.nav);
-
       }
 
       if (token === "undefined") {
