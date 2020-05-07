@@ -22,7 +22,7 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
-    container.style.backgroundColor = 'black';
+    container.style.backgroundColor = "black";
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
@@ -116,7 +116,8 @@ export class MoviePage {
 
         const x = (id) => () => {
           editMovieToAPI(id);
-          // console.log(id);
+          let Title = document.querySelector("#edit-movie-title");
+          Title.value = movie.Title;
         };
 
         const editMovieButton = document.createElement("button");
