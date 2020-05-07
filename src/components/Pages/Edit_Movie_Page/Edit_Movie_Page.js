@@ -77,12 +77,6 @@ export class EditMoviePage {
     editMovieDetailsButton.innerText = "Edit Movie";
 
     editMovieBox.appendChild(editMovieDetailsButton);
-<<<<<<< HEAD
-
-    //editMovieToAPI();
-  }
-=======
   }
   // editMovieToAPI()
->>>>>>> Pre-Production-3.0
 }
