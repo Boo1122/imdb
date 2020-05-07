@@ -1,15 +1,9 @@
 import "./Movie_Page.css";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History";
+import { navigate } from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
-import {
-  deleteMovieFromApi
-} from "../USER_Logged_In/Delete_Movie";
-import {
-  EditMoviePage
-} from "../Edit_Movie_Page/Edit_Movie_Page";
-
+import { deleteMovieFromApi } from "../USER_Logged_In/Delete_Movie";
+import { EditMoviePage } from "../Edit_Movie_Page/Edit_Movie_Page";
+import { editMovieToAPI } from "../Edit_Movie_Page/Edit_Utils";
 export class MoviePage {
   constructor() {
     this.number = 10;
@@ -28,8 +22,7 @@ export class MoviePage {
     const container = document.createElement("div");
     container.id = "movie-page";
     container.classList.add("page");
-    //container.style.backgroundImage =
-    ("url(./public/img/batman_background_single.jpg)");
+    container.style.backgroundColor = "black";
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
@@ -122,7 +115,9 @@ export class MoviePage {
         deleteMovieBox.appendChild(deleteMov);
 
         const x = (id) => () => {
-          console.log(id);
+          editMovieToAPI(id);
+          let Title = document.querySelector("#edit-movie-title");
+          Title.value = movie.Title;
         };
 
         const editMovieButton = document.createElement("button");
@@ -137,7 +132,6 @@ export class MoviePage {
         console.log(editMovieID);
 
         editMovieButton.addEventListener("click", navigate.nav);
-
       }
 
       if (token === "undefined") {

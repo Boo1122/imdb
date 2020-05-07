@@ -77,7 +77,6 @@ export class EditMoviePage {
     editMovieDetailsButton.innerText = "Edit Movie";
 
     editMovieBox.appendChild(editMovieDetailsButton);
-
-    //editMovieToAPI();
   }
+  // editMovieToAPI()
 }
