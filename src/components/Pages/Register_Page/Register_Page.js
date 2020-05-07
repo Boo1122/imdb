@@ -87,6 +87,25 @@ export class RegisterPage {
     const userPass = document.getElementById("password-input");
 
     regButton.addEventListener("click", () => {
+
+      if (!userName.value && !userPass.value) {
+        if (userName.value == "") {
+          userName.style.borderColor = "red";
+        } else {
+          userName.style.borderColor = "none";
+        }
+
+        if (userPass.value == "") {
+          userPass.style.borderColor = "red";
+        } else {
+          userPass.style.borderColor = "none";
+        }
+        alert('Please fill in your username and password')
+        return false;
+      } else {
+        regButton.disabled = false;
+      }
+
       fetch("https://movies-app-siit.herokuapp.com/auth/register", {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           mode: "cors", // no-cors, *cors, same-origin

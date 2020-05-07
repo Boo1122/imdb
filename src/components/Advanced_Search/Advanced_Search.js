@@ -17,6 +17,8 @@ export class AdvancedSearch {
 
     const containerBox = document.createElement("div");
     containerBox.id = "advancedBox";
+    containerBox.classList.add('showDropdown');
+
 
     box.appendChild(containerBox);
 
@@ -247,7 +249,6 @@ export class AdvancedSearch {
     p1.innerText = "Movie";
     const typeInput1 = document.createElement("input");
     typeInput1.name = "movie";
-    typeInput1.checked = true;
     typeInput1.className = "search-type-input";
     typeInput1.setAttribute("type", "radio");
     typeInput1.id = "movieInput";

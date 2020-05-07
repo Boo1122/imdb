@@ -100,7 +100,7 @@ export function generateURL() {
   function checkTvSeries() {
     let series = document.getElementById('TV-Series');
 
-    if (series) {
+    if (series.checked) {
       let tv = `Type=TV Series`;
       tv == endUrl[0] ?
         endUrl.push("&" + tv) :
@@ -118,7 +118,7 @@ export function generateURL() {
     let movies = document.getElementById('movieInput');
     let series = document.getElementById('TV-Series');
 
-    if (movies) {
+    if (movies.checked) {
       let movie = `Type=movie`;
       movie == endUrl[0] ?
         endUrl.push(movie) :
@@ -136,8 +136,10 @@ export function generateURL() {
 
     if (movies.checked) {
       checkMovies();
+
     } else {
       checkTvSeries();
+
     }
 
   }
