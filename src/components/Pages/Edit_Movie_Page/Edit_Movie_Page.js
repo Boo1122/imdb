@@ -31,7 +31,7 @@ export class EditMoviePage {
     titleContainer.innerText = "Edit Movie Details";
 
     const spanTitle = document.createElement("span");
-    spanTitle.innerText = "Edit Movie Title";
+    spanTitle.innerText = "Title";
     const movieTitle = document.createElement("input");
     movieTitle.id = "edit-movie-title";
 
@@ -40,31 +40,48 @@ export class EditMoviePage {
     editMovieBox.appendChild(movieTitle);
 
     const spanYear = document.createElement("span");
-    spanYear.innerText = "Edit Year";
+    spanYear.innerText = "Year";
     const movieYear = document.createElement("input");
     movieYear.id = "edit-movie-year";
 
     editMovieBox.appendChild(spanYear);
     editMovieBox.appendChild(movieYear);
 
-    const spanImdbID = document.createElement("span");
-    spanImdbID.innerText = "Edit Movie Imdb-ID";
-    const movieImdbID = document.createElement("input");
-    movieImdbID.id = "edit-movie-ImdbID";
+    const spanCountry = document.createElement("span");
+    spanCountry.innerText = "Country";
+    const movieCountry = document.createElement("input");
+    movieCountry.id = "edit-movie-country";
 
-    editMovieBox.appendChild(spanImdbID);
-    editMovieBox.appendChild(movieImdbID);
+    editMovieBox.appendChild(spanCountry);
+    editMovieBox.appendChild(movieCountry);
+
+    const spanLanguage = document.createElement("span");
+    spanLanguage.innerText = "Language";
+    const movieLanguage = document.createElement("input");
+    movieLanguage.id = "edit-movie-language";
+
+    editMovieBox.appendChild(spanLanguage);
+    editMovieBox.appendChild(movieLanguage);
 
     const spanType = document.createElement("span");
-    spanType.innerText = "Edit Type";
+    spanType.innerText = "Type";
     const movieType = document.createElement("input");
     movieType.id = "edit-movie-type";
 
     editMovieBox.appendChild(spanType);
     editMovieBox.appendChild(movieType);
 
+    const spanImdbID = document.createElement("span");
+    spanImdbID.innerText = "Imdb-ID";
+    const movieImdbID = document.createElement("input");
+    movieImdbID.id = "edit-movie-ImdbID";
+
+    editMovieBox.appendChild(spanImdbID);
+    editMovieBox.appendChild(movieImdbID);
+
+
     const spanPoster = document.createElement("span");
-    spanPoster.innerText = "Change Movie Poster";
+    spanPoster.innerText = "Poster URL";
 
     const moviePosterInput = document.createElement("input");
     moviePosterInput.id = "edit-movie-poster";

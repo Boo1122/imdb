@@ -9,6 +9,8 @@ export function editMovieToAPI() {
       const imdbID = document.getElementById("edit-movie-ImdbID");
       const type = document.getElementById("edit-movie-type");
       const posterUrl = document.getElementById("edit-movie-poster");
+      const country = document.getElementById("edit-movie-country");
+      const language = document.getElementById("edit-movie-language");
 
       const token = Cookie.get("token");
       let url = `https://movies-app-siit.herokuapp.com/movies${
@@ -22,20 +24,22 @@ export function editMovieToAPI() {
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
           "Content-Type": "application/json",
-          "X-Auth-Token": token,
+          "X-Auth-Token": token
         },
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *client
         body: JSON.stringify({
           Title: `${title.value}`,
           Year: `${year.value}`,
-          ImdbID: `${imdbID.value}`,
+          Country: `${country.value}`,
+          Language: `${language.value}`,
           Type: `${type.value}`,
-          Poster: `${posterUrl.value}`,
-        }),
+          ImdbID: `${imdbID.value}`,
+          Poster: `${posterUrl.value}`
+        })
       })
-        .then((response) => response.json())
-        .then((json) => {
+        .then(response => response.json())
+        .then(json => {
           console.log(json);
 
           /*if (json.accessToken) {

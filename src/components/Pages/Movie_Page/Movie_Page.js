@@ -118,6 +118,18 @@ export class MoviePage {
           editMovieToAPI(id);
           let Title = document.querySelector("#edit-movie-title");
           Title.value = movie.Title;
+          let Year = document.querySelector("#edit-movie-year");
+          Year.value = movie.Year;
+          let Country = document.querySelector("#edit-movie-country");
+          Country.value = movie.Country;
+          let Language = document.querySelector("#edit-movie-language");
+          Language.value = movie.Language;
+          let Type = document.querySelector("#edit-movie-type");
+          Type.value = movie.Type;
+          let ImdbID = document.querySelector("#edit-movie-ImdbID");
+          ImdbID.value = movie.imdbID;
+          let Poster = document.querySelector("#edit-movie-poster");
+          Poster.value = movie.Poster;
         };
 
         const editMovieButton = document.createElement("button");
