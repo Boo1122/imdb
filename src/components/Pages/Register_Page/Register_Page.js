@@ -128,7 +128,10 @@ export class RegisterPage {
       }
 
       if (userPass.value !== confirmUserPass.value) {
-        alert("Your password doesn't match")
+        alert("Your password doesn't match, try again")
+        userPass.value = "";
+        userName.value = "";
+        confirmUserPass.value = "";
         return false
       } else {
         regButton.disabled = false;
