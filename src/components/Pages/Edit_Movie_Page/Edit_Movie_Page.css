@@ -20,22 +20,18 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.699);
   width: 400px;
-  height: 580px;
+  height: 650px;
 }
 
-.movie-Title-class,
-.movieYear,
-.movie-ImdbID-class,
-.movie-Poster-class {
-  width: 200px;
+#editMovieBox input {
+  width: 250px;
   height: 20px;
   margin-bottom: 10px;
   border-radius: 5%;
   outline: none;
 }
 
-#movieBox span {
-  margin-top: 20px;
+#editMovieBox span {
   margin-bottom: 10px;
 }
 
@@ -54,7 +50,7 @@
   padding: 11px 23px;
   text-decoration: none;
   text-shadow: 0px -1px 0px #2b665e;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 #editMovieDetailsButton:hover {
@@ -69,6 +65,7 @@
   font-size: 30px;
   padding-bottom: 20px;
   font-family: "Pacifico", cursive;
+  margin-top: 10px;
 }
 
 .movie-poster {

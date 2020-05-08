@@ -1,8 +1,7 @@
-import "./Edit_Movie_Page.css"
+import "./Edit_Movie_Page.css";
 import Cookie from "js-cookie";
-import {
-  navigate
-} from "../../Navigate_History/Navigate_History"
+import { navigate } from "../../Navigate_History/Navigate_History";
+import { editMovieToAPI } from "./Edit_Utils";
 
 export class EditMoviePage {
   constructor() {
@@ -17,8 +16,8 @@ export class EditMoviePage {
     editMovieWrapper.id = "editMovieContainer";
     editMovieWrapper.classList.add("page");
     editMovieWrapper.classList.add("editMovieWrapper-class");
-    editMovieWrapper.style.backgroundImage = "url(./public/img/batman_bk2.jpeg)";
-
+    editMovieWrapper.style.backgroundImage =
+      "url(./public/img/batman_bk2.jpeg)";
 
     const editMovieBox = document.createElement("div");
     editMovieBox.id = "editMovieBox";
@@ -32,10 +31,8 @@ export class EditMoviePage {
     titleContainer.innerText = "Edit Movie Details";
 
     const spanTitle = document.createElement("span");
-    spanTitle.classList.add("spanTitle");
-    spanTitle.innerText = "Edit Movie Title";
+    spanTitle.innerText = "Title";
     const movieTitle = document.createElement("input");
-    movieTitle.classList.add("movie-Title-class");
     movieTitle.id = "edit-movie-title";
 
     editMovieBox.appendChild(titleContainer);
@@ -43,43 +40,51 @@ export class EditMoviePage {
     editMovieBox.appendChild(movieTitle);
 
     const spanYear = document.createElement("span");
-    spanYear.classList.add("spanTitle");
-    spanYear.innerText = "Edit Year";
+    spanYear.innerText = "Year";
     const movieYear = document.createElement("input");
-    movieYear.classList.add("movieYear");
     movieYear.id = "edit-movie-year";
 
     editMovieBox.appendChild(spanYear);
     editMovieBox.appendChild(movieYear);
 
-    const spanImdbID = document.createElement("span");
-    spanImdbID.classList.add("span-ImdbID-class");
-    spanImdbID.innerText = "Edit Movie Imdb-ID";
-    const movieImdbID = document.createElement("input");
-    movieImdbID.classList.add("movie-ImdbID-class");
-    movieImdbID.id = "edit-movie-ImdbID";
+    const spanCountry = document.createElement("span");
+    spanCountry.innerText = "Country";
+    const movieCountry = document.createElement("input");
+    movieCountry.id = "edit-movie-country";
 
-    editMovieBox.appendChild(spanImdbID);
-    editMovieBox.appendChild(movieImdbID);
+    editMovieBox.appendChild(spanCountry);
+    editMovieBox.appendChild(movieCountry);
+
+    const spanLanguage = document.createElement("span");
+    spanLanguage.innerText = "Language";
+    const movieLanguage = document.createElement("input");
+    movieLanguage.id = "edit-movie-language";
+
+    editMovieBox.appendChild(spanLanguage);
+    editMovieBox.appendChild(movieLanguage);
 
     const spanType = document.createElement("span");
-    spanType.classList.add("span-Type-class");
-    spanType.innerText = "Edit Type";
+    spanType.innerText = "Type";
     const movieType = document.createElement("input");
-    movieType.classList.add("movie-type-class");
     movieType.id = "edit-movie-type";
 
     editMovieBox.appendChild(spanType);
     editMovieBox.appendChild(movieType);
 
+    const spanImdbID = document.createElement("span");
+    spanImdbID.innerText = "Imdb-ID";
+    const movieImdbID = document.createElement("input");
+    movieImdbID.id = "edit-movie-ImdbID";
+
+    editMovieBox.appendChild(spanImdbID);
+    editMovieBox.appendChild(movieImdbID);
+
+
     const spanPoster = document.createElement("span");
-    spanPoster.classList.add("span-Poster-class");
-    spanPoster.innerText = "Change Movie Poster";
+    spanPoster.innerText = "Poster URL";
 
     const moviePosterInput = document.createElement("input");
     moviePosterInput.id = "edit-movie-poster";
-    moviePosterInput.classList.add("movie-Poster-class");
-    moviePosterInput.placeholder = "Change Image URL";
 
     editMovieBox.appendChild(spanPoster);
     editMovieBox.appendChild(moviePosterInput);
@@ -90,5 +95,5 @@ export class EditMoviePage {
 
     editMovieBox.appendChild(editMovieDetailsButton);
   }
-
+  // editMovieToAPI()
 }

@@ -138,6 +138,18 @@ export class LoginPage {
       }
 
       if (!userName.value && !passWord.value) {
+        if (userName.value == "") {
+          userName.style.borderColor = "red";
+        } else {
+          userName.style.borderColor = "none";
+        }
+
+        if (passWord.value == "") {
+          passWord.style.borderColor = "red";
+        } else {
+          passWord.style.borderColor = "none";
+        }
+        alert('Please fill in your username and password')
         return false;
       } else {
         logButton.disabled = false;

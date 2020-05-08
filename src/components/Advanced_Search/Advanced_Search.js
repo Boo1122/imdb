@@ -17,6 +17,8 @@ export class AdvancedSearch {
 
     const containerBox = document.createElement("div");
     containerBox.id = "advancedBox";
+    containerBox.classList.add('showDropdown');
+
 
     box.appendChild(containerBox);
 

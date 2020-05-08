@@ -25,12 +25,16 @@
   font-family: "Pacifico", cursive;
   margin-bottom: 10px;
   cursor: pointer;
+
+}
+
+.nr-of-pages:hover {
+  background-color: white;
 }
 
 .actives,
 .nr-of-pages:hover {
-  background-color: black;
-  color: white;
+  color: #68095b;
 }
 
 .next {
@@ -50,7 +54,8 @@
 }
 
 .next:hover {
-  background-color: black;
+  color: #68095b;
+  background-color: white;
 }
 
 .previous {
@@ -70,7 +75,8 @@
 }
 
 .previous:hover {
-  background-color: black;
+  color: #68095b;
+  background-color: whitesmoke;
 }
 
 #movie-page {
@@ -93,7 +99,7 @@
   flex-wrap: wrap;
   flex: 1;
   overflow: auto;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .movie-page-container {
