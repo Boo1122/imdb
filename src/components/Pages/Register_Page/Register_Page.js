@@ -48,6 +48,17 @@ export class RegisterPage {
     passwordInput.setAttribute("placeholder", "Enter Password");
     passwordInput.setAttribute("name", "email");
 
+    const confirmPasswordLabel = document.createElement("label");
+    passwordLabel.setAttribute("for", "password");
+    passwordLabel.id = "confirm-password-label";
+
+    const confirmPasswordInput = document.createElement("input");
+    confirmPasswordInput.id = "confirm-password-input";
+    confirmPasswordInput.setAttribute("type", "password");
+    confirmPasswordInput.setAttribute("placeholder", "Confirm Password");
+    confirmPasswordInput.setAttribute("name", "email");
+
+
     const message = document.createElement("p");
     message.id = "register-message";
     message.innerText =
@@ -73,7 +84,9 @@ export class RegisterPage {
     box2.appendChild(usernameInput);
 
     box2.appendChild(passwordLabel);
+    box2.appendChild(confirmPasswordLabel);
     box2.appendChild(passwordInput);
+    box2.appendChild(confirmPasswordInput);
 
     box2.appendChild(registerBtn);
     box2.appendChild(alreadyHaveAcc);
@@ -85,6 +98,7 @@ export class RegisterPage {
 
     const userName = document.getElementById("username-input");
     const userPass = document.getElementById("password-input");
+    const confirmUserPass = document.getElementById("confirm-password-input");
 
     regButton.addEventListener("click", () => {
 
@@ -95,13 +109,30 @@ export class RegisterPage {
           userName.style.borderColor = "none";
         }
 
+        if (confirmUserPass.value == "") {
+          confirmUserPass.style.borderColor = "red";
+        } else {
+          confirmUserPass.style.borderColor = "none";
+        }
+
         if (userPass.value == "") {
           userPass.style.borderColor = "red";
         } else {
           userPass.style.borderColor = "none";
         }
         alert('Please fill in your username and password')
+
         return false;
+      } else {
+        regButton.disabled = false;
+      }
+
+      if (userPass.value !== confirmUserPass.value) {
+        alert("Your password doesn't match, try again")
+        userPass.value = "";
+        userName.value = "";
+        confirmUserPass.value = "";
+        return false
       } else {
         regButton.disabled = false;
       }
