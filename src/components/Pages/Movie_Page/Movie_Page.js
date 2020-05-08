@@ -100,11 +100,16 @@ export class MoviePage {
       const editMovieBox = document.createElement("div");
       editMovieBox.classList.add("editMovieBox");
       anotherBox.appendChild(editMovieBox);
-
       deleteMovieBox.addEventListener("click", () => {
-        deleteMovieFromApi(movie._id, this.getMovies.bind(this));
-      });
 
+        if (confirm("Are you sure you want to DELETE this movie?")) {
+          deleteMovieFromApi(movie._id, this.getMovies.bind(this));
+          console.log("You pressed OK!");
+        } else {
+          console.log("You pressed Cancel!");
+        }
+      
+    });
       const token = Cookie.get("token");
 
       if (token) {
@@ -112,6 +117,7 @@ export class MoviePage {
         deleteMov.src = "./public/delete_button.png";
         deleteMov.classList.add("delete-single-movie");
         deleteMov.setAttribute("title", "Delete Movie");
+    
         deleteMovieBox.appendChild(deleteMov);
 
         const x = (id) => () => {
