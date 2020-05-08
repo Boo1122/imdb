@@ -23,7 +23,7 @@ export class Search {
     let img = document.createElement("img");
     img.id = "img";
     img.classList.add("imageSearch");
-    img.src = "./src/components/Home_Page_Header/search-9-24.png";
+    img.src = "./public/search-9-24.png";
 
     document.getElementById("body").appendChild(img);
   }
