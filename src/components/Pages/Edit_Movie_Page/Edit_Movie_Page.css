@@ -17,8 +17,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.699);
+  color: black;
+  background: white;
   width: 400px;
   height: 580px;
 }

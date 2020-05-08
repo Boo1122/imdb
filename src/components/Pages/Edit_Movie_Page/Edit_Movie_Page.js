@@ -16,8 +16,6 @@ export class EditMoviePage {
     editMovieWrapper.id = "editMovieContainer";
     editMovieWrapper.classList.add("page");
     editMovieWrapper.classList.add("editMovieWrapper-class");
-    editMovieWrapper.style.backgroundImage =
-      "url(./public/img/batman_bk2.jpeg)";
 
     const editMovieBox = document.createElement("div");
     editMovieBox.id = "editMovieBox";
