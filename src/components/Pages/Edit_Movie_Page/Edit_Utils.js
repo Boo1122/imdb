@@ -39,8 +39,6 @@ export function editMovieToAPI(id) {
         .then(response => response.json())
         .then(json => {
           console.log(json);
-
-
         });
     });
 }
