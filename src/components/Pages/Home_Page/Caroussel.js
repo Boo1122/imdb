@@ -55,8 +55,9 @@ export class Caroussel {
     innerDiv1.classList.add("innerDivClass");
     innerDiv1.classList.add("visible");
     innerDiv1.style.backgroundImage = "url('./public/reviewBkgr/film.jpg')";
-    innerDiv1.style.backgroundSize = "100%, 30%";
+    innerDiv1.style.backgroundSize = "100%, 100%";
     innerDiv1.style.backgroundRepeat = "no-repeat";
+    innerDiv1.style.backgroundPosition = "top";
 
     const icon1 = document.createElement("div");
     icon1.classList.add("userIcon");
@@ -88,7 +89,7 @@ export class Caroussel {
     innerDiv2.id = "innerDivID2";
     innerDiv2.classList.add("innerDivClass");
     innerDiv2.style.backgroundImage = "url('./public/reviewBkgr/film.jpg')";
-    innerDiv2.style.backgroundSize = "100%, 30px";
+    innerDiv2.style.backgroundSize = "100%, auto";
     innerDiv2.style.backgroundRepeat = "no-repeat";
 
     const icon2 = document.createElement("div");

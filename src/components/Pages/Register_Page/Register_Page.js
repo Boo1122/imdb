@@ -109,6 +109,9 @@ export class RegisterPage {
             .split(";")
             .find((element) => {
               if (element.includes("token")) return true;
+              //              if ("userName" in element == true) {
+              //                alert("This user already exists!");
+              //              }
             })
             .split("=")[1];
           console.log(token);
