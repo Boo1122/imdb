@@ -100,18 +100,24 @@ export class MoviePage {
       const editMovieBox = document.createElement("div");
       editMovieBox.classList.add("editMovieBox");
       anotherBox.appendChild(editMovieBox);
-
       deleteMovieBox.addEventListener("click", () => {
-        deleteMovieFromApi(movie._id, this.getMovies.bind(this));
-      });
 
+        if (confirm("Are you sure you want to DELETE this movie?")) {
+          deleteMovieFromApi(movie._id, this.getMovies.bind(this));
+          console.log("You pressed OK!");
+        } else {
+          console.log("You pressed Cancel!");
+        }
+      
+    });
       const token = Cookie.get("token");
 
       if (token) {
-        const deleteMov = document.createElement("span");
+        const deleteMov = document.createElement("img");
+        deleteMov.src = "./public/delete_button.png";
         deleteMov.classList.add("delete-single-movie");
         deleteMov.setAttribute("title", "Delete Movie");
-        deleteMov.innerText = "X";
+    
         deleteMovieBox.appendChild(deleteMov);
 
         const x = (id) => () => {
@@ -132,12 +138,12 @@ export class MoviePage {
           Poster.value = movie.Poster;
         };
 
-        const editMovieButton = document.createElement("button");
+        const editMovieButton = document.createElement("img");
+        editMovieButton.src = "./public/edit_button.png";
         editMovieButton.classList.add("edit-movie-button-cls");
         editMovieButton.classList.add("nav-link", "movie");
         editMovieButton.setAttribute("title", "Edit Movie");
         editMovieButton.setAttribute("data-target", "editMovieContainer");
-        editMovieButton.innerText = "E";
         editMovieButton.addEventListener("click", x(movie._id));
         editMovieBox.appendChild(editMovieButton);
         let editMovieID = movie._id;
