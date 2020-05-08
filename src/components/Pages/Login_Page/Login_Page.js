@@ -138,6 +138,7 @@ export class LoginPage {
       }
 
       if (!userName.value && !passWord.value) {
+
         if (userName.value == "") {
           userName.style.borderColor = "red";
         } else {
@@ -150,6 +151,16 @@ export class LoginPage {
           passWord.style.borderColor = "none";
         }
         alert('Please fill in your username and password')
+
+        return false;
+      } else {
+        logButton.disabled = false;
+      }
+
+      if (userName.value !== passWord.value) {
+        alert("Username or Password not found")
+        userName.value = "";
+        passWord.value = "";
         return false;
       } else {
         logButton.disabled = false;
