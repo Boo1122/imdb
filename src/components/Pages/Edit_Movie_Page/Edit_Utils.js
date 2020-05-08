@@ -16,29 +16,30 @@ export function editMovieToAPI(id) {
       let url = `https://movies-app-siit.herokuapp.com/movies/${id}`;
 
       fetch(url, {
-          method: "PUT", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors", // no-cors, *cors, same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json",
-            "X-Auth-Token": token
-          },
-          redirect: "follow", // manual, *follow, error
-          referrerPolicy: "no-referrer", // no-referrer, *client
-          body: JSON.stringify({
-            Title: `${title.value}`,
-            Year: `${year.value}`,
-            Country: `${country.value}`,
-            Language: `${language.value}`,
-            Type: `${type.value}`,
-            ImdbID: `${imdbID.value}`,
-            Poster: `${posterUrl.value}`
-          })
-        })
-        .then(response => response.json())
-        .then(json => {
+        method: "PUT", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          "X-Auth-Token": token,
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+          Title: `${title.value}`,
+          Year: `${year.value}`,
+          Country: `${country.value}`,
+          Language: `${language.value}`,
+          Type: `${type.value}`,
+          ImdbID: `${imdbID.value}`,
+          Poster: `${posterUrl.value}`,
+        }),
+      })
+        .then((response) => response.json())
+        .then((json) => {
           console.log(json);
-        });
+        })
+        .then(location.reload(false));
     });
 }
