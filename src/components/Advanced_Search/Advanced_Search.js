@@ -1,10 +1,6 @@
 import "./Advanced_Search.css";
-import {
-  generateURL
-} from "./Searchable_Fields";
-import {
-  navigate
-} from "../Navigate_History/Navigate_History";
+import { generateURL } from "./Searchable_Fields";
+import { navigate } from "../Navigate_History/Navigate_History";
 
 export class AdvancedSearch {
   constructor(fetchMoviesByUrl) {
@@ -17,8 +13,7 @@ export class AdvancedSearch {
 
     const containerBox = document.createElement("div");
     containerBox.id = "advancedBox";
-    containerBox.classList.add('showDropdown');
-
+    containerBox.classList.add("showDropdown");
 
     box.appendChild(containerBox);
 
@@ -38,7 +33,6 @@ export class AdvancedSearch {
     const titlelabel = document.createElement("p");
     titlelabel.classList = "search-title-label";
     titlelabel.innerText = "TITLE";
-
 
     const titleInput = document.createElement("input");
     titleInput.className = "search-title-input";
@@ -276,10 +270,10 @@ export class AdvancedSearch {
     typeSeries.appendChild(typeInput2);
   }
 
-
   executeSearch() {
     const searchButtonBox = document.createElement("div");
     searchButtonBox.id = "searchButtonBox";
+    searchButtonBox.classList.add = "universalDropdown";
 
     const searchButton = document.createElement("button");
     searchButton.id = "searchButton";
@@ -291,25 +285,23 @@ export class AdvancedSearch {
       this.fetchMoviesByUrl(url);
       navigate.nav(event);
 
-      let emptyTitleInput = document.getElementById("titleInput")
-      emptyTitleInput.value = '';
+      let emptyTitleInput = document.getElementById("titleInput");
+      emptyTitleInput.value = "";
 
-      let emptyGenreInput = document.getElementById("genreInput")
-      emptyGenreInput.value = '';
+      let emptyGenreInput = document.getElementById("genreInput");
+      emptyGenreInput.value = "";
 
-      let emptyYearInput = document.getElementById("yearInput")
-      emptyYearInput.value = '';
+      let emptyYearInput = document.getElementById("yearInput");
+      emptyYearInput.value = "";
 
-      let emptyLanguageInput = document.getElementById("languageInput")
-      emptyLanguageInput.value = '';
+      let emptyLanguageInput = document.getElementById("languageInput");
+      emptyLanguageInput.value = "";
 
-      let emptyCountryInput = document.getElementById("countryInput")
-      emptyCountryInput.value = '';
+      let emptyCountryInput = document.getElementById("countryInput");
+      emptyCountryInput.value = "";
 
-      let emptyRatingInput = document.getElementById("imdbRatingInput")
-      emptyRatingInput.value = '';
-
-
+      let emptyRatingInput = document.getElementById("imdbRatingInput");
+      emptyRatingInput.value = "";
     });
 
     document.getElementById("advancedBox").appendChild(searchButtonBox);
