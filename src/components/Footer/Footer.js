@@ -19,6 +19,11 @@ export class Footer {
     const MicroContainer3 = document.createElement("div");
     const MicroContainer4 = document.createElement("div");
 
+    MicroContainer2.innerHTML =
+      "Ardius Maria  $   Ioana Costea   $   Gafenco Bogdan  $   Cerlinca Marian    $  Dan George Caila";
+    MicroContainer2.style.color = "white";
+    MicroContainer2.style.fontSize = "20px";
+
     footerContainer.appendChild(MicroContainer1);
     footerContainer.appendChild(MicroContainer2);
     footerContainer.appendChild(MicroContainer3);
@@ -34,7 +39,7 @@ export class Footer {
     MicroContainer3.style.width = "25%";
     MicroContainer4.style.width = "25%";
 
-    MicroContainer1.innerHTML = "COPYRIGHT @ HUNGRYTEAM";
+    MicroContainer1.innerHTML = "COPYRIGHT @ VENUS TEAM";
     MicroContainer1.id = "Micro1";
 
     MicroContainer3.id = "Micro3";

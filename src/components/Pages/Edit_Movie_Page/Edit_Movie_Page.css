@@ -20,11 +20,11 @@
   color: black;
   background: white;
   width: 400px;
-  height: 580px;
+  height: 650px;
 }
 
 #editMovieBox input {
-  width: 200px;
+  width: 250px;
   height: 20px;
   margin-bottom: 10px;
   border-radius: 5%;
@@ -50,7 +50,7 @@
   padding: 11px 23px;
   text-decoration: none;
   text-shadow: 0px -1px 0px #2b665e;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 #editMovieDetailsButton:hover {
@@ -65,6 +65,7 @@
   font-size: 30px;
   padding-bottom: 20px;
   font-family: "Pacifico", cursive;
+  margin-top: 10px;
 }
 
 .movie-poster {
