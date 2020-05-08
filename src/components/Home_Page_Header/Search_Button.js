@@ -1,5 +1,7 @@
 import "./Search_Button.css";
-import { AdvancedSearch } from "../Advanced_Search/Advanced_Search";
+import {
+  AdvancedSearch
+} from "../Advanced_Search/Advanced_Search";
 
 export class Search {
   constructor() {
@@ -36,7 +38,7 @@ export class Search {
       !event.target.classList.contains("search-imdbRating-input")
     ) {
       container.classList.add("showDropdown");
-      console.log("dsadasdads");
+      // console.log("dsadasdads");
     }
   }
 }
