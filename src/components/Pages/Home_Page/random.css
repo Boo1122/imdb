@@ -48,11 +48,11 @@
 
 @media (max-width: 575.98px) {
   #randomDiv {
-    width: 70%;
-    font-size: 70px;
+    width: 100%;
+    font-size: 90px;
   }
   #divWrap {
-    width: 70%;
+    width: 100%;
   }
   #divText {
     width: 70%;

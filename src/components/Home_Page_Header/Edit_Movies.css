@@ -30,3 +30,82 @@
   margin-right: 30px;
   order: 4;
 }
+
+@media (max-width: 575.98px) {
+  #logOutBtn {
+    width: 70px;
+    font-size: 1rem;
+  }
+  .logout {
+    width: 70px;
+    font-size: 1rem;
+  }
+  #addmovie {
+    width: 70px;
+    font-size: 0.7rem;
+  }
+  .edit {
+    width: 100px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #logOutBtn {
+    width: 100px;
+    margin-top: 30px;
+  }
+  .logout {
+    width: 100px;
+    font-size: 1.2rem;
+  }
+  #addmovie {
+    width: 100px;
+    font-size: 0.9rem;
+    margin-right: 70px;
+  }
+  .edit {
+    width: 100px;
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+@media (min-width: 1200px) {
+  .edit {
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+
+    background: #272727;
+
+    color: #ffff00;
+    font-size: 1.8rem;
+    border: none;
+    font-family: "Pacifico", cursive;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .edit:hover {
+    font-family: "Pacifico", cursive;
+    color: rgba(233, 27, 16, 0.8);
+    border-radius: 20px;
+
+    background: #ffff00;
+    box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
+      -10px -10px 30px rgba(233, 27, 16, 0.8);
+    outline: none;
+  }
+
+  #addMovie {
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 30px;
+    order: 4;
+  }
+}

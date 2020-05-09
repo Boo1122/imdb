@@ -160,3 +160,75 @@ body {
     -10px -10px 30px rgba(233, 27, 16, 0.8);
   outline: none;
 }
+
+@media (max-width: 575.99px) {
+  .home {
+    width: 60px;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  #movBtn {
+    width: 70px;
+    margin-left: 10px;
+  }
+  .movies {
+    font-size: 1rem;
+  }
+  #loginBtn {
+    width: 70px;
+    margin-left: -5px;
+  }
+  .login {
+    font-size: 1rem;
+  }
+  #registerBtn {
+    width: 70px;
+    margin-left: -20px;
+    margin-right: -100px;
+  }
+  .register {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .home {
+    width: 90px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  #movBtn {
+    width: 150px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+  .movies {
+    font-size: 1.2rem;
+  }
+  #loginBtn {
+    width: 110px;
+    margin-left: -5px;
+    margin-top: 27px;
+  }
+  .login {
+    font-size: 1.2rem;
+  }
+  #registerBtn {
+    width: 110px;
+    margin-left: -50px;
+    margin-right: -100px;
+    margin-top: 7px;
+  }
+  .register {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+@media (min-width: 1200px) {
+}

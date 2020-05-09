@@ -45,3 +45,18 @@
   color: white;
   background: #ffff80;
 }
+
+@media (max-width: 575.98px) {
+  #footerContainer {
+    height: 10%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  #Micro1 {
+    font-size: 7px;
+  }
+  #Micro3 {
+    font-size: 7px;
+  }
+}
