@@ -25,7 +25,6 @@
   font-family: "Geo", sans-serif;
   margin-bottom: 10px;
   cursor: pointer;
-
 }
 
 .nr-of-pages:hover {
@@ -148,10 +147,7 @@
   align-self: flex-end;
   margin-top: 50px;
   cursor: pointer;
-  color: white;
-  padding: 7px;
-  background: black;
-  border-radius: 60%;
+  width: 27px;
 }
 
 .deleteMovie {
@@ -162,12 +158,8 @@
 }
 
 .edit-movie-button-cls {
-  margin-top: 30px;
   cursor: pointer;
-  color: white;
-  padding: 7px;
-  background: black;
-  border-radius: 60%;
+  width: 27px;
 }
 
 .editMovieBox {

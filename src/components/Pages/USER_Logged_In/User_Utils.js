@@ -17,7 +17,7 @@ export function addMovieToAPI() {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        "X-Auth-Token": token,
+        "X-Auth-Token": token
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *client
@@ -25,13 +25,14 @@ export function addMovieToAPI() {
         Title: title.value,
         Year: year.value,
         ImdbID: imdbID.value,
-        Poster: posterUrl.value,
-      }),
+        Poster: posterUrl.value
+      })
     })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-
+      .then(response => response.json())
+      .then(() => {
+        location.reload(false);
+      })
+      .then(json => {
         if (json.accessToken) {
           let emptyTitleInput = document.getElementById("movie-Title-id");
           emptyTitleInput.value = "";

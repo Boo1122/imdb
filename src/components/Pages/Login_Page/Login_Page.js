@@ -165,6 +165,9 @@ export class LoginPage {
       } else {
         logButton.disabled = false;
       }
+      if (userName.value !== userName.value && passWord.value !== passWord.value) {
+        alert("Username and Password do not match, can't login!")
+      }
 
       fetch("https://movies-app-siit.herokuapp.com/auth/login", {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
