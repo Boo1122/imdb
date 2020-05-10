@@ -5,7 +5,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-family: "Geo", sans-serif;
   font-size: large;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,6 +37,7 @@
 #movieBox span {
   margin-top: 20px;
   margin-bottom: 10px;
+  font-size: 1.7rem;
 }
 
 .type-movie-container {
@@ -84,7 +85,6 @@
 .title-container {
   color: #346178;
   font-weight: bold;
-  font-size: 30px;
   padding-bottom: 20px;
   font-family: "Geo", sans-serif;
 }

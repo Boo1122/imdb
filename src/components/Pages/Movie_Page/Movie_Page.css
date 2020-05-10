@@ -132,8 +132,8 @@
 .posters p {
   display: flex;
   color: white;
-  font-size: 0.85rem;
-  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-family: "Geo", sans-serif;
   outline: none;
   padding-left: 10px;
   padding-right: 10px;
