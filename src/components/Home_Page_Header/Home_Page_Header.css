@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Great+Vibes&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
-
 html,
 body {
   width: 100%;
@@ -22,16 +19,16 @@ body {
   background: #272727;
 
   color: #ffff00;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   border: none;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   text-align: center;
   outline: none;
   cursor: pointer;
 }
 
 .btn:hover {
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
 
@@ -53,9 +50,9 @@ body {
   background: #272727;
 
   color: #ffff00;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   border: none;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   text-align: center;
   outline: none;
   order: 4;
@@ -63,7 +60,7 @@ body {
 }
 
 .login:hover {
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
   border: none;
@@ -118,15 +115,15 @@ body {
   background: #272727;
 
   color: #ffff00;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   border: none;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   outline: none;
   cursor: pointer;
 }
 
 .register:hover {
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
   border: none;
