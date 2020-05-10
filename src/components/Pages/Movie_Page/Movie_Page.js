@@ -1,9 +1,17 @@
 import "./Movie_Page.css";
-import { navigate } from "../../Navigate_History/Navigate_History";
+import {
+  navigate
+} from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
-import { deleteMovieFromApi } from "../USER_Logged_In/Delete_Movie";
-import { EditMoviePage } from "../Edit_Movie_Page/Edit_Movie_Page";
-import { editMovieToAPI } from "../Edit_Movie_Page/Edit_Utils";
+import {
+  deleteMovieFromApi
+} from "../USER_Logged_In/Delete_Movie";
+import {
+  EditMoviePage
+} from "../Edit_Movie_Page/Edit_Movie_Page";
+import {
+  editMovieToAPI
+} from "../Edit_Movie_Page/Edit_Utils";
 export class MoviePage {
   constructor() {
     this.number = 10;
@@ -108,8 +116,8 @@ export class MoviePage {
         } else {
           console.log("You pressed Cancel!");
         }
-      
-    });
+
+      });
       const token = Cookie.get("token");
 
       if (token) {
@@ -117,7 +125,7 @@ export class MoviePage {
         deleteMov.src = "./public/delete_button.png";
         deleteMov.classList.add("delete-single-movie");
         deleteMov.setAttribute("title", "Delete Movie");
-    
+
         deleteMovieBox.appendChild(deleteMov);
 
         const x = (id) => () => {
@@ -222,7 +230,8 @@ export class MoviePage {
     paginationDiv.appendChild(pagesContainer);
     paginationDiv.appendChild(previous);
 
-    for (let i = 1; i <= 15; i++) {
+    for (let i = 1; i <= 10; i++) {
+
       const page = document.createElement("button");
       page.id = `${i}_pageButton`;
       page.classList.add("nr-of-pages");
