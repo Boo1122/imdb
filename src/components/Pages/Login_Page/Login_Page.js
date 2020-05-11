@@ -164,6 +164,7 @@ export class LoginPage {
       })
         .then(response => response.json())
         .then(json => {
+          json.message !== undefined ? alert(json.message) : "";
           console.log(json);
 
           if (json.accessToken) {
@@ -182,7 +183,7 @@ export class LoginPage {
         });
     });
     const inputpassword = document.getElementById("password-input-login");
-    inputpassword.addEventListener("keyup", function(event) {
+    inputpassword.addEventListener("keyup", function (event) {
       if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("loginButton").click();
