@@ -19,14 +19,20 @@
   align-items: center;
   background-color: white;
   width: 400px;
-  height: 580px;
-  font-size: 1.7rem;
+  height: 730px;
+  font-size: 1.5rem;
 }
 
 .movie-Title-class,
 .movieYear,
 .movie-ImdbID-class,
-.movie-Poster-class {
+.movie-Poster-class,
+.add-movie-country,
+.add-movie-Language,
+.add-movie-Runtime,
+.add-movie-imdbRating,
+.add-movie-imdbVotes,
+.add-movie-Genre {
   width: 200px;
   height: 20px;
   margin-bottom: 10px;
@@ -35,9 +41,8 @@
 }
 
 #movieBox span {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 1.7rem;
+  margin-bottom: 4px;
+  font-size: 1.2rem;
 }
 
 .type-movie-container {
@@ -73,7 +78,7 @@
   padding: 11px 23px;
   text-decoration: none;
   text-shadow: 0px -1px 0px #2b665e;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 #addMovieButton:hover {
