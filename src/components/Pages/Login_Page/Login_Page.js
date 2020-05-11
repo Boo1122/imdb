@@ -122,10 +122,7 @@ export class LoginPage {
     let userName = document.getElementById("username-input-login");
     let passWord = document.getElementById("password-input-login");
 
-
-
     logButton.addEventListener("click", () => {
-
       if (!userName.value && !passWord.value) {
         if (userName.value == "") {
           userName.style.borderColor = "red";
@@ -138,38 +135,38 @@ export class LoginPage {
         } else {
           passWord.style.borderColor = "none";
         }
-        alert('Please fill in your username and password')
+        alert("Please fill in your username and password");
         return false;
       } else {
         logButton.disabled = false;
       }
-      if (userName.value !== userName.value && passWord.value !== passWord.value) {
-        alert("Username and Password do not match, can't login!")
+      if (
+        userName.value !== userName.value &&
+        passWord.value !== passWord.value
+      ) {
+        alert("Username and Password do not match, can't login!");
       }
 
       fetch("https://movies-app-siit.herokuapp.com/auth/login", {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors", // no-cors, *cors, same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json",
-          },
-          redirect: "follow", // manual, *follow, error
-          referrerPolicy: "no-referrer", // no-referrer, *client
-          body: JSON.stringify({
-            username: `${userName.value}`,
-            password: `${passWord.value}`,
-          }),
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json"
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+          username: `${userName.value}`,
+          password: `${passWord.value}`
         })
-        .then((response) => response.json())
-        .then((json) => {
+      })
+        .then(response => response.json())
+        .then(json => {
           console.log(json);
 
-
-
           if (json.accessToken) {
-
             Cookie.set("token", json.accessToken);
             let eraseInputUser = document.getElementById(
               "username-input-login"
@@ -181,11 +178,15 @@ export class LoginPage {
             );
             eraseInputPass.value = "";
             this.handleButtonTransferLogin();
-
           }
-
-        })
-        
+        });
+    });
+    const inputpassword = document.getElementById("password-input-login");
+    inputpassword.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("loginButton").click();
+      }
     });
   }
 
