@@ -173,6 +173,13 @@ export class RegisterPage {
         
         });
     });
+    const inputCheckPassword = document.getElementById("confirm-password-input");
+  inputCheckPassword.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById("register-btn-form").click();
+    }
+  });
   }
 
   handleButtonsTransfetLogout() {
