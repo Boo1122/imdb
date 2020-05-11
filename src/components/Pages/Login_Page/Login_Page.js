@@ -181,12 +181,11 @@ export class LoginPage {
             );
             eraseInputPass.value = "";
             this.handleButtonTransferLogin();
+
           }
 
-
-
-
-        });
+        })
+        
     });
   }
 

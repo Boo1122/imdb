@@ -170,6 +170,7 @@ export class RegisterPage {
           emptyPassInput.value = "";
 
           this.handleButtonsTransfetLogout();
+        
         });
     });
   }
