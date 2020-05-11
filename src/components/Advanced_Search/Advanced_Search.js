@@ -302,6 +302,12 @@ export class AdvancedSearch {
 
       let emptyRatingInput = document.getElementById("imdbRatingInput");
       emptyRatingInput.value = "";
+
+      const movieradioBtn = document.getElementById("movieInput");
+      movieradioBtn.checked = false;
+
+      const tvSeriesRadioBtn = document.getElementById("TV-Series");
+      tvSeriesRadioBtn.checked = false;
     });
 
     document.getElementById("advancedBox").appendChild(searchButtonBox);
