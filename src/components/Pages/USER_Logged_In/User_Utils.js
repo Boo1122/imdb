@@ -6,6 +6,14 @@ export function addMovieToAPI() {
     const year = document.getElementById("movieYear-id");
     const imdbID = document.getElementById("movie-ImdbID-id");
     const posterUrl = document.getElementById("GET-THIS");
+
+    const movieCountry = document.getElementById("add-movie-country");
+    const movieLanguage = document.getElementById("add-movie-language");
+    const movieRuntime = document.getElementById("add-movie-runtime");
+    const movieImdbRating = document.getElementById("add-movie-rating");
+    const movieImdbVotes = document.getElementById("add-movie-imdbVotes");
+    const movieGenre = document.getElementById("add-movie-genre");
+
     console.log(posterUrl);
 
     const token = Cookie.get("token");
@@ -17,7 +25,7 @@ export function addMovieToAPI() {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        "X-Auth-Token": token
+        "X-Auth-Token": token,
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *client
@@ -25,14 +33,20 @@ export function addMovieToAPI() {
         Title: title.value,
         Year: year.value,
         ImdbID: imdbID.value,
-        Poster: posterUrl.value
-      })
+        Poster: posterUrl.value,
+        Country: movieCountry.value,
+        Language: movieLanguage.value,
+        Runtime: movieRuntime.value,
+        imdbRating: movieImdbRating.value,
+        imdbVotes: movieImdbVotes.value,
+        Genre: movieGenre.value,
+      }),
     })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then(() => {
         location.reload(false);
       })
-      .then(json => {
+      .then((json) => {
         if (json.accessToken) {
           let emptyTitleInput = document.getElementById("movie-Title-id");
           emptyTitleInput.value = "";
@@ -50,7 +64,7 @@ export function addMovieToAPI() {
   });
 
   const inputImageURL = document.getElementById("GET-THIS");
-  inputImageURL.addEventListener("keyup", function(event) {
+  inputImageURL.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
       document.getElementById("addMovieButton").click();

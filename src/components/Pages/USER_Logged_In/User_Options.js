@@ -1,8 +1,6 @@
 import "./User_Options.css";
 import Cookie from "js-cookie";
-import {
-  addMovieToAPI
-} from "./User_Utils";
+import { addMovieToAPI } from "./User_Utils";
 
 export class UserOptions {
   constructor() {
@@ -50,6 +48,60 @@ export class UserOptions {
 
     movieBox.appendChild(spanYear);
     movieBox.appendChild(movieYear);
+
+    const spanGenre = document.createElement("span");
+    spanGenre.innerText = "Genre";
+    const movieGenre = document.createElement("input");
+    movieGenre.classList.add("add-movie-Genre");
+    movieGenre.id = "add-movie-genre";
+
+    movieBox.appendChild(spanGenre);
+    movieBox.appendChild(movieGenre);
+
+    const spanCountry = document.createElement("span");
+    spanCountry.innerText = "Country";
+    const movieCountry = document.createElement("input");
+    movieCountry.classList.add("add-movie-country");
+    movieCountry.id = "add-movie-country";
+
+    movieBox.appendChild(spanCountry);
+    movieBox.appendChild(movieCountry);
+
+    const spanLanguage = document.createElement("span");
+    spanLanguage.innerText = "Language";
+    const movieLanguage = document.createElement("input");
+    movieLanguage.classList.add("add-movie-Language");
+    movieLanguage.id = "add-movie-language";
+
+    movieBox.appendChild(spanLanguage);
+    movieBox.appendChild(movieLanguage);
+
+    const spanRuntime = document.createElement("span");
+    spanRuntime.innerText = "Runtime";
+    const movieRuntime = document.createElement("input");
+    movieRuntime.classList.add("add-movie-Runtime");
+    movieRuntime.id = "add-movie-runtime";
+
+    movieBox.appendChild(spanRuntime);
+    movieBox.appendChild(movieRuntime);
+
+    const spanImdbRating = document.createElement("span");
+    spanImdbRating.innerText = "IMDb Rating";
+    const movieImdbRating = document.createElement("input");
+    movieImdbRating.classList.add("add-movie-imdbRating");
+    movieImdbRating.id = "add-movie-rating";
+
+    movieBox.appendChild(spanImdbRating);
+    movieBox.appendChild(movieImdbRating);
+
+    const spanImdbVotes = document.createElement("span");
+    spanImdbVotes.innerText = "IMDb Votes";
+    const movieImdbVotes = document.createElement("input");
+    movieImdbVotes.classList.add("add-movie-imdbVotes");
+    movieImdbVotes.id = "add-movie-imdbVotes";
+
+    movieBox.appendChild(spanImdbVotes);
+    movieBox.appendChild(movieImdbVotes);
 
     const spanImdbID = document.createElement("span");
     spanImdbID.classList.add("span-ImdbID-class");
