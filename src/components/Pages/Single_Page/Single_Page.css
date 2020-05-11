@@ -73,6 +73,7 @@
   max-width: 800px;
   margin-left: 20px;
   margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .poster-info {
@@ -84,9 +85,9 @@
 }
 
 .single-poster-img {
-  margin: 60px 10px 10px 30px;
+  margin: 35px 10px 10px 30px;
   border-radius: 10%;
-  height: 35rem;
+  height: 38rem;
 }
 
 .title-div {
@@ -178,7 +179,6 @@
 .rating-container {
   display: inline-flex;
   align-items: center;
-  margin-top: 20px;
 }
 
 .bubbles-div {
@@ -208,10 +208,6 @@
   margin-top: 10px;
 }
 
-.buttons-div {
-  margin-top: 0;
-}
-
 .buttons-div img {
   height: 20px;
   color: black;
@@ -236,7 +232,6 @@
   width: 552px;
   height: 272px;
   position: relative;
-  margin-top: 25px;
 }
 
 #trailer-background-div {
@@ -251,4 +246,11 @@
 
 #trailer-container {
   position: absolute;
+}
+
+.movie-plot {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: white;
 }
