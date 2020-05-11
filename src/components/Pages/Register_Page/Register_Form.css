@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   background: #272727;
   color: rgb(81, 99, 123);
-
+  padding: 30px;
   /*font-family: 'Geo', sans-serif;*/
   font-family: "Geo", sans-serif;
   font-size: large;
