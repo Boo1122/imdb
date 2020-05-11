@@ -5,7 +5,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  font-family: ProximaNova-Medium, Arial, sans-serif;
+  font-family: "Geo", sans-serif;
   font-size: large;
   background-position: center;
   background-repeat: no-repeat;
@@ -33,6 +33,11 @@
 
 #editMovieBox span {
   margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.title-container {
+  font-size: 2rem;
 }
 
 #editMovieDetailsButton {
@@ -62,9 +67,9 @@
 .title-container {
   color: #346178;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 1.5rem;
   padding-bottom: 20px;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   margin-top: 10px;
 }
 

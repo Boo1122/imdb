@@ -6,9 +6,9 @@
   background: #272727;
 
   color: #ffff00;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   border: none;
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   text-align: center;
   outline: none;
   order: 4;
@@ -16,7 +16,7 @@
 }
 
 .logout:hover {
-  font-family: "Pacifico", cursive;
+  font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
   border: none;
