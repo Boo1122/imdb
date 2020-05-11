@@ -137,7 +137,7 @@ body {
 @media (max-width: 575.99px) {
   .home {
     width: 60px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 10px;
   }
   #movBtn {
