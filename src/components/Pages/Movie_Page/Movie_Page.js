@@ -50,7 +50,6 @@ export class MoviePage {
         this.renderMovieList();
         this.currentPage = this.movieData.pagination.currentPage;
         this.setCurrentPage();
-        console.log(movieData);
       });
   }
 

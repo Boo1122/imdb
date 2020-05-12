@@ -165,7 +165,6 @@ export class LoginPage {
         .then((response) => response.json())
         .then((json) => {
           json.message !== undefined ? alert(json.message) : "";
-          console.log(json);
 
           if (json.accessToken) {
             Cookie.set("token", json.accessToken);

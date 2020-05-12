@@ -23,7 +23,6 @@ export class LogOutPage {
           if (element.includes("token")) return true;
         })
         .split("=")[1];
-      console.log(token);
 
       fetch("https://movies-app-siit.herokuapp.com/auth/logout", {
         method: "GET", // *GET, POST, PUT, DELETE, etc.
@@ -38,8 +37,6 @@ export class LogOutPage {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
-
           document.cookie = `token=${json.accessToken} '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
 
           this.handleButtonsTransfetLogout();

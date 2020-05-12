@@ -14,7 +14,7 @@ export function addMovieToAPI() {
     const movieImdbVotes = document.getElementById("add-movie-imdbVotes");
     const movieGenre = document.getElementById("add-movie-genre");
 
-    console.log(posterUrl);
+    //console.log(posterUrl);
 
     const token = Cookie.get("token");
 

@@ -27,7 +27,6 @@ export function generateURL() {
       title.value == endUrl[0]
         ? endUrl.push(checkTitle)
         : endUrl.push("&" + checkTitle);
-      console.log(endUrl);
     } else {
       let checkTitle = "";
       return checkTitle;
@@ -76,7 +75,6 @@ export function generateURL() {
       checkImdbRating == endUrl[0]
         ? endUrl.push(checkImdbRating)
         : endUrl.push("&" + checkImdbRating);
-      console.log(endUrl);
     } else {
       let checkImdbRating = "";
       return checkImdbRating;
@@ -89,7 +87,6 @@ export function generateURL() {
       checkGenre == endUrl[0]
         ? endUrl.push(checkGenre)
         : endUrl.push("&" + checkGenre);
-      console.log(endUrl);
     } else {
       let checkGenre = "";
       return checkGenre;
@@ -102,7 +99,6 @@ export function generateURL() {
     if (series.checked) {
       let tv = `Type=series`;
       tv == endUrl[0] ? endUrl.push("&" + tv) : endUrl.push(tv);
-      console.log(endUrl);
     } else {
       let tv = "";
       return tv;
@@ -141,17 +137,15 @@ export function generateURL() {
   checkGenreField();
 
   const realUrl = endUrl.join("");
-  console.log(realUrl);
-  const url = `https://movies-app-siit.herokuapp.com/movies?${realUrl}`;
 
-  console.log(url);
+  const url = `https://movies-app-siit.herokuapp.com/movies?${realUrl}`;
 
   return url;
 }
 
 export function searchableFields() {
   const url = generateURL();
-  console.log(url);
+
   fetch(url)
     .then((response) => response.json())
     .then((searchableFields) => {

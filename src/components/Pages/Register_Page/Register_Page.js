@@ -58,7 +58,6 @@ export class RegisterPage {
     confirmPasswordInput.setAttribute("placeholder", "Confirm Password");
     confirmPasswordInput.setAttribute("name", "email");
 
-
     const message = document.createElement("p");
     message.id = "register-message";
     message.innerText =
@@ -101,7 +100,6 @@ export class RegisterPage {
     const confirmUserPass = document.getElementById("confirm-password-input");
 
     regButton.addEventListener("click", () => {
-
       if (!userName.value && !userPass.value) {
         if (userName.value == "") {
           userName.style.borderColor = "red";
@@ -120,7 +118,7 @@ export class RegisterPage {
         } else {
           userPass.style.borderColor = "none";
         }
-        alert('Please fill in your username and password')
+        alert("Please fill in your username and password");
 
         return false;
       } else {
@@ -128,11 +126,11 @@ export class RegisterPage {
       }
 
       if (userPass.value !== confirmUserPass.value) {
-        alert("Your password doesn't match, try again")
+        alert("Your password doesn't match, try again");
         userPass.value = "";
         userName.value = "";
         confirmUserPass.value = "";
-        return false
+        return false;
       } else {
         regButton.disabled = false;
       }
@@ -161,7 +159,6 @@ export class RegisterPage {
               if (element.includes("token")) return true;
             })
             .split("=")[1];
-          console.log(token);
 
           let emptyUserInput = document.getElementById("username-input");
           emptyUserInput.value = "";
@@ -170,16 +167,17 @@ export class RegisterPage {
           emptyPassInput.value = "";
 
           this.handleButtonsTransfetLogout();
-        
         });
     });
-    const inputCheckPassword = document.getElementById("confirm-password-input");
-  inputCheckPassword.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      document.getElementById("register-btn-form").click();
-    }
-  });
+    const inputCheckPassword = document.getElementById(
+      "confirm-password-input"
+    );
+    inputCheckPassword.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("register-btn-form").click();
+      }
+    });
   }
 
   handleButtonsTransfetLogout() {

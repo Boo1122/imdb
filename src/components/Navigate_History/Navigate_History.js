@@ -39,7 +39,7 @@ export const navigate = {
   },
 
   poppin: (ev) => {
-    console.log(location.hash, "popstate event");
+    //console.log(location.hash, "popstate event");
     let hash = location.hash.replace("#", "");
     document.querySelector(".active").classList.remove("active");
     document.getElementById(hash).classList.add("active");

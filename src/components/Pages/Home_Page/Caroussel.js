@@ -367,7 +367,6 @@ export class Caroussel {
     const prev = document.getElementById("prev");
     prev.addEventListener("click", () => {
       this.carousel(null, false);
-      console.log(this);
     });
   }
 
