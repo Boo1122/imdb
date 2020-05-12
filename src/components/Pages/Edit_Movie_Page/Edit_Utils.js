@@ -34,7 +34,7 @@ export function editMovieToAPI(id) {
           Country: `${country.value}`,
           Language: `${language.value}`,
           Type: `${type.value}`,
-          ImdbID: `${imdbID.value}`,
+          imdbID: `${imdbID.value}`,
           Poster: `${posterUrl.value}`,
           Genre: `${genre.value}`,
           Runtime: `${runtime.value}`,

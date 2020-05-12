@@ -1,11 +1,11 @@
 #advancedBox {
   /* display: none; */
-  height: 25rem;
+  height: 30rem;
   overflow: auto;
   padding: 10px;
   color: whitesmoke;
   margin-top: 50px;
-
+  text-align: center;
   background-color: black;
   border-radius: 8px;
   box-shadow: 1px 1px #000000d5, 2px 2px #000000d5, 3px 3px #000000d5;

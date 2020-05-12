@@ -20,9 +20,10 @@
   align-items: center;
   background-color: white;
   width: 400px;
-  height: 860px;
   font-size: 1rem;
   margin: 1rem;
+  height: 970px;
+  overflow: auto;
 }
 
 .movie-Title-class,
@@ -130,4 +131,9 @@
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0px -1px 0px #2b665e;
+}
+
+#add-movie-plot {
+  height: 70px;
+  width: 280px;
 }
