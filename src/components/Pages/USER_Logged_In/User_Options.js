@@ -137,6 +137,14 @@ export class UserOptions {
     movieBox.appendChild(spanPoster);
     movieBox.appendChild(moviePoster);
 
+    const spanMoviePlot = document.createElement("span");
+    spanMoviePlot.innerText = "Movie plot";
+    const moviePlot = document.createElement("textarea");
+    moviePlot.id = "add-movie-plot";
+
+    movieBox.appendChild(spanMoviePlot);
+    movieBox.appendChild(moviePlot);
+
     moviePoster.appendChild(moviePosterInput);
     //moviePoster.appendChild(uploadPosterButton);
 

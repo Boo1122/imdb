@@ -13,6 +13,7 @@ export function addMovieToAPI() {
     const movieImdbRating = document.getElementById("add-movie-rating");
     const movieImdbVotes = document.getElementById("add-movie-imdbVotes");
     const movieGenre = document.getElementById("add-movie-genre");
+    const moviePlot = document.getElementById("add-movie-plot");
 
     console.log(posterUrl);
 
@@ -32,7 +33,7 @@ export function addMovieToAPI() {
       body: JSON.stringify({
         Title: title.value,
         Year: year.value,
-        ImdbID: imdbID.value,
+        imdbID: imdbID.value,
         Poster: posterUrl.value,
         Country: movieCountry.value,
         Language: movieLanguage.value,
@@ -40,6 +41,7 @@ export function addMovieToAPI() {
         imdbRating: movieImdbRating.value,
         imdbVotes: movieImdbVotes.value,
         Genre: movieGenre.value,
+        Plot: moviePlot.value,
       }),
     })
       .then((response) => response.json())
