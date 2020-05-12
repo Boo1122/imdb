@@ -134,6 +134,10 @@ export class MoviePage {
           ImdbID.value = movie.imdbID;
           let Poster = document.querySelector("#edit-movie-poster");
           Poster.value = movie.Poster;
+          let genre = document.querySelector("#edit-movie-genre");
+          genre.value = movie.Genre;
+          let runtime = document.querySelector("#edit-movie-runtime");
+          runtime.value = movie.Runtime;
         };
 
         const editMovieButton = document.createElement("img");
