@@ -8,6 +8,7 @@
   text-align: center;
   background-color: black;
   border-radius: 8px;
+  border: 1px solid white;
   box-shadow: 1px 1px #000000d5, 2px 2px #000000d5, 3px 3px #000000d5;
 
   -webkit-transition: background-color 2s ease-out;
