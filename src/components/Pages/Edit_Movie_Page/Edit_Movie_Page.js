@@ -108,5 +108,4 @@ export class EditMoviePage {
 
     editMovieBox.appendChild(editMovieDetailsButton);
   }
-  // editMovieToAPI()
 }
