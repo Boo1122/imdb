@@ -11,6 +11,8 @@ export function editMovieToAPI(id) {
       const posterUrl = document.getElementById("edit-movie-poster");
       const country = document.getElementById("edit-movie-country");
       const language = document.getElementById("edit-movie-language");
+      const genre = document.getElementById("edit-movie-genre");
+      const runtime = document.getElementById("edit-movie-runtime");
 
       const token = Cookie.get("token");
       let url = `https://movies-app-siit.herokuapp.com/movies/${id}`;
@@ -34,6 +36,8 @@ export function editMovieToAPI(id) {
           Type: `${type.value}`,
           ImdbID: `${imdbID.value}`,
           Poster: `${posterUrl.value}`,
+          Genre: `${genre.value}`,
+          Runtime: `${runtime.value}`,
         }),
       })
         .then((response) => response.json())

@@ -20,7 +20,8 @@
   color: black;
   background: white;
   width: 400px;
-  height: 650px;
+  height: 800px;
+  margin: 1rem;
 }
 
 #editMovieBox input {

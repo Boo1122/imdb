@@ -45,6 +45,22 @@ export class EditMoviePage {
     editMovieBox.appendChild(spanYear);
     editMovieBox.appendChild(movieYear);
 
+    const spanGenre = document.createElement("span");
+    spanGenre.innerText = "Genre";
+    const movieGenre = document.createElement("input");
+    movieGenre.id = "edit-movie-genre";
+
+    editMovieBox.appendChild(spanGenre);
+    editMovieBox.appendChild(movieGenre);
+
+    const spanRuntime = document.createElement("span");
+    spanRuntime.innerText = "Runtime";
+    const movieRuntime = document.createElement("input");
+    movieRuntime.id = "edit-movie-runtime";
+
+    editMovieBox.appendChild(spanRuntime);
+    editMovieBox.appendChild(movieRuntime);
+
     const spanCountry = document.createElement("span");
     spanCountry.innerText = "Country";
     const movieCountry = document.createElement("input");
@@ -76,7 +92,6 @@ export class EditMoviePage {
 
     editMovieBox.appendChild(spanImdbID);
     editMovieBox.appendChild(movieImdbID);
-
 
     const spanPoster = document.createElement("span");
     spanPoster.innerText = "Poster URL";

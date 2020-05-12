@@ -46,3 +46,51 @@
   font-family: "Patrick Hand SC", cursive;
   font-family: "Geo", sans-serif;
 }
+
+@media (max-width: 575.98px) {
+  #randomDiv {
+    width: 100%;
+    font-size: 90px;
+  }
+  #divWrap {
+    width: 100%;
+  }
+  #divText {
+    width: 70%;
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #randomDiv {
+    width: 100%;
+    font-size: 120px;
+  }
+  #divWrap {
+    width: 100%;
+  }
+  #divText {
+    width: 90%;
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #randomDiv {
+    width: 100%;
+    font-size: 150px;
+  }
+  #divWrap {
+    width: 100%;
+  }
+  #divText {
+    width: 100%;
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+@media (min-width: 1200px) {
+}

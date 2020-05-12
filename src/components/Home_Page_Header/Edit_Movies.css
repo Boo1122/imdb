@@ -30,3 +30,52 @@
   margin-right: 30px;
   order: 4;
 }
+
+@media (max-width: 575.98px) {
+  #logOutBtn {
+    width: 70px;
+    font-size: 1rem;
+  }
+  .logout {
+    width: 70px;
+    font-size: 1rem;
+  }
+  #addmovie {
+    width: 70px;
+    font-size: 0.7rem;
+  }
+  .edit {
+    width: 100px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #logOutBtn {
+    width: 100px;
+    margin-top: 30px;
+  }
+  .logout {
+    width: 100px;
+    font-size: 1.2rem;
+  }
+  #addmovie {
+    width: 100px;
+    font-size: 0.9rem;
+    margin-right: 70px;
+  }
+  .edit {
+    width: 100px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+@media (min-width: 1200px) {
+}
