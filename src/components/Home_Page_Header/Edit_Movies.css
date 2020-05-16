@@ -1,4 +1,4 @@
-.edit {
+.add-movie {
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
 
@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 
-.edit:hover {
+.add-movie:hover {
   font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
@@ -24,7 +24,7 @@
   outline: none;
 }
 
-#addMovie {
+#add-movie {
   margin-top: 20px;
   margin-left: 0px;
   margin-right: 30px;
@@ -36,15 +36,18 @@
     width: 70px;
     font-size: 1rem;
   }
+
   .logout {
     width: 70px;
     font-size: 1rem;
   }
-  #addmovie {
+
+  #addMovie {
     width: 70px;
     font-size: 0.7rem;
   }
-  .edit {
+
+  .add-movie-movie {
     width: 100px;
     font-size: 1rem;
   }
@@ -55,27 +58,27 @@
     width: 100px;
     margin-top: 30px;
   }
+
   .logout {
     width: 100px;
     font-size: 1.2rem;
   }
-  #addmovie {
+
+  #addMovie {
     width: 100px;
     font-size: 0.9rem;
     margin-right: 70px;
   }
-  .edit {
+
+  .add-movie {
     width: 100px;
     font-size: 1.2rem;
     margin-top: 10px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-}
+@media (min-width: 768px) and (max-width: 991.98px) {}
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
-}
+@media (min-width: 992px) and (max-width: 1199.98px) {}
 
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}

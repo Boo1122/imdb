@@ -1,9 +1,17 @@
 import "./Movie_Page.css";
-import { navigate } from "../../Navigate_History/Navigate_History";
+import {
+  navigate
+} from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
-import { deleteMovieFromApi } from "../USER_Logged_In/Delete_Movie";
-import { EditMoviePage } from "../Edit_Movie_Page/Edit_Movie_Page";
-import { editMovieToAPI } from "../Edit_Movie_Page/Edit_Utils";
+import {
+  deleteMovieFromApi
+} from "../USER_Logged_In/Delete_Movie";
+import {
+  EditMoviePage
+} from "../Edit_Movie_Page/Edit_Movie_Page";
+import {
+  editMovieToAPI
+} from "../Edit_Movie_Page/Edit_Utils";
 export class MoviePage {
   constructor() {
     this.number = 10;
@@ -238,7 +246,7 @@ export class MoviePage {
   }
 
   restMoviePage() {
-    const movieButton = document.getElementById("movBtn");
+    const movieButton = document.getElementById("movie-button");
     movieButton.addEventListener("click", () => this.getMovies());
   }
 

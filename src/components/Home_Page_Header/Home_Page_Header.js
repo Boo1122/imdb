@@ -24,10 +24,10 @@ export class Header {
     const header = document.createElement("div");
     header.classList.add("header");
     header.id = "header";
-
-    body.appendChild(header);
     header.style.backgroundImage = "url(./public/img/55376.jpg)";
     header.style.borderBottom = "5px solid salmon";
+
+    body.appendChild(header);
   }
 
   homeButton() {
@@ -48,12 +48,12 @@ export class Header {
   moviesButton() {
     const header = document.getElementById("header");
     header.style.backgroundImage = "url(./public/img/55376.jpg)";
+
     const buttonDiv = document.createElement("div");
-    buttonDiv.id = "movBtn";
-    buttonDiv.className = "dropdown";
+    buttonDiv.id = "movie-button";
 
     const movies = document.createElement("button");
-    movies.classList.add("nav-link", "movies", "movies-btn", "btn");
+    movies.classList.add("nav-link", "moviesButton");
     movies.setAttribute("data-target", "movie-page");
     movies.innerText = "Movies";
 
@@ -64,23 +64,23 @@ export class Header {
   editMovies() {
     const header = document.getElementById("header");
 
-    const editDiv = document.createElement("div");
-    editDiv.id = "addMovie";
+    const addMovieDiv = document.createElement("div");
+    addMovieDiv.id = "add-movie";
 
-    const editButton = document.createElement("button");
-    editButton.classList.add("nav-link", "edit");
-    editButton.setAttribute("data-target", "newMovieContainer");
-    editButton.innerHTML = "Add Movie";
+    const addMovieButton = document.createElement("button");
+    addMovieButton.classList.add("nav-link", "add-movie");
+    addMovieButton.setAttribute("data-target", "newMovieContainer");
+    addMovieButton.innerHTML = "Add Movie";
 
-    header.appendChild(editDiv);
-    editDiv.appendChild(editButton);
+    header.appendChild(addMovieDiv);
+    addMovieDiv.appendChild(addMovieButton);
   }
 
   loginButton() {
     const header = document.getElementById("header");
 
     const loginDiv = document.createElement("div");
-    loginDiv.id = "loginBtn";
+    loginDiv.id = "login-button";
 
     const loginButton = document.createElement("button");
     loginButton.classList.add("nav-link", "login");
