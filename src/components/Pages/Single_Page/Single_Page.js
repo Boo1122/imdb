@@ -18,13 +18,13 @@ export class SinglePage {
   }
 
   mainContent(movie) {
-    const main = document.getElementById("single-movie-page");
-    main.style.backgroundImage =
+    const mainSinglePage = document.getElementById("single-movie-page");
+    mainSinglePage.style.backgroundImage =
       "url(./public/img/batman_background_single.jpg)";
 
-    main.innerHTML = null;
+    mainSinglePage.innerHTML = null;
     const contentDiv = document.createElement("div");
-    contentDiv.id = "main-div";
+    contentDiv.id = "mainSinglePage-div";
 
     const movieContent = document.createElement("div");
     movieContent.id = "movie-content";
@@ -114,7 +114,7 @@ export class SinglePage {
     plot.innerText = `${movie.Plot}`;
 
     //appendings
-    main.appendChild(contentDiv);
+    mainSinglePage.appendChild(contentDiv);
     contentDiv.appendChild(movieContent);
     movieContent.appendChild(poster);
     poster.appendChild(img);

@@ -3,20 +3,20 @@ import Cookie from "js-cookie";
 
 export class RegisterPage {
   constructor() {
-    this.register();
+    this.createRegisterPage();
     this.registration();
   }
 
-  register() {
+  createRegisterPage() {
     const body = document.getElementById("body");
 
-    const containerForm = document.createElement("div");
-    containerForm.id = "register-page";
-    containerForm.classList.add("page");
-    containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
+    const registerContainerForm = document.createElement("div");
+    registerContainerForm.id = "register-page";
+    registerContainerForm.classList.add("page");
+    registerContainerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
-    const box2 = document.createElement("div");
-    box2.id = "register-box";
+    const registerBox = document.createElement("div");
+    registerBox.id = "register-box";
 
     const h1 = document.createElement("h1");
     h1.innerText = "Register";
@@ -59,15 +59,15 @@ export class RegisterPage {
     confirmPasswordInput.setAttribute("name", "email");
 
 
-    const message = document.createElement("p");
-    message.id = "register-message";
-    message.innerText =
+    const registerMessage = document.createElement("p");
+    registerMessage.id = "register-message";
+    registerMessage.innerText =
       "By creating an account you agree to our Terms & Privacy";
 
-    const registerBtn = document.createElement("button");
-    registerBtn.setAttribute("type", "submit");
-    registerBtn.id = "register-btn-form";
-    registerBtn.innerText = "Register";
+    const registerButton = document.createElement("button");
+    registerButton.setAttribute("type", "submit");
+    registerButton.id = "register-btn-form";
+    registerButton.innerText = "Register";
 
     const alreadyHaveAcc = document.createElement("p");
     alreadyHaveAcc.id = "existing-acc";
@@ -75,22 +75,22 @@ export class RegisterPage {
     alreadyHaveAcc.classList.add("nav-link");
     alreadyHaveAcc.setAttribute("data-target", "login-page");
 
-    body.appendChild(containerForm);
-    containerForm.appendChild(box2);
+    body.appendChild(registerContainerForm);
+    registerContainerForm.appendChild(registerBox);
 
-    box2.appendChild(h1);
-    box2.appendChild(completeForm);
-    box2.appendChild(usernameLabel);
-    box2.appendChild(usernameInput);
+    registerBox.appendChild(h1);
+    registerBox.appendChild(completeForm);
+    registerBox.appendChild(usernameLabel);
+    registerBox.appendChild(usernameInput);
 
-    box2.appendChild(passwordLabel);
-    box2.appendChild(confirmPasswordLabel);
-    box2.appendChild(passwordInput);
-    box2.appendChild(confirmPasswordInput);
+    registerBox.appendChild(passwordLabel);
+    registerBox.appendChild(confirmPasswordLabel);
+    registerBox.appendChild(passwordInput);
+    registerBox.appendChild(confirmPasswordInput);
 
-    box2.appendChild(registerBtn);
-    box2.appendChild(alreadyHaveAcc);
-    box2.appendChild(message);
+    registerBox.appendChild(registerButton);
+    registerBox.appendChild(alreadyHaveAcc);
+    registerBox.appendChild(registerMessage);
   }
 
   registration() {
@@ -169,20 +169,20 @@ export class RegisterPage {
           let emptyPassInput = document.getElementById("password-input");
           emptyPassInput.value = "";
 
-          this.handleButtonsTransfetLogout();
-        
+          this.handleButtonsTransferLogout();
+
         });
     });
     const inputCheckPassword = document.getElementById("confirm-password-input");
-  inputCheckPassword.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      document.getElementById("register-btn-form").click();
-    }
-  });
+    inputCheckPassword.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("register-btn-form").click();
+      }
+    });
   }
 
-  handleButtonsTransfetLogout() {
+  handleButtonsTransferLogout() {
     location.reload(false);
   }
 }

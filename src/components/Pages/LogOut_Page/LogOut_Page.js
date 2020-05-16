@@ -3,16 +3,16 @@ import Cookie from "js-cookie";
 
 export class LogOutPage {
   constructor() {
-    this.logout();
+    this.createLogoutPage();
     this.logOutClicked();
   }
 
-  logout() {
+  createLogoutPage() {
     const body = document.getElementById("body");
-    const containerForm = document.createElement("div");
-    containerForm.id = "logout-page";
+    const logoutPage = document.createElement("div");
+    logoutPage.id = "logout-page";
 
-    body.appendChild(containerForm);
+    body.appendChild(logoutPage);
   }
 
   logOutClicked() {
