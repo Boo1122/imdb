@@ -153,7 +153,7 @@ export class MoviePage {
         editMovieButton.classList.add("edit-movie-button-cls");
         editMovieButton.classList.add("nav-link", "movie");
         editMovieButton.setAttribute("title", "Edit Movie");
-        editMovieButton.setAttribute("data-target", "editMovieContainer");
+        editMovieButton.setAttribute("data-target", "edit-movie-page");
         editMovieButton.addEventListener("click", x(movie._id));
         editMovieBox.appendChild(editMovieButton);
         let editMovieID = movie._id;

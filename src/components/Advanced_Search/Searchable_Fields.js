@@ -128,10 +128,8 @@ export function generateURL() {
   checkGenreField();
 
   const realUrl = endUrl.join("");
-  console.log(realUrl);
   const url = `https://movies-app-siit.herokuapp.com/movies?${realUrl}`;
 
-  console.log(url);
 
   return url;
 }

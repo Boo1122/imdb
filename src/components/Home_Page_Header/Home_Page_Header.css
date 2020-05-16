@@ -12,7 +12,7 @@ body {
   z-index: 1;
 }
 
-.moviesButton {
+.movies-button {
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
 
@@ -27,7 +27,7 @@ body {
   cursor: pointer;
 }
 
-.moviesButton:hover {
+.movies-button:hover {
   font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
@@ -38,7 +38,7 @@ body {
   outline: none;
 }
 
-#home {
+#home-div {
   order: 0;
 }
 
@@ -91,7 +91,7 @@ body {
   order: 1;
 }
 
-.home {
+.home-img {
   width: 100px;
   margin-left: 30px;
   cursor: pointer;
@@ -101,13 +101,13 @@ body {
   text-align: center;
 }
 
-#registerBtn {
+#register-div {
   padding: 0;
   order: 5;
   margin-right: 5rem;
 }
 
-.register {
+.register-button {
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
   margin-top: 20px;
@@ -122,7 +122,7 @@ body {
   cursor: pointer;
 }
 
-.register:hover {
+.register-button:hover {
   font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
@@ -135,7 +135,7 @@ body {
 }
 
 @media (max-width: 575.99px) {
-  .home {
+  .home-img {
     width: 60px;
     margin-top: 10px;
     margin-left: 10px;
@@ -165,13 +165,13 @@ body {
     margin-right: -100px;
   }
 
-  .register {
+  .register-button {
     font-size: 1rem;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .home {
+  .home-img {
     width: 90px;
     margin-top: 10px;
     margin-left: 10px;
@@ -183,7 +183,7 @@ body {
     margin-top: 30px;
   }
 
-  .movies {
+  .movies-button {
     font-size: 1.2rem;
   }
 
@@ -193,7 +193,7 @@ body {
     margin-top: 27px;
   }
 
-  .login {
+  .login-button {
     font-size: 1.2rem;
   }
 
@@ -204,7 +204,7 @@ body {
     margin-top: 7px;
   }
 
-  .register {
+  .register-button {
     font-size: 1.2rem;
   }
 }

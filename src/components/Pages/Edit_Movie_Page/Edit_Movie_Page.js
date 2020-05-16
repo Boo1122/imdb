@@ -1,7 +1,6 @@
 import "./Edit_Movie_Page.css";
 import Cookie from "js-cookie";
-import { navigate } from "../../Navigate_History/Navigate_History";
-import { editMovieToAPI } from "./Edit_Utils";
+
 
 export class EditMoviePage {
   constructor() {
@@ -13,7 +12,7 @@ export class EditMoviePage {
     const body = document.getElementById("body");
 
     const editMovieWrapper = document.createElement("div");
-    editMovieWrapper.id = "editMovieContainer";
+    editMovieWrapper.id = "edit-movie-page";
     editMovieWrapper.classList.add("page");
     editMovieWrapper.classList.add("editMovieWrapper-class");
     editMovieWrapper.style.backgroundImage =
@@ -110,5 +109,4 @@ export class EditMoviePage {
 
     editMovieBox.appendChild(editMovieDetailsButton);
   }
-  // editMovieToAPI()
 }

@@ -5,7 +5,7 @@ export function switchButtons() {
 
   const loginDiv = document.getElementById("login-div");
   const logOutDiv = document.getElementById("logOut-div");
-  const registerButton = document.getElementById("registerBtn");
+  const registerButton = document.getElementById("register-div");
   const addMovieButton = document.getElementById("add-movie-div");
 
   if (token === undefined) {

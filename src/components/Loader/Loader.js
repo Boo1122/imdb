@@ -1,7 +1,7 @@
 export class Loader {
   constructor(parent) {
     this.parent = parent;
-    this.renderLoader();
+    // this.renderLoader();
   }
 
   renderLoader() {

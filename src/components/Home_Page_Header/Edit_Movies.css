@@ -32,12 +32,12 @@
 }
 
 @media (max-width: 575.98px) {
-  #logOutBtn {
+  #logOut-div {
     width: 70px;
     font-size: 1rem;
   }
 
-  .logout {
+  .logout-button {
     width: 70px;
     font-size: 1rem;
   }
@@ -54,12 +54,12 @@
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  #logOutBtn {
+  #logOut-div {
     width: 100px;
     margin-top: 30px;
   }
 
-  .logout {
+  .logout-button {
     width: 100px;
     font-size: 1.2rem;
   }
