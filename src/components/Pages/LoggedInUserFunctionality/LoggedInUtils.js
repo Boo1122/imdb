@@ -5,7 +5,7 @@ export function addMovieToAPI() {
     const title = document.getElementById("movie-Title-id");
     const year = document.getElementById("movieYear-id");
     const imdbID = document.getElementById("movie-ImdbID-id");
-    const posterUrl = document.getElementById("GET-THIS");
+    const posterUrl = document.getElementById("posterUrl");
 
     const movieCountry = document.getElementById("add-movie-country");
     const movieLanguage = document.getElementById("add-movie-language");
@@ -20,30 +20,30 @@ export function addMovieToAPI() {
     const token = Cookie.get("token");
 
     fetch("https://movies-app-siit.herokuapp.com/movies", {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        "X-Auth-Token": token,
-      },
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer", // no-referrer, *client
-      body: JSON.stringify({
-        Title: title.value,
-        Year: year.value,
-        imdbID: imdbID.value,
-        Poster: posterUrl.value,
-        Country: movieCountry.value,
-        Language: movieLanguage.value,
-        Runtime: movieRuntime.value,
-        imdbRating: movieImdbRating.value,
-        imdbVotes: movieImdbVotes.value,
-        Genre: movieGenre.value,
-        Plot: moviePlot.value,
-      }),
-    })
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          "X-Auth-Token": token,
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+          Title: title.value,
+          Year: year.value,
+          imdbID: imdbID.value,
+          Poster: posterUrl.value,
+          Country: movieCountry.value,
+          Language: movieLanguage.value,
+          Runtime: movieRuntime.value,
+          imdbRating: movieImdbRating.value,
+          imdbVotes: movieImdbVotes.value,
+          Genre: movieGenre.value,
+          Plot: moviePlot.value,
+        }),
+      })
       .then((response) => response.json())
       .then(() => {
         location.reload(false);
@@ -65,7 +65,7 @@ export function addMovieToAPI() {
       });
   });
 
-  const inputImageURL = document.getElementById("GET-THIS");
+  const inputImageURL = document.getElementById("posterUrl");
   inputImageURL.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();

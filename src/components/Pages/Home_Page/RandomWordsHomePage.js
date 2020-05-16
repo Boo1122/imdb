@@ -1,4 +1,4 @@
-import "./random.css";
+import "./RandomWordsHomePage.css";
 
 export class Random {
   constructor() {

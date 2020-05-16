@@ -1,8 +1,8 @@
-import "./User_Options.css";
+import "./LoggedInAddMovie.css";
 import Cookie from "js-cookie";
 import {
   addMovieToAPI
-} from "./User_Utils";
+} from "./LoggedInUtils";
 
 export class UserOptions {
   constructor() {
@@ -128,7 +128,7 @@ export class UserOptions {
     moviePoster.classList.add("movie-poster");
 
     const moviePosterInput = document.createElement("input");
-    moviePosterInput.id = "GET-THIS";
+    moviePosterInput.id = "posterUrl";
     moviePosterInput.classList.add("movie-Poster-class");
     moviePosterInput.placeholder = "Image URL";
 
@@ -148,7 +148,6 @@ export class UserOptions {
     movieBox.appendChild(moviePlot);
 
     moviePoster.appendChild(moviePosterInput);
-    //moviePoster.appendChild(uploadPosterButton);
 
     const addMovieButton = document.createElement("button");
     addMovieButton.id = "addMovieButton";

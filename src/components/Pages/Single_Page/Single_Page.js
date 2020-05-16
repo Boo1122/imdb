@@ -8,7 +8,9 @@ import {
   loveButtonInitialState,
   updateVotesOnServer
 } from "./SingleUtils";
-import { Loader } from "../../Loader/Loader";
+import {
+  Loader
+} from "../../Love_Button_Loading/Love_Button_Loading";
 
 export class SinglePage {
   constructor() {
@@ -34,8 +36,10 @@ export class SinglePage {
 
     const movieDetails = document.createElement("section");
     movieDetails.id = "poster-wrapper";
+
     const titleDiv = document.createElement("div");
     titleDiv.className = "title-div";
+
     const movieTitle = document.createElement("h1");
     movieTitle.className = "single-movie-title";
     movieTitle.innerText = `${movie.Title}`;
@@ -50,6 +54,7 @@ export class SinglePage {
 
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
+
     const movieInfo = document.createElement("p");
     movieInfo.innerText = `Year:  ${movie.Year}  | Country:  ${movie.Country}   | Language:  ${movie.Language}   | Runtime:  ${movie.Runtime}`;
 
@@ -174,7 +179,9 @@ export class SinglePage {
         console.log("new votes", newVotes);
 
         loveButtonLoadingState(loveButton, loader);
-        updateVotesOnServer(newVotes, movieId).then(({ message }) => {
+        updateVotesOnServer(newVotes, movieId).then(({
+          message
+        }) => {
           if (
             message !==
             "You need to be authenticated to be able to update a movie"
@@ -214,8 +221,8 @@ export class SinglePage {
 
   renderMovieTrailer(searchString) {
     fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
-    )
+        `https://cors-anywhere.herokuapp.com/https://www.myapifilms.com/imdb/idIMDB?idIMDB=${searchString}&token=3ebec604-df12-4647-aee8-aaec21b13c3e&format=json&language=en-us&trailers=1&directors=1&writers=1`
+      )
       .then(response => response.json())
       .then(json => {
         if (

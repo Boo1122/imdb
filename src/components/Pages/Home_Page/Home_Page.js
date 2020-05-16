@@ -1,7 +1,7 @@
 import "./Home_Page.css";
 import {
   Random
-} from "./random";
+} from "./RandomWordsHomePage";
 import {
   Caroussel
 } from "./Caroussel";

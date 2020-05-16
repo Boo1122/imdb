@@ -5,7 +5,7 @@ import {
 import Cookie from "js-cookie";
 import {
   deleteMovieFromApi
-} from "../USER_Logged_In/Delete_Movie";
+} from "../LoggedInUserFunctionality/LoggedInDelete_Movie";
 import {
   EditMoviePage
 } from "../Edit_Movie_Page/Edit_Movie_Page";

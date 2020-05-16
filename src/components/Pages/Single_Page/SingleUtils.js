@@ -1,12 +1,10 @@
 import formatNumber from "format-number";
-//var format=require('format-number');
 import Cookie from "js-cookie";
 
 export function getVotes() {
   const imdbVotesString = document.getElementById("imdb-votes").innerText;
   const [_, imdbVotes] = imdbVotesString.split(" ");
-  // const _ = imdbVotes.split(" ")[0];
-  // const imdbVotes = imdbVotes.split(" ")[1];
+
 
   return Number(imdbVotes.replace(/,/g, ""));
 }
