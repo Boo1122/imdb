@@ -246,8 +246,8 @@ export class MoviePage {
   }
 
   restMoviePage() {
-    const movieButton = document.getElementById("movie-button");
-    movieButton.addEventListener("click", () => this.getMovies());
+    const movieDiv = document.getElementById("movie-div");
+    movieDiv.addEventListener("click", () => this.getMovies());
   }
 
   numberPages() {

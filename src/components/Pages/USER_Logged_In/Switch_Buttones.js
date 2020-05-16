@@ -3,18 +3,18 @@ import Cookie from "js-cookie";
 export function switchButtons() {
   const token = Cookie.get("token");
 
-  const loginButton = document.getElementById("login-button");
-  const logOutButton = document.getElementById("logOutBtn");
+  const loginDiv = document.getElementById("login-div");
+  const logOutDiv = document.getElementById("logOut-div");
   const registerButton = document.getElementById("registerBtn");
-  const addMovieButton = document.getElementById("add-movie");
+  const addMovieButton = document.getElementById("add-movie-div");
 
   if (token === undefined) {
-    logOutButton.style.display = "none";
+    logOutDiv.style.display = "none";
     addMovieButton.style.display = "none";
   }
 
   if (token) {
-    loginButton.style.display = "none";
+    loginDiv.style.display = "none";
     registerButton.style.display = "none";
   }
 }

@@ -50,7 +50,7 @@ export class Header {
     header.style.backgroundImage = "url(./public/img/55376.jpg)";
 
     const buttonDiv = document.createElement("div");
-    buttonDiv.id = "movie-button";
+    buttonDiv.id = "movie-div";
 
     const movies = document.createElement("button");
     movies.classList.add("nav-link", "moviesButton");
@@ -65,7 +65,7 @@ export class Header {
     const header = document.getElementById("header");
 
     const addMovieDiv = document.createElement("div");
-    addMovieDiv.id = "add-movie";
+    addMovieDiv.id = "add-movie-div";
 
     const addMovieButton = document.createElement("button");
     addMovieButton.classList.add("nav-link", "add-movie");
@@ -80,10 +80,10 @@ export class Header {
     const header = document.getElementById("header");
 
     const loginDiv = document.createElement("div");
-    loginDiv.id = "login-button";
+    loginDiv.id = "login-div";
 
     const loginButton = document.createElement("button");
-    loginButton.classList.add("nav-link", "login");
+    loginButton.classList.add("nav-link", "login-button");
     loginButton.setAttribute("data-target", "login-page");
     loginButton.innerHTML = "Login";
 
@@ -95,7 +95,7 @@ export class Header {
     const header = document.getElementById("header");
 
     const logOutDiv = document.createElement("div");
-    logOutDiv.id = "logOutBtn";
+    logOutDiv.id = "logOut-div";
 
     const logOutButton = document.createElement("button");
     logOutButton.classList.add("nav-link", "logout");
