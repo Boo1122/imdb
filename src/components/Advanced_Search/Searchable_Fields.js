@@ -3,6 +3,10 @@ export function generateURL() {
   const year = document.getElementById("yearInput");
 
   const genre = document.getElementById("genreInput");
+  const language = document.getElementById("languageInput");
+  const country = document.getElementById("countryInput");
+  const imdbRating = document.getElementById("imdbRatingInput");
+
 
   const animation = document.getElementById("animation");
   const action = document.getElementById("action");
@@ -10,9 +14,7 @@ export function generateURL() {
   const horror = document.getElementById("horror");
   const sciFi = document.getElementById("sciFi");
 
-  const language = document.getElementById("languageInput");
-  const country = document.getElementById("countryInput");
-  const imdbRating = document.getElementById("imdbRatingInput");
+
 
   const movieInput = document.getElementById("movieInput");
   const tvSeries = document.getElementById("TV-Series");
