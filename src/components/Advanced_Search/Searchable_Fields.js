@@ -1,17 +1,30 @@
 export function generateURL() {
-  const titleInput = document.getElementById("titleInput");
-  const yearInput = document.getElementById("yearInput");
-  const genreInput = document.getElementById("genreInput");
-  const languageInput = document.getElementById("languageInput");
-  const countryInput = document.getElementById("countryInput");
-  const imdbRatingInput = document.getElementById("imdbRatingInput");
+  const title = document.getElementById("titleInput");
+  const year = document.getElementById("yearInput");
+
+  const genre = document.getElementById("genreInput");
+
+  const animation = document.getElementById("animation");
+  const action = document.getElementById("action");
+  const comedy = document.getElementById("comedy");
+  const horror = document.getElementById("horror");
+  const sciFi = document.getElementById("sciFi");
+
+  const language = document.getElementById("languageInput");
+  const country = document.getElementById("countryInput");
+  const imdbRating = document.getElementById("imdbRatingInput");
+
+  const movieInput = document.getElementById("movieInput");
+  const tvSeries = document.getElementById("TV-Series");
+
+  const lastSearch = document.getElementById("last-search");
 
   let endUrl = [];
 
   function checkTitleField() {
-    if (titleInput.value) {
-      let checkTitle = `Title=${titleInput.value}`;
-      titleInput.value == endUrl[0] ?
+    if (title.value) {
+      let checkTitle = `Title=${title.value}`;
+      title.value == endUrl[0] ?
         endUrl.push(checkTitle) :
         endUrl.push("&" + checkTitle);
       console.log(endUrl);
@@ -22,9 +35,9 @@ export function generateURL() {
   }
 
   function checkYearField() {
-    if (yearInput.value) {
-      let checkYear = `year=${yearInput.value}`;
-      yearInput.value == endUrl[0] ?
+    if (year.value) {
+      let checkYear = `Year=${year.value}`;
+      year.value == endUrl[0] ?
         endUrl.push(checkYear) :
         endUrl.push("&" + checkYear);
     } else {
@@ -34,9 +47,9 @@ export function generateURL() {
   }
 
   function checkLanguageField() {
-    if (languageInput.value) {
-      let checkLanguage = `language=${languageInput.value}`;
-      languageInput.value == endUrl[0] ?
+    if (language.value) {
+      let checkLanguage = `Language=${language.value}`;
+      language.value == endUrl[0] ?
         endUrl.push(checkLanguage) :
         endUrl.push("&" + checkLanguage);
     } else {
@@ -46,9 +59,9 @@ export function generateURL() {
   }
 
   function checkCountryField() {
-    if (countryInput.value) {
-      let checkCountry = `Country=${countryInput.value}`;
-      countryInput.value == endUrl[0] ?
+    if (country.value) {
+      let checkCountry = `Country=${country.value}`;
+      country.value == endUrl[0] ?
         endUrl.push(checkCountry) :
         endUrl.push("&" + checkCountry);
     } else {
@@ -58,8 +71,8 @@ export function generateURL() {
   }
 
   function checkImdbRatingField() {
-    if (imdbRatingInput.value) {
-      let checkImdbRating = `imdbRating=${imdbRatingInput.value}`;
+    if (imdbRating.value) {
+      let checkImdbRating = `imdbRating=${imdbRating.value}`;
       checkImdbRating == endUrl[0] ?
         endUrl.push(checkImdbRating) :
         endUrl.push("&" + checkImdbRating);
@@ -71,8 +84,8 @@ export function generateURL() {
   }
 
   function checkGenreField() {
-    if (genreInput.value) {
-      let checkGenre = `Genre=${genreInput.value}`;
+    if (genre.value) {
+      let checkGenre = `Genre=${genre.value}`;
       checkGenre == endUrl[0] ?
         endUrl.push(checkGenre) :
         endUrl.push("&" + checkGenre);
@@ -128,15 +141,20 @@ export function generateURL() {
   checkGenreField();
 
   const realUrl = endUrl.join("");
+  console.log(realUrl);
   const url = `https://movies-app-siit.herokuapp.com/movies?${realUrl}`;
 
+  console.log(url);
 
   return url;
 }
 
 export function searchableFields() {
   const url = generateURL();
+  console.log(url);
   fetch(url)
     .then((response) => response.json())
-    .then((searchableFields) => {});
+    .then((searchableFields) => {
+      console.log(searchableFields);
+    });
 }
