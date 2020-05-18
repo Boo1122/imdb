@@ -260,7 +260,7 @@ export class SinglePage {
 
           trailerBackgroundImage.addEventListener("click", () => {
             console.log("click play");
-            trailerIframe.autoplay = true;
+            trailerIframe.autoplay = 0;
             trailerBackgroundImage.style.display = "none";
           });
 
