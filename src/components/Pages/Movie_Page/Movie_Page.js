@@ -1,9 +1,17 @@
 import "./Movie_Page.css";
-import { navigate } from "../../Navigate_History/Navigate_History";
+import {
+  navigate
+} from "../../Navigate_History/Navigate_History";
 import Cookie from "js-cookie";
-import { deleteMovieFromApi } from "../USER_Logged_In/Delete_Movie";
-import { EditMoviePage } from "../Edit_Movie_Page/Edit_Movie_Page";
-import { editMovieToAPI } from "../Edit_Movie_Page/Edit_Utils";
+import {
+  deleteMovieFromApi
+} from "../LoggedInUserFunctionality/LoggedInDelete_Movie";
+import {
+  EditMoviePage
+} from "../Edit_Movie_Page/Edit_Movie_Page";
+import {
+  editMovieToAPI
+} from "../Edit_Movie_Page/Edit_Utils";
 export class MoviePage {
   constructor() {
     this.number = 10;
@@ -19,16 +27,16 @@ export class MoviePage {
 
   moviePage() {
     const body = document.getElementById("body");
-    const container = document.createElement("div");
-    container.id = "movie-page";
-    container.classList.add("page");
-    container.style.backgroundColor = "black";
+    const mainContainer = document.createElement("div");
+    mainContainer.id = "movie-page";
+    mainContainer.classList.add("page");
+    mainContainer.style.backgroundColor = "black";
 
     const movieListContainer = document.createElement("div");
     movieListContainer.id = "movie-list-container";
 
-    body.appendChild(container);
-    container.appendChild(movieListContainer);
+    body.appendChild(mainContainer);
+    mainContainer.appendChild(movieListContainer);
   }
 
   generateUrl(skip) {
@@ -62,13 +70,13 @@ export class MoviePage {
     const id = `${this.currentPage}_pageButton`;
     document.getElementById(id).classList.add("actives");
 
-    let prev = document.getElementById("previous-movie");
+    let previous = document.getElementById("previous-movie");
     if (this.currentPage === 1) {
-      prev.disabled = true;
-      prev.style.opacity = 0.5;
+      previous.disabled = true;
+      previous.style.opacity = 0.5;
     } else {
-      prev.disabled = false;
-      prev.style.opacity = 1.0;
+      previous.disabled = false;
+      previous.style.opacity = 1.0;
     }
 
     let next = document.getElementById("next-movie");
@@ -89,16 +97,16 @@ export class MoviePage {
     this.movieData.results.forEach((movie) => {
       this.moviesContent(movie, body);
 
-      const anotherBox = document.createElement("div");
-      body.appendChild(anotherBox);
+      const deleteMovieDiv = document.createElement("div");
+      body.appendChild(deleteMovieDiv);
 
       const deleteMovieBox = document.createElement("div");
       deleteMovieBox.classList.add("deleteMovie");
-      anotherBox.appendChild(deleteMovieBox);
+      deleteMovieDiv.appendChild(deleteMovieBox);
 
       const editMovieBox = document.createElement("div");
       editMovieBox.classList.add("editMovieBox");
-      anotherBox.appendChild(editMovieBox);
+      deleteMovieDiv.appendChild(editMovieBox);
       deleteMovieBox.addEventListener("click", () => {
         if (confirm("Are you sure you want to DELETE this movie?")) {
           deleteMovieFromApi(movie._id, this.getMovies.bind(this));
@@ -110,12 +118,12 @@ export class MoviePage {
       const token = Cookie.get("token");
 
       if (token) {
-        const deleteMov = document.createElement("img");
-        deleteMov.src = "./public/delete_button.png";
-        deleteMov.classList.add("delete-single-movie");
-        deleteMov.setAttribute("title", "Delete Movie");
+        const deleteMovieImage = document.createElement("img");
+        deleteMovieImage.src = "./public/delete_button.png";
+        deleteMovieImage.classList.add("delete-single-movie");
+        deleteMovieImage.setAttribute("title", "Delete Movie");
 
-        deleteMovieBox.appendChild(deleteMov);
+        deleteMovieBox.appendChild(deleteMovieImage);
 
         const x = (id) => () => {
           editMovieToAPI(id);
@@ -144,7 +152,7 @@ export class MoviePage {
         editMovieButton.classList.add("edit-movie-button-cls");
         editMovieButton.classList.add("nav-link", "movie");
         editMovieButton.setAttribute("title", "Edit Movie");
-        editMovieButton.setAttribute("data-target", "editMovieContainer");
+        editMovieButton.setAttribute("data-target", "edit-movie-page");
         editMovieButton.addEventListener("click", x(movie._id));
         editMovieBox.appendChild(editMovieButton);
         let editMovieID = movie._id;
@@ -162,12 +170,12 @@ export class MoviePage {
   }
 
   moviesContent(movie, body) {
-    const container = document.createElement("div");
-    container.setAttribute("data-target", "single-movie-page");
-    container.addEventListener("click", navigate.nav);
+    const singleMovieContainer = document.createElement("div");
+    singleMovieContainer.setAttribute("data-target", "single-movie-page");
+    singleMovieContainer.addEventListener("click", navigate.nav);
 
-    container.id = movie._id;
-    container.classList.add("movie-page-container");
+    singleMovieContainer.id = movie._id;
+    singleMovieContainer.classList.add("movie-page-container");
 
     const posters = document.createElement("div");
 
@@ -180,10 +188,9 @@ export class MoviePage {
     img.classList.add("detail-posters");
     img.setAttribute("src", movie.Poster);
 
-    body.appendChild(container);
-    container.appendChild(posters);
+    body.appendChild(singleMovieContainer);
+    singleMovieContainer.appendChild(posters);
     posters.appendChild(p);
-
     posters.appendChild(img);
   }
 
@@ -213,7 +220,7 @@ export class MoviePage {
       this.getMovies(this.movieData.pagination.currentPage * 10);
     });
 
-    let store = [];
+    let storePages = [];
     const pagesContainer = document.createElement("div");
     pagesContainer.id = "pages-container";
 
@@ -228,7 +235,7 @@ export class MoviePage {
       page.classList.add("nr-of-pages");
 
       page.innerText = `${i}`;
-      store.push(page[i]);
+      storePages.push(page[i]);
 
       pagesContainer.appendChild(page);
     }
@@ -237,8 +244,8 @@ export class MoviePage {
   }
 
   restMoviePage() {
-    const movieButton = document.getElementById("movBtn");
-    movieButton.addEventListener("click", () => this.getMovies());
+    const movieDiv = document.getElementById("movie-div");
+    movieDiv.addEventListener("click", () => this.getMovies());
   }
 
   numberPages() {

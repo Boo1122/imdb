@@ -8,7 +8,7 @@ import {
   loveButtonInitialState,
   updateVotesOnServer,
 } from "./SingleUtils";
-import { Loader } from "../../Loader/Loader";
+import { Loader } from "../../Love_Button_Loading/Love_Button_Loading";
 
 export class SinglePage {
   constructor() {
@@ -16,13 +16,11 @@ export class SinglePage {
   }
 
   mainContent(movie) {
-    const main = document.getElementById("single-movie-page");
-    //main.style.backgroundImage =
-    ("url(./public/img/batman_background_single.jpg)");
+    const mainSinglePage = document.getElementById("single-movie-page");
 
-    main.innerHTML = null;
+    mainSinglePage.innerHTML = null;
     const contentDiv = document.createElement("div");
-    contentDiv.id = "main-div";
+    contentDiv.id = "mainSinglePage-div";
 
     const movieContent = document.createElement("div");
     movieContent.id = "movie-content";
@@ -34,8 +32,10 @@ export class SinglePage {
 
     const movieDetails = document.createElement("section");
     movieDetails.id = "poster-wrapper";
+
     const titleDiv = document.createElement("div");
     titleDiv.className = "title-div";
+
     const movieTitle = document.createElement("h1");
     movieTitle.className = "single-movie-title";
     movieTitle.innerText = `${movie.Title}`;
@@ -50,6 +50,7 @@ export class SinglePage {
 
     const posterInfo = document.createElement("div");
     posterInfo.className = "poster-info";
+
     const movieInfo = document.createElement("p");
     movieInfo.innerText = `Year:  ${movie.Year}  | Country:  ${movie.Country}   | Language:  ${movie.Language}   | Runtime:  ${movie.Runtime}`;
 
@@ -109,7 +110,7 @@ export class SinglePage {
     plot.innerText = `${movie.Plot}`;
 
     //appendings
-    main.appendChild(contentDiv);
+    mainSinglePage.appendChild(contentDiv);
     contentDiv.appendChild(movieContent);
     movieContent.appendChild(poster);
     poster.appendChild(img);

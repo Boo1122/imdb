@@ -1,7 +1,5 @@
 import "./Edit_Movie_Page.css";
 import Cookie from "js-cookie";
-import { navigate } from "../../Navigate_History/Navigate_History";
-import { editMovieToAPI } from "./Edit_Utils";
 
 export class EditMoviePage {
   constructor() {
@@ -13,7 +11,7 @@ export class EditMoviePage {
     const body = document.getElementById("body");
 
     const editMovieWrapper = document.createElement("div");
-    editMovieWrapper.id = "editMovieContainer";
+    editMovieWrapper.id = "edit-movie-page";
     editMovieWrapper.classList.add("page");
     editMovieWrapper.classList.add("editMovieWrapper-class");
 
@@ -30,6 +28,7 @@ export class EditMoviePage {
 
     const spanTitle = document.createElement("span");
     spanTitle.innerText = "Title";
+
     const movieTitle = document.createElement("input");
     movieTitle.id = "edit-movie-title";
 
@@ -39,6 +38,7 @@ export class EditMoviePage {
 
     const spanYear = document.createElement("span");
     spanYear.innerText = "Year";
+
     const movieYear = document.createElement("input");
     movieYear.id = "edit-movie-year";
 
@@ -47,6 +47,7 @@ export class EditMoviePage {
 
     const spanGenre = document.createElement("span");
     spanGenre.innerText = "Genre";
+
     const movieGenre = document.createElement("input");
     movieGenre.id = "edit-movie-genre";
 
@@ -55,6 +56,7 @@ export class EditMoviePage {
 
     const spanRuntime = document.createElement("span");
     spanRuntime.innerText = "Runtime";
+
     const movieRuntime = document.createElement("input");
     movieRuntime.id = "edit-movie-runtime";
 
@@ -63,6 +65,7 @@ export class EditMoviePage {
 
     const spanCountry = document.createElement("span");
     spanCountry.innerText = "Country";
+
     const movieCountry = document.createElement("input");
     movieCountry.id = "edit-movie-country";
 
@@ -71,6 +74,7 @@ export class EditMoviePage {
 
     const spanLanguage = document.createElement("span");
     spanLanguage.innerText = "Language";
+
     const movieLanguage = document.createElement("input");
     movieLanguage.id = "edit-movie-language";
 
@@ -79,6 +83,7 @@ export class EditMoviePage {
 
     const spanType = document.createElement("span");
     spanType.innerText = "Type";
+
     const movieType = document.createElement("input");
     movieType.id = "edit-movie-type";
 
@@ -87,6 +92,7 @@ export class EditMoviePage {
 
     const spanImdbID = document.createElement("span");
     spanImdbID.innerText = "Imdb-ID";
+
     const movieImdbID = document.createElement("input");
     movieImdbID.id = "edit-movie-ImdbID";
 

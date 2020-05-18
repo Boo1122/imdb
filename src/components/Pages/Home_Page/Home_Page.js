@@ -1,5 +1,5 @@
 import "./Home_Page.css";
-import { Random } from "./random";
+import { Random } from "./RandomWordsHomePage";
 import { Caroussel } from "./Caroussel";
 
 export class HomePage {
@@ -13,9 +13,13 @@ export class HomePage {
     const container = document.createElement("div");
     container.id = "home-page";
     container.classList.add("page", "active");
-    //container.style.backgroundImage = "url(./public/img/joker_2019.jpg)";
+    container.style.background = "black";
+
+    const countdown = document.createElement("img");
+    countdown.src = "./public/cinema.gif";
 
     body.appendChild(container);
+    container.appendChild(countdown);
     new Random(Random);
     new Caroussel(Caroussel);
   }

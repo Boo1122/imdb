@@ -1,9 +1,6 @@
 import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
-import "./Login_Button.css";
-import {
-  Search
-} from "../Home_Page_Header/Search_Button";
+import { Search } from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
 
@@ -11,7 +8,7 @@ export class Header {
   constructor() {
     this.header();
     this.homeButton();
-    this.editMovies();
+    this.addMovies();
     this.moviesButton();
     this.loginButton();
     this.logOutButton();
@@ -26,34 +23,30 @@ export class Header {
     header.id = "header";
 
     body.appendChild(header);
-    //header.style.backgroundImage = "url(./public/img/55376.jpg)";
-    //header.style.borderBottom = "5px solid salmon";
   }
 
   homeButton() {
     new Search();
-    const homeButton = document.createElement("div");
-    homeButton.id = "home";
+    const homeDiv = document.createElement("div");
+    homeDiv.id = "home-div";
 
     const homeLogo = document.createElement("img");
-    homeLogo.id = "home";
-    homeLogo.classList.add("nav-link", "home");
+    homeLogo.classList.add("nav-link", "home-img");
     homeLogo.setAttribute("data-target", "home-page");
     homeLogo.src = "./public/logoFINAL.png";
 
-    homeButton.appendChild(homeLogo);
-    header.appendChild(homeButton);
+    homeDiv.appendChild(homeLogo);
+    header.appendChild(homeDiv);
   }
 
   moviesButton() {
     const header = document.getElementById("header");
-    //header.style.backgroundImage = "url(./public/img/55376.jpg)";
+
     const buttonDiv = document.createElement("div");
-    buttonDiv.id = "movBtn";
-    buttonDiv.className = "dropdown";
+    buttonDiv.id = "movie-div";
 
     const movies = document.createElement("button");
-    movies.classList.add("nav-link", "movies", "movies-btn", "btn");
+    movies.classList.add("nav-link", "movies-button");
     movies.setAttribute("data-target", "movie-page");
     movies.innerText = "Movies";
 
@@ -61,29 +54,29 @@ export class Header {
     buttonDiv.appendChild(movies);
   }
 
-  editMovies() {
+  addMovies() {
     const header = document.getElementById("header");
 
-    const editDiv = document.createElement("div");
-    editDiv.id = "addMovie";
+    const addMovieDiv = document.createElement("div");
+    addMovieDiv.id = "add-movie-div";
 
-    const editButton = document.createElement("button");
-    editButton.classList.add("nav-link", "edit");
-    editButton.setAttribute("data-target", "newMovieContainer");
-    editButton.innerHTML = "Add Movie";
+    const addMovieButton = document.createElement("button");
+    addMovieButton.classList.add("nav-link", "movies-button");
+    addMovieButton.setAttribute("data-target", "add-movie-page");
+    addMovieButton.innerHTML = "Add Movie";
 
-    header.appendChild(editDiv);
-    editDiv.appendChild(editButton);
+    header.appendChild(addMovieDiv);
+    addMovieDiv.appendChild(addMovieButton);
   }
 
   loginButton() {
     const header = document.getElementById("header");
 
     const loginDiv = document.createElement("div");
-    loginDiv.id = "loginBtn";
+    loginDiv.id = "login-div";
 
     const loginButton = document.createElement("button");
-    loginButton.classList.add("nav-link", "login");
+    loginButton.classList.add("nav-link", "login-button");
     loginButton.setAttribute("data-target", "login-page");
     loginButton.innerHTML = "Login";
 
@@ -95,10 +88,10 @@ export class Header {
     const header = document.getElementById("header");
 
     const logOutDiv = document.createElement("div");
-    logOutDiv.id = "logOutBtn";
+    logOutDiv.id = "logOut-div";
 
     const logOutButton = document.createElement("button");
-    logOutButton.classList.add("nav-link", "logout");
+    logOutButton.classList.add("nav-link", "logout-button");
     logOutButton.setAttribute("data-target", "logout-page");
     logOutButton.innerHTML = "LogOut";
 
@@ -110,10 +103,10 @@ export class Header {
     const header = document.getElementById("header");
 
     const registerDiv = document.createElement("div");
-    registerDiv.id = "registerBtn";
+    registerDiv.id = "register-div";
 
     const registerButton = document.createElement("button");
-    registerButton.classList.add("nav-link", "register");
+    registerButton.classList.add("nav-link", "register-button");
     registerButton.setAttribute("data-target", "register-page");
     registerButton.innerHTML = "Register";
 

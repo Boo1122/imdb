@@ -1,6 +1,8 @@
-import "./User_Options.css";
+import "./LoggedInAddMovie.css";
 import Cookie from "js-cookie";
-import { addMovieToAPI } from "./User_Utils";
+import {
+  addMovieToAPI
+} from "./LoggedInUtils";
 
 export class UserOptions {
   constructor() {
@@ -12,7 +14,7 @@ export class UserOptions {
     const body = document.getElementById("body");
 
     const newMovieWrapper = document.createElement("div");
-    newMovieWrapper.id = "newMovieContainer";
+    newMovieWrapper.id = "add-movie-page";
     newMovieWrapper.classList.add("page");
     newMovieWrapper.classList.add("newMovieWrapper-class");
     //newMovieWrapper.style.backgroundImage = "url(./public/img/batman_bk2.jpeg)";
@@ -126,7 +128,7 @@ export class UserOptions {
     moviePoster.classList.add("movie-poster");
 
     const moviePosterInput = document.createElement("input");
-    moviePosterInput.id = "GET-THIS";
+    moviePosterInput.id = "posterUrl";
     moviePosterInput.classList.add("movie-Poster-class");
     moviePosterInput.placeholder = "Image URL";
 
@@ -146,7 +148,6 @@ export class UserOptions {
     movieBox.appendChild(moviePlot);
 
     moviePoster.appendChild(moviePosterInput);
-    //moviePoster.appendChild(uploadPosterButton);
 
     const addMovieButton = document.createElement("button");
     addMovieButton.id = "addMovieButton";

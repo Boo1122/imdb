@@ -3,6 +3,8 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .header {
@@ -12,43 +14,11 @@ body {
   z-index: 1;
 }
 
-.btn {
+.movies-button {
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
 
   background: black;
-
-  color: #ffffff;
-  font-size: 2.8rem;
-  border: none;
-  font-family: "Geo", sans-serif;
-  text-align: center;
-  outline: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  font-family: "Geo", sans-serif;
-  color: rgba(233, 27, 16, 0.8);
-  border-radius: 20px;
-
-  background: #ffffff;
-  box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
-    -10px -10px 30px rgba(233, 27, 16, 0.8);
-  outline: none;
-}
-
-#home {
-  order: 0;
-}
-
-.login {
-  padding: 10px 10px 10px 10px;
-  border-radius: 20px;
-  margin-left: 5px;
-
-  background: black;
-
   color: #ffffff;
   font-size: 2.8rem;
   border: none;
@@ -59,7 +29,7 @@ body {
   cursor: pointer;
 }
 
-.login:hover {
+.movies-button:hover {
   font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
@@ -71,27 +41,59 @@ body {
   outline: none;
 }
 
-#loginBtnHeader {
+#home-div {
+  order: 0;
+}
+
+.login-button {
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  margin-left: 5px;
+
+  background: black;
+  color: #ffffff;
+  font-size: 2.8rem;
+  border: none;
+  font-family: "Geo", sans-serif;
+  text-align: center;
+  outline: none;
+  order: 4;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  font-family: "Geo", sans-serif;
+  color: rgba(233, 27, 16, 0.8);
+  border-radius: 20px;
+  border: none;
+
+  background: #ffffff;
+  box-shadow: 3px 3px 30px rgba(233, 27, 16, 0.8),
+    -10px -10px 30px rgba(233, 27, 16, 0.8);
+  outline: none;
+}
+
+#login-divHeader {
   margin-left: auto;
   order: 3;
   margin-top: 20px;
   margin-right: 50px;
 }
 
-#loginBtn {
+#login-div {
   margin-top: 20px;
   margin-right: 20px;
   order: 3;
 }
 
-#movBtn {
+#movie-div {
   margin-top: 20px;
   margin-left: 30px;
   margin-right: 30px;
   order: 1;
 }
 
-.home {
+.home-img {
   width: 100px;
   margin-left: 30px;
   cursor: pointer;
@@ -101,28 +103,31 @@ body {
   text-align: center;
 }
 
-#registerBtn {
+#register-div {
   padding: 0;
   order: 5;
   margin-right: 5rem;
 }
 
-.register {
+.register-button {
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
   margin-top: 20px;
 
   background: black;
 
+  background: black;
   color: #ffffff;
   font-size: 2.8rem;
   border: none;
   font-family: "Geo", sans-serif;
+  text-align: center;
   outline: none;
+  order: 4;
   cursor: pointer;
 }
 
-.register:hover {
+.register-button:hover {
   font-family: "Geo", sans-serif;
   color: rgba(233, 27, 16, 0.8);
   border-radius: 20px;
@@ -135,64 +140,76 @@ body {
 }
 
 @media (max-width: 575.99px) {
-  .home {
+  .home-img {
     width: 60px;
     margin-top: 10px;
     margin-left: 10px;
   }
-  #movBtn {
+
+  #movie-div {
     width: 70px;
     margin-left: 10px;
   }
+
   .movies {
     font-size: 1rem;
   }
-  #loginBtn {
+
+  #login-div {
     width: 70px;
     margin-left: -5px;
   }
-  .login {
+
+  .login-button {
     font-size: 1rem;
   }
+
   #registerBtn {
     width: 70px;
     margin-left: -20px;
     margin-right: -100px;
   }
-  .register {
+
+  .register-button {
     font-size: 1rem;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .home {
+  .home-img {
     width: 90px;
     margin-top: 10px;
     margin-left: 10px;
   }
-  #movBtn {
+
+  #movie-div {
     width: 150px;
     margin-left: 10px;
     margin-top: 30px;
   }
-  .movies {
+
+  .movies-button {
     font-size: 1.2rem;
   }
-  #loginBtn {
+
+  #login-div {
     width: 110px;
     margin-left: -5px;
     margin-top: 27px;
   }
-  .login {
+
+  .login-button {
     font-size: 1.2rem;
   }
+
   #registerBtn {
     width: 110px;
     margin-left: -50px;
     margin-right: -100px;
     margin-top: 7px;
   }
-  .register {
+
+  .register-button {
     font-size: 1.2rem;
   }
 }

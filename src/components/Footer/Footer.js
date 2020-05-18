@@ -48,24 +48,24 @@ export class Footer {
     MicroContainer4.style.display = "flex";
     MicroContainer4.style.justifyContent = "space-around";
 
-    const icon1 = document.createElement("a");
-    MicroContainer4.appendChild(icon1);
-    icon1.href = "https://www.facebook.com";
-    icon1.classList = "fa fa-facebook";
+    const facebookIcon = document.createElement("a");
+    MicroContainer4.appendChild(facebookIcon);
+    facebookIcon.href = "https://www.facebook.com";
+    facebookIcon.classList = "fa fa-facebook";
 
-    const icon2 = document.createElement("a");
-    MicroContainer4.appendChild(icon2);
-    icon2.href = "https://www.instagram.com";
-    icon2.classList = "fa fa-instagram";
+    const instagramIcon = document.createElement("a");
+    MicroContainer4.appendChild(instagramIcon);
+    instagramIcon.href = "https://www.instagram.com";
+    instagramIcon.classList = "fa fa-instagram";
 
-    const icon3 = document.createElement("a");
-    MicroContainer4.appendChild(icon3);
-    icon3.href = "https://www.twitter.com";
-    icon3.classList = "fa fa-twitter";
+    const twitterIcon = document.createElement("a");
+    MicroContainer4.appendChild(twitterIcon);
+    twitterIcon.href = "https://www.twitter.com";
+    twitterIcon.classList = "fa fa-twitter";
 
-    const icon4 = document.createElement("a");
-    MicroContainer4.appendChild(icon4);
-    icon4.href = "https://www.snapchat.com";
-    icon4.classList = "fa fa-snapchat";
+    const snapchatIcon = document.createElement("a");
+    MicroContainer4.appendChild(snapchatIcon);
+    snapchatIcon.href = "https://www.snapchat.com";
+    snapchatIcon.classList = "fa fa-snapchat";
   }
 }

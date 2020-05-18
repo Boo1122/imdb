@@ -3,19 +3,19 @@ import Cookie from "js-cookie";
 
 export class LoginPage {
   constructor() {
-    this.login();
+    this.createLoginPage();
     this.loginClicked();
   }
 
-  login() {
+  createLoginPage() {
     const body = document.getElementById("body");
     const containerForm = document.createElement("div");
     containerForm.id = "login-page";
     containerForm.classList.add("page");
     //containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
-    const box1 = document.createElement("div");
-    box1.id = "login-box";
+    const loginBox = document.createElement("div");
+    loginBox.id = "login-box";
 
     const h1 = document.createElement("h1");
     h1.innerText = "Login";
@@ -50,26 +50,26 @@ export class LoginPage {
     loginBtn.id = "loginButton";
     loginBtn.innerText = "Login";
 
-    const regPar = document.createElement("p");
-    regPar.id = "register-paragraph";
-    regPar.innerText = "If you dont have an account Register here!";
-    regPar.classList.add("nav-link");
-    regPar.setAttribute("data-target", "register-page");
+    const registerParagraph = document.createElement("p");
+    registerParagraph.id = "register-paragraph";
+    registerParagraph.innerText = "If you dont have an account Register here!";
+    registerParagraph.classList.add("nav-link");
+    registerParagraph.setAttribute("data-target", "register-page");
 
     body.appendChild(containerForm);
-    containerForm.appendChild(box1);
+    containerForm.appendChild(loginBox);
 
-    box1.appendChild(h1);
-    box1.appendChild(usernameLabel);
-    box1.appendChild(usernameInput);
+    loginBox.appendChild(h1);
+    loginBox.appendChild(usernameLabel);
+    loginBox.appendChild(usernameInput);
 
-    box1.appendChild(passwordLabel);
-    box1.appendChild(passwordInput);
+    loginBox.appendChild(passwordLabel);
+    loginBox.appendChild(passwordInput);
 
-    box1.appendChild(loginBtnContainer);
+    loginBox.appendChild(loginBtnContainer);
     loginBtnContainer.appendChild(loginBtn);
 
-    box1.appendChild(regPar);
+    loginBox.appendChild(registerParagraph);
 
     const wrapper = document.createElement("div");
     wrapper.id = "wrapper";
@@ -148,20 +148,20 @@ export class LoginPage {
       }
 
       fetch("https://movies-app-siit.herokuapp.com/auth/login", {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, *cors, same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-          "Content-Type": "application/json",
-        },
-        redirect: "follow", // manual, *follow, error
-        referrerPolicy: "no-referrer", // no-referrer, *client
-        body: JSON.stringify({
-          username: `${userName.value}`,
-          password: `${passWord.value}`,
-        }),
-      })
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, *cors, same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+            "Content-Type": "application/json",
+          },
+          redirect: "follow", // manual, *follow, error
+          referrerPolicy: "no-referrer", // no-referrer, *client
+          body: JSON.stringify({
+            username: `${userName.value}`,
+            password: `${passWord.value}`,
+          }),
+        })
         .then((response) => response.json())
         .then((json) => {
           json.message !== undefined ? alert(json.message) : "";

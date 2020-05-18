@@ -3,16 +3,15 @@ export function generateURL() {
   const year = document.getElementById("yearInput");
 
   const genre = document.getElementById("genreInput");
+  const language = document.getElementById("languageInput");
+  const country = document.getElementById("countryInput");
+  const imdbRating = document.getElementById("imdbRatingInput");
 
   const animation = document.getElementById("animation");
   const action = document.getElementById("action");
   const comedy = document.getElementById("comedy");
   const horror = document.getElementById("horror");
   const sciFi = document.getElementById("sciFi");
-
-  const language = document.getElementById("languageInput");
-  const country = document.getElementById("countryInput");
-  const imdbRating = document.getElementById("imdbRatingInput");
 
   const movieInput = document.getElementById("movieInput");
   const tvSeries = document.getElementById("TV-Series");
@@ -27,6 +26,7 @@ export function generateURL() {
       title.value == endUrl[0]
         ? endUrl.push(checkTitle)
         : endUrl.push("&" + checkTitle);
+      console.log(endUrl);
     } else {
       let checkTitle = "";
       return checkTitle;
@@ -75,6 +75,7 @@ export function generateURL() {
       checkImdbRating == endUrl[0]
         ? endUrl.push(checkImdbRating)
         : endUrl.push("&" + checkImdbRating);
+      console.log(endUrl);
     } else {
       let checkImdbRating = "";
       return checkImdbRating;
@@ -87,6 +88,7 @@ export function generateURL() {
       checkGenre == endUrl[0]
         ? endUrl.push(checkGenre)
         : endUrl.push("&" + checkGenre);
+      console.log(endUrl);
     } else {
       let checkGenre = "";
       return checkGenre;

@@ -1,5 +1,4 @@
 import "./Search_Button.css";
-import { AdvancedSearch } from "../Advanced_Search/Advanced_Search";
 
 export class Search {
   constructor() {
