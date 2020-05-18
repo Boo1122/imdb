@@ -1,8 +1,6 @@
 import "./LoggedInAddMovie.css";
 import Cookie from "js-cookie";
-import {
-  addMovieToAPI
-} from "./LoggedInUtils";
+import { addMovieToAPI } from "./LoggedInUtils";
 
 export class UserOptions {
   constructor() {
@@ -26,8 +24,9 @@ export class UserOptions {
     body.appendChild(newMovieWrapper);
     newMovieWrapper.appendChild(movieBox);
 
-    const titleContainer = document.createElement("span");
+    const titleContainer = document.createElement("p");
     titleContainer.classList.add("title-container");
+    titleContainer.id = "titleContainerSpan";
     titleContainer.innerText = "Add New Movie";
 
     const spanTitle = document.createElement("span");

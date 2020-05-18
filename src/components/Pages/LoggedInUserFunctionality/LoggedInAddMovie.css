@@ -36,11 +36,15 @@
 .add-movie-imdbRating,
 .add-movie-imdbVotes,
 .add-movie-Genre {
-  width: 200px;
-  height: 20px;
-  margin-bottom: 25px;
+  width: 240px;
+  height: 23px;
+  margin-bottom: 15px;
   border-radius: 5%;
   outline: none;
+}
+
+#titleContainerSpan {
+  font-size: 2rem;
 }
 
 #movieBox span {
@@ -93,19 +97,13 @@
 .title-container {
   color: #346178;
   font-weight: bold;
-  padding-bottom: 20px;
   font-family: "Geo", sans-serif;
-}
-
-.movie-poster {
-  display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-  width: 300px;
+  margin: 0px;
+  margin-top: 20px;
 }
 
 .movie-poster input {
-  width: 200px;
+  width: 230px;
   height: 20px;
   margin-bottom: 10px;
   border-radius: 5%;
@@ -135,6 +133,6 @@
 }
 
 #add-movie-plot {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 230px;
 }
