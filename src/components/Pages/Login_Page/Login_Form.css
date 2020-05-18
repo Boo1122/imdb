@@ -6,16 +6,21 @@ body {
 }
 
 #login-page {
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-
-  background: #272727;
-  color: rgb(81, 99, 123);
-
+  height: 100%;
+  width: 100%;
   font-family: "Geo", sans-serif;
   font-size: large;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+
+  color: rgb(81, 99, 123);
 }
 
 #login-h1 {
