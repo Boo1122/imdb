@@ -20,24 +20,19 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.699);
   width: 400px;
-  height: 650px;
 }
 
 #editMovieBox input {
   width: 250px;
-  height: 20px;
+  height: 23px;
+  margin-top: 4px;
   margin-bottom: 10px;
   border-radius: 5%;
   outline: none;
 }
 
 #editMovieBox span {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-.title-container {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 #editMovieDetailsButton {
@@ -56,6 +51,7 @@
   text-decoration: none;
   text-shadow: 0px -1px 0px #2b665e;
   margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 #editMovieDetailsButton:hover {
@@ -67,7 +63,7 @@
 .title-container {
   color: #346178;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding-bottom: 20px;
   font-family: "Geo", sans-serif;
   margin-top: 10px;

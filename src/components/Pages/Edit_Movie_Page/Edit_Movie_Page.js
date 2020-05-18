@@ -25,7 +25,7 @@ export class EditMoviePage {
     body.appendChild(editMovieWrapper);
     editMovieWrapper.appendChild(editMovieBox);
 
-    const titleContainer = document.createElement("span");
+    const titleContainer = document.createElement("p");
     titleContainer.classList.add("title-container");
     titleContainer.innerText = "Edit Movie Details";
 
