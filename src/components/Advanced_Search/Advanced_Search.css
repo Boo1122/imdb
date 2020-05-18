@@ -1,5 +1,5 @@
 #advancedBox {
-  height: 25rem;
+  height: 30rem;
   overflow: auto;
   padding: 10px;
   color: whitesmoke;
@@ -20,8 +20,7 @@
 
 .search-title-input {
   height: 20px;
-  width: 170px;
-  background: white;
+  width: 190px;
 }
 
 #advancedBox p {
