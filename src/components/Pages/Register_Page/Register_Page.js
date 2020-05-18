@@ -13,7 +13,6 @@ export class RegisterPage {
     const containerForm = document.createElement("div");
     containerForm.id = "register-page";
     containerForm.classList.add("page");
-    //containerForm.style.backgroundImage = "url(./public/img/batman_bk14.jpg)";
 
     const box2 = document.createElement("div");
     box2.id = "register-box";

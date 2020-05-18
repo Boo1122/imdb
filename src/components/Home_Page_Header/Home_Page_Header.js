@@ -1,9 +1,7 @@
 import "./Home_Page_Header.css";
 import "../Pages/Movie_Page/Movie_Button.css";
 import "./Login_Button.css";
-import {
-  Search
-} from "../Home_Page_Header/Search_Button";
+import { Search } from "../Home_Page_Header/Search_Button";
 import "../Pages/LogOut_Page/LogOut_Page.css";
 import "./Edit_Movies.css";
 
@@ -26,8 +24,6 @@ export class Header {
     header.id = "header";
 
     body.appendChild(header);
-    //header.style.backgroundImage = "url(./public/img/55376.jpg)";
-    //header.style.borderBottom = "5px solid salmon";
   }
 
   homeButton() {
@@ -47,7 +43,7 @@ export class Header {
 
   moviesButton() {
     const header = document.getElementById("header");
-    //header.style.backgroundImage = "url(./public/img/55376.jpg)";
+
     const buttonDiv = document.createElement("div");
     buttonDiv.id = "movBtn";
     buttonDiv.className = "dropdown";

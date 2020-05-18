@@ -17,8 +17,6 @@ export class SinglePage {
 
   mainContent(movie) {
     const main = document.getElementById("single-movie-page");
-    //main.style.backgroundImage =
-    ("url(./public/img/batman_background_single.jpg)");
 
     main.innerHTML = null;
     const contentDiv = document.createElement("div");
